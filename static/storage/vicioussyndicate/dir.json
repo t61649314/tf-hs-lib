@@ -1,0 +1,678 @@
+{
+  "wild-vs-data-reaper-report-1": {
+    "Mage": [
+      "PHONETAP’s Solia Reno Mage.json",
+      "PHONETAP’s Tempo Mage.json",
+      "RamonLH’s Freeze Mage.json",
+      "Sjow’s N’Zoth’s Reno Mage.json",
+      "Specialist’s Secret Mage.json",
+      "Thijs’ Freeze Mage.json"
+    ],
+    "Druid": [
+      "Innervate Egg Druid.json",
+      "Lektron’s Jade Druid.json",
+      "Regular Egg Druid.json",
+      "Skywalker’s Hobgoblin Egg Druid.json"
+    ],
+    "Rogue": [
+      "Malygos Miracle Rogue.json",
+      "Midrange Miracle Rogue.json",
+      "Pirate Quest Rogue.json",
+      "Questing Miracle Rogue.json",
+      "Traditional Quest Rogue.json"
+    ],
+    "Hunter": [
+      "Classic Midrange Hunter.json",
+      "Face Hunter.json",
+      "Mid Secret Hunter.json",
+      "N’Zoth Midrange Hunter.json",
+      "Rhino Midrange Hunter.json"
+    ],
+    "Priest": [
+      "Capilano’s Dragon Priest.json",
+      "Control’s Combo Priest.json",
+      "Frodan’s Dragon Priest.json",
+      "Sipiwi94’s Reno N’Zoth Priest.json"
+    ],
+    "Shaman": [
+      "Ancestor’s Call Malygos Shaman.json",
+      "Auctioneer Malygos Shaman.json",
+      "Classic Malygos Shaman.json",
+      "Coldstory’s Jade Control-Midrange Shaman.json",
+      "Demigod’s Aggro Shaman.json",
+      "Evolve Midrange Shaman.json",
+      "Jade Aggro-Midrange Shaman.json",
+      "Murloc Shaman.json",
+      "Reincarnate Control Shaman.json",
+      "Sipiwi94’s Reincarnate Control Shaman.json",
+      "Specialist’s Aggro Shaman.json",
+      "Thing from Below Control Shaman.json"
+    ],
+    "Paladin": [
+      "Control Paladin.json",
+      "Curator Midrange Paladin.json",
+      "Lemon’s Murloc Paladin.json",
+      "Roarr’s Steward Midrange Paladin.json",
+      "Secret Paladin.json"
+    ],
+    "Warlock": [
+      "Classic Zoo Warlock.json",
+      "Discard Zoo Warlock.json",
+      "Doc Rowdy’s N’zoth Reno Warlock.json",
+      "Melody4Ever’s Dreadsteed Reno Warlock.json",
+      "XCrouton’’s Anti-Aggro Reno Warlock.json"
+    ],
+    "Warrior": [
+      "Control’s Pirate Warrior.json",
+      "Dog’s Taunt Warrior.json",
+      "Scorpion’s N’Zoth Control Warrior.json"
+    ]
+  },
+  "wild-vs-data-reaper-report-2": {
+    "Mage": [
+      "Generic Freeze Mage.json",
+      "MeknugetZz’ N’Zoth Reno Mage.json",
+      "PHONETAP’s Tempo Mage.json",
+      "Snou’s Freeze Mage.json",
+      "Specialist’s Secret Mage.json"
+    ],
+    "Druid": [
+      "Alb987’s Token Druid.json",
+      "Regular Egg Druid.json",
+      "Regular Jade Druid.json",
+      "SHRoyalBaiZe’s Jade Druid.json"
+    ],
+    "Rogue": [
+      "Capilano’s Giants Miracle Rogue.json",
+      "Control’s Questing Miracle Rogue.json",
+      "Hoff’s Crystal Rogue.json",
+      "SHRoyalBaiZe’s Crystal Rogue.json"
+    ],
+    "Hunter": [
+      "Classic Midrange Hunter.json",
+      "Face Hunter.json",
+      "Fire Fly Midrange Hunter.json",
+      "Mid Secret Hunter.json",
+      "N’Zoth Midrange Hunter.json",
+      "Rhino Midrange Hunter.json"
+    ],
+    "Priest": [
+      "Capilano’s Dragon Priest.json",
+      "Control’s Combo Priest.json",
+      "Masinc’s Dragon Reno Priest.json",
+      "Sipiwi94’s Reno N’Zoth Priest.json"
+    ],
+    "Shaman": [
+      "Coldstory’s Control Jade Shaman.json",
+      "Masinc’s N’Zoth Control Shaman.json",
+      "MeknugetZz’s Aggro Shaman.json",
+      "Murloc Shaman.json",
+      "Oracle’s Midrange Jade Shaman.json",
+      "Poach’s OTK Reincarnate Control Shaman.json",
+      "Sipiwi94’s Reincarnate Control Shaman.json",
+      "Token Shaman.json"
+    ],
+    "Paladin": [
+      "Awedragon’s Midrange Anyfin Paladin.json",
+      "Bertik’s Steward Midrange Paladin.json",
+      "Chai and Haydumb’s Midrange Paladin.json",
+      "Chai’s Secret Paladin.json",
+      "Snou’s Control Paladin.json"
+    ],
+    "Warlock": [
+      "Ant’s 12-Win Brawl Zoo Warlock.json",
+      "Hurryupidiot’s Reno Warlock.json",
+      "Masinc’s N’Zoth Reno Warlock.json",
+      "Zed’s Classic Zoo Warlock.json",
+      "Zed’s Discard Zoo Warlock.json"
+    ],
+    "Warrior": [
+      "Control’s Pirate Warrior.json",
+      "Noriggoon’s Taunt Warrior.json",
+      "Scorpion’s Juggernaut Control Warrior.json",
+      "Scorpion’s N’Zoth Control Warrior.json",
+      "Scorpion’s Taunt Warrior.json"
+    ]
+  },
+  "wild-vs-data-reaper-report-3": {
+    "Zoo": [
+      "Poach’s Reno Zoo.json",
+      "Zed’s Classic Zoo.json"
+    ],
+    "Mage": [
+      "DannyDonut’s Secret Mage.json",
+      "Freeze Mage.json",
+      "GetMeowth’s Reno Mage.json",
+      "Grizzlybayer’s Exodia Mage.json",
+      "Tempo Mage.json"
+    ],
+    "Druid": [
+      "Awedragon’s Aggro-Token Druid.json",
+      "Chai’s Giants Druid.json",
+      "SamAnthony’s Astral Druid.json",
+      "XCrouton’s Jade Druid.json"
+    ],
+    "Rogue": [
+      "DannyDonuts’ Jade N’Zoth Rogue.json",
+      "Graveyardsmash’s Questing Miracle Rogue.json",
+      "ShatteR’s Mill Rogue.json"
+    ],
+    "Hunter": [
+      "Capilano’s Giants hunter.json",
+      "Midrange Hunter.json"
+    ],
+    "Priest": [
+      "awedragon’s Reno Priest.json",
+      "Big Priest.json",
+      "Sipiwi94’s Velen Reno Priest.json"
+    ],
+    "Shaman": [
+      "Awedragon’s Zealot Aggro Shaman.json",
+      "Casanova’s Murloc Shaman.json",
+      "MekNugetZz’s Twililght Aggro Shaman.json",
+      "Poach’s Control Shaman.json",
+      "Poach’s Doomhammer Aggro Shaman.json",
+      "Xixo’s Token Shaman.json"
+    ],
+    "Paladin": [
+      "Chai’s Murloc Paladin.json",
+      "Haydumb’s Midrange Paladin.json",
+      "Schmiddy’s Control Paladin.json"
+    ],
+    "Warrior": [
+      "DannyDonuts’ Pirate Warrior.json",
+      "Scorpion’s Dead Man’s Hand N’Zoth Warrior.json",
+      "Xixo’s Pirate Warrior.json"
+    ],
+    "Handlock": [
+      "Clickpwn’s Naga Handlock.json"
+    ],
+    "Renolock": [
+      "GetMeowth’s Renolock.json"
+    ],
+    "Discolock": [
+      "Zed’s Discolock.json"
+    ]
+  },
+  "wild-vs-data-reaper-report-4": {
+    "Mage": [
+      "Bananaramic’s Exodia Mage.json",
+      "Bananaramic’s Reno Mage.json",
+      "Harain’s and Control’s Tempo Mage.json",
+      "slizzle466’s Tempo Secret Mage.json"
+    ],
+    "Druid": [
+      "Chai’s Giants Ramp Druid.json",
+      "Poach’s Jade Druid.json",
+      "slizzle466’s Aggro-Token Druid.json"
+    ],
+    "Rogue": [
+      "Awedragon’s Keleseth Tempo Rogue.json",
+      "Bananaramic’s Mill Rogue.json",
+      "DannyDonuts’ Jade N’Zoth Rogue.json",
+      "Graveyardsmash’s Classic Miracle Rogue.json",
+      "Haydumb’s Keleseth Tempo Rogue.json",
+      "Holt’s Pirate Oil Tempo Rogue.json",
+      "Kohai’s Oil Miracle Rogue.json"
+    ],
+    "Hunter": [
+      "Capilano’s Giants Hunter.json",
+      "Control’s Deathrattle Hunter.json",
+      "Midrange Hunter.json"
+    ],
+    "Priest": [
+      "Capilano’s Reno Priest.json",
+      "Ice’s Inner Fire Priest.json",
+      "Roboleg’s Big Priest.json",
+      "Sipiwi94’s Reno Priest.json"
+    ],
+    "Shaman": [
+      "Masinc’s Doomhammer Aggro Shaman.json",
+      "Murloc Shaman.json",
+      "Poach’s Control Shaman.json",
+      "Poach’s Malygos Shaman.json",
+      "SamAnthony’s Aggro Shaman.json",
+      "Xixo’s Token Shaman.json"
+    ],
+    "Paladin": [
+      "Awedragon’s Anyfin Paladin.json",
+      "Chai’s Secret Paladin.json",
+      "Haydumb’s Anti-Priest Midrange Paladin.json",
+      "Haydumb’s Midrange Paladin.json",
+      "Schmiddy’s Control Paladin.json",
+      "Toymachine’s Murloc Paladin.json"
+    ],
+    "Warlock": [
+      "Atralb’s Demon Disco Zoo Warlock.json",
+      "AZSwim’s Demon Zoo Warlock.json",
+      "Hurryupidiot’s Reno Warlock.json"
+    ],
+    "Warrior": [
+      "Cursed Blade Pirate Warrior.json",
+      "DannyDonuts’ Pirate Warrior.json",
+      "Keleseth Pirate Warrior.json",
+      "Scorpion’s N’Zoth Control Warrior.json"
+    ]
+  },
+  "wild-vs-data-reaper-report-5": {
+    "Mage": [
+      "Bananaramic’s Exodia Mage.json",
+      "Bananaramic’s Reno Mage.json",
+      "Daboss212’s Reno Mage.json",
+      "Ko10rino082’s Secret Tempo Mage.json",
+      "Laughing’s Freeze Mage.json"
+    ],
+    "Druid": [
+      "Coldstory’s Jade Druid.json",
+      "Jonahrah’s Classic Ramp Druid.json",
+      "KimiHaSpider’s Mill Ramp Druid.json",
+      "slizzle466’s Aggro-Token Druid.json"
+    ],
+    "Rogue": [
+      "Awedragon’s Ship’s Cannon Tempo Rogue.json",
+      "Capilano’s Miracle Rogue.json",
+      "Ciataccis’s Mill Rogue.json",
+      "Hazer’s Keleseth Tempo Rogue.json",
+      "Kohai’s Oil Tempo Rogue.json",
+      "Poach’s Raptor Jade Rogue.json"
+    ],
+    "Hunter": [
+      "Kenji’s Giants Hunter.json",
+      "RenoJackson’s N’Zoth Hunter.json",
+      "Scorpion’s Face Hunter.json"
+    ],
+    "Priest": [
+      "AZSwim’s Inner-Fire Priest.json",
+      "Capilano’s Dragon Priest.json",
+      "Capilano’s Reno Priest.json",
+      "cndman’s Big Priest.json",
+      "Control’s Inner Fire Priest.json",
+      "Grizzlybayer’s Dragon Ascendant Priest.json",
+      "Sipiwi94’s Velen Reno Priest.json"
+    ],
+    "Shaman": [
+      "Casanova’s Murloc Shaman.json",
+      "GetMeowth’s Doomhammer Aggro Shaman.json",
+      "GetMeowth’s Token Evolve Shaman.json",
+      "Poach’s Control Shaman.json",
+      "Poach’s Malygos Shaman.json",
+      "SamAnthony’s Hammer of Twilight Aggro Shaman.json"
+    ],
+    "Paladin": [
+      "Bananaramic’s Anyfin Paladin.json",
+      "Bananaramic’s Tempo Dude Paladin.json",
+      "Chai’s Secret Paladin.json",
+      "GetMeowth’s Murloc Paladin.json",
+      "GrizzlyBayer’s Justicar Dude Paladin.json",
+      "Haydumb’s Control Paladin.json"
+    ],
+    "Warlock": [
+      "Hurryupidiot’s Reno Warlock.json",
+      "Seviang’s Zoo Warlock.json",
+      "TitanX’s Demon Zoo Warlock.json"
+    ],
+    "Warrior": [
+      "DannyDonuts’ Pirate Warrior.json",
+      "RenoJackson’s N’Zoth Control Warrior.json",
+      "Scorpion’s N’Zoth Control Warrior.json",
+      "Yang Zhitan’s Pirate Warrior.json"
+    ]
+  },
+  "wild-vs-data-reaper-report-6": {
+    "Mage": [
+      "Bananaramic’s Burn Aluneth Mage.json",
+      "Bananaramic’s Exodia Mage.json",
+      "Bananaramic’s Reno Mage.json",
+      "ko10rino082’s Tempo Aluneth Mage.json"
+    ],
+    "Druid": [
+      "Poach’s Jade Druid.json",
+      "sipiwi94’s Aggro Druid.json",
+      "Zeddy’s Malygos Druid.json"
+    ],
+    "Rogue": [
+      "Bananramic’s Tempo Rogue.json",
+      "Eon’s Kingsbane Miracle Rogue.json",
+      "Kingsbane Mill Rogue.json",
+      "N’Zoth Mill Rogue.json",
+      "Questing Miracle Rogue.json"
+    ],
+    "Hunter": [
+      "Audrey’s Mad Scientist Aggro Hunter.json",
+      "Control’s Tundra Rhino Aggro Hunter.json",
+      "GetMeowth’s Midrange Deathrattle Hunter.json"
+    ],
+    "Priest": [
+      "awedragon’s Reno Priest.json",
+      "Grizzlybayer’s Spiteful Dragon Priest.json",
+      "Grizzlybayer’s Velen Reno Priest.json",
+      "Haze’s Inner Fire Combo Dragon Priest.json",
+      "RoffleCONCERNEDMOM’s Big Priest.json",
+      "slizzle466’s Greedy Big Priest.json"
+    ],
+    "Shaman": [
+      "Bananaramic’s Aggro Shaman.json",
+      "GetMeowth’s Evolve Control Shaman.json",
+      "GetMeowth’s Murloc Shaman.json",
+      "GetMeowth’s Windfury Aggro Shaman.json",
+      "Poach’s Malygos Shaman.json",
+      "SKKrillin’s Evolve Token Shaman.json",
+      "SKKrillin’s Totem Token Shaman.json",
+      "Tezzmizzet’s N’Zoth Control Shaman.json"
+    ],
+    "Paladin": [
+      "Bananaramic’s Anyfin Paladin.json",
+      "Chai’s Secret Paladin.json",
+      "Control’s Aggro Paladin.json",
+      "GetMeowth’s Spiteful Murloc Paladin.json",
+      "Haydumb’s Aggro Paladin.json",
+      "Haydumb’s Dude Paladin.json"
+    ],
+    "Warlock": [
+      "gorky’s Giant Warlock.json",
+      "Harain’s Zoo Warlock.json",
+      "XCrouton’s Reno Warlock.json"
+    ],
+    "Warrior": [
+      "Awedragon’s Control Warrior.json",
+      "Pirate Warrior.json"
+    ],
+    "Cubelock": [
+      "Capiliano’s Cubelock.json",
+      "GetMeowth’s Greedy Cubelock.json"
+    ]
+  },
+  "wild-vs-data-reaper-report-7": {
+    "Mage": [
+      "Bananaramic’s Exodia Mage.json",
+      "Bananaramic’s Reno Mage.json",
+      "Bananaramic’s Secret Mage.json",
+      "slizzle466’s Aluneth Mage.json"
+    ],
+    "Druid": [
+      "GetMeowth’s Jade Druid.json",
+      "Jonahrah’s Malygos Druid.json",
+      "slizzle466’s Aggro Druid.json"
+    ],
+    "Rogue": [
+      "Bananaramic’s Tempo Rogue.json",
+      "Hel’s Kingsbane Rogue.json",
+      "Jonahrah’s Miracle Rogue.json"
+    ],
+    "Hunter": [
+      "DannyDonuts’ Spell Hunter.json",
+      "MrDollSteak’s Giants Hunter.json",
+      "MrDollSteak’s Secret Hunter.json",
+      "na0_Yattaze’s Deathrattle Hunter.json",
+      "TopoPablo11’s Aggro Hunter.json"
+    ],
+    "Priest": [
+      "ConcernedMom’s Big Priest.json",
+      "Control’s Combo Priest.json",
+      "Haze’s Combo Priest.json",
+      "Sipiwi94’s Reno Priest.json",
+      "Spiteful Priest.json"
+    ],
+    "Shaman": [
+      "Control’s Aggro Shaman.json",
+      "GetMeowth’s Murloc Shaman.json",
+      "Jonahrah’s Aggro Shaman.json",
+      "RenoJackson’s Cube Control Shaman.json",
+      "RenoJackson’s Evolve Shaman.json"
+    ],
+    "Paladin": [
+      "Banaramic’s Dude Paladin.json",
+      "Chai’s Dude Paladin.json",
+      "Chai’s Secret Paladin.json",
+      "Doc Rowdy’s Control Paladin.json",
+      "GetMeowth’s Aggro Murloc Paladin.json",
+      "Jonahrah’s Secret Anyfin Paladin.json",
+      "Неясыть’s Aggro Paladin.json"
+    ],
+    "Warlock": [
+      "Cooky’s Bloodbloom Zoo Warlock.json",
+      "IndianNinja’s Reno Warlock.json",
+      "Jonahrah’s Giants Warlock.json",
+      "Roffle’s Cube Warlock.json",
+      "SighTed’s Reno Warlock.json"
+    ],
+    "Warrior": [
+      "Awedragon’s Control Warrior.json",
+      "RenoJackson’s Pirate Warrior.json"
+    ]
+  },
+  "wild-vs-data-reaper-report-8": {
+    "Mage": [
+      "AZSwim’s Aluneth Mage.json",
+      "Bananaramic’s Exodia Mage.json",
+      "Bananaramic’s Reno Mage.json"
+    ],
+    "Druid": [
+      "Control’s Egg Aggro Druid.json",
+      "GetMeowth’s Jade Druid.json",
+      "Jonahrah’s Malygos Druid.json",
+      "LazyTitan’s Aggro Druid.json",
+      "Poach’s Miracle Druid.json"
+    ],
+    "Rogue": [
+      "Control’s Kingsbane Rogue.json",
+      "Dane’s Big Rogue.json",
+      "Jonahrah’s Miracle Rogue.json"
+    ],
+    "Hunter": [
+      "GetMeowth’s Aggro Hunter.json",
+      "GetMeowth’s Secret Hunter.json",
+      "Spell Hunter.json"
+    ],
+    "Priest": [
+      "CONCERNEDMOM’s Big Priest.json",
+      "Haze’s Combo Priest.json",
+      "Haze’s Dragon Combo Priest.json",
+      "HIOCKY’s Dragon Reno Priest.json",
+      "Spiteful Priest.json",
+      "Xaos’ Control Priest.json"
+    ],
+    "Shaman": [
+      "Control’s Aggro Shaman.json",
+      "Ecthelionlotf’s Control Shaman.json"
+    ],
+    "Paladin": [
+      "Banaramic’s Dude Paladin.json",
+      "Chai’s Secret Paladin.json",
+      "GetMeowth’s Aggro Murloc Paladin.json",
+      "Wo1o1o’s Aggro Paladin.json"
+    ],
+    "Warlock": [
+      "GetMeowth’s Giants Warlock.json",
+      "Kigo’s Demon Zoo Warlock.json",
+      "sipiwi94’s Cube Warlock.json",
+      "XCrouton’s Reno Warlock.json"
+    ],
+    "Warrior": [
+      "Awedragon’s Control Warrior.json",
+      "Jonahrah’s Pirate Warrior.json",
+      "RenoJackson’s Pirate Warrior.json"
+    ]
+  },
+  "wild-vs-data-reaper-report-9": {
+    "Mage": [
+      "Bananaramic’s Exodia Mage.json",
+      "Bananaramic’s Reno Mage.json",
+      "GetMeowth’s Aluneth Mage.json"
+    ],
+    "Druid": [
+      "Bananaramic’s Malygos Druid.json",
+      "Jonahrah’s Aggro Druid.json",
+      "Kohai’s Togwaggle Druid.json",
+      "Memnarc’s Jade Druid.json"
+    ],
+    "Rogue": [
+      "Goku’s Odd Rogue.json",
+      "XuwangShackdaddy’s Kingsbane Rogue.json"
+    ],
+    "Hunter": [
+      "Applecat’s Kathrena Hunter.json",
+      "Gunnolf’s Odd Face Hunter.json",
+      "Jonahrah’s Giant Hunter.json",
+      "RenoJackson’s Kathrena Cube Hunter.json"
+    ],
+    "Priest": [
+      "Big Priest.json",
+      "Dragon Combo Priest.json",
+      "Eon’s Control Dragon Priest.json",
+      "Haze’s Combo Priest.json",
+      "Skylight’s Reno Priest.json",
+      "Spiteful Dragon Priest.json"
+    ],
+    "Shaman": [
+      "Awedragon’s Totemcarver Even Shaman.json",
+      "Control’s Aggro Shaman.json",
+      "Jade Shaman.json",
+      "OfMonCala’s Al’Akir Even Shaman.json",
+      "RenoJackson’s Even Shaman.json",
+      "Shudderwock Shaman.json"
+    ],
+    "Paladin": [
+      "Aoierias’ Odd Paladin.json",
+      "chai’s Secret Paladin.json",
+      "GetMeowth’s Murloc Paladin.json",
+      "Sipiwi94’s Aggro Paladin.json",
+      "Slizzle466’s Even Paladin.json"
+    ],
+    "Warlock": [
+      "Dean’s Mountain Giant Cube Warlock.json",
+      "MrDollSteak’s Giant Warlock.json",
+      "Sipiwi94’s Cube Warlock.json",
+      "xcrouton’s Reno Warlock.json"
+    ],
+    "Warrior": [
+      "Control’s Patron Warrior.json",
+      "Corbet’s Pirate Rush Warrior.json",
+      "Pirate Warrior.json",
+      "RenoJackson’s Fatigue Warrior.json"
+    ]
+  },
+  "wild-vs-data-reaper-report-10": {
+    "Mage": [
+      "Bananaramic’s Exodia Mage.json",
+      "Bananaramic’s N’Zoth Reno Mage.json",
+      "Spiral’s Aluneth Mage.json"
+    ],
+    "Druid": [
+      "Awedragon’s Jade Druid.json",
+      "Awedragon’s Malygos Druid.json",
+      "Kohai’s Togwaggle Druid.json"
+    ],
+    "Rogue": [
+      "Carly’s Odd Rogue.json",
+      "MadCorvus’s Odd Rogue.json",
+      "Shackdaddy’s Kingsbane Rogue.json",
+      "Slizzle466’s Face Collector Odd Rogue.json"
+    ],
+    "Hunter": [
+      "Applecat’s Kathrena Hunter.json",
+      "Dane’s Deathrattle Reno Hunter.json",
+      "Jonahrah’s Spell Hunter.json"
+    ],
+    "Priest": [
+      "Big Priest.json",
+      "DannyDonuts’ Midrange Dragon Priest.json",
+      "Haze’s Combo Priest.json",
+      "Kripparrian’s Mind Blast Quest Priest.json",
+      "Sipiwi94’s Combo Reno Priest.json",
+      "Spiteful Dragon Priest.json"
+    ],
+    "Shaman": [
+      "Alice’s Reno Shudderwock Shaman.json",
+      "Control’s Aggro Shaman.json",
+      "Eregost’s Shudderwock Jade Shaman.json",
+      "Shuku’s Even Shaman.json",
+      "Zalae’s Even Shaman.json"
+    ],
+    "Paladin": [
+      "Aggro Paladin.json",
+      "Aoierias’ Odd Paladin.json",
+      "GetMeowth’s Murloc Paladin.json",
+      "Hail’s Secret Paladin.json",
+      "Slizzle466’s Odd Paladin.json",
+      "Zalae’s Odd Paladin.json"
+    ],
+    "Warlock": [
+      "Corbett’s Even Warlock.json",
+      "Dean’s Reno Warlock.json",
+      "GetMeowth’s Cube Warlock.json",
+      "H1J0’s Reno Warlock.json",
+      "Kigo’s Zoo Warlock.json"
+    ],
+    "Warrior": [
+      "Control’s Patron Warrior.json",
+      "Dean’s Fatigue Control Warrior.json",
+      "Gunnolf’s Odd Quest Warrior.json",
+      "Pirate Warrior.json"
+    ]
+  },
+  "wild-vs-data-reaper-report-11": {
+    "Mage": [
+      "Bananaramic’s Exodia Mage.json",
+      "Bananaramic’s Reno Mage.json",
+      "Sipiwi’s Aluneth Freeze Mage.json",
+      "Spiral’s Aluneth Mage.json"
+    ],
+    "Druid": [
+      "Awedragon’s Malygos Druid.json",
+      "Dean’s Togwaggle Druid.json",
+      "xxFroBro45’s Jade Druid.json"
+    ],
+    "Rogue": [
+      "Bananaramic’s Odd Rogue.json",
+      "Dean’s Odd Rogue.json",
+      "Shackdaddy’s Kingsbane Rogue.json"
+    ],
+    "Hunter": [
+      "Applecat’s Kathrena Secret Hunter.json",
+      "Dane’s Reno Deathrattle Hunter.json",
+      "Duwinddk’s Recruit Hunter.json",
+      "OfMonCala’s Feugen and Stalagg Reno Hunter.json",
+      "Romulus’ Spell Hunter.json",
+      "Yuma9420’s Secret Hunter.json"
+    ],
+    "Priest": [
+      "Big Priest.json",
+      "DannyDonuts’ Dragon Priest.json",
+      "Kripparrian’s Mind Blast Quest Priest.json",
+      "RenoJackson’s Inner Fire Priest.json",
+      "ShockiiGodx’s Big Priest.json",
+      "XxFroBro45xX’s Reno Priest.json"
+    ],
+    "Shaman": [
+      "Aggro Shaman.json",
+      "Carly’s Even Shaman.json",
+      "DannyDonut’s Lifedrinker Shudderwock Shaman.json",
+      "Dean’s Even Shaman.json",
+      "Eregost’s Jade Shudderwock Shaman.json",
+      "Tezzmizzet’s Reno Shudderwock Shaman.json"
+    ],
+    "Paladin": [
+      "Bananaramic’s Aggro Paladin.json",
+      "GetMeowth’s Murloc Paladin.json",
+      "Hail’s Secret Paladin.json",
+      "Sinyaev’s Odd Paladin.json",
+      "Slizzle466’s Pirate Odd Paladin.json"
+    ],
+    "Warlock": [
+      "Dean’s Reno Warlock.json",
+      "GetMeowth’s Cube Warlock.json",
+      "H1J0’s Reno Warlock.json",
+      "Jak’s Zoo Warlock.json",
+      "Jayden’s Zoo Warlock.json",
+      "V1sby’s Dollmaster Cube Warlock.json",
+      "XxFroBro45xX’s Even Warlock.json"
+    ],
+    "Warrior": [
+      "Control’s Patron Warrior.json",
+      "Control’s Pirate Warrior.json",
+      "KeithNumber’s Recruit Warrior.json",
+      "パチンコおじさん’s Mill Warrior.json"
+    ]
+  }
+}
