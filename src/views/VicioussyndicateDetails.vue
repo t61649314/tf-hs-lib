@@ -4,7 +4,7 @@
         <div class="list">
             <div class="deck-item" v-for="(value ,key) in obj" :key="key">
                 <img :src="require(`../../static/storage/vicioussyndicate/${gParent}/${parent}/${value.name}.png`)">
-                <div class="btn clipboard-btn" :data-clipboard-text="value.code">复制卡组</div>
+                <button class="btn clipboard-btn" :data-clipboard-text="value.code">复制卡组</button>
             </div>
         </div>
     </div>
@@ -33,7 +33,7 @@
 <style lang="less" rel="stylesheet/less" scoped>
     .deck-item {
         padding: 25px 0;
-        border: 1px solid #ddd;
+        border-bottom: 1px solid #ddd;
         background-color: #fff;
     }
 </style>

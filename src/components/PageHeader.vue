@@ -23,8 +23,6 @@
 </script>
 <style lang="less" rel="stylesheet/less" scoped>
     .page-header {
-        position: fixed;
-        width: 100%;
         height: 60px;
         z-index: 1;
         background-color: #fff;
