@@ -23,12 +23,15 @@
 </script>
 <style lang="less" rel="stylesheet/less" scoped>
     .page-header {
-        margin: 20px auto;
-        text-align: center;
-        display: block;
+        position: fixed;
+        width: 100%;
+        height: 60px;
+        z-index: 1;
+        background-color: #fff;
         h1 {
             font-size: 20px;
-            line-height: 1;
+            line-height: 60px;
+            margin: 0;
         }
         .mintui-back {
             display: inline-block;

@@ -1,678 +1,2025 @@
 {
   "wild-vs-data-reaper-report-1": {
-    "Mage": [
-      "PHONETAP’s Solia Reno Mage.png",
-      "PHONETAP’s Tempo Mage.png",
-      "RamonLH’s Freeze Mage.png",
-      "Sjow’s N’Zoth’s Reno Mage.png",
-      "Specialist’s Secret Mage.png",
-      "Thijs’ Freeze Mage.png"
-    ],
     "Druid": [
-      "Innervate Egg Druid.png",
-      "Lektron’s Jade Druid.png",
-      "Regular Egg Druid.png",
-      "Skywalker’s Hobgoblin Egg Druid.png"
-    ],
-    "Rogue": [
-      "Malygos Miracle Rogue.png",
-      "Midrange Miracle Rogue.png",
-      "Pirate Quest Rogue.png",
-      "Questing Miracle Rogue.png",
-      "Traditional Quest Rogue.png"
+      {
+        "name": "Regular Egg Druid",
+        "code": "AAEBAZICAoQXkbwCDtUB/QL3A+YF5Qf1DfoNwg6OEOYR6BXNuwKGwQLrwgIA"
+      },
+      {
+        "name": "Innervate Egg Druid",
+        "code": "AAEBAZICBP0C9Q2EF5G8Ag3+AfcD5gXlB/oNjhDmEegVzbsChsEC5MIC68ICysMCAA=="
+      },
+      {
+        "name": "Skywalker’s Hobgoblin Egg Druid",
+        "code": "AAEBAZICAoQXkbwCDv4B9wPmBfUF5Qf1DcIOjhCYEOgVwasCzbsChsEC68ICAA=="
+      },
+      {
+        "name": "Lektron’s Jade Druid",
+        "code": "AAEBAZICBrkGpAeuqwKUvQL5wALTxQIMQF/+AcQG5AiBDr6rArS7Asu8As+8At2+AsnHAgA="
+      }
     ],
     "Hunter": [
-      "Classic Midrange Hunter.png",
-      "Face Hunter.png",
-      "Mid Secret Hunter.png",
-      "N’Zoth Midrange Hunter.png",
-      "Rhino Midrange Hunter.png"
+      {
+        "name": "Classic Midrange Hunter",
+        "code": "AAEBAR8EyQTbCZ4Q5MICDagCtQOHBOsH7Qn+DPcNubQC6rsC7LsC2cICicMCjsMCAA=="
+      },
+      {
+        "name": "N’Zoth Midrange Hunter",
+        "code": ""
+      },
+      {
+        "name": "Rhino Midrange Hunter",
+        "code": ""
+      },
+      {
+        "name": "Mid Secret Hunter",
+        "code": "AAEBAR8G9gLHA8kErgbtCYW4AgyeAagCtQOHBOsH/gz3DdQR+LECubQCxLQC7LsCAA=="
+      },
+      {
+        "name": "Face Hunter",
+        "code": "AAEBAR8ExwOvBMkE6rsCDZ4BqAK1A4cE2wn+DPcN2w/UEbitAvixArm0AsS0AgA="
+      }
     ],
-    "Priest": [
-      "Capilano’s Dragon Priest.png",
-      "Control’s Combo Priest.png",
-      "Frodan’s Dragon Priest.png",
-      "Sipiwi94’s Reno N’Zoth Priest.png"
-    ],
-    "Shaman": [
-      "Ancestor’s Call Malygos Shaman.png",
-      "Auctioneer Malygos Shaman.png",
-      "Classic Malygos Shaman.png",
-      "Coldstory’s Jade Control-Midrange Shaman.png",
-      "Demigod’s Aggro Shaman.png",
-      "Evolve Midrange Shaman.png",
-      "Jade Aggro-Midrange Shaman.png",
-      "Murloc Shaman.png",
-      "Reincarnate Control Shaman.png",
-      "Sipiwi94’s Reincarnate Control Shaman.png",
-      "Specialist’s Aggro Shaman.png",
-      "Thing from Below Control Shaman.png"
+    "Mage": [
+      {
+        "name": "PHONETAP’s Solia Reno Mage",
+        "code": "AAEBAf0EHk2KAcABuwKrBMUEywTtBJYF7QW5BooH7Ae4CPcNgQ6HD/UPnhDWEboWwxaFF42sAqO2Aum6Ati7Av29ApjEApbHAgAA"
+      },
+      {
+        "name": "Sjow’s N’Zoth’s Reno Mage",
+        "code": "AAEBAf0EHk1xigHAAbsCxQSWBbkG7Ae5DfcNgQ6JDocPlQ/1D5AQnhDDFoUX4KwC6boC2LsCwcECysEC5MICmMQC3sQC08UClscCAAA="
+      },
+      {
+        "name": "PHONETAP’s Tempo Mage",
+        "code": "AAEBAf0EBHG4CIkOnhANuwKVA6sEtATmBJYFuQb3DYkPkBDjEYwUmMQCAA=="
+      },
+      {
+        "name": "Specialist’s Secret Mage",
+        "code": "AAEBAf0EBsAB7AX6Dp4Q67oCmMQCDHHDAbsClQOWBbkGyQ33DYkO17YCh70CwcECAA=="
+      },
+      {
+        "name": "RamonLH’s Freeze Mage",
+        "code": "AAEBAf0EBsUE7QX7DNYRiKwC6boCDIoBrAHAAZwCuwLJA6sEywTtBJYF9w26FgA="
+      },
+      {
+        "name": "Thijs’ Freeze Mage",
+        "code": "AAEBAf0EBskDxQTtBbgI1hHBwQIMigGsAcABuwKrBMsE7QSWBfsM9w3XtgKYxAIA"
+      }
     ],
     "Paladin": [
-      "Control Paladin.png",
-      "Curator Midrange Paladin.png",
-      "Lemon’s Murloc Paladin.png",
-      "Roarr’s Steward Midrange Paladin.png",
-      "Secret Paladin.png"
+      {
+        "name": "Roarr’s Steward Midrange Paladin",
+        "code": "AAEBAZ8FBtIE+gbmrgK8vQK5wQLkwgIM3AP0Bc8G6g/sD+0Pu68C/68Cm8ICiMcCuMcC2ccCAA=="
+      },
+      {
+        "name": "Curator Midrange Paladin",
+        "code": "AAEBAZ8FCs8G+gb6DrAVyRa5sgK8vQK5wQLkwgLJxwIK3AP0BeoP7A/tD7PBApvCAojHArjHAtnHAgA="
+      },
+      {
+        "name": "Secret Paladin",
+        "code": "AAEBAZ8FCIwB+gbrD54Q2BS8vQK5wQLkwgILngHIBIEOjA7qD+0PkBCmFbPBApvCAojHAgA="
+      },
+      {
+        "name": "Lemon’s Murloc Paladin",
+        "code": "AAEBAZ8FCOAF+gb6DusPnhDfFOO+ArnBAgvbA9wDpwjqD+0P06oCs8ECm8ICncICscICiMcCAA=="
+      },
+      {
+        "name": "Control Paladin",
+        "code": "AAEBAZ8FCtIE+gbbCuCsAoquAuauArmyAry9ApvCAsnHAgqKAdwD9AX2B4EOkBDiEckWs8ECiMcCAA=="
+      }
+    ],
+    "Priest": [
+      {
+        "name": "Control’s Combo Priest",
+        "code": "AAEBAa0GBvYH1wr7DLW7AtHBAr7IAgztAfgC5QTRCtIK8gzZDf4NjQ+PD/C7AtjBAgA="
+      },
+      {
+        "name": "Capilano’s Dragon Priest",
+        "code": "AAEBAa0GBMkG0wrXCoUXDeUEuQbyDO4R6RKJFKQUgrUCtbsCursC0cEC2MEC2cECAA=="
+      },
+      {
+        "name": "Frodan’s Dragon Priest",
+        "code": "AAEBAa0GBpAH0wrXCoUX6r8CyccCDOUEuQbyDO4R6RKJFKQUqrICgrUCtbsCursC8LsCAA=="
+      },
+      {
+        "name": "Sipiwi94’s Reno N’Zoth Priest",
+        "code": "AAEBAa0GHooBkALlBIoH0wrXCvIMuQ3ZDf4NgQ6PDosPjw+SD5AQvhbDFrcXxxfgrAKDuwK1uwLYuwLRwQLVwQLZwQLkwgLexALTxQIAAA=="
+      }
+    ],
+    "Rogue": [
+      {
+        "name": "Midrange Miracle Rogue",
+        "code": "AAEBAaIHCrIC7QLNA68E1AXtBfoO9Q/1uwKRvAIKtAGMApsFuQaIB6QHhgnEFpK2AoHCAgA="
+      },
+      {
+        "name": "Questing Miracle Rogue",
+        "code": "AAEBAaIHBrIC1AXtBfoO9bsCkbwCDLQBjALNA5sFlwa5BogHpAfeB4YJxBaStgIA"
+      },
+      {
+        "name": "Malygos Miracle Rogue",
+        "code": "AAEBAaIHDLIC7QK0A80DxQTGBe0F9Q/WEfW7AoHCAtPFAgm0Ab0EmwW5BogHpAeGCcQW+MECAA=="
+      },
+      {
+        "name": "Pirate Quest Rogue",
+        "code": "AAEBAaIHBMQBkbwChsICxscCDZwC7QKfA5IE1AWGCfsPgBKStgL4vQKXwQL8wQLrwgIA"
+      },
+      {
+        "name": "Traditional Quest Rogue",
+        "code": "AAEBAaIHBpIEhRCAEpG8AvzBAobCAgzEAZwC7QKfA4gF1AWGCY0Q+L0Cl8EC68ICxscCAA=="
+      }
+    ],
+    "Shaman": [
+      {
+        "name": "Demigod’s Aggro Shaman",
+        "code": "AAEBAaoIBO0FhBeRvAKUvQIN7gH5A7kG4AblB/AH1g+yFMoW96oCoLYCh7wC0bwCAA=="
+      },
+      {
+        "name": "Specialist’s Aggro Shaman",
+        "code": "AAEBAaoIBIQX/qoCkbwClL0CDe4B+QPgBuUH8AfWD7IUyhb3qgKgtgKHvALRvALkwgIA"
+      },
+      {
+        "name": "Jade Aggro-Midrange Shaman",
+        "code": "AAEBAaoIBu4BgQSTCZ4QlL0C9r0CDPkD9QT+BbkG8AeyFMoW+6oCoLYC3boCh7wC0bwCAA=="
+      },
+      {
+        "name": "Evolve Midrange Shaman",
+        "code": "AAEBAaoIBJMJkBCRvAKUvQIN5QfwB7IUyhb6qgL7qgKgtgKHvALRvAL5vwKRwQKbwgLrwgIA"
+      },
+      {
+        "name": "Coldstory’s Jade Control-Midrange Shaman",
+        "code": "AAEBAaoIBJ4QhRemvAKUvQIN9QT+BbkGoLYC3boC5rsCh7wCz7wC0bwC9r0Cx8ECm8IC5MICAA=="
+      },
+      {
+        "name": "Reincarnate Control Shaman",
+        "code": "AAEBAaoICPkDuQ2CDqIQ0hPgrAKFuAKmvAILlAP1BP4Fsgb1CIEOkQ60FKC2Ava9AsfBAgA="
+      },
+      {
+        "name": "Thing from Below Control Shaman",
+        "code": "AAEBAaoICLkNohC8FOCsAqC2AoW4Aqa8ArHEAguUA4EE9QT+BbIG9QiBDrQU+6oC9r0Cx8ECAA=="
+      },
+      {
+        "name": "Sipiwi94’s Reincarnate Control Shaman",
+        "code": "AAEBAaoIBrkNgg6iEOCsAoW4Aqa8AgyUA/UE/gWyBvUIgQ6RDtITtBSgtgL2vQLHwQIA"
+      },
+      {
+        "name": "Classic Malygos Shaman",
+        "code": "AAEBAaoIBrQD4AbOD9YRwq4ChbgCDPkD9QT+BbIGywfWD/ER0hO0FKC2Ava9AsfBAgA="
+      },
+      {
+        "name": "Ancestor’s Call Malygos Shaman",
+        "code": "AAEBAaoICvYCtAPWEbwUqKsCwq4Cz7ECoLYChbgCprwCCvkD9QT+BbIGzg/WD/ER0hO0FMfBAgA="
+      },
+      {
+        "name": "Auctioneer Malygos Shaman",
+        "code": "AAEBAaoICLQDpAfOD9YRvBTCrgKFuALnuwIL+QP1BP4FsgbLB9YP8RHSE7QU9r0Cx8ECAA=="
+      },
+      {
+        "name": "Murloc Shaman",
+        "code": "AAEBAaoICMUD+QPgBdgPhBfjvgKxwgKbxAIL2wPjBdAH8AenCL8XoLYC47sC9r0CkcECncICAA=="
+      }
     ],
     "Warlock": [
-      "Classic Zoo Warlock.png",
-      "Discard Zoo Warlock.png",
-      "Doc Rowdy’s N’zoth Reno Warlock.png",
-      "Melody4Ever’s Dreadsteed Reno Warlock.png",
-      "XCrouton’’s Anti-Aggro Reno Warlock.png"
+      {
+        "name": "Classic Zoo Warlock",
+        "code": "AAEBAf0GBNwCrwShBt0PDTD7Bc4G2QexCMII9Q3wEc8WtKwC9q4C5MIC68ICAA=="
+      },
+      {
+        "name": "Discard Zoo Warlock",
+        "code": "AAEBAf0GBKEGigfZB5THAg0w9wT7Bc4HwgjwEc8Wr6wCtKwC9q4C1LMCvLYC5MICAA=="
+      },
+      {
+        "name": "Doc Rowdy’s N’zoth Reno Warlock",
+        "code": "AAEBAf0GHooBkwHyBYkG2waSB7YH4QeNCMQIzAjzDLkN/g2BDvUPkBCtENYR8BH9EcMWhRfgrALYuwLdvALKvwLKwwLexALfxAIAAA=="
+      },
+      {
+        "name": "Melody4Ever’s Dreadsteed Reno Warlock",
+        "code": "AAEBAf0GHIoBowHyBYkGzgbbBrYHxAjMCLkNgQ6CDsIP9Q/8D60Q/RGQFcMWzxaFF9i7Av2/AsnCAt7EAt/EAtPFAo/HAgGGFgA="
+      },
+      {
+        "name": "XCrouton’’s Anti-Aggro Reno Warlock",
+        "code": "AAEBAf0GHooBkwGTBK8E8gWJBs4G2waSB7YHjQjECMwIgQ71D/oPrRDWEfAR/RHDFs8WhRfYuwLdvAL9vwLkwgLexALfxALTxQIAAA=="
+      }
     ],
     "Warrior": [
-      "Control’s Pirate Warrior.png",
-      "Dog’s Taunt Warrior.png",
-      "Scorpion’s N’Zoth Control Warrior.png"
+      {
+        "name": "Control’s Pirate Warrior",
+        "code": "AAEBAQcEsAKvBIQXkbwCDRyRA/8DjgWoBdQF7gbnB+8HjQ77D4KwAoiwAgA="
+      },
+      {
+        "name": "Dog’s Taunt Warrior",
+        "code": "AAEBAQcG/ASQDuCsAsbDAtPDAqLHAgxLkAORA9QEkQayCPsM/g2BDo0Om8IC38QCAA=="
+      },
+      {
+        "name": "Scorpion’s N’Zoth Control Warrior",
+        "code": "AAEBAQcG0gL7DLAV4KwCubICyccCDEuRA6IEkQb/B/4NjQ74EakVgq0C38QCoscCAA=="
+      }
     ]
   },
   "wild-vs-data-reaper-report-2": {
-    "Mage": [
-      "Generic Freeze Mage.png",
-      "MeknugetZz’ N’Zoth Reno Mage.png",
-      "PHONETAP’s Tempo Mage.png",
-      "Snou’s Freeze Mage.png",
-      "Specialist’s Secret Mage.png"
-    ],
     "Druid": [
-      "Alb987’s Token Druid.png",
-      "Regular Egg Druid.png",
-      "Regular Jade Druid.png",
-      "SHRoyalBaiZe’s Jade Druid.png"
-    ],
-    "Rogue": [
-      "Capilano’s Giants Miracle Rogue.png",
-      "Control’s Questing Miracle Rogue.png",
-      "Hoff’s Crystal Rogue.png",
-      "SHRoyalBaiZe’s Crystal Rogue.png"
+      {
+        "name": "Alb987’s Token Druid",
+        "code": "AAEBAZICAoQXkbwCDv4B9wPmBeUH9Q2OEOgVwasCtrMCzbsChsECn8IC5MIC68ICAA=="
+      },
+      {
+        "name": "Regular Egg Druid",
+        "code": "AAEBAZICBPsFhBeRvAKGwQIN1QH9AvcD5gXlB/UN+g3CDo4Q5hHoFc27AuvCAgA="
+      },
+      {
+        "name": "Regular Jade Druid",
+        "code": "AAEBAZICBK6rAumsApS9AsnHAg1AX/4BuQbEBqQH5Ai+qwK0uwLLvALPvALdvgL5wAIA"
+      },
+      {
+        "name": "SHRoyalBaiZe’s Jade Druid",
+        "code": "AAEBAZICBOgVrqsClL0C+cACDUBf/gG5BsQGpAfkCL6rArS7Asu8As+8At2+AsnHAgA="
+      }
     ],
     "Hunter": [
-      "Classic Midrange Hunter.png",
-      "Face Hunter.png",
-      "Fire Fly Midrange Hunter.png",
-      "Mid Secret Hunter.png",
-      "N’Zoth Midrange Hunter.png",
-      "Rhino Midrange Hunter.png"
+      {
+        "name": "Classic Midrange Hunter",
+        "code": "AAEBAR8IqALrB9sJ+g6eENQR7LsC5MICC7UDhwTtCf4M9Q33DZAQubQC6rsCicMCjsMCAA=="
+      },
+      {
+        "name": "Fire Fly Midrange Hunter",
+        "code": "AAEBAR8GqALbCfoOnhDUEeTCAgy1A4cE7Qn+DPUN9w3bD5AQubQC6rsC7LsC68ICAA=="
+      },
+      {
+        "name": "N’Zoth Midrange Hunter",
+        "code": "AAEBAR8GqAKeENQR4KwC7LsC5MICDLUDhwTtCf4M9Q33DYEO2w+QELm0Auq7AuvCAgA="
+      },
+      {
+        "name": "Rhino Midrange Hunter",
+        "code": "AAEBAR8EuwXbCZ4Q1BENqAK1A+sH7QmBCv4MubQC6rsC7LsC2cIC5MICicMCjsMCAA=="
+      },
+      {
+        "name": "Mid Secret Hunter",
+        "code": "AAEBAR8G9gLHA8kE+g7UEYW4AgyeAbUDhwTtCf4M9w3bD5AQ+LECubQCxLQC68ICAA=="
+      },
+      {
+        "name": "Face Hunter",
+        "code": "AAEBAR8ExwOvBMkE6rsCDZ4BqAK1A4cE2wn+DPcN2w/UEbitAvixArm0AsS0AgA="
+      }
     ],
-    "Priest": [
-      "Capilano’s Dragon Priest.png",
-      "Control’s Combo Priest.png",
-      "Masinc’s Dragon Reno Priest.png",
-      "Sipiwi94’s Reno N’Zoth Priest.png"
-    ],
-    "Shaman": [
-      "Coldstory’s Control Jade Shaman.png",
-      "Masinc’s N’Zoth Control Shaman.png",
-      "MeknugetZz’s Aggro Shaman.png",
-      "Murloc Shaman.png",
-      "Oracle’s Midrange Jade Shaman.png",
-      "Poach’s OTK Reincarnate Control Shaman.png",
-      "Sipiwi94’s Reincarnate Control Shaman.png",
-      "Token Shaman.png"
+    "Mage": [
+      {
+        "name": "Snou’s Freeze Mage",
+        "code": "AAEBAf0EBsUE7QW/CNYRuhbXtgIMigGsAcABuwLJA6sEywTtBJYF+wz3DZjEAgA="
+      },
+      {
+        "name": "Generic Freeze Mage",
+        "code": "AAEBAf0EBsUE7QX7DNYRiKwC6boCDIoBrAHAAZwCuwLJA6sEywTtBJYF9w26FgA="
+      },
+      {
+        "name": "MeknugetZz’ N’Zoth Reno Mage",
+        "code": "AAEBAf0EHk2KAcABuwKrBMUE7QSWBfIFigfsB/cNgQ6HD/UPkBCeEMMWhRfgrAKjtgLpugLYuwLBwQLKwQLkwgKYxALexALTxQKWxwIAAA=="
+      },
+      {
+        "name": "Specialist’s Secret Mage",
+        "code": "AAEBAf0EBMAB7AX6Dp4QDXHDAbsClQOWBbkGyQ33DYkO17YC67oCh70CwcECAA=="
+      },
+      {
+        "name": "PHONETAP’s Tempo Mage",
+        "code": "AAEBAf0EBnHtBbgIiQ76Dp4QDLsClQOrBLQE5gSWBbkG9w2QEOMRjBSYxAIA"
+      }
     ],
     "Paladin": [
-      "Awedragon’s Midrange Anyfin Paladin.png",
-      "Bertik’s Steward Midrange Paladin.png",
-      "Chai and Haydumb’s Midrange Paladin.png",
-      "Chai’s Secret Paladin.png",
-      "Snou’s Control Paladin.png"
+      {
+        "name": "Chai and Haydumb’s Midrange Paladin",
+        "code": "AAEBAZ8FCvoG+g7rD7AVyRbmrgK5sgK8vQK5wQLJxwIK3AP0BeoP7A/tD7PBApvCAojHArjHAtnHAgA="
+      },
+      {
+        "name": "Bertik’s Steward Midrange Paladin",
+        "code": "AAEBAZ8FBLuvArnBAuTCAoPHAg3cA/QF2Q3+DeoP7A/tD8kW/68Cm8ICiMcCuMcC2ccCAA=="
+      },
+      {
+        "name": "Snou’s Control Paladin",
+        "code": "AAEBAZ8FCtwD+ga5DZ4Q4KwC5q4CucEC5MIC08UC2ccCCs8GgQ7qD+0PkBDJFrPBApvCAojHArjHAgA="
+      },
+      {
+        "name": "Awedragon’s Midrange Anyfin Paladin",
+        "code": "AAEBAZ8FCOAFqwa5BuwPubIC474CucECiMcCC9wD4wX0BacI9Q3qD+0P0habwgK4xwLZxwIA"
+      },
+      {
+        "name": "Chai’s Secret Paladin",
+        "code": "AAEBAZ8FCowB+gaBDvoOnhDYFNmuAry9ArnBAojHAgqeAcgEjA7qD+0PkBCmFckWs8EC5MICAA=="
+      }
+    ],
+    "Priest": [
+      {
+        "name": "Control’s Combo Priest",
+        "code": "AAEBAa0GAtcKvsgCDvgC5QT2B9EK0gryDPsM/g2PD7W7AvC7AtHBAtjBAsrDAgA="
+      },
+      {
+        "name": "Masinc’s Dragon Reno Priest",
+        "code": "AAEBAa0GHooB5QS5BskGjQiiCdMK1wryDI8Pkg/uEYkUpBTDFoUXqrICkrQCgrUCg7sCtbsCursC2LsC8LsC4b8C6r8C0cEC2cECysMCyccCAAA="
+      },
+      {
+        "name": "Sipiwi94’s Reno N’Zoth Priest",
+        "code": "AAEBAa0GHooBkALlBIoH0wrXCvIMuQ3ZDf4NgQ6PDosPjw+SD5AQvhbDFrcXxxfgrAKDuwK1uwLYuwLRwQLVwQLZwQLkwgLexALTxQIAAA=="
+      },
+      {
+        "name": "Capilano’s Dragon Priest",
+        "code": "AAEBAa0GBMkG0wrXCoUXDeUEuQbyDO4R6RKJFKQUgrUCtbsCursC0cEC2MEC2cECAA=="
+      }
+    ],
+    "Rogue": [
+      {
+        "name": "Capilano’s Giants Miracle Rogue",
+        "code": "AAEBAaIHBLIC7QX6DoLCAg20AZsFuQaIB6QHhgnEFoK0AvW7AvjBAoHCAsrDApvIAgA="
+      },
+      {
+        "name": "Control’s Questing Miracle Rogue",
+        "code": "AAEBAaIHBLIC7QWRvAKBwgINtAGMAs0DmwWXBrkGiAekB94HhgnEFpK2AvW7AgA="
+      },
+      {
+        "name": "Hoff’s Crystal Rogue",
+        "code": "AAEBAaIHBooBkgSAEpG8AvzBAobCAgzEAZwC7QKfA4gF1AWGCY0Q+L0Cl8EC68ICxscCAA=="
+      },
+      {
+        "name": "SHRoyalBaiZe’s Crystal Rogue",
+        "code": "AAEBAaIHApG8AobCAg7EAZwC7QKfA4gF1AWGCY0Qiq0C+L0Cl8EC/MEC68ICxscCAA=="
+      }
+    ],
+    "Shaman": [
+      {
+        "name": "MeknugetZz’s Aggro Shaman",
+        "code": "AAEBAaoIBtQFuQaEF/6qApG8ApS9AgzuAfkD4AblB/AH1g+yFMoW96oCoLYCh7wC0bwCAA=="
+      },
+      {
+        "name": "Poach’s OTK Reincarnate Control Shaman",
+        "code": "AAEBAaoICq8Egg7WEfER0hO8FPuqAuCsAoW4Aqa8AgqUA/UE/gWyBvUIgQ6RDrQU9r0Cx8ECAA=="
+      },
+      {
+        "name": "Sipiwi94’s Reincarnate Control Shaman",
+        "code": "AAEBAaoIBrkNgg6iEOCsAoW4Aqa8AgyUA/UE/gWyBvUIgQ6RDtITtBSgtgL2vQLHwQIA"
+      },
+      {
+        "name": "Masinc’s N’Zoth Control Shaman",
+        "code": "AAEBAaoICPYC+QPUD6IQ4KwChbgCprwCscQCC5QD9QT+BbIG9QiBDrQU+6oCoLYC9r0Cx8ECAA=="
+      },
+      {
+        "name": "Oracle’s Midrange Jade Shaman",
+        "code": "AAEBAaoICPYC+QOBBPUEkwmeEJS9Ava9AgvuAf4FuQbwB7IUyhb7qgKgtgLdugKHvALRvAIA"
+      },
+      {
+        "name": "Coldstory’s Control Jade Shaman",
+        "code": "AAEBAaoIBJ4QhRemvAKUvQIN9QT+BbkGoLYC3boC5rsCh7wCz7wC0bwC9r0Cx8ECm8IC5MICAA=="
+      },
+      {
+        "name": "Token Shaman",
+        "code": ""
+      },
+      {
+        "name": "Murloc Shaman",
+        "code": "AAEBAaoICMUD+QPgBdgPhBfjvgKxwgKbxAIL2wPjBdAH8AenCL8XoLYC47sC9r0CkcECncICAA=="
+      }
     ],
     "Warlock": [
-      "Ant’s 12-Win Brawl Zoo Warlock.png",
-      "Hurryupidiot’s Reno Warlock.png",
-      "Masinc’s N’Zoth Reno Warlock.png",
-      "Zed’s Classic Zoo Warlock.png",
-      "Zed’s Discard Zoo Warlock.png"
+      {
+        "name": "Hurryupidiot’s Reno Warlock",
+        "code": "AAEBAf0GHooBkwGTBK8EzgbbBvsGtgfhB40IxAjMCPMMgQ71D60Q1hHwEf0RkBXDFoUXqa0C2LsC3bwC3sQC38QC08UCkMcCz8cCAAA="
+      },
+      {
+        "name": "Masinc’s N’Zoth Reno Warlock",
+        "code": "AAEBAf0GHooBkwGJBtsGkge2B40IxAjMCPMMuQ3ZDf4NgQ71D54QrRDWEfAR/RGQFcMWhRfgrALYuwLdvALkwgLKwwLexAKPxwIAAA=="
+      },
+      {
+        "name": "Ant’s 12-Win Brawl Zoo Warlock",
+        "code": "AAEBAf0GBK8E+wX6Dp4QDTDyAc4G2QexCMII9Q36Dd0P8BHPFvauAufBAgA="
+      },
+      {
+        "name": "Zed’s Classic Zoo Warlock",
+        "code": "AAEBAf0GCPIB3AKvBKEG3Q+2rAKIrwLkwgILMPsFzgbZB7EIwgj1DfARzxa0rAL2rgIA"
+      },
+      {
+        "name": "Zed’s Discard Zoo Warlock",
+        "code": "AAEBAf0GBKEG2QeIrwKUxwINMPcE+wXOB8II8BHZFc8Wr6wC9q4C1LMCvLYC5MICAA=="
+      }
     ],
     "Warrior": [
-      "Control’s Pirate Warrior.png",
-      "Noriggoon’s Taunt Warrior.png",
-      "Scorpion’s Juggernaut Control Warrior.png",
-      "Scorpion’s N’Zoth Control Warrior.png",
-      "Scorpion’s Taunt Warrior.png"
+      {
+        "name": "Control’s Pirate Warrior",
+        "code": "AAEBAQcErwTyBYQXkbwCDRyRA/8DjgWoBdQF7gbnB+8HjQ77D4KwAoiwAgA="
+      },
+      {
+        "name": "Scorpion’s N’Zoth Control Warrior",
+        "code": "AAEBAQcGnQLSAvsMuQ2wFeCsAgxLkQOiBJEG/wf+DY0O+BGpFYKtAt/EAqLHAgA="
+      },
+      {
+        "name": "Scorpion’s Juggernaut Control Warrior",
+        "code": "AAEBAQcG+AfoD9YRsBWFF4cXDEuRA6IEkQb/B4EOjQ7lD/gRqRWCrQLfxAIA"
+      },
+      {
+        "name": "Scorpion’s Taunt Warrior",
+        "code": "AAEBAQcMkAP8BIEO+BH6FOCsAtKuArmyAsbDAsrDAtPDAsnHAglLkQORBvsM/g2NDoKtApvCAqLHAgA="
+      },
+      {
+        "name": "Noriggoon’s Taunt Warrior",
+        "code": "AAEBAQcIigGiBIEO1RO5sgLTwwKixwLJxwILS5EDkQb/B40O+BGCrQL+vAKbwgLKwwLfxAIA"
+      }
     ]
   },
   "wild-vs-data-reaper-report-3": {
-    "Zoo": [
-      "Poach’s Reno Zoo.png",
-      "Zed’s Classic Zoo.png"
-    ],
-    "Mage": [
-      "DannyDonut’s Secret Mage.png",
-      "Freeze Mage.png",
-      "GetMeowth’s Reno Mage.png",
-      "Grizzlybayer’s Exodia Mage.png",
-      "Tempo Mage.png"
-    ],
     "Druid": [
-      "Awedragon’s Aggro-Token Druid.png",
-      "Chai’s Giants Druid.png",
-      "SamAnthony’s Astral Druid.png",
-      "XCrouton’s Jade Druid.png"
-    ],
-    "Rogue": [
-      "DannyDonuts’ Jade N’Zoth Rogue.png",
-      "Graveyardsmash’s Questing Miracle Rogue.png",
-      "ShatteR’s Mill Rogue.png"
+      {
+        "name": "Awedragon’s Aggro-Token Druid",
+        "code": "AAEBAZICAoQXkbwCDv4B9wPmBeUH9Q2OEOgVwasCzbsChsECn8IC68ICm80CkdACAA=="
+      },
+      {
+        "name": "XCrouton’s Jade Druid",
+        "code": "AAEBAZICCKQHhReuqwK+rgKUvQLJxwLCzgKZ0wILQF/+AcQG5Ai0uwLLvALPvALdvgKgzQKHzgIA"
+      },
+      {
+        "name": "Chai’s Giants Druid",
+        "code": "AAEBAZICBPoO7BXguwKZ0wINX4oB0wH+AcQG4QfkCNwK3haCtALLvAKgzQKHzgIA"
+      },
+      {
+        "name": "SamAnthony’s Astral Druid",
+        "code": "AAEBAZICBsIGogmoqwK5sgLCzgKZ0wIM/gGcAsQG+AeLCOQI4RWXaIatAsnHAqDNAofOAgA="
+      }
     ],
     "Hunter": [
-      "Capilano’s Giants hunter.png",
-      "Midrange Hunter.png"
+      {
+        "name": "Midrange Hunter",
+        "code": "AAEBAR8GlwjbCYEO1BHRFIbTAgyoArUDhwTrB+0J/gz1DfcNkBDquwKOwwLGzgIA"
+      }
     ],
-    "Priest": [
-      "awedragon’s Reno Priest.png",
-      "Big Priest.png",
-      "Sipiwi94’s Velen Reno Priest.png"
+    "hunter": [
+      {
+        "name": "Capilano’s Giants hunter",
+        "code": "AAEBAR8C+g6G0wIOigHTAbUD4Qf4B5cI3Aq5EcsU3hbHrgKIwQLkwgLTzQIA"
+      }
     ],
-    "Shaman": [
-      "Awedragon’s Zealot Aggro Shaman.png",
-      "Casanova’s Murloc Shaman.png",
-      "MekNugetZz’s Twililght Aggro Shaman.png",
-      "Poach’s Control Shaman.png",
-      "Poach’s Doomhammer Aggro Shaman.png",
-      "Xixo’s Token Shaman.png"
+    "Mage": [
+      {
+        "name": "Freeze Mage",
+        "code": "AAEBAf0EBMUE7QXWEYisAg2KAawBwAGcArsCyQOrBMsE7QSWBfsM9w26FgA="
+      },
+      {
+        "name": "GetMeowth’s Reno Mage",
+        "code": "AAEBAf0EHk2KAcABuwLQAvYCqwTtBJYF7Ae5DfcNgQ6JDocP9Q/DFoUX4KwC17YC6boC2LsCwcECysECmMQC3sQC08UClscCoM4Cm9MCAAA="
+      },
+      {
+        "name": "DannyDonut’s Secret Mage",
+        "code": "AAEBAf0EBsABwwGJDvoOnhCCzgIMcbsClQOWBewFuQbJDfcN17YCh70CwcECmMQCAA=="
+      },
+      {
+        "name": "Tempo Mage",
+        "code": "AAEBAf0EBnHtBbgIiQ6JD54QDLsClQOrBLQE5gSWBbkG9w3jEYwUmMQC3s0CAA=="
+      },
+      {
+        "name": "Grizzlybayer’s Exodia Mage",
+        "code": "AAEBAf0EBO0FuAj7DNYRDYoBwAGcAskDqwTLBOYE7QSWBfgH9w2YxALaxQIA"
+      }
     ],
     "Paladin": [
-      "Chai’s Murloc Paladin.png",
-      "Haydumb’s Midrange Paladin.png",
-      "Schmiddy’s Control Paladin.png"
+      {
+        "name": "Schmiddy’s Control Paladin",
+        "code": "AAEBAZ8FDM8G+gb4DLkN4KwC5q4CvL0CucECws4C99ACjtMCtuICCYoB3AP0BfYHjwmBDpvCAojHApboAgA="
+      },
+      {
+        "name": "Haydumb’s Midrange Paladin",
+        "code": "AAEBAZ8FCNwD+gb1DbAVyRaRvAK5wQKDxwIL1AX0BbEI6g/sD+0P2a4C/68CuMcC2ccC48sCAA=="
+      },
+      {
+        "name": "Chai’s Murloc Paladin",
+        "code": "AAEBAZ8FBtwD4AX6BvoO474CucECDNsD9AWnCOoP06oC2a4C07wCs8ECncICscIC48sCps4CAA=="
+      }
     ],
-    "Warrior": [
-      "DannyDonuts’ Pirate Warrior.png",
-      "Scorpion’s Dead Man’s Hand N’Zoth Warrior.png",
-      "Xixo’s Pirate Warrior.png"
+    "Priest": [
+      {
+        "name": "awedragon’s Reno Priest",
+        "code": "AAEBAa0GHooB+wHlBO0F0wrXCvIM+wz+DYEOjw+SD/cTvhbDFoUXtxfgrAKDuwK1uwLYuwLqvwLRwQLVwQLZwQLcwQLKwwLfxALwzwKQ0wIAAA=="
+      },
+      {
+        "name": "Sipiwi94’s Velen Reno Priest",
+        "code": "AAEBAa0GHgmKAfsBlwKhBOUE7QXJBtMK1QrXCvIM+wz6Do8Pkg/WEcMWhRehrAKStAKDuwK1uwLYuwLovwLqvwLDwQLRwQLYwQKQ0wIAAA=="
+      },
+      {
+        "name": "Big Priest",
+        "code": "AAEBAa0GCPYCogmCDqirAoW4Are7AsLOApDTAgvTCtcKkg/6EaGsAui/AtHBAuXMAubMArTOAvDPAgA="
+      }
     ],
-    "Handlock": [
-      "Clickpwn’s Naga Handlock.png"
+    "Rogue": [
+      {
+        "name": "ShatteR’s Mill Rogue",
+        "code": "AAEBAaIHBogHhRfgrAKgzgKA0wKa4gIMigG0AcQB7QLNA5sF+AeGCf4NgQ71D4ASAA=="
+      },
+      {
+        "name": "Graveyardsmash’s Questing Miracle Rogue",
+        "code": "AAEBAaIHBrICzQOvBO0F+g6RvAIMtAGMApsFlwa5BogHpAfeB4YJxBaStgL1uwIA"
+      },
+      {
+        "name": "DannyDonuts’ Jade N’Zoth Rogue",
+        "code": "AAEBAaIHCLIC7QLzDPUP4KwCkbwClL0CgNMCC4oBxAHNA5sF/g2StgLPvAL5vQL6vQKBwgKbyAIA"
+      }
+    ],
+    "Shaman": [
+      {
+        "name": "MekNugetZz’s Twililght Aggro Shaman",
+        "code": "AAEBAaoIBtQFhBf+qgKRvAKUvQL2vQIM7gH5A+AG5QfwB9YPshTKFveqAqC2Aoe8AtG8AgA="
+      },
+      {
+        "name": "Awedragon’s Zealot Aggro Shaman",
+        "code": "AAEBAaoIBO0F4AaEF5G8Ag3uAfkD1AXlB/AH1g+OELIUyhb3qgKOtgKgtgKX6AIA"
+      },
+      {
+        "name": "Poach’s Doomhammer Aggro Shaman",
+        "code": "AAEBAaoIBu8B+g7SE4QXkbwC9r0CDO4B4AL5A+UH8AfWD7IUyhb3qgKgtgKHvALRvAIA"
+      },
+      {
+        "name": "Xixo’s Token Shaman",
+        "code": "AAEBAaoIBvoOkbwClL0C+b8Cm8sC688CDIEE5QfwB5MJ+qoC+6oCoLYCh7wC0bwC9r0CkcEC68ICAA=="
+      },
+      {
+        "name": "Casanova’s Murloc Shaman",
+        "code": "AAEBAaoIBvkD4AXKFva9AuO+ApvEAgzbA+MF0AenCLIUvxegtgLjuwKRwQKdwgKxwgKLzgIA"
+      },
+      {
+        "name": "Poach’s Control Shaman",
+        "code": "AAEBAaoICLkNgg7WEeCsAqC2AoW4Aqa8ArbiAguUA/UE/gWyBvUIgQ6RDtITtBT2vQLHwQIA"
+      }
     ],
     "Renolock": [
-      "GetMeowth’s Renolock.png"
+      {
+        "name": "GetMeowth’s Renolock",
+        "code": "AAEBAf0GHooBkwH3BPIF2waSB7YHjQjECMwIuQ2BDo4Owg/1D60Q1hH9EcMWhRfgrALYuwLZvALdvALKwwLexALTxQLnywL3zQKX0wIAAA=="
+      }
+    ],
+    "Handlock": [
+      {
+        "name": "Clickpwn’s Naga Handlock",
+        "code": "AAEBAf0GCLYH+g7CD/UP8BHdvAL3zQKX0wILigGTAdMB4QeNCNwKjg6tEN4Wqa0C58sCAA=="
+      }
     ],
     "Discolock": [
-      "Zed’s Discolock.png"
+      {
+        "name": "Zed’s Discolock",
+        "code": "AAEBAf0GCtwC+wWhBtkHtKwCiK8C/b8C5MIClMcCuNACCjD3BM4HwgjPFq+sAvauAtSzAry2ApLNAgA="
+      }
+    ],
+    "Zoo": [
+      {
+        "name": "Zed’s Classic Zoo",
+        "code": "AAEBAf0GCvIB3AKvBPsFoQbZB90PtqwCiK8C5MICCjDOBrEIwgj1DfARuhPPFrSsAvauAgA="
+      },
+      {
+        "name": "Poach’s Reno Zoo",
+        "code": "AAEBAf0GHoUE+wXOBtwGtgfECPUN+g2ODvoOwg+eEK0Q8BHDFs8WtKwC9q4C2LsC2bwCl8EC58ECq8IC5MIC68IC3sQC58sC980Clc4Cl9MCAAA="
+      }
+    ],
+    "Warrior": [
+      {
+        "name": "DannyDonuts’ Pirate Warrior",
+        "code": "AAEBAQcEyAOvBIQXkbwCDRyRA/8DjgWoBdQF7gbnB+8HjQ77D4KwAoiwAgA="
+      },
+      {
+        "name": "Xixo’s Pirate Warrior",
+        "code": "AAEBAQcErwS+D4QXkbwCDRyRA/8DjgWoBdQF7gbnB+8HjQ77D4KwAoiwAgA="
+      },
+      {
+        "name": "Scorpion’s Dead Man’s Hand N’Zoth Warrior",
+        "code": "AAEBAQcCsBXgrAIOS5EDogSRBv8Hsgj7DP4NjQ74EakVgq0CoscCjs4CAA=="
+      }
     ]
   },
   "wild-vs-data-reaper-report-4": {
-    "Mage": [
-      "Bananaramic’s Exodia Mage.png",
-      "Bananaramic’s Reno Mage.png",
-      "Harain’s and Control’s Tempo Mage.png",
-      "slizzle466’s Tempo Secret Mage.png"
-    ],
     "Druid": [
-      "Chai’s Giants Ramp Druid.png",
-      "Poach’s Jade Druid.png",
-      "slizzle466’s Aggro-Token Druid.png"
-    ],
-    "Rogue": [
-      "Awedragon’s Keleseth Tempo Rogue.png",
-      "Bananaramic’s Mill Rogue.png",
-      "DannyDonuts’ Jade N’Zoth Rogue.png",
-      "Graveyardsmash’s Classic Miracle Rogue.png",
-      "Haydumb’s Keleseth Tempo Rogue.png",
-      "Holt’s Pirate Oil Tempo Rogue.png",
-      "Kohai’s Oil Miracle Rogue.png"
+      {
+        "name": "slizzle466’s Aggro-Token Druid",
+        "code": "AAEBAZICAoQXkbwCDvcD5gWhBuUH9Q2OEOgVwasCtrMCzbsChsEC68ICm80CkdACAA=="
+      },
+      {
+        "name": "Poach’s Jade Druid",
+        "code": "AAEBAZICCLkG6RWFF66rAtG7ApS9AqDNApnTAgtAX8QG5AjoFbS7As27Asu8As+8At2+AofOAgA="
+      },
+      {
+        "name": "Chai’s Giants Ramp Druid",
+        "code": "AAEBAZICBvoO6RXsFb6uAuC7ApnTAgxAX4oB0wHEBuQI3AreFoK0Asu8AqDNAofOAgA="
+      }
     ],
     "Hunter": [
-      "Capilano’s Giants Hunter.png",
-      "Control’s Deathrattle Hunter.png",
-      "Midrange Hunter.png"
+      {
+        "name": "Midrange Hunter",
+        "code": "AAEBAR8IqALrB/oOnhDUEdEUr8IChtMCC7UDhwTtCf4M9Q33DZAQ6rsC68ICjsMC180CAA=="
+      },
+      {
+        "name": "Control’s Deathrattle Hunter",
+        "code": "AAEBAR8G+wWXCPoO+w7JwgKG0wIM+wb6DccP2w/UEY2vAom0AqvCAtjCApzNAtPNAqvQAgA="
+      },
+      {
+        "name": "Capilano’s Giants Hunter",
+        "code": "AAEBAR8C+g6G0wIOigHTAbUD4Qf4B5cI3Aq5EcsU3hbHrgKIwQLkwgLTzQIA"
+      }
     ],
-    "Priest": [
-      "Capilano’s Reno Priest.png",
-      "Ice’s Inner Fire Priest.png",
-      "Roboleg’s Big Priest.png",
-      "Sipiwi94’s Reno Priest.png"
-    ],
-    "Shaman": [
-      "Masinc’s Doomhammer Aggro Shaman.png",
-      "Murloc Shaman.png",
-      "Poach’s Control Shaman.png",
-      "Poach’s Malygos Shaman.png",
-      "SamAnthony’s Aggro Shaman.png",
-      "Xixo’s Token Shaman.png"
+    "Mage": [
+      {
+        "name": "Harain’s and Control’s Tempo Mage",
+        "code": "AAEBAf0EBPoOnhCjtgKvwgINcbsClQOrBLQE5gSWBbkG9w2QEOMRjBSYxAIA"
+      },
+      {
+        "name": "slizzle466’s Tempo Secret Mage",
+        "code": "AAEBAf0EBMkN+g6jtgKmzgINccMBuwKVA5YF7AW5BvcNiQ7XtgKHvQLBwQKYxAIA"
+      },
+      {
+        "name": "Bananaramic’s Reno Mage",
+        "code": "AAEBAf0EHk1xigHAAbsCyQOrBJYF7QW5BuwH+wz3Df4NgQ71D5AQnhDWEYwUwxaFF+CsAqO2Aum6Ati7AsrBApjEAt/EApvTAgAA"
+      },
+      {
+        "name": "Bananaramic’s Exodia Mage",
+        "code": "AAEBAf0EBu0E7QW4CPsM1hG50QIMigHAAZwCyQOrBMsE5gSWBfgH9w2YxALaxQIA"
+      }
     ],
     "Paladin": [
-      "Awedragon’s Anyfin Paladin.png",
-      "Chai’s Secret Paladin.png",
-      "Haydumb’s Anti-Priest Midrange Paladin.png",
-      "Haydumb’s Midrange Paladin.png",
-      "Schmiddy’s Control Paladin.png",
-      "Toymachine’s Murloc Paladin.png"
+      {
+        "name": "Haydumb’s Anti-Priest Midrange Paladin",
+        "code": "AAEBAZ8FBPQFkbwCucECg8cCDacF1AWxCOoP7A/tD8kW2a4Cu68C/68CuMcC2ccC48sCAA=="
+      },
+      {
+        "name": "Haydumb’s Midrange Paladin",
+        "code": "AAEBAZ8FBqsG+g67rwKRvAK5wQKDxwIM1AX0BbEI6g/sD+0PyRbZrgL/rwK4xwLZxwLjywIA"
+      },
+      {
+        "name": "Toymachine’s Murloc Paladin",
+        "code": "AAEBAZ8FCqcF4AX6BusPnhCEF9muArq9AuO+ArnBAgrbA6cI6g/TqgLTvAKzwQKdwgKxwgKIxwLjywIA"
+      },
+      {
+        "name": "Awedragon’s Anyfin Paladin",
+        "code": "AAEBAZ8FCuAFuQb2B/sMubICvL0C474CucECyM4ClugCCtwD4wX0BacI9Q3qD+0P4hHSFuPLAgA="
+      },
+      {
+        "name": "Chai’s Secret Paladin",
+        "code": "AAEBAZ8FDIwB+gavB4EO+g7rD54Q2BS8vQK5wQKIxwLQ4gIJngHIBIwO6g/tD5AQphWzwQLjywIA"
+      },
+      {
+        "name": "Schmiddy’s Control Paladin",
+        "code": "AAEBAZ8FDPoG9ge5DYUX4KwC5q4CvL0CucEC78ICz8cCws4CjtMCCYoB3AP0BY8JgQ6PtAKbwgKIxwKW6AIA"
+      }
+    ],
+    "Priest": [
+      {
+        "name": "Capilano’s Reno Priest",
+        "code": "AAEBAa0GHu0B+wGXApwC5QTtBbkG9gelCdIK0wrXCvIM+wySD9YR9xOWFMMWtxeDuwK1uwLYuwLRwQLSwQLYwQLfxAK+yALwzwKQ0wIAAA=="
+      },
+      {
+        "name": "Sipiwi94’s Reno Priest",
+        "code": "AAEBAa0GHgmKAfsBnAK0AqEE5QTtBbkGpQnTCtcK8gz7DJIP1hH3E8MWhRe3F5K0AoO7ArW7Ati7Auq/AtHBAtjBAt/EAvDPApDTAgAA"
+      },
+      {
+        "name": "Roboleg’s Big Priest",
+        "code": "AAEBAa0GBvYCxxeoqwKFuALovwLCzgIMlwLTCtcKkg/6EbcXoawC0cEC5cwC5swCtM4C8M8CAA=="
+      },
+      {
+        "name": "Ice’s Inner Fire Priest",
+        "code": "AAEBAa0GBPYH1wqND7W7Ag3tAfgC5QTRCtIK8gz7DNkN/g2PD/C7AtHBAtjBAgA="
+      }
+    ],
+    "Rogue": [
+      {
+        "name": "Awedragon’s Keleseth Tempo Rogue",
+        "code": "AAEBAaIHCLICrwT6DpAQmxWRvAKBwgKc4gILtAGMAu0CqAXUBd0IjhC6E5K2AuvCApTQAgA="
+      },
+      {
+        "name": "Haydumb’s Keleseth Tempo Rogue",
+        "code": "AAEBAaIHCLICrwT6DpG8Asm/AoHCApTQApziAgu0AYwC7QKoBdQFuQbdCLoTkrYC68ICm8sCAA=="
+      },
+      {
+        "name": "Holt’s Pirate Oil Tempo Rogue",
+        "code": "AAEBAaIHDLICywPNA68E9gSbBe4Ghgn6DpsVkbwC/cECCbQBqAXUBYgH+w+vELoTkrYCw84CAA=="
+      },
+      {
+        "name": "Kohai’s Oil Miracle Rogue",
+        "code": "AAEBAaIHCLIC9gTUBe0FpAeQEJG8AoHCAgu0AcsDzQObBbkGiAfdCIYJrxDEFpK2AgA="
+      },
+      {
+        "name": "Graveyardsmash’s Classic Miracle Rogue",
+        "code": "AAEBAaIHBrICzQOvBO0F+g6RvAIMtAGMApsFlwa5BogHpAfeB4YJxBaStgL1uwIA"
+      },
+      {
+        "name": "Bananaramic’s Mill Rogue",
+        "code": "AAEBAaIHCO0FgQ6FF7myAoHCAoDTApriAp7iAgu0AcQB7QLNA5sFiAf4B4YJ/g31D4ASAA=="
+      },
+      {
+        "name": "DannyDonuts’ Jade N’Zoth Rogue",
+        "code": "AAEBAaIHCLIC7QLzDPUP4KwCkbwClL0CgNMCC4oBxAHNA5sF/g2StgLPvAL5vQL6vQKBwgKbyAIA"
+      }
+    ],
+    "Shaman": [
+      {
+        "name": "SamAnthony’s Aggro Shaman",
+        "code": "AAEBAaoIBtQF4AaEF/6qApG8ApS9AgzuAfkDuQblB/AH1g+yFMoW96oCoLYCh7wC0bwCAA=="
+      },
+      {
+        "name": "Masinc’s Doomhammer Aggro Shaman",
+        "code": "AAEBAaoIBOAChBegtgKRvAIN7gHvAfkD1AXwB9QP1Q/WD7IUyhb3qgKHvALRvAIA"
+      },
+      {
+        "name": "Xixo’s Token Shaman",
+        "code": "AAEBAaoIBvoOkbwClL0C+b8Cm8sC688CDIEE5QfwB5MJ+qoC+6oCoLYCh7wC0bwC9r0CkcEC68ICAA=="
+      },
+      {
+        "name": "Poach’s Control Shaman",
+        "code": "AAEBAaoICIEE7QW5DYIO1hHgrAKFuAKmvAILlAP1BLIGgQ6RDtITtBT7qgKgtgL2vQLHwQIA"
+      },
+      {
+        "name": "Poach’s Malygos Shaman",
+        "code": "AAEBAaoIBrQD4AakB9YRoLYChbgCDPkD9QSyBssHzg/WD/ER0hO0FLwU9r0Cx8ECAA=="
+      },
+      {
+        "name": "Murloc Shaman",
+        "code": "AAEBAaoIBMUDhBeRvALjvgIN2wPjBeUH8AenCJMJvxegtgLjuwKdwgKxwgK2zQKLzgIA"
+      }
     ],
     "Warlock": [
-      "Atralb’s Demon Disco Zoo Warlock.png",
-      "AZSwim’s Demon Zoo Warlock.png",
-      "Hurryupidiot’s Reno Warlock.png"
+      {
+        "name": "Hurryupidiot’s Reno Warlock",
+        "code": "AAEBAf0GHjCKAZMErwT3BM4G2wa2B+EHjQjECMwIgQ6ODsIP9Q+tENYR/RHDFs8WhRfYuwLZvALdvALKwwKbywLnywL3zQKX0wIAAA=="
+      },
+      {
+        "name": "AZSwim’s Demon Zoo Warlock",
+        "code": "AAEBAf0GCMIPtKwCkbwCn8IC68ICm8sCl9MCnOICCzD3BKgFzgbOB+UHwgiODry2AvfNAqbOAgA="
+      },
+      {
+        "name": "Atralb’s Demon Disco Zoo Warlock",
+        "code": "AAEBAf0GBvYI8BH9EdkVlMcCuNACDDDQBPcEzgbOB8IIvxTUswK8tgLHuwLJuwKRxwIA"
+      }
     ],
     "Warrior": [
-      "Cursed Blade Pirate Warrior.png",
-      "DannyDonuts’ Pirate Warrior.png",
-      "Keleseth Pirate Warrior.png",
-      "Scorpion’s N’Zoth Control Warrior.png"
+      {
+        "name": "Cursed Blade Pirate Warrior",
+        "code": "AAEBAQcErwS+D4QXkbwCDRz/A44FqAXUBe4G5wfvB40O+w/RkQKCsAKIsAIA"
+      },
+      {
+        "name": "Keleseth Pirate Warrior",
+        "code": "AAEBAQcGyAOvBL4PhBeRvAKc4gIMHP8DjgWoBdQF7gaNDo4QxBWCsAKIsALrwgIA"
+      },
+      {
+        "name": "DannyDonuts’ Pirate Warrior",
+        "code": "AAEBAQcChBeRvAIOHP8DjgWoBdQF7gbnB+8HjQ77D44QxBWCsAKIsAIA"
+      },
+      {
+        "name": "Scorpion’s N’Zoth Control Warrior",
+        "code": "AAEBAQcG0gL7DLAV4KwCubICyccCDEuRA6IEkQb/B/4NjQ74EakVgq0C38QCoscCAA=="
+      }
     ]
   },
   "wild-vs-data-reaper-report-5": {
-    "Mage": [
-      "Bananaramic’s Exodia Mage.png",
-      "Bananaramic’s Reno Mage.png",
-      "Daboss212’s Reno Mage.png",
-      "Ko10rino082’s Secret Tempo Mage.png",
-      "Laughing’s Freeze Mage.png"
-    ],
     "Druid": [
-      "Coldstory’s Jade Druid.png",
-      "Jonahrah’s Classic Ramp Druid.png",
-      "KimiHaSpider’s Mill Ramp Druid.png",
-      "slizzle466’s Aggro-Token Druid.png"
-    ],
-    "Rogue": [
-      "Awedragon’s Ship’s Cannon Tempo Rogue.png",
-      "Capilano’s Miracle Rogue.png",
-      "Ciataccis’s Mill Rogue.png",
-      "Hazer’s Keleseth Tempo Rogue.png",
-      "Kohai’s Oil Tempo Rogue.png",
-      "Poach’s Raptor Jade Rogue.png"
+      {
+        "name": "slizzle466’s Aggro-Token Druid",
+        "code": "AAEBAZICAoQXkbwCDvcD5gWhBuUHjhDoFcGrArazAs27AobBAuTCAuvCApvNApHQAgA="
+      },
+      {
+        "name": "Coldstory’s Jade Druid",
+        "code": "AAEBAZICBukVhReuqwK+rgKUvQKZ0wIMQF/eBcQG5AjoFbS7Asu8As+8At2+AqDNAofOAgA="
+      },
+      {
+        "name": "KimiHaSpider’s Mill Ramp Druid",
+        "code": "AAEBAZICCtYRhRfprAK+rgK0uwLguwLLvALJxwLCzgKZ0wIKX+kB3gX4B+QI/g3pFfnAAqDNAofOAgA="
+      },
+      {
+        "name": "Jonahrah’s Classic Ramp Druid",
+        "code": "AAEBAZICCvYCtAPCBqirAr6uAp+wAuC7AvnAAsLOApnTAgpAX/4BxAbkCIEOy7wCyccCoM0Ch84CAA=="
+      }
     ],
     "Hunter": [
-      "Kenji’s Giants Hunter.png",
-      "RenoJackson’s N’Zoth Hunter.png",
-      "Scorpion’s Face Hunter.png"
+      {
+        "name": "RenoJackson’s N’Zoth Hunter",
+        "code": "AAEBAR8KhwTJBO0JuQ2QENEU4KwCw8wCnM0ChtMCCp4Blwj+DPcNgQ74sQLEtAKdzALTzQKmzgIA"
+      },
+      {
+        "name": "Kenji’s Giants Hunter",
+        "code": "AAEBAR8CyQSG0wIO0wGoArUDhwThB5cIxQjcCv4MuRHUEcsU3hbTzQIA"
+      },
+      {
+        "name": "Scorpion’s Face Hunter",
+        "code": "AAEBAR8ErwTbCf4MkbwCDagCtQPHA9QF6wf3DdsP1BH4sQLquwLkwgKOwwLXzQIA"
+      }
     ],
-    "Priest": [
-      "AZSwim’s Inner-Fire Priest.png",
-      "Capilano’s Dragon Priest.png",
-      "Capilano’s Reno Priest.png",
-      "cndman’s Big Priest.png",
-      "Control’s Inner Fire Priest.png",
-      "Grizzlybayer’s Dragon Ascendant Priest.png",
-      "Sipiwi94’s Velen Reno Priest.png"
-    ],
-    "Shaman": [
-      "Casanova’s Murloc Shaman.png",
-      "GetMeowth’s Doomhammer Aggro Shaman.png",
-      "GetMeowth’s Token Evolve Shaman.png",
-      "Poach’s Control Shaman.png",
-      "Poach’s Malygos Shaman.png",
-      "SamAnthony’s Hammer of Twilight Aggro Shaman.png"
+    "Mage": [
+      {
+        "name": "Bananaramic’s Reno Mage",
+        "code": "AAEBAf0EHk1xigHAAbsCyQOrBO0ElgXtBbkG7Af7DPcNgQ78D54Q1hGMFMMWhReBsgKjtgLpugLYuwLBwQLKwQKYxALfxAKb0wIAAA=="
+      },
+      {
+        "name": "Daboss212’s Reno Mage",
+        "code": "AAEBAf0EHk1xigHAAbsC0AL2AosDyQOrBMsElgXeBewH9w3+DYEOhw/1D/wPwxbgrAKjtgLpugLYuwLKwQLKwwKYxALexAKb0wIAAA=="
+      },
+      {
+        "name": "Bananaramic’s Exodia Mage",
+        "code": "AAEBAf0EBu0E7QW4CPsM1hG50QIMigHAAZwCyQOrBMsE5gSWBfgH9w2YxALaxQIA"
+      },
+      {
+        "name": "Laughing’s Freeze Mage",
+        "code": "AAEBAf0EBMUE7QXWEYisAg2KAawBwAGcArsCyQOrBMsE7QSWBfsM9w26FgA="
+      },
+      {
+        "name": "Ko10rino082’s Secret Tempo Mage",
+        "code": "AAEBAf0EBPYCuQb6Dp4QDXHDAbsClQOrBJYF7AX3DYkO17YCh70CwcECmMQCAA=="
+      }
     ],
     "Paladin": [
-      "Bananaramic’s Anyfin Paladin.png",
-      "Bananaramic’s Tempo Dude Paladin.png",
-      "Chai’s Secret Paladin.png",
-      "GetMeowth’s Murloc Paladin.png",
-      "GrizzlyBayer’s Justicar Dude Paladin.png",
-      "Haydumb’s Control Paladin.png"
+      {
+        "name": "GrizzlyBayer’s Justicar Dude Paladin",
+        "code": "AAEBAZ8FCKcF9AX6DrAVyRaRvAK5wQKDxwIL1AWxCOoP7A/tD9muAruvAv+vArjHAtnHAuPLAgA="
+      },
+      {
+        "name": "Bananaramic’s Tempo Dude Paladin",
+        "code": "AAEBAZ8FCKcFrwf1DfoOyRaRvAK5wQKDxwIL1AX0BbEI6g/sD+0P2a4C/68CuMcC2ccC48sCAA=="
+      },
+      {
+        "name": "GetMeowth’s Murloc Paladin",
+        "code": "AAEBAZ8FBvYC4AW5sgLjvgK5wQKIxwIM2wOnCOoP06oC2a4Cs8ECncICscIC5MICyssC48sCps4CAA=="
+      },
+      {
+        "name": "Chai’s Secret Paladin",
+        "code": "AAEBAZ8FCIwBpwWvB/oO2BS8vQK5wQLvwgILngHIBIwO6g/tD5AQphXZrgKzwQLjywKW6AIA"
+      },
+      {
+        "name": "Haydumb’s Control Paladin",
+        "code": "AAEBAZ8FBvoG4KwC5q4CvL0CucECjtMCDIoB3AP0BfYHgQ7iEckW2a4C38QCiMcC48sClugCAA=="
+      },
+      {
+        "name": "Bananaramic’s Anyfin Paladin",
+        "code": "AAEBAZ8FCooB4AWrBrkG9gf7DLmyAry9AuO+ArnBAgrcA+MF9AWnCPUN7Q/iEdIW48sClugCAA=="
+      }
+    ],
+    "Priest": [
+      {
+        "name": "Capilano’s Reno Priest",
+        "code": "AAEBAa0GHu0B+wGXApwC5QTtBbkG9gelCdIK0wrXCvIM+wySD9YR9xOWFMMWtxeDuwK1uwLYuwLRwQLSwQLYwQLfxAK+yALwzwKQ0wIAAA=="
+      },
+      {
+        "name": "Sipiwi94’s Velen Reno Priest",
+        "code": "AAEBAa0GHgmKAfsBnAK0AqEE5QTtBbkGpQnTCtcK8gz7DJIP1hH3E8MWhRe3F5K0AoO7ArW7Ati7Auq/AtHBAtjBAt/EAvDPApDTAgAA"
+      },
+      {
+        "name": "cndman’s Big Priest",
+        "code": "AAEBAa0GCvYCkg/HF6irAoW4Aui/Auq/AsLOAvDPApDTAgqXAtMK1wr6EbcXoawC0cEC5cwC5swCtM4CAA=="
+      },
+      {
+        "name": "Control’s Inner Fire Priest",
+        "code": "AAEBAa0GBvYH1wr7DLW7AtHBAr7IAgztAfgC5QTRCtIK8gzZDf4NjQ+PD/C7AtjBAgA="
+      },
+      {
+        "name": "AZSwim’s Inner-Fire Priest",
+        "code": "AAEBAa0GCO0B9gelCdcK+wyND7W7Ar7IAgv4AuUE0QrSCvIM2Q3+DY8P8LsC0cEC2MECAA=="
+      },
+      {
+        "name": "Capilano’s Dragon Priest",
+        "code": "AAEBAa0GBMkG0wrXCoUXDeUEuQbyDO4R6RKJFKQUgrUCtbsCursC0cEC2MEC2cECAA=="
+      },
+      {
+        "name": "Grizzlybayer’s Dragon Ascendant Priest",
+        "code": "AAEBAa0GAvIF0woO5QTJBtcK8gyPD+4R6RKJFKQUursC8LsCyssCzswCps4CAA=="
+      }
+    ],
+    "Rogue": [
+      {
+        "name": "Awedragon’s Ship’s Cannon Tempo Rogue",
+        "code": "AAEBAaIHBrIC7QL6Dp4QkbwCps4CDLQBjAKoBdQFuQaIB90I+w+QEJK2AoHCAuvCAgA="
+      },
+      {
+        "name": "Hazer’s Keleseth Tempo Rogue",
+        "code": "AAEBAaIHCLICpAOvBLkG8xGRvALJvwKc4gILtAGMAu0CqAXUBd0IkBCStgKBwgLrwgKmzgIA"
+      },
+      {
+        "name": "Kohai’s Oil Tempo Rogue",
+        "code": "AAEBAaIHCLIC9gTUBaQH/Q2QEJG8AoHCAgu0Ac0DmwW5BogH3QiGCa8QmxXEFpK2AgA="
+      },
+      {
+        "name": "Capilano’s Miracle Rogue",
+        "code": "AAEBAaIHBLIC+g6BwgKA0wINtAHNA5sFuQaIB6QHhgmbFMQWgrQC9bsC/MECm8gCAA=="
+      },
+      {
+        "name": "Ciataccis’s Mill Rogue",
+        "code": "AAEBAaIHCogHhgmQFIUX4KwCubIC5MICgNMCmuICnuICCooBxAGaAu0CzQP4B/4NgQ71D4ASAA=="
+      },
+      {
+        "name": "Poach’s Raptor Jade Rogue",
+        "code": "AAEBAaIHCvMRhRf5qwLcrwL1uwKUvQKBwgKrwgLexAKA0wIKjAL7BfoNgQ7LFs+8Avm9Avq9AvzBApXOAgA="
+      }
+    ],
+    "Shaman": [
+      {
+        "name": "SamAnthony’s Hammer of Twilight Aggro Shaman",
+        "code": "AAEBAaoIBuAG5Qf6DoQX/qoCkbwCDO4B+QPUBbkG8AfWD7IUyhb3qgKgtgKHvALRvAIA"
+      },
+      {
+        "name": "GetMeowth’s Doomhammer Aggro Shaman",
+        "code": "AAEBAaoIBOAC1A+EF5G8Ag3uAe8B+QPUBfAH1Q/WD7IUyhb3qgKgtgKHvALRvAIA"
+      },
+      {
+        "name": "GetMeowth’s Token Evolve Shaman",
+        "code": "AAEBAaoIBvoOkbwClL0C68ICm8sC688CDIEE5QfwB5MJ+qoC+6oCoLYCh7wC0bwC9r0C+b8CkcECAA=="
+      },
+      {
+        "name": "Casanova’s Murloc Shaman",
+        "code": "AAEBAaoIBvkD4AWEF/a9AuO+ApvEAgzbA+MF0AfwB6cIshS/F6C2AuO7ApHBAp3CAovOAgA="
+      },
+      {
+        "name": "Poach’s Control Shaman",
+        "code": "AAEBAaoICIEE7QW5DYIO1hHgrAKFuAKmvAILlAP1BLIGgQ6RDtITtBT7qgKgtgL2vQLHwQIA"
+      },
+      {
+        "name": "Poach’s Malygos Shaman",
+        "code": "AAEBAaoIBrQD4AakB9YRoLYChbgCDPkD9QSyBssHzg/WD/ER0hO0FLwU9r0Cx8ECAA=="
+      }
     ],
     "Warlock": [
-      "Hurryupidiot’s Reno Warlock.png",
-      "Seviang’s Zoo Warlock.png",
-      "TitanX’s Demon Zoo Warlock.png"
+      {
+        "name": "Seviang’s Zoo Warlock",
+        "code": "AAEBAf0GBMIPkbwC68ICnOICDTD3BKgFzgbOB+UHwgiODrSsAry2Ap/CAvfNAqbOAgA="
+      },
+      {
+        "name": "TitanX’s Demon Zoo Warlock",
+        "code": "AAEBAf0GCM4Hwg/JuwKRvALrwgKbywKX0wKc4gILMPcEqAXOBuUHwgiODry2Ase7AvfNAqbOAgA="
+      },
+      {
+        "name": "Hurryupidiot’s Reno Warlock",
+        "code": "AAEBAf0GHjCKAfcE2waSB7YH4QeNCMQIzAiBDo4O+g7CD/UPkBCtENYR8BH9EcMWhRfYuwLZvALdvAKbwgLKwwLnywL3zQKX0wIAAA=="
+      }
     ],
     "Warrior": [
-      "DannyDonuts’ Pirate Warrior.png",
-      "RenoJackson’s N’Zoth Control Warrior.png",
-      "Scorpion’s N’Zoth Control Warrior.png",
-      "Yang Zhitan’s Pirate Warrior.png"
+      {
+        "name": "DannyDonuts’ Pirate Warrior",
+        "code": "AAEBAQcErwS+D4QXkbwCDRz/A44FqAXUBe4G5wfvB40O+w/EFYKwAoiwAgA="
+      },
+      {
+        "name": "Yang Zhitan’s Pirate Warrior",
+        "code": "AAEBAQcIsAKvBPIFpAbEFYQXkbwC68ICCxz/A6gF1AXuBucH7weNDvsPgrACiLACAA=="
+      },
+      {
+        "name": "Scorpion’s N’Zoth Control Warrior",
+        "code": "AAEBAQcGpAONDqkVsBXgrALMzQIMS6IEkQb/B7II+wz+DYEO+BGCrQLfxALKzQIA"
+      },
+      {
+        "name": "RenoJackson’s N’Zoth Control Warrior",
+        "code": "AAEBAQcI+wGiBLII5Q+wFYUX4KwCjs4CC0uRBv8H+wz+DYEO+BGCrQLfxALKzQLMzQIA"
+      }
     ]
   },
   "wild-vs-data-reaper-report-6": {
-    "Mage": [
-      "Bananaramic’s Burn Aluneth Mage.png",
-      "Bananaramic’s Exodia Mage.png",
-      "Bananaramic’s Reno Mage.png",
-      "ko10rino082’s Tempo Aluneth Mage.png"
-    ],
     "Druid": [
-      "Poach’s Jade Druid.png",
-      "sipiwi94’s Aggro Druid.png",
-      "Zeddy’s Malygos Druid.png"
-    ],
-    "Rogue": [
-      "Bananramic’s Tempo Rogue.png",
-      "Eon’s Kingsbane Miracle Rogue.png",
-      "Kingsbane Mill Rogue.png",
-      "N’Zoth Mill Rogue.png",
-      "Questing Miracle Rogue.png"
+      {
+        "name": "sipiwi94’s Aggro Druid",
+        "code": "AAEBAZICAoQXkbwCDvcD5gXlB/UNjhDoFcGrArazAs27AobBAuvCApvNAvvTAovlAgA="
+      },
+      {
+        "name": "Zeddy’s Malygos Druid",
+        "code": "AAEBAZICBrQDkwTsFeC7ApnTAqPmAgxAX9MDxAbkCOgVoM0Ch84ClNICntIChOYC+eYCAA=="
+      },
+      {
+        "name": "Poach’s Jade Druid",
+        "code": "AAEBAZICBukVhReuqwK+rgKUvQKZ0wIMX+QItLsCzbsCy7wCz7wC3b4CoM0Ch84CmNICntIC29MCAA=="
+      }
     ],
     "Hunter": [
-      "Audrey’s Mad Scientist Aggro Hunter.png",
-      "Control’s Tundra Rhino Aggro Hunter.png",
-      "GetMeowth’s Midrange Deathrattle Hunter.png"
+      {
+        "name": "Control’s Tundra Rhino Aggro Hunter",
+        "code": "AAEBAR8C8gWRvAIOqAK1A6gFuwXUBesH9Q3bD9QR6rsCr8ICjsMC+9MCi+UCAA=="
+      },
+      {
+        "name": "Audrey’s Mad Scientist Aggro Hunter",
+        "code": "AAEBAR8ExwPyBf4MkbwCDagCtQPUBesH9w3bD9QR+LEC6rsCjsMC180C+9MCi+UCAA=="
+      },
+      {
+        "name": "GetMeowth’s Midrange Deathrattle Hunter",
+        "code": "AAEBAR8C8gWG0wIOqAK1A+sH7Qn+DPUNkBDUEbm0Auq7Ao7DAvvTAovhAovlAgA="
+      }
     ],
-    "Priest": [
-      "awedragon’s Reno Priest.png",
-      "Grizzlybayer’s Spiteful Dragon Priest.png",
-      "Grizzlybayer’s Velen Reno Priest.png",
-      "Haze’s Inner Fire Combo Dragon Priest.png",
-      "RoffleCONCERNEDMOM’s Big Priest.png",
-      "slizzle466’s Greedy Big Priest.png"
-    ],
-    "Shaman": [
-      "Bananaramic’s Aggro Shaman.png",
-      "GetMeowth’s Evolve Control Shaman.png",
-      "GetMeowth’s Murloc Shaman.png",
-      "GetMeowth’s Windfury Aggro Shaman.png",
-      "Poach’s Malygos Shaman.png",
-      "SKKrillin’s Evolve Token Shaman.png",
-      "SKKrillin’s Totem Token Shaman.png",
-      "Tezzmizzet’s N’Zoth Control Shaman.png"
+    "Mage": [
+      {
+        "name": "ko10rino082’s Tempo Aluneth Mage",
+        "code": "AAEBAf0EBPoO2bsCj9MCotMCDXG7ApUDlgXsBfcNiQ7XtgLrugKHvQLBwQKYxAL70wIA"
+      },
+      {
+        "name": "Bananaramic’s Burn Aluneth Mage",
+        "code": "AAEBAf0EBqwBwAHDAeYE67oCotMCDHG7ApUDqwSWBewF9w26Fte2Aoe9AsHBAo/TAgA="
+      },
+      {
+        "name": "Bananaramic’s Exodia Mage",
+        "code": "AAEBAf0EBq4D7QW4CPsM1hG50QIMigHAAZwCyQOrBMsE5gTtBPgHvAj3DdrFAgA="
+      },
+      {
+        "name": "Bananaramic’s Reno Mage",
+        "code": "AAEBAf0EHk1xigHAAbsCiwPJA6sElgW5BuwH+wy5DfcNlQ/1D/wPwxaFF4GyAqO2AqG3Aum6Ati7AsrBAsrDAt/EApbHApvTAtfhAgAA"
+      }
     ],
     "Paladin": [
-      "Bananaramic’s Anyfin Paladin.png",
-      "Chai’s Secret Paladin.png",
-      "Control’s Aggro Paladin.png",
-      "GetMeowth’s Spiteful Murloc Paladin.png",
-      "Haydumb’s Aggro Paladin.png",
-      "Haydumb’s Dude Paladin.png"
+      {
+        "name": "Haydumb’s Aggro Paladin",
+        "code": "AAEBAZ8FBvIFrwfZrgKRvAK5wQK36QIMpwWoBdQFsQj1DeoP7Q/7D7jHAuPLAvjSAvvTAgA="
+      },
+      {
+        "name": "Control’s Aggro Paladin",
+        "code": "AAEBAZ8FApG8ArnBAg6nBagF1AWxCPUN6g/tD/sPyRbZrgK4xwLjywL40gL70wIA"
+      },
+      {
+        "name": "Haydumb’s Dude Paladin",
+        "code": "AAEBAZ8FCqcF9AX1DfoOyRbZrgK7rwKRvAK5wQKDxwIK1AWxCOoP7A/tD/+vArjHAtnHAuPLAvjSAgA="
+      },
+      {
+        "name": "Chai’s Secret Paladin",
+        "code": "AAEBAZ8FBIwBnhDYFLnBAg2eAcgEsQiBDowO6g/tD6YV2a4Cs8EC48sC+NIC+9MCAA=="
+      },
+      {
+        "name": "Bananaramic’s Anyfin Paladin",
+        "code": "AAEBAZ8FCOAF9geKrgK8vQLjvgK5wQLfxALIzgIL+wHcA+MF9AWnCOoP4hHSFtmuAuPLAvjSAgA="
+      },
+      {
+        "name": "GetMeowth’s Spiteful Murloc Paladin",
+        "code": "AAEBAZ8FBOAFubIC474CucECDdsDpwjqD9IW06oC2a4CqsECncICscIC48sC+NIC+9MC1+sCAA=="
+      }
     ],
-    "Warlock": [
-      "gorky’s Giant Warlock.png",
-      "Harain’s Zoo Warlock.png",
-      "XCrouton’s Reno Warlock.png"
+    "Priest": [
+      {
+        "name": "RoffleCONCERNEDMOM’s Big Priest",
+        "code": "AAEBAa0GCPYC0wqSD6irAoW4Are7Auq/AsLOAgvXCvoRtxehrALRwQLlzALmzAK0zgLwzwLo0ALj6QIA"
+      },
+      {
+        "name": "slizzle466’s Greedy Big Priest",
+        "code": "AAEBAa0GDPYCogmlCdMK1gqSD6irAoW4Are7AubMAsLOAvDPAgnXCvoRtxehrALRwQLlzAK0zgLo0ALj6QIA"
+      },
+      {
+        "name": "awedragon’s Reno Priest",
+        "code": "AAEBAa0GHooB+wGXApwC5QTtBbkGpAf2B6UJ0grTCtYK1wryDPsMkg/3E4QUwxa3F6GsAoO7ArW7Ati7Aui/AtHBAvDPAujQApDTAgAA"
+      },
+      {
+        "name": "Grizzlybayer’s Velen Reno Priest",
+        "code": "AAEBAa0GHgmKAZcCnALlBO0FuQalCdMK1wryDPsMgQ6SD9YRwxa3F6GsAqKsApK0AoO7ArW7Ati7Auq/AsPBAtHBAt/EAvDPAujQApDTAgAA"
+      },
+      {
+        "name": "Grizzlybayer’s Spiteful Dragon Priest",
+        "code": "AAEBAa0GBIUX4b8C0OcC/OoCDQjyDO4R6RKJFKQUgrUCursC8LsCmcgC+9MCy+YC1+sCAA=="
+      },
+      {
+        "name": "Haze’s Inner Fire Combo Dragon Priest",
+        "code": "AAEBAa0GBKUJtbsCvsgC/OoCDfgC5QTRCvIMjw/uEYkUgrUCursC8LsC0cEC2MECy+YCAA=="
+      }
     ],
-    "Warrior": [
-      "Awedragon’s Control Warrior.png",
-      "Pirate Warrior.png"
+    "Rogue": [
+      {
+        "name": "Bananramic’s Tempo Rogue",
+        "code": "AAEBAaIHCLICzQP6Dp4QkbwC68ICz+EC2+MCC7QBjAKoBdQFuQaIB90I+w+QEJK2AvvTAgA="
+      },
+      {
+        "name": "Questing Miracle Rogue",
+        "code": "AAEBAaIHBLICrwT6DpG8Ag20AYwCzQObBZcGuQaIB6QH3gfdCIYJxBaStgIA"
+      },
+      {
+        "name": "Eon’s Kingsbane Miracle Rogue",
+        "code": "AAEBAaIHCMQBmwXtBagIqc0Csc4CgNMCu+8CC7QBywPNA4gHpAeGCa8Q9bsC3NEC5dEC2+MCAA=="
+      },
+      {
+        "name": "N’Zoth Mill Rogue",
+        "code": "AAEBAaIHBIAShRfgrAKA0wINigG0AcQB7QLNA5sF+AeGCf4NgQ71D9vjAt/jAgA="
+      },
+      {
+        "name": "Kingsbane Mill Rogue",
+        "code": "AAEBAaIHBIUXqc0CgNMCu+8CDbQBxAHtAssDzQOIB/gHqAiGCa8QgBLl0QLf4wIA"
+      }
+    ],
+    "Shaman": [
+      {
+        "name": "GetMeowth’s Windfury Aggro Shaman",
+        "code": "AAEBAaoIBOAChBegtgKRvAIN7gHvAfkD1AXwB9QP1Q/WD7IUyhb3qgKHvALRvAIA"
+      },
+      {
+        "name": "Bananaramic’s Aggro Shaman",
+        "code": "AAEBAaoIBrkG4Ab6DoQXkbwC5MICDO4B+QPlB/AH1g+yFMoW96oCoLYCh7wC0bwC+9MCAA=="
+      },
+      {
+        "name": "SKKrillin’s Totem Token Shaman",
+        "code": "AAEBAaoIApS9AtHmAg7uAYEE8AeTCbIUtxTKFveqAvuqAqC2Aoe8AtG8AuvCAvvTAgA="
+      },
+      {
+        "name": "SKKrillin’s Evolve Token Shaman",
+        "code": "AAEBAaoIBvoOkbwClL0C68IC688C3+kCDIEE5QfwB5MJ+qoC+6oCoLYCh7wC0bwC+b8CkcEC+9MCAA=="
+      },
+      {
+        "name": "Poach’s Malygos Shaman",
+        "code": "AAEBAaoIBrQD/gXOD9YRhbgC9r0CDPkDsgbLB/gH1g/xEbwUoLYCx8ECi84CutIC8+cCAA=="
+      },
+      {
+        "name": "Tezzmizzet’s N’Zoth Control Shaman",
+        "code": "AAEBAaoICKQDuQ2CDtYR4KwChbgCprwCi+ECC5QD9QT+BbIGgQ6RDtIToLYC9r0Cx8EC8+cCAA=="
+      },
+      {
+        "name": "GetMeowth’s Evolve Control Shaman",
+        "code": "AAEBAaoIBv4FvBTprAKUvQKmzgLrzwIMsga0FPWsAoK0AqC2Aua7Aoe8AtG8Ava9AsfBAvvTAt/pAgA="
+      },
+      {
+        "name": "GetMeowth’s Murloc Shaman",
+        "code": "AAEBAaoIBuAFkwnYD4QX474Cm8QCDNsD8AenCLIUyha/F+O7AtG8ApHBAp3CArHCAtfrAgA="
+      }
     ],
     "Cubelock": [
-      "Capiliano’s Cubelock.png",
-      "GetMeowth’s Greedy Cubelock.png"
+      {
+        "name": "GetMeowth’s Greedy Cubelock",
+        "code": "AAEBAf0GDPcE8gXbBrkN+g7CD60Q1hHgrALJwgKX0wKd4gIJtgeODufLAvLQAvjQAojSAovhAvzlAujnAgA="
+      },
+      {
+        "name": "Capiliano’s Cubelock",
+        "code": "AAEBAf0GCPcEuQ36DsIP1hHgrAKX0wKd4gILtgfECI4OrRDnywLy0AL40AKI0gKL4QL85QLo5wIA"
+      }
+    ],
+    "Warlock": [
+      {
+        "name": "XCrouton’s Reno Warlock",
+        "code": "AAEBAf0GHjCKAfcE8gXbBrYHxAjMCIEOjg76DsIP9Q/WEf0RwxbPFoUX2LsC2bwC3bwC38QC58sCrs0C980C8dAC8tACl9MC6OcCw+oCAAA="
+      },
+      {
+        "name": "gorky’s Giant Warlock",
+        "code": "AAEBAf0GBtMB3AbCD/jQApfTAtvpAgyjAfcEtgfhB9wKjg65Ed4W58sC8tACiNIC6OcCAA=="
+      },
+      {
+        "name": "Harain’s Zoo Warlock",
+        "code": "AAEBAf0GBMIPybsCps4Cl9MCDTD3BM4GzgfCCI4O8BG8tgLHuwL3zQLx0ALy0AL70wIA"
+      }
+    ],
+    "Warrior": [
+      {
+        "name": "Pirate Warrior",
+        "code": "AAEBAQcGsAKvBPIFhBfRkQKRvAIMHP8DjgWoBdQF7gbnB+8HjQ77D4KwAoiwAgA="
+      },
+      {
+        "name": "Awedragon’s Control Warrior",
+        "code": "AAEBAQcEjQ6wFeCsAqLHAg1LogSRBv8H+wz+DYEO+BGCrQLGwwLfxALMzQLP5wIA"
+      }
     ]
   },
   "wild-vs-data-reaper-report-7": {
-    "Mage": [
-      "Bananaramic’s Exodia Mage.png",
-      "Bananaramic’s Reno Mage.png",
-      "Bananaramic’s Secret Mage.png",
-      "slizzle466’s Aluneth Mage.png"
-    ],
     "Druid": [
-      "GetMeowth’s Jade Druid.png",
-      "Jonahrah’s Malygos Druid.png",
-      "slizzle466’s Aggro Druid.png"
-    ],
-    "Rogue": [
-      "Bananaramic’s Tempo Rogue.png",
-      "Hel’s Kingsbane Rogue.png",
-      "Jonahrah’s Miracle Rogue.png"
+      {
+        "name": "GetMeowth’s Jade Druid",
+        "code": "AAEBAZICBK6rAuC7ApS9ApnTAg1AX+QIig60uwLLvALdvgKgzQKHzgKU0gKY0gKe0gKE5gIA"
+      },
+      {
+        "name": "Jonahrah’s Malygos Druid",
+        "code": "AAEBAZICBLQD7BXguwKZ0wINQF/pAdMDkwTkCIoO6BXLvAKgzQKHzgKY0gKe0gIA"
+      },
+      {
+        "name": "slizzle466’s Aggro Druid",
+        "code": "AAEBAZICAoQXkbwCDrsD9wPmBeUH9Q2OEOgVwasCtrMCzbsChsEC68ICm80Ci+UCAA=="
+      }
     ],
     "Hunter": [
-      "DannyDonuts’ Spell Hunter.png",
-      "MrDollSteak’s Giants Hunter.png",
-      "MrDollSteak’s Secret Hunter.png",
-      "na0_Yattaze’s Deathrattle Hunter.png",
-      "TopoPablo11’s Aggro Hunter.png"
+      {
+        "name": "MrDollSteak’s Giants Hunter",
+        "code": "AAEBAR8EhwTFCPoOhtMCDdMByQSAB+EHlwjcCv4MuRHUEcsU3hbTzQLf0gIA"
+      },
+      {
+        "name": "MrDollSteak’s Secret Hunter",
+        "code": "AAEBAR8IhwTJBPIF+Aj6Dp3MAobTArbqAgueAZcI7Qn+DPcN+LECxLQCxsIC3dIC39IC49ICAA=="
+      },
+      {
+        "name": "TopoPablo11’s Aggro Hunter",
+        "code": "AAEBAR8CxwOvBA6oArUDuwPyBesH/gz3DdsP1BH4sQLquwKOwwLXzQKL5QIA"
+      },
+      {
+        "name": "DannyDonuts’ Spell Hunter",
+        "code": "AAEBAR8EgAeoqwKFuAKG0wINjQGoArUDyQSXCNsJ/gzUEfixAt3SAt/SAuPSAuHjAgA="
+      },
+      {
+        "name": "na0_Yattaze’s Deathrattle Hunter",
+        "code": "AAEBAR8E9Q37DsnCAobTAg2XCPoNxw/bD9QRja8CibQCq8IC2MICnM0C080Cq9ACi+ECAA=="
+      }
     ],
-    "Priest": [
-      "ConcernedMom’s Big Priest.png",
-      "Control’s Combo Priest.png",
-      "Haze’s Combo Priest.png",
-      "Sipiwi94’s Reno Priest.png",
-      "Spiteful Priest.png"
-    ],
-    "Shaman": [
-      "Control’s Aggro Shaman.png",
-      "GetMeowth’s Murloc Shaman.png",
-      "Jonahrah’s Aggro Shaman.png",
-      "RenoJackson’s Cube Control Shaman.png",
-      "RenoJackson’s Evolve Shaman.png"
+    "Mage": [
+      {
+        "name": "slizzle466’s Aluneth Mage",
+        "code": "AAEBAf0EAvoOotMCDnGsAbsClQOWBewF9w3XtgLrugLZuwKHvQLBwQKYxAKP0wIA"
+      },
+      {
+        "name": "Bananaramic’s Secret Mage",
+        "code": "AAEBAf0EBqwBwAHmBOu6Atm7AqLTAgxxuwKVA6sElgXsBfcNuhbXtgKHvQLBwQKP0wIA"
+      },
+      {
+        "name": "Bananaramic’s Exodia Mage",
+        "code": "AAEBAf0EBq4D7QW4CNYRmMQCudECDIoBwAGcAskDqwTLBOYE7QT4B/cN2sUCluQCAA=="
+      },
+      {
+        "name": "Bananaramic’s Reno Mage",
+        "code": "AAEBAf0EHk1xigHAAckDqwSWBe0FuQaKB+wH+wz3DYEOlQ/1D/wPjBTDFoUXgbIC6boC2LsCysECysMCmMQClscCm9MCluQCw+oCAAA="
+      }
     ],
     "Paladin": [
-      "Banaramic’s Dude Paladin.png",
-      "Chai’s Dude Paladin.png",
-      "Chai’s Secret Paladin.png",
-      "Doc Rowdy’s Control Paladin.png",
-      "GetMeowth’s Aggro Murloc Paladin.png",
-      "Jonahrah’s Secret Anyfin Paladin.png",
-      "Неясыть’s Aggro Paladin.png"
+      {
+        "name": "Chai’s Dude Paladin",
+        "code": "AAEBAZ8FBPIF+g65wQK35wINpwX0BbEI6g/sD+0P2a4C/68CuMcC2ccC48sC+NICieYCAA=="
+      },
+      {
+        "name": "Banaramic’s Dude Paladin",
+        "code": "AAEBAZ8FBKcF+g65wQKJ5gIN9AWxCOoP7A/tD4UQ2a4C/68CuMcC2ccC48sC+NICt+cCAA=="
+      },
+      {
+        "name": "Jonahrah’s Secret Anyfin Paladin",
+        "code": "AAEBAZ8FBIwB4AXYFLnBAg3IBKcF4wWnCLEIjA7qD+0PphXSFtmuAuPLAvjSAgA="
+      },
+      {
+        "name": "Chai’s Secret Paladin",
+        "code": "AAEBAZ8FCIwB6AGnBZ4Q2BTZrgK5wQLZxwILngHIBLEIjA7qD+wP7Q+mFbjHAuPLAvjSAgA="
+      },
+      {
+        "name": "Неясыть’s Aggro Paladin",
+        "code": "AAEBAZ8FBq8E+g6dFbnBAsrDAtblAgynBc8GrwexCOoP7Q/JFtmuAv+vArjHAuPLAvjSAgA="
+      },
+      {
+        "name": "GetMeowth’s Aggro Murloc Paladin",
+        "code": "AAEBAZ8FBOAF+g6EF7nBAg3bA6cF8gWnCLEI6g/tD9OqAtO8Ap3CArHCAuPLAvjSAgA="
+      },
+      {
+        "name": "Doc Rowdy’s Control Paladin",
+        "code": "AAEBAZ8FCPoGuQ3grALmrgK8vQK5wQKO0wLD6gIL+wHcA/QF9gf+DYEOm8IC3sQC38QCiMcC+NICAA=="
+      }
+    ],
+    "Priest": [
+      {
+        "name": "ConcernedMom’s Big Priest",
+        "code": "AAEBAa0GCPYCpQnTCpIPqKsChbgCt7sCws4CC9cK+hG3F6GsAtHBAuXMAubMArTOAvDPAujQAuPpAgA="
+      },
+      {
+        "name": "Control’s Combo Priest",
+        "code": "AAEBAa0GAvYHvsgCDu0B+ALlBKUJ0QrSCvIM2Q3+DY8PtbsC8LsC0cEC2MECAA=="
+      },
+      {
+        "name": "Haze’s Combo Priest",
+        "code": "AAEBAa0GAqUJtbsCDvgC5QTRCvIMjw/uEYkUgrUCursC8LsC0cEC2MECy+YC/OoCAA=="
+      },
+      {
+        "name": "Spiteful Priest",
+        "code": "AAEBAa0GBPoOhRfhvwLQ5wINCPIM7hHpEokUpBSCtQK6uwLwuwKZyALL5gL86gLX6wIA"
+      },
+      {
+        "name": "Sipiwi94’s Reno Priest",
+        "code": "AAEBAa0GHgmKAfsBlwKcAqEE5QTtBbkG9gf4B6UJ0wrWCtcK8gz7DJIP1hH3E8MWoawCg7sCtbsC2LsCw8EC0cEC8M8C6NACkNMCAAA="
+      }
+    ],
+    "Rogue": [
+      {
+        "name": "Bananaramic’s Tempo Rogue",
+        "code": "AAEBAaIHCLICrwT1DfoOrxCRvALrwgLb4wILtAGMAs0DqAXUBbkGiAfdCPsPkBCStgIA"
+      },
+      {
+        "name": "Hel’s Kingsbane Rogue",
+        "code": "AAEBAaIHBKgIsc4CgNMCu+8CDbQBxAHtAssDzQOIB/gHhgmvEKnNAuXRAtvjAt/jAgA="
+      },
+      {
+        "name": "Jonahrah’s Miracle Rogue",
+        "code": "AAEBAaIHBrICrwS5BvW7ApG8AtvjAgy0AYwCzQObBYgHpAfeB90IhgnEFpK2AtzRAgA="
+      }
+    ],
+    "Shaman": [
+      {
+        "name": "Jonahrah’s Aggro Shaman",
+        "code": "AAEBAaoIAoQXi+UCDu4B7wHgAvkD/wXgBvAH1Q/WD7IUyhb3qgKHvALRvAIA"
+      },
+      {
+        "name": "Control’s Aggro Shaman",
+        "code": "AAEBAaoIBP8F4AaEF5G8Ag3uAe8B4AL5A9QF8AfVD9YPshTKFveqAoe8AtG8AgA="
+      },
+      {
+        "name": "RenoJackson’s Cube Control Shaman",
+        "code": "AAEBAaoICPYCuQ2CDtYR4KwCoLYChbgCprwCC5QD9QSyBvUIkQ7SE/a9Av7NAsPSAovhAvPnAgA="
+      },
+      {
+        "name": "GetMeowth’s Murloc Shaman",
+        "code": "AAEBAaoIBOAF+g6EF5vEAg3bA/AHpwiTCbIUyha/F+O7Aoe8AtG8ApHBAp3CArHCAgA="
+      },
+      {
+        "name": "RenoJackson’s Evolve Shaman",
+        "code": "AAEBAaoIAtIT688CDvUE/gW8FPqqAva9Avm/AsfBAt/EAv7NAo3OAvvTAvPnAvXnAt/pAgA="
+      }
     ],
     "Warlock": [
-      "Cooky’s Bloodbloom Zoo Warlock.png",
-      "IndianNinja’s Reno Warlock.png",
-      "Jonahrah’s Giants Warlock.png",
-      "Roffle’s Cube Warlock.png",
-      "SighTed’s Reno Warlock.png"
+      {
+        "name": "Jonahrah’s Giants Warlock",
+        "code": "AAEBAf0GBtMBtgf6DsIPrRCX0wIMigGTAaMB4QfcCo4OuRHeFufLAvLQAojSAujnAgA="
+      },
+      {
+        "name": "Roffle’s Cube Warlock",
+        "code": "AAEBAf0GCPcEuQ36DsIP1hHgrAKX0wKd4gILzga2B44OrRDnywLy0AL40AKI0gKL4QL85QLo5wIA"
+      },
+      {
+        "name": "Cooky’s Bloodbloom Zoo Warlock",
+        "code": "AAEBAf0GAA8XMPcE8gXOBsII9gjBD/ARvLYCkMcC8dAC8tAC/dAC29MCAA=="
+      },
+      {
+        "name": "IndianNinja’s Reno Warlock",
+        "code": "AAEBAf0GHjCKAboE8gXbBrYHxAjMCLkNgQ6ODvoOwg/1D60Q1hH9EcMWhRfYuwLdvALfxALTxQLnywKuzQL3zQLy0AKX0wLo5wLD6gIAAA=="
+      },
+      {
+        "name": "SighTed’s Reno Warlock",
+        "code": "AAEBAf0GHIoBkwGTBK8E9wTOBtsGtgeNCMwIgQ6ODvUPkBCtENYR/RHDFs8W4KwC2LsC3bwC58sC980C8dACl9MC2OcC6OcCAfLQAgA="
+      }
     ],
     "Warrior": [
-      "Awedragon’s Control Warrior.png",
-      "RenoJackson’s Pirate Warrior.png"
+      {
+        "name": "RenoJackson’s Pirate Warrior",
+        "code": "AAEBAQcGsAKvBPIFhBfRkQKRvAIMHP8DjgWoBdQF7gbnB+8HjQ77D4KwAoiwAgA="
+      },
+      {
+        "name": "Awedragon’s Control Warrior",
+        "code": "AAEBAQcEjQ6wFeCsAqLHAg1LogSRBv8H+wz+DYEO+BGCrQLGwwLfxALMzQLP5wIA"
+      }
     ]
   },
   "wild-vs-data-reaper-report-8": {
-    "Mage": [
-      "AZSwim’s Aluneth Mage.png",
-      "Bananaramic’s Exodia Mage.png",
-      "Bananaramic’s Reno Mage.png"
-    ],
     "Druid": [
-      "Control’s Egg Aggro Druid.png",
-      "GetMeowth’s Jade Druid.png",
-      "Jonahrah’s Malygos Druid.png",
-      "LazyTitan’s Aggro Druid.png",
-      "Poach’s Miracle Druid.png"
-    ],
-    "Rogue": [
-      "Control’s Kingsbane Rogue.png",
-      "Dane’s Big Rogue.png",
-      "Jonahrah’s Miracle Rogue.png"
+      {
+        "name": "LazyTitan’s Aggro Druid",
+        "code": "AAEBAZICAtkHhBcO9wPmBfUNjhDeFegVwasCtrMCzbsChsEC68ICm80CkdACi+UCAA=="
+      },
+      {
+        "name": "Control’s Egg Aggro Druid",
+        "code": "AAEBAZICAoQXl8ECDvcD5gXyBfUN+g2OEOgVwasCtrMCzbsChsEC68ICm80Ci+UCAA=="
+      },
+      {
+        "name": "GetMeowth’s Jade Druid",
+        "code": "AAEBAZICBK6rAuC7ApS9ApnTAg1AX+QIig60uwLLvALdvgKgzQKHzgKU0gKY0gKe0gKE5gIA"
+      },
+      {
+        "name": "Jonahrah’s Malygos Druid",
+        "code": "AAEBAZICBLQD7BXguwKZ0wINQF/pAdMDkwTkCIoO6BXLvAKgzQKHzgKY0gKe0gIA"
+      },
+      {
+        "name": "Poach’s Miracle Druid",
+        "code": "AAEBAZICBqQHhQjWEbS7Asu8ApnTAgxAX+kB5AiKDs27AqDNAofOApTSApjSAp7SAoTmAgA="
+      }
     ],
     "Hunter": [
-      "GetMeowth’s Aggro Hunter.png",
-      "GetMeowth’s Secret Hunter.png",
-      "Spell Hunter.png"
+      {
+        "name": "Spell Hunter",
+        "code": "AAECAR8EqKsChbgChsMChtMCDY0BqAK1A8kE7QaXCNsJ/gz4sQLd0gLf0gLj0gLh4wIA"
+      },
+      {
+        "name": "GetMeowth’s Secret Hunter",
+        "code": "AAEBAR8IhwTyBfgI+g74sQLGwgKG0wK26gILngGoAskE2wntCf4M9w3UEcS0At/SAuPSAgA="
+      },
+      {
+        "name": "GetMeowth’s Aggro Hunter",
+        "code": "AAEBAR8CrwTyBQ6oArUDyQTrB9sJ/gz3DdsP1BH4sQLquwKOwwLXzQKL5QIA"
+      }
     ],
-    "Priest": [
-      "CONCERNEDMOM’s Big Priest.png",
-      "Haze’s Combo Priest.png",
-      "Haze’s Dragon Combo Priest.png",
-      "HIOCKY’s Dragon Reno Priest.png",
-      "Spiteful Priest.png",
-      "Xaos’ Control Priest.png"
-    ],
-    "Shaman": [
-      "Control’s Aggro Shaman.png",
-      "Ecthelionlotf’s Control Shaman.png"
+    "Mage": [
+      {
+        "name": "AZSwim’s Aluneth Mage",
+        "code": "AAEBAf0EBsABqwT6DroW67oCotMCDHG7ApUD5gSWBewF9w3XtgLZuwKHvQLBwQKP0wIA"
+      },
+      {
+        "name": "Bananaramic’s Reno Mage",
+        "code": "AAEBAf0EHk1xigHAAYsDyQOrBMsElgXtBbkG+wy5DfcN/g2BDvUP/A+MFMMW4KwCgbIC6boC2LsC3sQC38QClscCoM4Cm9MCw+oCAAA="
+      },
+      {
+        "name": "Bananaramic’s Exodia Mage",
+        "code": "AAEBAf0EBq4D7QW4CLwI+wzWEQyKAcABnALJA6sEywTmBO0E+Af3DdrFApbkAgA="
+      }
     ],
     "Paladin": [
-      "Banaramic’s Dude Paladin.png",
-      "Chai’s Secret Paladin.png",
-      "GetMeowth’s Aggro Murloc Paladin.png",
-      "Wo1o1o’s Aggro Paladin.png"
+      {
+        "name": "Banaramic’s Dude Paladin",
+        "code": "AAEBAZ8FBqcF8gWFELnBAonmArXmAgz0BbEI6g/sD+0P2a4C/68CuMcC2ccC48sC+NICt+cCAA=="
+      },
+      {
+        "name": "Wo1o1o’s Aggro Paladin",
+        "code": "AAEBAZ8FBtwD8gX0BckW2a4CucECDEanBa8HsQj1DfoN6g/tD7jHAuPLAvjSAtHhAgA="
+      },
+      {
+        "name": "GetMeowth’s Aggro Murloc Paladin",
+        "code": "AAEBAZ8FBOAF+g6EF7nBAg3bA6cF8gWnCLEI6g/tD9OqAtO8Ap3CArHCAuPLAvjSAgA="
+      },
+      {
+        "name": "Chai’s Secret Paladin",
+        "code": "AAEBAZ8FCIwB8gX1DfcN+g7YFIQXucECC54ByASnBbEIjA7qD+sP7Q+mFePLAvjSAgA="
+      }
+    ],
+    "Priest": [
+      {
+        "name": "CONCERNEDMOM’s Big Priest",
+        "code": "AAEBAa0GCPYCpQnTCpIPqKsChbgCt7sCws4CC9cK+hG3F6GsAtHBAuXMAubMArTOAvDPAujQAuPpAgA="
+      },
+      {
+        "name": "Haze’s Combo Priest",
+        "code": "AAEBAa0GArW7Ar7IAg74AuUE9gelCdEK0gryDPsM/g2PD/C7AtHBAtjBAs7MAgA="
+      },
+      {
+        "name": "Haze’s Dragon Combo Priest",
+        "code": "AAEBAa0GAqUJtbsCDvgC5QTRCvIMjw/uEYkUgrUCursC8LsC0cEC2MECy+YC/OoCAA=="
+      },
+      {
+        "name": "Spiteful Priest",
+        "code": "AAEBAa0GBPoOhRfhvwLQ5wINCPIM7hHpEokUpBSCtQK6uwLwuwKZyALL5gL86gLX6wIA"
+      },
+      {
+        "name": "Xaos’ Control Priest",
+        "code": "AAEBAa0GBrkG0wruEaDOApDTAsPqAgzlBPIMiRTHF4K1ArW7Are7Arq7Auq/AtHBAt/EAsvmAgA="
+      },
+      {
+        "name": "HIOCKY’s Dragon Reno Priest",
+        "code": "AAEBAa0GHpcCnALlBO0FuQb2B6UJ0grTCtcK8gz7DJIP1hH3E8MWtxeCtQKDuwK1uwK6uwLYuwLqvwLRwQLSwQLJxwLwzwLo0AKQ0wLL5gIAAA=="
+      }
+    ],
+    "Rogue": [
+      {
+        "name": "Control’s Kingsbane Rogue",
+        "code": "AAEBAaIHBMgDgBKA0wK77wINxAHtAssDzQObBfgHqAiGCa8Qqc0Csc4C5dEC2+MCAA=="
+      },
+      {
+        "name": "Jonahrah’s Miracle Rogue",
+        "code": "AAEBAaIHBLICrwT6DtvjAg20AYwCzQObBZcGuQaIB6QH3gfdCIYJxBb1uwIA"
+      },
+      {
+        "name": "Dane’s Big Rogue",
+        "code": "AAEBAaIHDMQB9gL7DqIQsq0ChbgCycICwMwCws4CgNMCz+EC5+ECCbQBzQObBYgHhgn3DdDjAtnjAvDmAgA="
+      }
+    ],
+    "Shaman": [
+      {
+        "name": "Control’s Aggro Shaman",
+        "code": "AAEBAaoIAoQXi+UCDu4B7wHgAvkD/wXgBvAH1Q/WD7IUyhb3qgKHvALRvAIA"
+      },
+      {
+        "name": "Ecthelionlotf’s Control Shaman",
+        "code": "AAEBAaoICJQD+QO5DYIOtBTgrAKmvAKL4QIL9QT+BbIG9QiBDpEO0hOgtgL2vQLHwQLz5wIA"
+      }
     ],
     "Warlock": [
-      "GetMeowth’s Giants Warlock.png",
-      "Kigo’s Demon Zoo Warlock.png",
-      "sipiwi94’s Cube Warlock.png",
-      "XCrouton’s Reno Warlock.png"
+      {
+        "name": "GetMeowth’s Giants Warlock",
+        "code": "AAEBAf0GBJMB+g7CD5fTAg2KAaMB0wG2B+EH3AqODrkR3hbexALnywLy0ALo5wIA"
+      },
+      {
+        "name": "sipiwi94’s Cube Warlock",
+        "code": "AAEBAf0GCJMEwg/grALJwgLexAKX0wKd4gLb6QILigH3BLYHjg7nywLy0AL40AKI0gKL4QL85QLo5wIA"
+      },
+      {
+        "name": "XCrouton’s Reno Warlock",
+        "code": "AAEBAf0GHooBkwHyBdsGtgfhB8QIzAiBDo4O+g7CD/UPrRDWEcMWhRfYuwLdvAKbwgLfxALTxQKPxwLnywKuzQL3zQLy0AKX0wLo5wLD6gIAAA=="
+      },
+      {
+        "name": "Kigo’s Demon Zoo Warlock",
+        "code": "AAEBAf0GAtAE8gUOMPcEzgfCCPYIjg7wEf0RvxS8tgLHuwLJuwL3zQLx0AIA"
+      }
     ],
     "Warrior": [
-      "Awedragon’s Control Warrior.png",
-      "Jonahrah’s Pirate Warrior.png",
-      "RenoJackson’s Pirate Warrior.png"
+      {
+        "name": "Jonahrah’s Pirate Warrior",
+        "code": "AAEBAQcGsAKvBPIFhBfRkQKRvAIMHP8DjgWoBdQF7gbnB+8HjQ77D4KwAoiwAgA="
+      },
+      {
+        "name": "RenoJackson’s Pirate Warrior",
+        "code": "AAEBAQcG/wOvBIQX0ZECkbwCzM0CDByOBagF1AXyBe4G5wfvB40O+w+CsAKIsAIA"
+      },
+      {
+        "name": "Awedragon’s Control Warrior",
+        "code": "AAEBAQcG8gX4B7AV4KwCoscCoM4CDEuiBJEG/wf7DP4NgQ74EYKtAsbDAszNAs/nAgA="
+      }
     ]
   },
   "wild-vs-data-reaper-report-9": {
-    "Mage": [
-      "Bananaramic’s Exodia Mage.png",
-      "Bananaramic’s Reno Mage.png",
-      "GetMeowth’s Aluneth Mage.png"
-    ],
     "Druid": [
-      "Bananaramic’s Malygos Druid.png",
-      "Jonahrah’s Aggro Druid.png",
-      "Kohai’s Togwaggle Druid.png",
-      "Memnarc’s Jade Druid.png"
-    ],
-    "Rogue": [
-      "Goku’s Odd Rogue.png",
-      "XuwangShackdaddy’s Kingsbane Rogue.png"
+      {
+        "name": "Kohai’s Togwaggle Druid",
+        "code": "AAEBAZICBuwV4LsCysMCmdMC/esCmu4CDEBf/gHkCIoOoM0Ch84ClNICmNICntIChOYCv/ICAA=="
+      },
+      {
+        "name": "Bananaramic’s Malygos Druid",
+        "code": "AAEBAZICCLQDig7sFeC7ApjSAp7SApnTAoTmAgtAX4oB0wOTBOQI6BXLvAKgzQKHzgK/8gIA"
+      },
+      {
+        "name": "Memnarc’s Jade Druid",
+        "code": "AAEBAZICBK6rApS9Ap7SApnTAg1AX+QIig60uwLLvALdvgKgzQKHzgKU0gKY0gKE5gK/8gIA"
+      },
+      {
+        "name": "Jonahrah’s Aggro Druid",
+        "code": "AAEBAZICAoQXtrMCDvcD5gXyBfUN+g2OEOgVwasCzbsChsECl8EC68ICm80Ci+UCAA=="
+      }
     ],
     "Hunter": [
-      "Applecat’s Kathrena Hunter.png",
-      "Gunnolf’s Odd Face Hunter.png",
-      "Jonahrah’s Giant Hunter.png",
-      "RenoJackson’s Kathrena Cube Hunter.png"
+      {
+        "name": "Jonahrah’s Giant Hunter",
+        "code": "AAEBAR8EgAf6DobTAoDzAg3TAeEHlwjbCdwK/gy5EdQRyxTeFtPNAt/SAtzuAgA="
+      },
+      {
+        "name": "RenoJackson’s Kathrena Cube Hunter",
+        "code": "AAEBAR8G9gL4CLkNxw+G0wK26gIMhwSTBN4F/gz3DcS0AsbCAp3MApzNAt/SAuPSAovhAgA="
+      },
+      {
+        "name": "Applecat’s Kathrena Hunter",
+        "code": "AAEBAR8E+Aj6DobTArbqAg2eAbUDhwTyBe0J/gz3DfixAsS0At3SAt/SAuPSAvLxAgA="
+      },
+      {
+        "name": "Gunnolf’s Odd Face Hunter",
+        "code": "AAEBAR8CrwSe+AIOoQKiAqgCtQP1Be0GlwjbCf4M6asC6rsC68IC4eMCi+UCAA=="
+      }
     ],
-    "Priest": [
-      "Big Priest.png",
-      "Dragon Combo Priest.png",
-      "Eon’s Control Dragon Priest.png",
-      "Haze’s Combo Priest.png",
-      "Skylight’s Reno Priest.png",
-      "Spiteful Dragon Priest.png"
-    ],
-    "Shaman": [
-      "Awedragon’s Totemcarver Even Shaman.png",
-      "Control’s Aggro Shaman.png",
-      "Jade Shaman.png",
-      "OfMonCala’s Al’Akir Even Shaman.png",
-      "RenoJackson’s Even Shaman.png",
-      "Shudderwock Shaman.png"
+    "Mage": [
+      {
+        "name": "GetMeowth’s Aluneth Mage",
+        "code": "AAEBAf0EBKsE5gT6DqLTAg1xuwKVA5YF7AX3DboW17YC2bsCh70CwcECj9MCvuwCAA=="
+      },
+      {
+        "name": "Bananaramic’s Exodia Mage",
+        "code": "AAEBAf0EBq4DqwS4CNYRwcECudECDIoBwAGcAskDywTmBO0E+Af3DdrFApbkAs7vAgA="
+      },
+      {
+        "name": "Bananaramic’s Reno Mage",
+        "code": "AAEBAf0EHk1xigHAAdACyQOTBKsElgXeBewHuQ33Df4NgQ78D4wUwxaJrALgrALpugLYuwLexALfxAKWxwKb0wLD6gLO7wKm8ALF8wIAAA=="
+      }
     ],
     "Paladin": [
-      "Aoierias’ Odd Paladin.png",
-      "chai’s Secret Paladin.png",
-      "GetMeowth’s Murloc Paladin.png",
-      "Sipiwi94’s Aggro Paladin.png",
-      "Slizzle466’s Even Paladin.png"
+      {
+        "name": "Slizzle466’s Even Paladin",
+        "code": "AAEBAZ8FBpAQucECws4C4fACzfQC6/cCDNwD8gX0Bc8GrwexCJYJ9Q36DeoPhRD40gIA"
+      },
+      {
+        "name": "Sipiwi94’s Aggro Paladin",
+        "code": "AAEBAZ8FAoUQucECDkanBfIFrwexCPUN+g3qD+0PyRa4xwLjywL40gLR4QIA"
+      },
+      {
+        "name": "chai’s Secret Paladin",
+        "code": "AAEBAZ8FCIwB9w36DusPnhDYFIQXucECC8gEpwXyBbEI9Q2MDuoP7Q+mFePLAvjSAgA="
+      },
+      {
+        "name": "GetMeowth’s Murloc Paladin",
+        "code": "AAEBAZ8FBOAF+g6EF7nBAg3bA6cF8gWnCLEI6g/tD9OqAtO8Ap3CArHCAuPLAvjSAgA="
+      },
+      {
+        "name": "Aoierias’ Odd Paladin",
+        "code": "AAEBAZ8FBq8E2BSRvAKDxwLR4QKe+AIMRqIC1AX1BewP7Q/TE9muAv+vArjHAuPLArXmAgA="
+      }
+    ],
+    "Priest": [
+      {
+        "name": "Big Priest",
+        "code": "AAEBAa0GCPYCpQnTCpIPqKsChbgCt7sCws4CC9cK+hG3F6GsAtHBAuXMAubMArTOAvDPAujQAuPpAgA="
+      },
+      {
+        "name": "Haze’s Combo Priest",
+        "code": "AAEBAa0GArW7Ar7IAg74AuUE9gelCdEK0gryDPsM/g2PD/C7AtHBAtjBAs7MAgA="
+      },
+      {
+        "name": "Dragon Combo Priest",
+        "code": "AAEBAa0GAqUJtbsCDvgC5QTRCvIMjw/uEYkUgrUCursC8LsC0cEC2MECy+YC/OoCAA=="
+      },
+      {
+        "name": "Spiteful Dragon Priest",
+        "code": "AAEBAa0GBPoOhRfhvwLQ5wINCPIM7hHpEokUpBSCtQK6uwLwuwKZyALL5gL86gLX6wIA"
+      },
+      {
+        "name": "Eon’s Control Dragon Priest",
+        "code": "AAEBAa0GAtMKkNMCDooB5QTyDJIPiRS3F8cXgrUCtbsCursC0cEC38QCy+YCvfMCAA=="
+      },
+      {
+        "name": "Skylight’s Reno Priest",
+        "code": "AAEBAa0GHu0BlwLlBO0FuQakB/YHpQnSCtMK1grXCvIM+wySD9YR9xOWFMMWtxeIrwKStAKDuwK1uwLYuwLRwQLYwQLwzwLo0AKQ0wIAAA=="
+      }
+    ],
+    "Rogue": [
+      {
+        "name": "Goku’s Odd Rogue",
+        "code": "AAEBAaIHBq8E+g6eEJG8AoHCAp74AgyMAqICqAXUBd0I8xG6E5sVkrYC68IC0eECpu8CAA=="
+      },
+      {
+        "name": "XuwangShackdaddy’s Kingsbane Rogue",
+        "code": "AAEBAaIHBL0EqAiA0wK77wINxAHtAssDzQObBfgHhgmvEKnNArHOAuXRAtvjAt/jAgA="
+      }
+    ],
+    "Shaman": [
+      {
+        "name": "OfMonCala’s Al’Akir Even Shaman",
+        "code": "AAEBAaoIAiDN9AIO0wHZB/AH1Q/WD7IU96oC+6oCoLYCh7wC0bwC9r0ClugClO8CAA=="
+      },
+      {
+        "name": "Awedragon’s Totemcarver Even Shaman",
+        "code": "AAEBAaoIBPIFlL0CkcECzfQCDdMB2QfwB9YPkBCyFLUU+6oCoLYCh7wC0bwC9r0ClO8CAA=="
+      },
+      {
+        "name": "RenoJackson’s Even Shaman",
+        "code": "AAEBAaoIBL0B7QWUvQLN9AIN0wHyBdkH8AfWD7IU96oC+6oCoLYCh7wC0bwC9r0ClO8CAA=="
+      },
+      {
+        "name": "Control’s Aggro Shaman",
+        "code": "AAEBAaoIAoQXi+UCDu4B7wHgAvkD/wXgBvAH1Q/WD7IUyhb3qgKHvALRvAIA"
+      },
+      {
+        "name": "Jade Shaman",
+        "code": "AAEBAaoICLkN+g6FF+CsAqa8ApS9AqfuAu/3AguKAf4F+Af1D6C2Aoe8AtG8Ava9AsfBAt/EAsXzAgA="
+      },
+      {
+        "name": "Shudderwock Shaman",
+        "code": "AAEBAaoICoEE7QX+BfoO9Q/fxAKr5wLD6gKn7gLv9wIK9QSyBvsM0hOgtgL2vQLHwQKbywLz5wLv8QIA"
+      }
     ],
     "Warlock": [
-      "Dean’s Mountain Giant Cube Warlock.png",
-      "MrDollSteak’s Giant Warlock.png",
-      "Sipiwi94’s Cube Warlock.png",
-      "xcrouton’s Reno Warlock.png"
+      {
+        "name": "Sipiwi94’s Cube Warlock",
+        "code": "AAEBAf0GCKMBwg/grALJwgKX0wKd4gLb6QKc+AILkwT3BLYHjg7nywLy0AL40AKI0gKL4QL85QLo5wIA"
+      },
+      {
+        "name": "Dean’s Mountain Giant Cube Warlock",
+        "code": "AAEBAf0GCs4GuQ3CD9YR4KwCycICl9MCneIC2+kCnPgCCooBkwHhB97EAufLAvLQAvjQAovhAvzlAujnAgA="
+      },
+      {
+        "name": "MrDollSteak’s Giant Warlock",
+        "code": "AAEBAf0GBJMBwg+X0wKc+AINigGjAdMBtgfhB9wKjg6tELkR3hbnywLy0ALo5wIA"
+      },
+      {
+        "name": "xcrouton’s Reno Warlock",
+        "code": "AAEBAf0GHooBkwHyBdsGige2B+EHzAi5DYEOjg7CD/UPrRDWEcMWhRfgrALYuwKbwgLexALfxAKPxwLnywL3zQLy0AKX0wLo5wLD6gKc+AIAAA=="
+      }
     ],
     "Warrior": [
-      "Control’s Patron Warrior.png",
-      "Corbet’s Pirate Rush Warrior.png",
-      "Pirate Warrior.png",
-      "RenoJackson’s Fatigue Warrior.png"
+      {
+        "name": "Corbet’s Pirate Rush Warrior",
+        "code": "AAEBAQcGrwTyBYQXkbwCuuwCze8CDBz/A44FqAXuBucHjQ77D4KwAoiwAp3wApfzAgA="
+      },
+      {
+        "name": "Pirate Warrior",
+        "code": "AAEBAQcErwT6DoQXkbwCDRz/A44FqAXUBfIF7gbnB+8HjQ77D4KwAoiwAgA="
+      },
+      {
+        "name": "RenoJackson’s Fatigue Warrior",
+        "code": "AAEBAQcE/wewFYUXyucCDUuiBJEG+Af7DPgR38QCzM0Cjs4C8dMCz+cCt/ECm/MCAA=="
+      },
+      {
+        "name": "Control’s Patron Warrior",
+        "code": "AAEBAQcG0gL7DJAOhBfN7wLR9QIMFpAD1AT8BI4F8gWNDucRgq0CzM0CnfACm/MCAA=="
+      }
     ]
   },
   "wild-vs-data-reaper-report-10": {
-    "Mage": [
-      "Bananaramic’s Exodia Mage.png",
-      "Bananaramic’s N’Zoth Reno Mage.png",
-      "Spiral’s Aluneth Mage.png"
-    ],
     "Druid": [
-      "Awedragon’s Jade Druid.png",
-      "Awedragon’s Malygos Druid.png",
-      "Kohai’s Togwaggle Druid.png"
-    ],
-    "Rogue": [
-      "Carly’s Odd Rogue.png",
-      "MadCorvus’s Odd Rogue.png",
-      "Shackdaddy’s Kingsbane Rogue.png",
-      "Slizzle466’s Face Collector Odd Rogue.png"
+      {
+        "name": "Awedragon’s Jade Druid",
+        "code": "AAEBAZICBK6rApS9ApnTAr/yAg1AX+QIig60uwLLvALdvgKgzQKHzgKU0gKY0gKe0gKE5gIA"
+      },
+      {
+        "name": "Awedragon’s Malygos Druid",
+        "code": "AAEBAZICCLQDkwTsFb6uAuC7ApnTAqPmApvoAgtAX9MD5AiKDugVoM0Ch84CmNICntICv/ICAA=="
+      },
+      {
+        "name": "Kohai’s Togwaggle Druid",
+        "code": "AAEBAZICBuwV4LsCysMCmdMC/esCmu4CDEBf/gHkCIoOoM0Ch84ClNICmNICntIChOYCv/ICAA=="
+      }
     ],
     "Hunter": [
-      "Applecat’s Kathrena Hunter.png",
-      "Dane’s Deathrattle Reno Hunter.png",
-      "Jonahrah’s Spell Hunter.png"
+      {
+        "name": "Applecat’s Kathrena Hunter",
+        "code": "AAEBAR8E+Aj6DobTArbqAg2eAbUDhwTyBe0J/gz3DfixAsS0At3SAt/SAuPSAvLxAgA="
+      },
+      {
+        "name": "Jonahrah’s Spell Hunter",
+        "code": "AAEBAR8GhwTJBKirAoW4AobTAtzuAgyNAagCtQOXCNsJ/gzUEfixAt3SAt/SAuPSAuHjAgA="
+      },
+      {
+        "name": "Dane’s Deathrattle Reno Hunter",
+        "code": "AAEBAR8ejQG1A4cE3gWAB5cI2wn+DLkN9w2BDscP2w+QENQRyhTLFMMW4KwCycIC38QCnM0C080Cxs4C39IChtMCi+EC4eMC6uYCgPMCAAA="
+      }
     ],
-    "Priest": [
-      "Big Priest.png",
-      "DannyDonuts’ Midrange Dragon Priest.png",
-      "Haze’s Combo Priest.png",
-      "Kripparrian’s Mind Blast Quest Priest.png",
-      "Sipiwi94’s Combo Reno Priest.png",
-      "Spiteful Dragon Priest.png"
-    ],
-    "Shaman": [
-      "Alice’s Reno Shudderwock Shaman.png",
-      "Control’s Aggro Shaman.png",
-      "Eregost’s Shudderwock Jade Shaman.png",
-      "Shuku’s Even Shaman.png",
-      "Zalae’s Even Shaman.png"
+    "Mage": [
+      {
+        "name": "Spiral’s Aluneth Mage",
+        "code": "AAEBAf0EAsABotMCDnG7ApUDqwSWBewF9w26Fte2Auu6Aoe9AsHBApjEAo/TAgA="
+      },
+      {
+        "name": "Bananaramic’s N’Zoth Reno Mage",
+        "code": "AAEBAf0EHk2KAcABuwLQAskDqwTeBewHuQ33Df4NgQ78D8MWhRfgrALpugLYuwLZuwLexALfxAKWxwKb0wLV4QLX4QLD6gLO7wK38QLF8wIAAA=="
+      },
+      {
+        "name": "Bananaramic’s Exodia Mage",
+        "code": "AAEBAf0EBq4DuAjWEbnRAs7vAqbwAgyKAcABnALJA6sEywTmBO0E+Af3DdrFApbkAgA="
+      }
     ],
     "Paladin": [
-      "Aggro Paladin.png",
-      "Aoierias’ Odd Paladin.png",
-      "GetMeowth’s Murloc Paladin.png",
-      "Hail’s Secret Paladin.png",
-      "Slizzle466’s Odd Paladin.png",
-      "Zalae’s Odd Paladin.png"
+      {
+        "name": "Aoierias’ Odd Paladin",
+        "code": "AAEBAZ8FBK8E+g7YFJ74Ag3ZDYwO7A/tD8cT0xPZrgL/rwK4xwLjywL70wLR4QK15gIA"
+      },
+      {
+        "name": "Slizzle466’s Odd Paladin",
+        "code": "AAEBAZ8FBq8E2BSRvAKDxwLR4QKe+AIMRqgF1AX1BewP7Q/TE9muAv+vArjHAuPLArXmAgA="
+      },
+      {
+        "name": "Zalae’s Odd Paladin",
+        "code": "AAEBAZ8FAvoOnvgCDvkK7A/tD9MT/68C68ICg8cCuMcC48sC+9MC0eEC1uUCteYC/eoCAA=="
+      },
+      {
+        "name": "Aggro Paladin",
+        "code": "AAEBAZ8FAtmuArnBAg5GpwXyBa8HsQj1DfoN6g/tD8kWuMcC48sC+NIC0eECAA=="
+      },
+      {
+        "name": "Hail’s Secret Paladin",
+        "code": "AAEBAZ8FBPoOnhDYFLnBAg2MAZ4ByATyBfUNjA7qD+0PphXJFtmuAuPLAq3yAgA="
+      },
+      {
+        "name": "GetMeowth’s Murloc Paladin",
+        "code": "AAEBAZ8FBOAF+g6EF7nBAg3bA6cF8gWnCLEI6g/tD9OqAtO8Ap3CArHCAuPLAvjSAgA="
+      }
+    ],
+    "Priest": [
+      {
+        "name": "Big Priest",
+        "code": "AAEBAa0GCPYCpQnTCpIPqKsChbgCt7sCws4CC9cK+hG3F6GsAtHBAuXMAubMArTOAvDPAujQAuPpAgA="
+      },
+      {
+        "name": "Sipiwi94’s Combo Reno Priest",
+        "code": "AAEBAa0GHu0B+wGXAuUE7QW5BqQH9gelCdIK0wrWCtcK8gz7DJIP1hH3E5YUwxa3F5K0AoO7ArW7Ati7AsPBAtHBAvDPAujQApDTAgAA"
+      },
+      {
+        "name": "Spiteful Dragon Priest",
+        "code": "AAEBAa0GAvoOhRcOCPIM7hHpEokUpBSCtQK6uwLwuwKZyALL5gLQ5wL86gLX6wIA"
+      },
+      {
+        "name": "DannyDonuts’ Midrange Dragon Priest",
+        "code": "AAEBAa0GBNMK1wrfxAKQ0wIN5QT2B/IM+wzpEokUgrUCursC6r8C0cEC6NACy+YCvfMCAA=="
+      },
+      {
+        "name": "Haze’s Combo Priest",
+        "code": "AAEBAa0GAA/4AuUE9gelCdEK0gryDPsM/g2PD7W7AvC7AtHBAtjBAs7MAgA="
+      },
+      {
+        "name": "Kripparrian’s Mind Blast Quest Priest",
+        "code": "AAEBAa0GBgmKAe0F1hGWxAKf6wIM+wGXApwCoQT4B/wPsbACw8EC0cEC8M8C6NACqeICAA=="
+      }
+    ],
+    "Rogue": [
+      {
+        "name": "Shackdaddy’s Kingsbane Rogue",
+        "code": "AAEBAaIHBL0EqAiA0wK77wINxAHtAssDzQObBfgHhgmvEKnNArHOAuXRAtvjAt/jAgA="
+      },
+      {
+        "name": "Slizzle466’s Face Collector Odd Rogue",
+        "code": "AAEBAaIHBq8EkbwCyssCi+UC7/MCnvgCDIwCywOoBdQF3Qi6E5sVkrYCgcIC68IC0eECpu8CAA=="
+      },
+      {
+        "name": "Carly’s Odd Rogue",
+        "code": "AAEBAaIHBK8EkbwC0eECnvgCDYwCogKbBagF1AXdCPMRuhObFZK2AoHCAuvCAqbvAgA="
+      },
+      {
+        "name": "MadCorvus’s Odd Rogue",
+        "code": "AAEBAaIHCMsDrwSoBfoOnhCRvALKywKe+AILjALUBd0I8xG6E5sVkrYCyr8CgcIC68ICpu8CAA=="
+      }
+    ],
+    "Shaman": [
+      {
+        "name": "Zalae’s Even Shaman",
+        "code": "AAEBAaoIApS9As30Ag7TAfIF8Af1DdYPshT3qgL7qgKgtgKHvALRvAL2vQKU7wKw8AIA"
+      },
+      {
+        "name": "Shuku’s Even Shaman",
+        "code": "AAEBAaoIAtkHzfQCDtMB8AfWD7IU96oC+6oCjrYCoLYCh7wC0bwC9r0CtM0Cl84ClO8CAA=="
+      },
+      {
+        "name": "Eregost’s Shudderwock Jade Shaman",
+        "code": "AAEBAaoIBrkG+g6FF5S9AojoAu/3AgyBBPUE/gX1D5AVoLYC5rsCh7wCz7wC0bwC9r0Cx8ECAA=="
+      },
+      {
+        "name": "Alice’s Reno Shudderwock Shaman",
+        "code": "AAEBAaoIHvUE3gXtBf4F/wWyBvkM+wz6DvUP1hHSE7wUwxaEF6C2Ava9Avm/AsfBAt/EAp3HApvLArrSAqvnAvPnAsPqAuDqAqfuAu/xAu/3AgAA"
+      },
+      {
+        "name": "Control’s Aggro Shaman",
+        "code": "AAEBAaoIAoQXi+UCDu4B7wHgAvkD/wXgBvAH1Q/WD7IUyhb3qgKHvALRvAIA"
+      }
     ],
     "Warlock": [
-      "Corbett’s Even Warlock.png",
-      "Dean’s Reno Warlock.png",
-      "GetMeowth’s Cube Warlock.png",
-      "H1J0’s Reno Warlock.png",
-      "Kigo’s Zoo Warlock.png"
+      {
+        "name": "Corbett’s Even Warlock",
+        "code": "AAEBAf0GBPsH1hGX0wLN9AINigH7BrYH4QeNCNwKrRCprQLnywLx0AL90AKI0gLq5gIA"
+      },
+      {
+        "name": "GetMeowth’s Cube Warlock",
+        "code": "AAEBAf0GCrkN+g7CD9YR4KwCycICl9MCneIC2+kCnPgCCooB9wS2B44O58sC8tAC+NACiNICi+EC6OcCAA=="
+      },
+      {
+        "name": "H1J0’s Reno Warlock",
+        "code": "AAEBAf0GHooB2waSB7YHxAjMCP4Njg7CD/UPrRDWEf0RwxaFF+CsAti7At7EAt/EAo/HAufLAq7NAvfNAvLQApfTAujnAsPqAsXzAqf3Apz4AgAA"
+      },
+      {
+        "name": "Dean’s Reno Warlock",
+        "code": "AAEBAf0GHooB2waSB7YHxAjMCP4NgQ6ODsIPrRDWEf0RwxaFF+CsAti7At/EAufLAq7NAvfNAvHQAvLQAojSApfTAujnAsPqAsXzAqf3Apz4AgAA"
+      },
+      {
+        "name": "Kigo’s Zoo Warlock",
+        "code": "AAEBAf0GAvIF+g4OMPcEzgfCCPYIjg7wEf0RvxS8tgLHuwLJuwL3zQLx0AIA"
+      }
     ],
     "Warrior": [
-      "Control’s Patron Warrior.png",
-      "Dean’s Fatigue Control Warrior.png",
-      "Gunnolf’s Odd Quest Warrior.png",
-      "Pirate Warrior.png"
+      {
+        "name": "Dean’s Fatigue Control Warrior",
+        "code": "AAEBAQcE+AfoD7AVpOcCDUudApADogTUBJEG/wf7DPgRgq0CzM0Cjs4Cm/MCAA=="
+      },
+      {
+        "name": "Gunnolf’s Odd Quest Warrior",
+        "code": "AAEBAQcGqgbTwwLPxwLK5wKa7gKe+AIMS6IE/AT/B/sM/g2BDsQVzhabwgKixwKq7AIA"
+      },
+      {
+        "name": "Control’s Patron Warrior",
+        "code": "AAEBAQcG0gL7DJAOhBfN7wLR9QIMFpAD1AT8BI4F8gWNDucRgq0CzM0CnfACm/MCAA=="
+      },
+      {
+        "name": "Pirate Warrior",
+        "code": "AAEBAQcErwT6DoQXkbwCDRz/A44FqAXUBfIF7gbnB+8HjQ77D4KwAoiwAgA="
+      }
     ]
   },
   "wild-vs-data-reaper-report-11": {
-    "Mage": [
-      "Bananaramic’s Exodia Mage.png",
-      "Bananaramic’s Reno Mage.png",
-      "Sipiwi’s Aluneth Freeze Mage.png",
-      "Spiral’s Aluneth Mage.png"
-    ],
     "Druid": [
-      "Awedragon’s Malygos Druid.png",
-      "Dean’s Togwaggle Druid.png",
-      "xxFroBro45’s Jade Druid.png"
-    ],
-    "Rogue": [
-      "Bananaramic’s Odd Rogue.png",
-      "Dean’s Odd Rogue.png",
-      "Shackdaddy’s Kingsbane Rogue.png"
+      {
+        "name": "xxFroBro45’s Jade Druid",
+        "code": "AAEBAZICBMQGrqsClL0CmdMCDUBf5AiKDrS7Asu8At2+AqDNAofOApTSApjSAp7SAoTmAgA="
+      },
+      {
+        "name": "Dean’s Togwaggle Druid",
+        "code": "AAEBAZICBpAH7BXguwKZ0wL96wKa7gIMQF/EBuQIig6gzQKHzgKU0gKY0gKe0gKE5gK/8gIA"
+      },
+      {
+        "name": "Awedragon’s Malygos Druid",
+        "code": "AAEBAZICCLQDkwTsFb6uAuC7ApnTAqPmApvoAgtAX9MD5AiKDugVoM0Ch84CmNICntICv/ICAA=="
+      }
     ],
     "Hunter": [
-      "Applecat’s Kathrena Secret Hunter.png",
-      "Dane’s Reno Deathrattle Hunter.png",
-      "Duwinddk’s Recruit Hunter.png",
-      "OfMonCala’s Feugen and Stalagg Reno Hunter.png",
-      "Romulus’ Spell Hunter.png",
-      "Yuma9420’s Secret Hunter.png"
+      {
+        "name": "Applecat’s Kathrena Secret Hunter",
+        "code": "AAEBAR8E+Aj6DobTArbqAg2eAbUDhwTyBe0J/gz3DfixAsS0At3SAt/SAuPSAvLxAgA="
+      },
+      {
+        "name": "Yuma9420’s Secret Hunter",
+        "code": "AAEBAR8ErwT6DtEUhtMCDagCtQOHBMkE8gXbCf4M9w3UEfixAsS0At/SAuPSAgA="
+      },
+      {
+        "name": "Romulus’ Spell Hunter",
+        "code": "AAEBAR8MxwOHBIAHxQjbCairAumrAoW4At3SAobTAuHjAurjAgmoArUDyQSXCP4M1BH4sQLf0gLj0gIA"
+      },
+      {
+        "name": "OfMonCala’s Feugen and Stalagg Reno Hunter",
+        "code": "AAEBAR8eigGNAYoHlwj+DLkNgQ6EDoUOxw/8D9QRyhTLFM4UwxbgrAKGwwLKwwLexAKczQLTzQLd0gKG0wLh4wLD6gLc7gK38QKA8wLF8wIAAA=="
+      },
+      {
+        "name": "Dane’s Reno Deathrattle Hunter",
+        "code": "AAEBAR8ejQG1A4cE3gWAB5cI2wn+DLkN9w2BDscP2w+QENQRyhTLFMMW4KwCycIC38QCnM0C080Cxs4C39IChtMCi+EC4eMC6uYCgPMCAAA="
+      },
+      {
+        "name": "Duwinddk’s Recruit Hunter",
+        "code": "AAEBAR8K9gLyBfgI+g7fxALCzgKG0wLn4QK26gKA8wIK1BHGwgLrwgLKwwKczQLTzQLd0gLh4wLt6gLy8QIA"
+      }
     ],
-    "Priest": [
-      "Big Priest.png",
-      "DannyDonuts’ Dragon Priest.png",
-      "Kripparrian’s Mind Blast Quest Priest.png",
-      "RenoJackson’s Inner Fire Priest.png",
-      "ShockiiGodx’s Big Priest.png",
-      "XxFroBro45xX’s Reno Priest.png"
-    ],
-    "Shaman": [
-      "Aggro Shaman.png",
-      "Carly’s Even Shaman.png",
-      "DannyDonut’s Lifedrinker Shudderwock Shaman.png",
-      "Dean’s Even Shaman.png",
-      "Eregost’s Jade Shudderwock Shaman.png",
-      "Tezzmizzet’s Reno Shudderwock Shaman.png"
+    "Mage": [
+      {
+        "name": "Spiral’s Aluneth Mage",
+        "code": "AAEBAf0EAsABotMCDnG7ApUDqwSWBewF9w26Fte2Auu6Aoe9AsHBApjEAo/TAgA="
+      },
+      {
+        "name": "Bananaramic’s Reno Mage",
+        "code": "AAEBAf0EHk2KAcAB0ALJA8sE7Af7DLkN9w3+DYEO/A/DFoUX4KwC6boC2LsC2bsC3sQC38QClscCm9MC1eEC1+ECw+oCvuwCzu8Ct/ECxfMCAAA="
+      },
+      {
+        "name": "Bananaramic’s Exodia Mage",
+        "code": "AAEBAf0ECE2uA+0EuAjWEbnRAs7vAqbwAguKAcABnALJA6sEywTmBPgH9w3axQKW5AIA"
+      },
+      {
+        "name": "Sipiwi’s Aluneth Freeze Mage",
+        "code": "AAEBAf0EBuYE7QXWEYisAsHBAqLTAgyKAawBwAG7AqsEywSWBfsM9w26Fte2Ao/TAgA="
+      }
     ],
     "Paladin": [
-      "Bananaramic’s Aggro Paladin.png",
-      "GetMeowth’s Murloc Paladin.png",
-      "Hail’s Secret Paladin.png",
-      "Sinyaev’s Odd Paladin.png",
-      "Slizzle466’s Pirate Odd Paladin.png"
+      {
+        "name": "Sinyaev’s Odd Paladin",
+        "code": "AAEBAZ8FBqcF2BSbwgKDxwLR4QKe+AIMRqIC1AX1BewP7Q/TE9muAv+vArjHAuPLArXmAgA="
+      },
+      {
+        "name": "Slizzle466’s Pirate Odd Paladin",
+        "code": "AAEBAZ8FBK8E2a4CkbwCnvgCDUaoBdQF9QXsD+0P0xP/rwK4xwLjywLR4QK15gL96gIA"
+      },
+      {
+        "name": "Bananaramic’s Aggro Paladin",
+        "code": "AAEBAZ8FBtwD8gXJFtmuArnBAv3qAgxGpwWvB7EI9Q36DeoP7Q+4xwLjywL40gLR4QIA"
+      },
+      {
+        "name": "Hail’s Secret Paladin",
+        "code": "AAEBAZ8FBK8E+g7YFLnBAg2MAZ4ByAT0BfUN9w2MDuoP7Q/JFtmuAuPLAq3yAgA="
+      },
+      {
+        "name": "GetMeowth’s Murloc Paladin",
+        "code": "AAEBAZ8FBOAF+g6EF7nBAg3bA6cIsQjqD+0P06oC2a4CncICscIC48sC+NIC0eEC3oIDAA=="
+      }
+    ],
+    "Priest": [
+      {
+        "name": "Big Priest",
+        "code": "AAEBAa0GCPYCpQnTCpIPqKsChbgCt7sCws4CC9cK+hG3F6GsAtHBAuXMAubMArTOAvDPAujQAuPpAgA="
+      },
+      {
+        "name": "ShockiiGodx’s Big Priest",
+        "code": "AAEBAa0GCvYCpQmSD4gUqKsCt7sC6r8Cws4C6NACkNMCCtMK1wr6EbcX0cEC5cwC5swCtM4C8M8C4+kCAA=="
+      },
+      {
+        "name": "XxFroBro45xX’s Reno Priest",
+        "code": "AAEBAa0GHu0B+wGXAuUE7QW5BqQH9gelCdIK0wrWCtcK8gz7DJIP1hH3E5YUwxa3F5K0AoO7ArW7Ati7AsPBAtHBAvDPAujQApDTAgAA"
+      },
+      {
+        "name": "RenoJackson’s Inner Fire Priest",
+        "code": "AAEBAa0GAA/4AuUE0QryDP4Njw/uEYK1ArW7Arq7AtHBAtjBAujQAsvmAvzqAgA="
+      },
+      {
+        "name": "DannyDonuts’ Dragon Priest",
+        "code": "AAEBAa0GBNMK1wrfxAKQ0wIN5QT2B/IM+wzpEokUgrUCursC6r8C0cEC6NACy+YCvfMCAA=="
+      },
+      {
+        "name": "Kripparrian’s Mind Blast Quest Priest",
+        "code": "AAEBAa0GBgmKAe0F1hGWxAKf6wIM+wGXApwCoQT4B/wPsbACw8EC0cEC8M8C6NACqeICAA=="
+      }
+    ],
+    "Rogue": [
+      {
+        "name": "Bananaramic’s Odd Rogue",
+        "code": "AAEBAaIHCq8E3Qj6DtAVkbwCl8ECgcIC/eoCnvgCx/gCCowCqAXUBfMRuhObFZK2AuvCAtHhAqbvAgA="
+      },
+      {
+        "name": "Dean’s Odd Rogue",
+        "code": "AAEBAaIHBq8E+g6eENAVkbwCnvgCDIwCqAXUBd0I8xG6E5sVkrYCgcIC68IC0eECpu8CAA=="
+      },
+      {
+        "name": "Shackdaddy’s Kingsbane Rogue",
+        "code": "AAEBAaIHBKgIgBKA0wK77wINxAHtAssDzQObBfgHhgmvEKnNArHOAuXRAtvjAt/jAgA="
+      }
+    ],
+    "Shaman": [
+      {
+        "name": "DannyDonut’s Lifedrinker Shudderwock Shaman",
+        "code": "AAEBAaoICt4F/wX6DtPFAp3HApziAqvnAsPqAqfuAu/3AgqBBPUE/gWyBvsMl8ECx8ECm8sC8+cC7/ECAA=="
+      },
+      {
+        "name": "Tezzmizzet’s Reno Shudderwock Shaman",
+        "code": "AAEBAaoIHooB+wH5A4EE9QTtBf4Fsgb2B8IO+g71D/ER0hO8FMMWhBegtgL2vQL5vwLHwQLTxQKbywK60gLz5wLD6gKn7gL28AKn9wLv9wIAAA=="
+      },
+      {
+        "name": "Eregost’s Jade Shudderwock Shaman",
+        "code": "AAEBAaoIBrkG+g6FF5S9AojoAu/3AgyBBPUE/gX1D5AVoLYC5rsCh7wCz7wC0bwC9r0Cx8ECAA=="
+      },
+      {
+        "name": "Aggro Shaman",
+        "code": "AAEBAaoIAoQXi+UCDu4B7wHgAvkD/wXgBvAH1Q/WD7IUyhb3qgKHvALRvAIA"
+      },
+      {
+        "name": "Carly’s Even Shaman",
+        "code": "AAEBAaoIBPIFlL0Cws4CzfQCDdMB2QfwB9YPshS1FPeqAvuqAqC2Aoe8AtG8Ava9ApTvAgA="
+      },
+      {
+        "name": "Dean’s Even Shaman",
+        "code": "AAEBAaoIApS9As30Ag7TAdkH8Af1DdYPshS1FPeqAvuqAqC2Aoe8AtG8Ava9ApTvAgA="
+      }
     ],
     "Warlock": [
-      "Dean’s Reno Warlock.png",
-      "GetMeowth’s Cube Warlock.png",
-      "H1J0’s Reno Warlock.png",
-      "Jak’s Zoo Warlock.png",
-      "Jayden’s Zoo Warlock.png",
-      "V1sby’s Dollmaster Cube Warlock.png",
-      "XxFroBro45xX’s Even Warlock.png"
+      {
+        "name": "Jayden’s Zoo Warlock",
+        "code": "AAEBAf0GAq8EnOICDjCEAfcEzgbOB8IIjg7wEby2AvfNAp/OAvLQAtHhAofoAgA="
+      },
+      {
+        "name": "Jak’s Zoo Warlock",
+        "code": "AAEBAf0GAs4HhRcOMPIB9wTOBsII8BG/FM8WvLYCx7sC58EC8dAC8tAC2O4CAA=="
+      },
+      {
+        "name": "H1J0’s Reno Warlock",
+        "code": "AAEBAf0GHooB2waSB7YHxAjMCP4Njg7CD/UPrRDWEf0RwxaFF+CsAti7At7EAt/EAo/HAufLAq7NAvfNAvLQApfTAujnAsPqAsXzAqf3Apz4AgAA"
+      },
+      {
+        "name": "Dean’s Reno Warlock",
+        "code": "AAEBAf0GHooB2waSB7YHxAjMCP4NgQ6ODsIPrRDWEf0RwxaFF+CsAti7At/EAufLAq7NAvfNAvHQAvLQAojSApfTAujnAsPqAsXzAqf3Apz4AgAA"
+      },
+      {
+        "name": "V1sby’s Dollmaster Cube Warlock",
+        "code": "AAEBAf0GCJMEwg/grAKFuAKX0wLb6QLC8QKc+AILigGjAfcE3Aa2B44O58sC+NACi+EC6OcCxfMCAA=="
+      },
+      {
+        "name": "GetMeowth’s Cube Warlock",
+        "code": "AAEBAf0GCrkN+g7CD9YR4KwCycICl9MCneIC2+kCnPgCCooB9wS2B44O58sC8tAC+NACiNICi+EC6OcCAA=="
+      },
+      {
+        "name": "XxFroBro45xX’s Even Warlock",
+        "code": "AAEBAf0GCPIFigetEKmtAqDOApfTAr/xAs30AguKAfsGtgfhB40I3ArnywLx0AL90AKI0gLY5QIA"
+      }
     ],
     "Warrior": [
-      "Control’s Patron Warrior.png",
-      "Control’s Pirate Warrior.png",
-      "KeithNumber’s Recruit Warrior.png",
-      "パチンコおじさん’s Mill Warrior.png"
+      {
+        "name": "パチンコおじさん’s Mill Warrior",
+        "code": "AAEBAQcGkAONDoUXoM4C9s8Cn9MCDEuiBJEG+Af/B/sMgq0CzM0Cjs4C8dMCz+cCm/MCAA=="
+      },
+      {
+        "name": "KeithNumber’s Recruit Warrior",
+        "code": "AAEBAQcKFtIC9gL4EairAo7OAsLOAvbPAp/TAv3nAgpLogSRBv8HsgjGwgK5wwLMzQLq5wKb8wIA"
+      },
+      {
+        "name": "Control’s Pirate Warrior",
+        "code": "AAEBAQcGsAKvBPIFhBfRkQKRvAIMHP8DjgWoBdQF7gbnB+8HjQ77D4KwAoiwAgA="
+      },
+      {
+        "name": "Control’s Patron Warrior",
+        "code": "AAEBAQcG0gL7DJAOhBfN7wLR9QIMFpAD1AT8BI4F8gWNDucRgq0CzM0CnfACm/MCAA=="
+      }
     ]
-  }
+  },
+  "wild-vs-data-reaper-report-12": {}
 }

@@ -3,7 +3,7 @@
         <page-header title="Vicioussyndicate"></page-header>
         <div class="list">
             <router-link class="item" v-for="(value ,key) in obj" :key="key"
-                         :to="{path:'/VicioussyndicateDetails', query:{key:key,parentKey:parentKey}}">{{key}}
+                         :to="{path:'/VicioussyndicateDetails', query:{parent:key,gParent:parent}}">{{key}}
             </router-link>
         </div>
     </div>
@@ -20,8 +20,8 @@
         },
         data() {
             return {
-                parentKey: this.$route.query.key,
-                obj: dirs[this.$route.query.key]
+                parent: this.$route.query.parent,
+                obj: dirs[this.$route.query.parent]
             }
         },
         mounted: function () {
@@ -34,5 +34,5 @@
     }
 </script>
 
-<style scoped>
+<style lang="less" rel="stylesheet/less" scoped>
 </style>

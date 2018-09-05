@@ -3,17 +3,21 @@ const utils = require("./utils");
 const path = require("path");
 const constLib = require("../constLib");
 const storagePath = constLib.storagePath;
+let dir = require("../../static/storage/vicioussyndicate/dir.json");
 
 let mainIndex = 1;
 let hrefList = [];
+let rootName = "";
 let url = "";
 let mainDir = "";
 run();
 
 function run() {
     console.info(`开始执行${mainIndex}`);
-    url = `https://www.vicioussyndicate.com/wild-vs-data-reaper-report-${mainIndex}/`;
-    mainDir = path.join(storagePath, "vicioussyndicate", `wild-vs-data-reaper-report-${mainIndex}`);
+    rootName = `wild-vs-data-reaper-report-${mainIndex}`;
+    dir[rootName] = {};
+    url = `https://www.vicioussyndicate.com/${rootName}/`;
+    mainDir = path.join(storagePath, "vicioussyndicate", rootName);
     //请求主页
     utils.startRequest(url).then(($) => {
         const deckHrefList = $('.tag-analysis').children('.entry-content').children('ul').find("a");
@@ -29,12 +33,8 @@ function run() {
         } else {
             //请求到的页面没有我们想要的东西，默认视为404了，开始解析目录
             console.info(`未解析到数据，程序终止`);
-            let dirObj = {};
             const rootDir = path.join(storagePath, "vicioussyndicate");
-            //读取目录结构
-            utils.readDir(rootDir, dirObj);
-            //把目录结构写入json
-            utils.writeFile(path.join(rootDir, `dir.json`), JSON.stringify(dirObj)).then(() => {
+            utils.writeFile(path.join(rootDir, `dir.json`), JSON.stringify(dir)).then(() => {
                 console.info(`dir写入成功`);
             }).catch(err => {
                 console.error(err);
@@ -45,8 +45,12 @@ function run() {
     });
 }
 
-function writeImg(imgUrl, filePath) {
+function writeImg(imgUrl, filePath, name, occupation, code) {
     utils.writeFileFormUrl(imgUrl, filePath).then(() => {
+        if (!dir[rootName][occupation]) {
+            dir[rootName][occupation] = [];
+        }
+        dir[rootName][occupation].push({name: name, code: code});
         console.info(`${imgUrl}写入成功，剩余${hrefList.length}`);
         if (hrefList.length) {
             readChildPage()
@@ -72,7 +76,7 @@ function readChildPage() {
             const occupation = nameSplitArr[nameSplitArr.length - 1];
             const fileDir = path.join(mainDir, occupation);
             utils.makeDirs(fileDir).then(() => {
-                writeImg(imgUrl, path.join(fileDir, `${name}.png`));
+                writeImg(imgUrl, path.join(fileDir, `${name}.png`), name, occupation, code);
             }).catch(err => {
                 console.error(err);
             });

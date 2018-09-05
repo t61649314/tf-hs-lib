@@ -2,7 +2,7 @@
     <div class="vicioussyndicate">
         <page-header title="Vicioussyndicate"></page-header>
         <div class="list">
-            <router-link class="item" v-for="(value ,key) in dirs" :key="key" :to="{path:'/VicioussyndicateList', query:{key:key}}">{{key}}
+            <router-link class="item" v-for="(value ,key) in dirs" :key="key" :to="{path:'/VicioussyndicateList', query:{parent:key}}">{{key}}
             </router-link>
         </div>
     </div>
@@ -32,5 +32,5 @@
     }
 </script>
 
-<style scoped>
+<style lang="less" rel="stylesheet/less" scoped>
 </style>

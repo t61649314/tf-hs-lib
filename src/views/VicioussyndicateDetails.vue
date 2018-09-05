@@ -1,10 +1,10 @@
 <template>
     <div class="vicioussyndicate">
         <page-header title="Vicioussyndicate"></page-header>
-        <div class="deck-list">
-            <div class="deck-item" v-for="(item, index)  in deckNameList" :key="index">
-                <img :src="require(`../../static/storage/vicioussyndicate/${parentKey}/${key}/${item}`)">
-                <div class="btn">复制卡组</div>
+        <div class="list">
+            <div class="deck-item" v-for="(value ,key) in obj" :key="key">
+                <img :src="require(`../../static/storage/vicioussyndicate/${gParent}/${parent}/${value.name}.png`)">
+                <div class="btn clipboard-btn" :data-clipboard-text="value.code">复制卡组</div>
             </div>
         </div>
     </div>
@@ -21,24 +21,18 @@
         },
         data() {
             return {
-                parentKey: this.$route.query.parentKey,
-                key: this.$route.query.key,
-                deckNameList: dirs[this.$route.query.parentKey][this.$route.query.key],
+                gParent: this.$route.query.gParent,
+                parent: this.$route.query.parent,
+                obj: dirs[this.$route.query.gParent][this.$route.query.parent],
             }
         },
-        mounted: function () {
-            this.init();
-        },
-        methods: {
-            init: function () {
-            }
-        }
+        methods: {}
     }
 </script>
 
-<style scoped>
+<style lang="less" rel="stylesheet/less" scoped>
     .deck-item {
-        padding: 25px 0 ;
+        padding: 25px 0;
         border: 1px solid #ddd;
         background-color: #fff;
     }

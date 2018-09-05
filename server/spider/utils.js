@@ -5,44 +5,6 @@ const cheerio = require('cheerio');
 const request = require('request');
 const _ = require("lodash");
 
-//获取Dir
-function readDir(rootPath, obj) {
-
-    const compare = function (string1, string2) {
-        if (string1.length < string2.length) {
-            return -1;
-        } else if (string1.length > string2.length) {
-            return 1;
-        }
-        for (let i = 0; i < string1.length; i++) {
-            let val1 = string1[i];
-            let val2 = string2[i];
-            if (val1 < val2) {
-                return -1;
-            } else if (val1 > val2) {
-                return 1;
-            }
-        }
-        return 0;
-    };
-    const childArr = fs.readdirSync(rootPath).sort(compare);
-    childArr.forEach((ele, index) => {
-        const childPath = path.join(rootPath, ele);
-        const childStat = fs.statSync(childPath);
-        if (childStat.isDirectory()) {
-            const pChildArr = fs.readdirSync(childPath);
-            const pChildStat = fs.statSync(path.join(childPath, pChildArr[0]));
-            if (pChildStat.isDirectory()) {
-                obj[ele] = {};
-                readDir(childPath, obj[ele]);
-            } else {
-                obj[ele] = pChildArr;
-            }
-        }
-    });
-}
-
-
 //请求url并写到文件
 function writeFileFormUrl(reqUrl, fileUrl) {
     const reqUrlSplit = reqUrl.split("/");
@@ -129,7 +91,6 @@ function makeDirs(dirpath, mode) {
 
 module.exports = {
     writeFileFormUrl,
-    readDir,
     writeFile,
     startRequest,
     makeDirs
