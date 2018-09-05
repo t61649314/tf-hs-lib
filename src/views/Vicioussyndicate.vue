@@ -1,14 +1,16 @@
 <template>
     <div class="vicioussyndicate">
         <page-header title="Vicioussyndicate"></page-header>
-        <img :src="a.imgUrl"/>
-        {{b}}
+        <div class="list">
+            <router-link class="item" v-for="(value ,key) in dirs" :key="key" :to="{path:'/VicioussyndicateList', query:{key:key}}">{{key}}
+            </router-link>
+        </div>
     </div>
 </template>
 
 <script>
     import PageHeader from '../components/PageHeader.vue'
-    import a from '../../static/storage/vicioussyndicate/wild-vs-data-reaper-report-1/Druid/Innervate Egg Druid.json'
+    import dirs from '../../static/storage/vicioussyndicate/dir.json'
 
     export default {
         name: 'Vicioussyndicate',
@@ -17,8 +19,7 @@
         },
         data() {
             return {
-                a:a,
-                b:b
+                dirs: dirs
             }
         },
         mounted: function () {

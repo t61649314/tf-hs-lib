@@ -3,12 +3,14 @@
 import Vue from 'vue'
 import MintUI from 'mint-ui'
 import 'mint-ui/lib/style.css'
+import './assets/base.less'
 import App from './App'
 import router from './router'
 
 Vue.use(MintUI)
 Vue.config.productionTip = false
-
+window.addEventListener('touchstart', function () {
+});
 /* eslint-disable no-new */
 new Vue({
     el: '#app',

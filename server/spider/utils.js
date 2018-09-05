@@ -2,6 +2,7 @@ const https = require('https');
 const fs = require("fs");
 const path = require("path");
 const cheerio = require('cheerio');
+const request = require('request');
 const _ = require("lodash");
 
 //获取Dir
@@ -42,6 +43,26 @@ function readDir(rootPath, obj) {
 }
 
 
+//请求url并写到文件
+function writeFileFormUrl(reqUrl, fileUrl) {
+    const reqUrlSplit = reqUrl.split("/");
+    const replaceStr = reqUrlSplit[reqUrlSplit.length - 1];
+    reqUrl = reqUrl.replace(replaceStr, encodeURIComponent(replaceStr));
+    const readable = request(reqUrl);
+    const writable = fs.createWriteStream(fileUrl);
+    return new Promise(function (resolve, reject) {
+        request.head(reqUrl, function (err, res, body) {
+            if (err) {
+                reject(err);
+            }
+        });
+        readable.pipe(writable);
+        readable.on('end', () => {
+            resolve();
+        });
+    });
+}
+
 //写如文本信息到文件
 function writeFile(fileUrl, content) {
     return new Promise(function (resolve, reject) {
@@ -57,12 +78,7 @@ function writeFile(fileUrl, content) {
 
 //请求url并返回解析对象
 function startRequest(url) {
-    const timeoutPromise = new Promise(function (resolve, reject) {
-        setTimeout(() => {
-            reject("timeout")
-        }, 15000);
-    });
-    const requestPromise = new Promise(function (resolve, reject) {
+    return new Promise(function (resolve, reject) {
         if (_.startsWith(url, "//")) {
             url = "https:" + url;
         }
@@ -82,7 +98,6 @@ function startRequest(url) {
             reject(err);
         });
     });
-    return Promise.race([timeoutPromise, requestPromise]);
 }
 
 //创建目录
@@ -113,6 +128,7 @@ function makeDirs(dirpath, mode) {
 
 
 module.exports = {
+    writeFileFormUrl,
     readDir,
     writeFile,
     startRequest,
