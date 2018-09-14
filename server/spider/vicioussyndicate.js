@@ -5,7 +5,7 @@ const constLib = require("../constLib");
 const storagePath = constLib.storagePath;
 let dir = require("../../static/storage/vicioussyndicate/dir.json");
 
-let mainIndex = 1;
+let mainIndex = 12;
 let hrefList = [];
 let rootName = "";
 let url = "";
@@ -15,13 +15,13 @@ run();
 function run() {
     console.info(`开始执行${mainIndex}`);
     rootName = `wild-vs-data-reaper-report-${mainIndex}`;
-    dir[rootName] = {};
     url = `https://www.vicioussyndicate.com/${rootName}/`;
     mainDir = path.join(storagePath, "vicioussyndicate", rootName);
     //请求主页
     utils.startRequest(url).then(($) => {
         const deckHrefList = $('.tag-analysis').children('.entry-content').children('ul').find("a");
         if (deckHrefList.length) {
+            dir[rootName] = {};
             deckHrefList.each(function () {
                 const href = $(this).attr("href");
                 //请求href

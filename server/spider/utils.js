@@ -1,4 +1,5 @@
 const https = require('https');
+const http = require('http');
 const fs = require("fs");
 const path = require("path");
 const cheerio = require('cheerio');
@@ -39,12 +40,12 @@ function writeFile(fileUrl, content) {
 }
 
 //请求url并返回解析对象
-function startRequest(url) {
+function startRequest(url, isHttp) {
     return new Promise(function (resolve, reject) {
         if (_.startsWith(url, "//")) {
             url = "https:" + url;
         }
-        https.get(url, (res) => {
+        (isHttp ? http : https).get(url, (res) => {
             let html = '';
             res.setEncoding('utf-8'); //防止中文乱码
             //监听data事件，每次取一块数据
