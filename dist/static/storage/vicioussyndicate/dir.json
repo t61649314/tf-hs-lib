@@ -2021,5 +2021,188 @@
       }
     ]
   },
-  "wild-vs-data-reaper-report-12": {}
+  "wild-vs-data-reaper-report-12": {
+    "Druid": [
+      {
+        "name": "H1J0’s Togwaggle Druid",
+        "code": "AAEBAZICCP4B7BW+rgLguwKZ0wL96wKa7gL1/AILQF+KAeQIy7wCoM0CmNICntICv/IC4vgCjPsCAA=="
+      },
+      {
+        "name": "H1J0’s Jade Druid",
+        "code": "AAEBAZICBFauqwK0uwKZ0wINQF/EBuQIig7LvAKgzQKHzgKU0gKY0gKe0gKE5gK/8gIA"
+      },
+      {
+        "name": "XxFroBro45xX’s Aligner Druid",
+        "code": "AAEBAZICCOkB7BWFF6G3AuC7ApnTAqbwAvX8AgtAX7oB5AigzQKY0gKe0gK/8gKP9gKM+wKrgAMA"
+      }
+    ],
+    "Hunter": [
+      {
+        "name": "Atlas’ Secret Hunter",
+        "code": ""
+      },
+      {
+        "name": "성성’s Mech Hunter",
+        "code": "AAEBAR8C3A+ggAMOlA/gD4UQjhCQEOL1Apn3Arn4ApH7Apj7Avb9Atf+AomAA8yBAwA="
+      },
+      {
+        "name": "Aoierias’ Mech Hunter",
+        "code": "AAEBAR8AD5QP2w/gD4QQhRCOEKX1AuD1AuL1Apn3Apj7Avb9Atf+AomAA8yBAwA="
+      },
+      {
+        "name": "MrDollsteak’s Spell Hunter",
+        "code": "AAEBAR8GhwTJBKirAoW4AobTAuHjAgyNAagCtQOXCNsJ/gzUEfixAt3SAt/SAuPSAof7AgA="
+      },
+      {
+        "name": "Jonahrah’s Egg Hunter",
+        "code": "AAEBAR8G+AjbD4bTArbqAsvsAoDzAgyXCPoNxw+rwgLYwgKczQLd0gKL4QLh4wLy8QK5+ALi+AIA"
+      }
+    ],
+    "Mage": [
+      {
+        "name": "BUTTSTUFF420’s Aluneth Mage",
+        "code": "AAEBAf0EBsABiQ66Ftm7AqLTAqeCAwxxngG7ApUDlgXsBde2Auu6Aoe9AsHBApjEAo/TAgA="
+      },
+      {
+        "name": "L0adSTar’s Aluneth Mage",
+        "code": "AAEBAf0EBHH6DqLTAu72Ag2sAbsClQPmBJYF7AX3DboW17YC2bsCh70CwcECj9MCAA=="
+      },
+      {
+        "name": "Eileen’s Mech Mage",
+        "code": "AAEBAf0EBq8Evwj6DqLTAsvsAqCAAwyID44PlA+FEJAQ/eoCzu8Cn/UCpfUCmPsC1/4CzIEDAA=="
+      },
+      {
+        "name": "Bananaramic’s Combo Reno Mage",
+        "code": "AAEBAf0EHk2KAcABtAPJA6sEywSWBe0F7Af2B7gI+wz3DfwP1hGMFMMWhReNrALYuwKYxALfxAKb0wLD6gLN6wK+7ALG+ALi+AK5/wIAAA=="
+      },
+      {
+        "name": "Eon’s Exodia Mage",
+        "code": "AAEBAf0EBq4D+Ae4CNYRudECpvACDIoBwAGcAskDqwTLBOYE7QT3DdrFApbkArT8AgA="
+      }
+    ],
+    "Paladin": [
+      {
+        "name": "Eileen_nico’s Odd Paladin",
+        "code": "AAEBAZ8FBq8EthORvAKDxwL96gKe+AIMogKnBdQF7A/tD9MT2a4C/68CuMcC48sC+9MCteYCAA=="
+      },
+      {
+        "name": "GetMeowth’s Odd Paladin",
+        "code": "AAEBAZ8FBEb6DoPHAp74Ag3sD+0P0xP/rwLrwgK4xwLjywLR4QLW5QK15gL96gLi+ALW/gIA"
+      },
+      {
+        "name": "Bananaramic’s Aggro Paladin",
+        "code": "AAEBAZ8FBtwD8gXJFtmuArnBAv3qAgxGpwWvB7EI9Q36DeoP7Q+4xwLjywL40gLR4QIA"
+      },
+      {
+        "name": "Applecat’s Mech Paladin",
+        "code": "AAEBAZ8FBPoOucEC8f4CoIADDYwB9w2MDpQP6g/tD5AQ2a4C48sC+NIC1v4C4f4CzIEDAA=="
+      },
+      {
+        "name": "Gunnolf’s Mech Secret Paladin",
+        "code": "AAEBAZ8FBvcN+g7YFLnBAqCAA8yBAwzIBIoG9Q2MDpQP6g/tD5AQ48sC+NIC1uUCrfICAA=="
+      },
+      {
+        "name": "GetMeowth’s Murloc Paladin",
+        "code": "AAEBAZ8FBMUD4AWEF7nBAg3bA+MFpwj1DeoPjhDSFtOqAp3CArHCAuPLAvz8At6CAwA="
+      }
+    ],
+    "Priest": [
+      {
+        "name": "Big Priest",
+        "code": "AAEBAa0GCPYCpQnTCpIPqKsChbgCt7sCws4CC9cK+hG3F6GsAtHBAuXMAubMArTOAvDPAujQAuPpAgA="
+      },
+      {
+        "name": "Tezzmizzet’s Dragon Reno Priest",
+        "code": "AAEBAa0GHpAC5QTtBbkG0wrXCvIM/g2SD4kUwxaFF7cXxxeCtQKDuwK1uwK6uwLYuwLqvwLRwQLfxALJxwLwzwLo0AKQ0wLL5gLD6gL86gK98wIAAA=="
+      },
+      {
+        "name": "RenoJackson’s Dragon Combo Priest",
+        "code": "AAEBAa0GAA/4AuUE0QryDP4Njw/uEYK1ArW7Arq7AtHBAtjBAujQAsvmAvzqAgA="
+      }
+    ],
+    "Rogue": [
+      {
+        "name": "Flugel11775’s Odd Rogue",
+        "code": "AAEBAaIHCK8E+g7zEZG8AtHhAp74AuL4Auf6AguMAssD1AXdCLoTmxXQFZK2AoHCAuvCAqbvAgA="
+      },
+      {
+        "name": "H1J0’s Odd Rogue",
+        "code": "AAEBAaIHBq8E+g6eEJG8AoHCAp74AgyMAqICqAXUBfMRuhObFdAVkrYCoL0C0eECpu8CAA=="
+      },
+      {
+        "name": "Aoierias’ Kingsbane Rogue",
+        "code": "AAEBAaIHBKgIgBKA0wK77wINxAHtAssDzQObBfgHhgmvEKnNArHOAuXRAtvjAt/jAgA="
+      },
+      {
+        "name": "Dane’s Big Rogue",
+        "code": "AAEBAaIHCvYCuQ2CDqIQqKsChbgCycICws4Cz+EC7PwCCrQBzQObBYgHhgnl0QLn4QLQ4wLw5gLe+gIA"
+      },
+      {
+        "name": "Jonahrah’s Quest Rogue",
+        "code": "AAEBAaIHBIbCAoDTAs/hAsPqAg3EAe0CnwObBdQF+AeGCY0Q+L0Cl8EC/MEC9uwC4vgCAA=="
+      }
+    ],
+    "Shaman": [
+      {
+        "name": "Gorky’s Even Shaman",
+        "code": "AAEBAaoIBLUUlL0Cws4CzfQCDdMB2QfwB9YPshT3qgL7qgKgtgKHvALRvAL2vQKU7wKP+wIA"
+      },
+      {
+        "name": "Awedragon’s Even Shaman",
+        "code": "AAEBAaoIBNkHlL0Cws4CzfQCDdMB8AfWD7IUtRT3qgL7qgKgtgKHvALRvAL2vQKU7wKw8AIA"
+      },
+      {
+        "name": "mtgsquirrel’s Shudderwock Shaman",
+        "code": "AAEBAaoICu0F+g71D6vnAsPqAqfuAu/xArP3Au/3Apn7Agr1BP4Fsgb7DKC2ApfBAsfBAt/EApvLAvPnAgA="
+      },
+      {
+        "name": "Reno Shudderwock Shaman",
+        "code": "AAEBAaoIHooB+wH5A4EE9QTtBf4Fsgb2B8IO+g71D/ER0hO8FMMWhBegtgL2vQL5vwLHwQLTxQKbywLz5wLD6gKn7gKn9wLv9wLi+AKZ+wIAAA=="
+      }
+    ],
+    "Warlock": [
+      {
+        "name": "H1J0’s Reno Warlock",
+        "code": "AAEBAf0GHooB2waSB7YHxAjMCP4Njg7CD/UPrRDWEf0RwxaFF9i7At7EAt/EAo/HAufLAq7NAvfNAvLQApfTAujnAsPqAqf3Apz4AuL4AoCKAwAA"
+      },
+      {
+        "name": "Dean’s Reno Warlock",
+        "code": "AAEBAf0GHooB2waSB7YHzAi5Df4Njg7CD60Q/RHDFoUX4KwC2LsC3sQC38QC08UCj8cC58sCrs0C980C8tACl9MC6OcCw+oCxfMCnPgC4vgCgIoDAAA="
+      },
+      {
+        "name": "H1J0’s Mecha’thun Reno Warlock",
+        "code": "AAEBAf0GHooB2waSB7YHxAjMCI4Owg/1D60Q1hH9EcMWhRfYuwLexALfxAKPxwKQxwLnywL3zQLy0AKX0wLo5wLO6QKc+ALi+ALx+wKPggOAigMAAA=="
+      },
+      {
+        "name": "GetMeowth’s Demon Zoo Warlock",
+        "code": "AAEBAf0GAv3qAo+CAw4w9wTOB8II8BG/FNSzAry2Ase7Asm7AvHQAvLQAvT3AsP9AgA="
+      },
+      {
+        "name": "GetMeowth’s Bloodbloom Zoo Warlock",
+        "code": "AAEBAf0GArf9Ao+CAw4w9wTOB8IIwQ/wEb8UvLYCybsCkMcC8dAC8tAC/dAC29MCAA=="
+      },
+      {
+        "name": "Spiral’s Even Warlock",
+        "code": "AAEBAf0GAo0IzfQCDooBkwH7BrYH4QfcCq0Qqa0C38QC58sC8dAC/dACiNIC2OUCAA=="
+      },
+      {
+        "name": "MrDollSteak’s Mecha’thun Warlock",
+        "code": "AAEBAf0GCNwGwg/WEZ3HApfTAs7pApz4AvH7AguKAaMBxAiODq0Q/RHexAKQxwLnywLy0ALo5wIA"
+      }
+    ],
+    "Warrior": [
+      {
+        "name": "Awedragon’s Control Warrior",
+        "code": "AAEBAQcGkAf7DPgR4KwCxfMCkvgCDEuiBJEG/g2BDsbDAt/EAszNAs/nApvzAvT1AoP7AgA="
+      },
+      {
+        "name": "RenoJackson’s DMH Fatigue Warrior",
+        "code": "AAEBAQcE/weFF5/TApL4Ag1LogSRBvgH+wz4Ed/EAszNAo7OAvHTAs/nArfxApvzAgA="
+      },
+      {
+        "name": "Pirate Warrior",
+        "code": "AAEBAQcGsAKvBPIFhBfRkQKRvAIMHP8DjgWoBdQF7gbnB+8HjQ77D4KwAoiwAgA="
+      }
+    ]
+  }
 }
