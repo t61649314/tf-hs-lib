@@ -1,6 +1,6 @@
 {
   "name": "my-h5-page",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "A Vue.js project",
   "author": "田放 <tianfanga@zbj.com>",
   "private": true,
@@ -17,6 +17,7 @@
     "less-loader": "^4.1.0",
     "lodash": "^4.17.10",
     "mint-ui": "^2.2.13",
+    "normalize.css": "^8.0.0",
     "vue": "^2.5.2",
     "vue-router": "^3.0.1"
   },

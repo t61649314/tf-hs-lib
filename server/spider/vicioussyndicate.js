@@ -5,7 +5,7 @@ const constLib = require("../constLib");
 const storagePath = constLib.storagePath;
 let dir = require("../../static/storage/vicioussyndicate/dir.json");
 
-let mainIndex = 12;
+let mainIndex = 13;
 let hrefList = [];
 let rootName = "";
 let url = "";

@@ -1,46 +1,46 @@
 <template>
-    <div class="page-header">
-        <i v-if="!noBack" class="mintui mintui-back" @click="goBack"></i>
-        <h1>{{ title }}</h1>
-    </div>
+  <div class="page-header">
+    <i v-if="!noBack" class="mintui mintui-back" @click="goBack"></i>
+    <h1>{{ title }}</h1>
+  </div>
 </template>
 
 <script>
-    export default {
-        name: 'PageHeader',
-        props: ['title', 'noBack'],
-        data() {
-            return {}
-        },
-        methods: {
-            goBack() {
-                window.history.length > 1
-                    ? this.$router.go(-1)
-                    : this.$router.push('/')
-            }
-        }
+  export default {
+    name: 'PageHeader',
+    props: ['title', 'noBack'],
+    data() {
+      return {}
+    },
+    methods: {
+      goBack() {
+        window.history.length > 1
+          ? this.$router.go(-1)
+          : this.$router.push('/')
+      }
     }
+  }
 </script>
 <style lang="less" rel="stylesheet/less" scoped>
-    .page-header {
-        height: 60px;
-        z-index: 1;
-        background-color: #fff;
-        h1 {
-            font-size: 20px;
-            line-height: 60px;
-            margin: 0;
-        }
-        .mintui-back {
-            display: inline-block;
-            top: 10px;
-            left: 10px;
-            position: absolute;
-            width: 40px;
-            height: 40px;
-            font-size: 24px;
-            line-height: 40px;
-            text-align: center;
-        }
+  .page-header {
+    height: 1.2rem;
+    z-index: 1;
+    background-color: #fff;
+    h1 {
+      font-size: 0.4rem;
+      line-height: 1.2rem;
+      margin: 0;
     }
+    .mintui-back {
+      display: inline-block;
+      top: 0.2rem;
+      left: 0.2rem;
+      position: absolute;
+      width: 0.8rem;
+      height: 0.8rem;
+      font-size: 0.48rem;
+      line-height: 0.8rem;
+      text-align: center;
+    }
+  }
 </style>

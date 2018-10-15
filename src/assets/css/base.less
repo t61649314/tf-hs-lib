@@ -1,0 +1,82 @@
+.list {
+  position: absolute;
+  top: 1.2rem;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  overflow-y: scroll;
+  width: auto;
+  height: auto;
+  .item {
+    display: block;
+    border-bottom: 0.01rem solid #ddd;
+    padding: 0.32rem;
+    color: initial;
+    text-decoration: initial;
+    font-size: 0.32rem;
+    &:first-child {
+      border-top: 0.01rem solid #ddd;
+    }
+    &:after {
+      display: inline-block;
+      position: absolute;
+      right: 0.32rem;
+      content: "\E600";
+      font-family: "mintui" !important;
+      font-size: 0.32rem;
+      font-style: normal;
+      -webkit-font-smoothing: antialiased;
+      -webkit-text-stroke-width: 0.004rem;
+      -moz-osx-font-smoothing: grayscale;
+      transform: scaleX(-1);
+    }
+  }
+}
+
+.btn {
+  display: block;
+  width: 60%;
+  height: 0.8rem;
+  border-radius: 0.08rem;
+  background-color: #30b1ff;
+  margin: 0.3rem auto;
+  line-height: 0.8rem;
+  color: #fff;
+  position: relative;
+  border: none;
+  font-size: 0.28rem;
+  &:active:after {
+    opacity: 0.4;
+  }
+  &:after {
+    background-color: #000;
+    content: "";
+    opacity: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    position: absolute;
+  }
+}
+
+html, body {
+  //让滚动条产生滚动回弹的效果
+  -webkit-overflow-scrolling: touch;
+  //去除移动端长按选取，同时排除input
+  user-select: none;
+  input {
+    -webkit-user-select: auto;
+  }
+}
+
+//移除wk内核默认滚动条样式
+::-webkit-scrollbar {
+  display: none;
+}
+
+//1.去除android a/button/input标签被点击时产生的边框
+//2.去除ios a标签被点击时产生的半透明灰色背景
+a, button, input {
+  -webkit-tap-highlight-color: rgba(255, 0, 0, 0);
+}
