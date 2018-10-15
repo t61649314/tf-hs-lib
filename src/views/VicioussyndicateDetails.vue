@@ -39,4 +39,22 @@
       width: 4.38rem;
     }
   }
+
+  @media screen and (min-width: 960px) {
+    .list {
+      text-align: left;
+    }
+
+    .deck-item {
+      display: inline-block;
+      padding: 0.2rem;
+      box-sizing: border-box;
+      img {
+        width: 2rem;
+      }
+      button {
+        width: 2rem;
+      }
+    }
+  }
 </style>
