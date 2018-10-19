@@ -12,4 +12,4 @@ module.exports = class Deck {
   addCard(card) {
     this.cards.push(card);
   }
-}
+};

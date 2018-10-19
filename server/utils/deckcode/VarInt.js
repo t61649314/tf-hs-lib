@@ -30,4 +30,4 @@ module.exports = class VarInt {
 
     return $buffer.join("");
   }
-}
+};

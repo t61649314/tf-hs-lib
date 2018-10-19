@@ -1,5 +1,5 @@
 const VarInt = require("./VarInt");
-module.exports =class Deckcode {
+module.exports = class Deckcode {
 
   constructor() {
     this.DECKCODE_VERSION = 1
@@ -17,7 +17,7 @@ module.exports =class Deckcode {
 
     let $cards = this.sortCards(deck.cards);
 
-    Object.keys($cards).forEach(key=>{
+    Object.keys($cards).forEach(key => {
       $ints.push($cards[key].length);
       $cards[key].forEach($card => {
         $ints.push($card.id);
@@ -43,4 +43,4 @@ module.exports =class Deckcode {
     });
     return $by_count;
   }
-}
+};
