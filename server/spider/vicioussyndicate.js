@@ -3,7 +3,7 @@ const path = require("path");
 const storagePath = path.resolve(__dirname, '../../storage');
 const co = require('co');
 const tinify = require("tinify");
-tinify.key = "upqz0jZCom2GwqfFqqi9qu8MVovkKs6l";
+tinify.key = "f348cyVw8EYflrQ0esvr3IZ0xQwdsRBr";
 
 const occupationArr = ["Druid", "Hunter", "Mage", "Paladin", "Priest", "Rogue", "Shaman", "Warlock", "Warrior"];
 
@@ -67,7 +67,7 @@ class ViciousSyndicateSpider {
     let dir = {};
     let errorUrlArr = [];
     co(function* () {
-      for (let i = 4; ; i++) {
+      for (let i = 1; ; i++) {
         let itemName = `wild-vs-data-reaper-report-${i}`;
         dir[itemName] = {};
         let rootDir = path.join(storagePath, "vicious-syndicate");
@@ -107,7 +107,7 @@ class ViciousSyndicateSpider {
                 console.error(e);
                 console.error(`${deckInfo.name}.png写入失败`);
                 console.error(`imgUrl：${deckInfo.imgUrl}`);
-                errorUrlArr.push(deckInfo.imgUrl);
+                errorUrlArr.push({imgUrl: deckInfo.imgUrl, filePath: filePath});
               }
             }
             console.info(`该篇周报剩余：${hrefList.length - j - 1}`);

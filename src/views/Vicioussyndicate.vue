@@ -10,7 +10,7 @@
 
 <script>
     import PageHeader from '../components/PageHeader.vue'
-    import dirs from '../../static/storage/vicioussyndicate/dir.json'
+    import dirs from '../../storage/vicious-syndicate/dir.json'
 
     export default {
         name: 'Vicioussyndicate',
