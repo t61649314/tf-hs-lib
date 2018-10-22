@@ -14,7 +14,7 @@
   import dirs from '../../storage/vicious-syndicate/dir.json'
 
   export default {
-    name: 'Vicioussyndicate',
+    name: 'VicioussyndicateDetails',
     components: {
       PageHeader
     },

@@ -4,7 +4,7 @@ module.exports = class VarInt {
     let $buffer = [];
     numbers.forEach($num => {
       if ($num === 0) {
-        $buffer.push(String.fromCharCode(0));
+        $buffer.push(0);
       } else {
         let $bytes = [];
 
@@ -19,15 +19,11 @@ module.exports = class VarInt {
 
         $bytes[$bytes.length - 1] &= 0x7f;
 
-        let $bytesStr = "";
-        $bytes.forEach(item => {
-          $bytesStr += String.fromCharCode(item)
-        });
 
-        $buffer.push($bytesStr);
+        $buffer.push(...$bytes);
       }
     });
 
-    return $buffer.join("");
+    return $buffer;
   }
 };

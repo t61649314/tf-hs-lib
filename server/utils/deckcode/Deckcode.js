@@ -31,7 +31,6 @@ module.exports = class Deckcode {
     let $varint = new VarInt();
 
     let $raw = $varint.encode($ints);
-
     return new Buffer($raw).toString('base64');
   }
 

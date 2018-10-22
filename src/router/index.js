@@ -4,7 +4,9 @@ import Home from '@/views/Home'
 import Vicioussyndicate from '@/views/Vicioussyndicate'
 import VicioussyndicateList from '@/views/VicioussyndicateList'
 import VicioussyndicateDetails from '@/views/VicioussyndicateDetails'
-import Flex from '@/views/Flex'
+import Tempostorm from '@/views/Tempostorm'
+import TempostormList from '@/views/TempostormList'
+import TempostormDetails from '@/views/TempostormDetails'
 
 Vue.use(Router)
 
@@ -21,11 +23,6 @@ export default new Router({
       component: Vicioussyndicate
     },
     {
-      path: '/Flex',
-      name: 'Flex',
-      component: Flex
-    },
-    {
       path: '/VicioussyndicateList',
       name: 'VicioussyndicateList',
       component: VicioussyndicateList
@@ -34,6 +31,21 @@ export default new Router({
       path: '/VicioussyndicateDetails',
       name: 'VicioussyndicateDetails',
       component: VicioussyndicateDetails
+    },
+    {
+      path: '/Tempostorm',
+      name: 'Tempostorm',
+      component: Tempostorm
+    },
+    {
+      path: '/TempostormList',
+      name: 'TempostormList',
+      component: TempostormList
+    },
+    {
+      path: '/TempostormDetails',
+      name: 'TempostormDetails',
+      component: TempostormDetails
     }
   ]
 })

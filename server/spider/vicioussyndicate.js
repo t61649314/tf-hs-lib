@@ -1,11 +1,10 @@
 const utils = require("./utils");
+const Const = require("./const.js");
 const path = require("path");
 const storagePath = path.resolve(__dirname, '../../storage');
 const co = require('co');
 const tinify = require("tinify");
 tinify.key = "f348cyVw8EYflrQ0esvr3IZ0xQwdsRBr";
-
-const occupationArr = ["Druid", "Hunter", "Mage", "Paladin", "Priest", "Rogue", "Shaman", "Warlock", "Warrior"];
 
 class ViciousSyndicateSpider {
   readChildPage(url) {
@@ -18,7 +17,7 @@ class ViciousSyndicateSpider {
           const imgUrl = attachmentMediumDom.attr("data-cfsrc");
           const code = attachmentMediumDom.parent().parent().next().attr("data-clipboard-text");
           let occupation = "Other";
-          occupationArr.forEach(item => {
+          Object.keys(Const.occupationInfo).forEach(item => {
             if (name.indexOf(item) > -1) {
               occupation = item;
               return false;

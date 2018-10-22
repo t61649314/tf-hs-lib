@@ -1,10 +1,17 @@
 const _ = require("lodash");
 const utils = require("./utils");
 const path = require("path");
-const constLib = require("../constLib");
-const storagePath = constLib.storagePath;
+const Const = require("./const.js");
+const storagePath = path.resolve(__dirname, '../../storage');
 const getCountUrl = 'https://tempostorm.com/api/snapshots/count?where={"snapshotType":"wild","isActive":true}';
 const co = require('co');
+const Deckcode = require("../utils/deckcode/Deckcode");
+const Deck = require("../utils/deckcode/Deck");
+const Card = require("../utils/deckcode/Card");
+const Hero = require("../utils/deckcode/Hero");
+let dir = require("../../storage/tempo-storm/dir.json") || {};
+const FORMAT_WILD = 1;
+const FORMAT_STANDARD = 2;
 
 class TempoStormSpider {
   getCount() {
@@ -23,7 +30,7 @@ class TempoStormSpider {
       "fields": ["id", "snapshotType", "isActive", "publishDate"],
       "where": {
         "isActive": true,
-        "publishDate": {"lte": "2018-10-15T07:07:16.464Z"},
+        "publishDate": {"lte": new Date().toJSON()},
         "snapNum": page,
         "snapshotType": "wild"
       },
@@ -125,11 +132,14 @@ class TempoStormSpider {
     return new Promise((resolve, reject) => {
       utils.startRequest(encodeURI(getPageDateUrl), false, true).then(json => {
         deck.name = json.description;
+        deck.playerClass = json.playerClass;
         json.cards.forEach(item => {
           arr.push({
+            dbfId: item.card.dbfId,
             name: item.card.name,
             img: item.card.photoNames.small,
-            quantity: item.card.rarity === 'Legendary' ? 0 : item.cardQuantity,
+            quantity: item.cardQuantity,
+            rarity: item.card.rarity,//Legendary
             cost: item.card.cost
           });
         });
@@ -141,18 +151,50 @@ class TempoStormSpider {
     });
   }
 
+  getDeckcode(deck) {
+    let $deck = new Deck(FORMAT_WILD);
+    $deck.addHero(new Hero(Const.occupationInfo[deck.playerClass].dbfId));
+    deck.cards.forEach(item => {
+      $deck.addCard(new Card(item.dbfId, item.quantity));
+    });
+    let $dc = new Deckcode();
+    return $dc.getCodeFromDeck($deck);
+  }
+
   run() {
     let _this = this;
-    let dir = {};
+    let rootDir = path.join(storagePath, "tempo-storm");
     co(function* () {
+      console.info(`开始获取count`);
       let count = yield _this.getCount();
-      for (let i = 1; i <= count; i++) {
+      console.info(`获取count成功：${count}`);
+
+      for (let i = 20; i <= count; i++) {
+        console.info(`开始获取pageSlug`);
         let slug = yield _this.getPageSlug(i);
-        dir[``] = {};
+        console.info(`获取pageSlug成功：${slug}`);
+
+        const dirPageName = `tempo-storm-${slug}`;
+        dir[dirPageName] = {};
+
+        console.info(`开始获取deckSlugList`);
         let deckSlugList = yield _this.getDeckSlugList(slug);
+        console.info(`获取deckSlugList成功：${deckSlugList}`);
+
         for (let j = 0; j < deckSlugList.length; j++) {
+          console.info(`开始获取deck`);
           let deck = yield _this.getDeck(deckSlugList[j]);
+          console.info(`获取deck成功：${JSON.stringify(deck)}`);
+
+          //构建dir对象
+          if (!dir[dirPageName][deck.playerClass]) {
+            dir[dirPageName][deck.playerClass] = [];
+          }
+          deck.code = _this.getDeckcode(deck);
+          dir[dirPageName][deck.playerClass].push(deck);
         }
+        yield utils.makeDirs(rootDir);
+        yield utils.writeFile(path.join(rootDir, `dir.json`), JSON.stringify(dir));
       }
     });
   }

@@ -9,6 +9,7 @@ import App from './App'
 import router from './router'
 import './assets/lib/clipboard.min'
 import './assets/lib/flexible'
+import './assets/font/fontawesome-webfont.woff2'
 
 Vue.use(MintUI)
 Vue.config.productionTip = false

@@ -2,8 +2,8 @@
     <div class="home">
         <page-header title="Home" noBack="true"></page-header>
         <div class="list">
-            <router-link class="item" to="/Vicioussyndicate">vicioussyndicate</router-link>
-            <!--<router-link class="item" to="/Flex">Flex</router-link>-->
+            <router-link class="item" to="/Vicioussyndicate">ViciousSyndicate</router-link>
+            <router-link class="item" to="/Tempostorm">TempoStorm</router-link>
         </div>
     </div>
 </template>

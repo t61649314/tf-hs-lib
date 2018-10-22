@@ -1,6 +1,6 @@
 <template>
     <div class="vicioussyndicate">
-        <page-header title="Vicioussyndicate"></page-header>
+        <page-header title="Tempostorm"></page-header>
         <div class="list">
             <router-link class="item" v-for="(item) in Object.keys(dirs).reverse()" :key="item" :to="{path:'/VicioussyndicateList', query:{parent:item}}">{{item}}
             </router-link>
