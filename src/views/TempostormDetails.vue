@@ -45,10 +45,9 @@
     padding: 0.5rem 0;
     border-bottom: 0.01rem solid #ddd;
     background-color: #fff;
-    width: 6rem;
-    margin: auto;
     .deck-info-box {
-      width: 100%;
+      width: 4.5rem;
+      margin: auto;
       height: 0.8rem;
       background: #1b1b1b;
       color: #fff;
@@ -57,7 +56,8 @@
       font-weight: bold;
     }
     .card-box {
-      width: 100%;
+      width: 4.5rem;
+      margin: auto;
       .card-item {
         height: 0.5rem;
         line-height: 0.5rem;
