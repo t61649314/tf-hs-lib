@@ -1,4 +1,7 @@
 const VarInt = require("./VarInt");
+const Deck = require("./Deck");
+const Hero = require("./Hero");
+const Card = require("./Card");
 module.exports = class Deckcode {
 
   constructor() {
@@ -32,6 +35,62 @@ module.exports = class Deckcode {
 
     let $raw = $varint.encode($ints);
     return new Buffer($raw).toString('base64');
+  }
+
+  getDeckFromCode($code) {
+
+    let $varint = new VarInt();
+    let $data = $varint.decode($code);
+
+    if ($data[0] !== 0) {
+      throw new Error();
+    }
+
+    let $version = $data[1];
+    if ($version !== this.DECKCODE_VERSION) {
+      throw new Error("Unsupported version: {$version}");
+    }
+
+    let $format = $data[2];
+    let $deck = new Deck($format);
+
+    let $num_heroes = $data[3];
+
+    let $offset = 4;
+    for (let $i = 0; $i < $num_heroes; $i++) {
+      let $hero_id = $data[$offset];
+      $deck.addHero(new Hero($hero_id));
+      $offset++;
+    }
+
+    let $num_cards_x1 = $data[$offset];
+    $offset++;
+
+    for (let $i = 0; $i < $num_cards_x1; $i++) {
+      let $card_id = $data[$offset];
+      $deck.addCard(new Card($card_id, 1));
+      $offset++;
+    }
+
+    let $num_cards_x2 = $data[$offset];
+    $offset++;
+
+    for (let $i = 0; $i < $num_cards_x2; $i++) {
+      let $card_id = $data[$offset];
+      $deck.addCard(new Card($card_id, 2));
+      $offset++;
+    }
+
+    let $num_cards_xn = $data[$offset];
+    $offset++;
+
+    for (let $i = 0; $i < $num_cards_xn; $i++) {
+      let $card_id = $data[$offset];
+      let $count = $data[$offset + 1];
+      $deck.addCard(new Card($card_id, $count));
+      $offset += 2;
+    }
+    return $deck;
   }
 
   sortCards($cards) {

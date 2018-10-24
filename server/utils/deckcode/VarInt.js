@@ -26,4 +26,22 @@ module.exports = class VarInt {
 
     return $buffer;
   }
+
+  decode(code) {
+    let $shift = 0;
+    let $result = 0;
+    let $return = [];
+
+    new Buffer(code, 'base64').forEach($i => {
+      $result |= ($i & 0x7f) << $shift;
+      $shift += 7;
+      if (!($i & 0x80)) {
+        $return.push($result);
+        $result = 0;
+        $shift = 0;
+      }
+    });
+
+    return $return;
+  }
 };

@@ -1,5 +1,5 @@
 const _ = require("lodash");
-const utils = require("./utils");
+const utils = require("../utils/utils");
 const path = require("path");
 const Const = require("./const.js");
 const storagePath = path.resolve(__dirname, '../../storage');
@@ -9,9 +9,11 @@ const Deckcode = require("../utils/deckcode/Deckcode");
 const Deck = require("../utils/deckcode/Deck");
 const Card = require("../utils/deckcode/Card");
 const Hero = require("../utils/deckcode/Hero");
-let dir = require("../../storage/tempo-storm/dir.json") || {};
+const dir = require("../../storage/tempo-storm/dir.json") || {};
+const cardZhCNJson = require("../../server/zhCN/cardZhCNJson.json");
 const FORMAT_WILD = 1;
 const FORMAT_STANDARD = 2;
+const rootDir = path.join(storagePath, "tempo-storm");
 
 class TempoStormSpider {
   getCount() {
@@ -152,24 +154,37 @@ class TempoStormSpider {
   }
 
   getDeckcode(deck) {
-    let $deck = new Deck(FORMAT_WILD);
-    $deck.addHero(new Hero(Const.occupationInfo[deck.playerClass].dbfId));
+    let _deck = new Deck(FORMAT_WILD);
+    _deck.addHero(new Hero(Const.occupationInfo[deck.playerClass].dbfId));
     deck.cards.forEach(item => {
-      $deck.addCard(new Card(item.dbfId, item.quantity));
+      _deck.addCard(new Card(item.dbfId, item.quantity));
     });
-    let $dc = new Deckcode();
-    return $dc.getCodeFromDeck($deck);
+    let deckCode = new Deckcode();
+    return deckCode.getCodeFromDeck(_deck);
+  }
+
+  zhCN() {
+    let dir = require("../../storage/tempo-storm/dir.json");
+    Object.keys(dir).forEach(pageName => {
+      Object.keys(dir[pageName]).forEach(occupationName => {
+        dir[pageName][occupationName].forEach(item => {
+          item.cards.forEach(item => {
+            item.cnName = cardZhCNJson[item.dbfId];
+          });
+        })
+      })
+    });
+    utils.writeFile(path.join(rootDir, `dir.json`), JSON.stringify(dir));
   }
 
   run() {
     let _this = this;
-    let rootDir = path.join(storagePath, "tempo-storm");
     co(function* () {
       console.info(`开始获取count`);
       let count = yield _this.getCount();
       console.info(`获取count成功：${count}`);
 
-      for (let i = 20; i <= count; i++) {
+      for (let i = 1; i <= count; i++) {
         console.info(`开始获取pageSlug`);
         let slug = yield _this.getPageSlug(i);
         console.info(`获取pageSlug成功：${slug}`);
@@ -191,6 +206,9 @@ class TempoStormSpider {
             dir[dirPageName][deck.playerClass] = [];
           }
           deck.code = _this.getDeckcode(deck);
+          deck.cards.forEach(item => {
+            item.cnName = cardZhCNJson[item.dbfId];
+          });
           dir[dirPageName][deck.playerClass].push(deck);
         }
         yield utils.makeDirs(rootDir);
@@ -200,6 +218,7 @@ class TempoStormSpider {
   }
 }
 
-new TempoStormSpider().run();
+// new TempoStormSpider().run();
+new TempoStormSpider().zhCN();
 
 

@@ -1,10 +1,13 @@
-const utils = require("./utils");
+const utils = require("../utils/utils");
 const Const = require("./const.js");
 const path = require("path");
 const storagePath = path.resolve(__dirname, '../../storage');
+const cardZhCNJson = require("../../server/zhCN/cardZhCNJson.json");
+const Deckcode = require("../utils/deckcode/Deckcode");
 const co = require('co');
 const tinify = require("tinify");
 tinify.key = "f348cyVw8EYflrQ0esvr3IZ0xQwdsRBr";
+let rootDir = path.join(storagePath, "vicious-syndicate");
 
 class ViciousSyndicateSpider {
   readChildPage(url) {
@@ -69,7 +72,6 @@ class ViciousSyndicateSpider {
       for (let i = 1; ; i++) {
         let itemName = `wild-vs-data-reaper-report-${i}`;
         dir[itemName] = {};
-        let rootDir = path.join(storagePath, "vicious-syndicate");
         let itemDir = path.join(rootDir, itemName);
         let url = `https://www.vicioussyndicate.com/${itemName}/`;
         try {
@@ -83,7 +85,9 @@ class ViciousSyndicateSpider {
             if (!dir[itemName][deckInfo.occupation]) {
               dir[itemName][deckInfo.occupation] = [];
             }
-            dir[itemName][deckInfo.occupation].push({name: deckInfo.name, code: deckInfo.code});
+
+            let cards = yield _this.getCardInfoByCode(deckInfo.code);
+            dir[itemName][deckInfo.occupation].push({name: deckInfo.name, cards: cards, code: deckInfo.code});
 
             //定义文件夹路径和文件路径
             const fileDir = path.join(itemDir, deckInfo.occupation);
@@ -124,6 +128,69 @@ class ViciousSyndicateSpider {
       }
     });
   }
+
+  getCardInfoByCode(code) {
+    let deckFromCode = new Deckcode().getDeckFromCode(code);
+    const params = {
+      "where": {
+        "dbfId": {
+          "inq": deckFromCode.cards.map(item => {
+            return item.id
+          })
+        },
+        "deckable": true,
+        "isActive": true
+      },
+      "fields": ["id", "name", "cost", "rarity", "playerClass", "dust", "mechanics", "cardType", "deckable", "expansion", "isActive", "photoNames", "isTriClass", "triClasses", "isHallOfFame", "dbfId"],
+      "sort": ["cost", "name"],
+      "limit": 30
+    };
+    const getPageDateUrl = `https://tempostorm.com/api/cards?filter=${JSON.stringify(params)}`;
+    return new Promise((resolve, reject) => {
+      utils.startRequest(encodeURI(getPageDateUrl), false, true).then(json => {
+        let arr = [];
+        json.forEach(item => {
+          arr.push({
+            dbfId: item.dbfId,
+            name: item.name,
+            cnName: cardZhCNJson[item.dbfId],
+            img: item.photoNames.small,
+            quantity: deckFromCode.cards.find(deckFromCodeItem => {
+              return deckFromCodeItem.id === item.dbfId
+            }).count,
+            rarity: item.rarity,//Legendary
+            cost: item.cost
+          });
+        });
+        resolve(arr);
+      }).catch(err => {
+        reject(err);
+      });
+    });
+  }
+
+  reBuildJson() {
+    let _this = this;
+    co(function* () {
+      let dir = require("../../storage/vicious-syndicate/dir.json");
+      for (let pageName in dir) {
+        if (!dir[pageName]["Druid"][0].cards) {
+          for (let occupationName in dir[pageName]) {
+            for (let i = 0; i < dir[pageName][occupationName].length; i++) {
+              let item = dir[pageName][occupationName][i];
+              if (item.code) {
+                item.cards = yield _this.getCardInfoByCode(item.code);
+                console.info(`卡组信息获取成功：${JSON.stringify(item.cards)}`);
+              }
+            }
+          }
+          yield utils.writeFile(path.join(rootDir, `dir.json`), JSON.stringify(dir));
+        }
+        console.info(`${pageName} done`);
+      }
+    });
+  }
 }
 
-new ViciousSyndicateSpider().run();
+// new ViciousSyndicateSpider().run();
+new ViciousSyndicateSpider().reBuildJson();
