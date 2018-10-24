@@ -70,6 +70,7 @@
       text-align: left;
       padding: 0.3rem;
       box-sizing: border-box;
+      word-break: break-all;
     }
     .card-box {
       width: 4.5rem;

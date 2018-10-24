@@ -1,6 +1,6 @@
 <template>
   <div>
-    <page-header title="ViciousSyndicate战报"></page-header>
+    <page-header title="ViciousSyndicate狂野战报"></page-header>
     <div class="list">
       <router-link class="item" v-for="(item) in Object.keys(dirs).reverse()"
                    :key="item" :to="{path:'/OccupationList', query:{page:item,type:'vicious-syndicate'}}">{{item}}
