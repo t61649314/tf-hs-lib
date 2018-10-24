@@ -11,6 +11,10 @@ import './assets/lib/clipboard.min'
 import './assets/lib/flexible'
 import './assets/font/fontawesome-webfont.woff2'
 
+const FastClick = require('fastclick');
+FastClick.attach(document.body);
+
+
 Vue.use(MintUI)
 Vue.config.productionTip = false
 window.addEventListener('touchstart', function () {

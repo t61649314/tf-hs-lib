@@ -1,12 +1,11 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import Home from '@/views/Home'
-import Vicioussyndicate from '@/views/Vicioussyndicate'
-import VicioussyndicateList from '@/views/VicioussyndicateList'
-import VicioussyndicateDetails from '@/views/VicioussyndicateDetails'
-import Tempostorm from '@/views/Tempostorm'
-import TempostormList from '@/views/TempostormList'
-import TempostormDetails from '@/views/TempostormDetails'
+import ViciousSyndicate from '@/views/ViciousSyndicate'
+import TempoStorm from '@/views/TempoStorm'
+import OccupationList from '@/views/OccupationList'
+import DeckList from '@/views/DeckList'
+
 
 Vue.use(Router)
 
@@ -18,34 +17,24 @@ export default new Router({
       component: Home
     },
     {
-      path: '/Vicioussyndicate',
-      name: 'Vicioussyndicate',
-      component: Vicioussyndicate
+      path: '/ViciousSyndicate',
+      name: 'ViciousSyndicate',
+      component: ViciousSyndicate
     },
     {
-      path: '/VicioussyndicateList',
-      name: 'VicioussyndicateList',
-      component: VicioussyndicateList
+      path: '/TempoStorm',
+      name: 'TempoStorm',
+      component: TempoStorm
     },
     {
-      path: '/VicioussyndicateDetails',
-      name: 'VicioussyndicateDetails',
-      component: VicioussyndicateDetails
+      path: '/OccupationList',
+      name: 'OccupationList',
+      component: OccupationList
     },
     {
-      path: '/Tempostorm',
-      name: 'Tempostorm',
-      component: Tempostorm
-    },
-    {
-      path: '/TempostormList',
-      name: 'TempostormList',
-      component: TempostormList
-    },
-    {
-      path: '/TempostormDetails',
-      name: 'TempostormDetails',
-      component: TempostormDetails
+      path: '/DeckList',
+      name: 'DeckList',
+      component: DeckList
     }
   ]
 })

@@ -14,6 +14,21 @@
     color: initial;
     text-decoration: initial;
     font-size: 0.32rem;
+    position: relative;
+    &:active:before {
+      opacity: 0.1;
+    }
+    &:before {
+      background-color: #000;
+      content: "";
+      opacity: 0;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      position: absolute;
+    }
+
     &:first-child {
       border-top: 0.01rem solid #ddd;
     }
