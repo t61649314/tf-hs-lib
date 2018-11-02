@@ -3,20 +3,19 @@ const utils = require("../utils/utils");
 const path = require("path");
 const Const = require("./const.js");
 const storagePath = path.resolve(__dirname, '../../storage');
-const getCountUrl = 'https://tempostorm.com/api/snapshots/count?where={"snapshotType":"wild","isActive":true}';
 const co = require('co');
 const Deckcode = require("../utils/deckcode/Deckcode");
 const Deck = require("../utils/deckcode/Deck");
 const Card = require("../utils/deckcode/Card");
 const Hero = require("../utils/deckcode/Hero");
-const dir = require("../../storage/tempo-storm/dir.json") || {};
 const cardZhCNJson = require("../../server/zhCN/cardZhCNJson.json");
 const FORMAT_WILD = 1;
 const FORMAT_STANDARD = 2;
 const rootDir = path.join(storagePath, "tempo-storm");
 
 class TempoStormSpider {
-  getCount() {
+  getCount(snapshotType) {
+    const getCountUrl = `https://tempostorm.com/api/snapshots/count?where={"snapshotType":"${snapshotType}","isActive":true}`;
     return new Promise((resolve, reject) => {
       utils.startRequest(encodeURI(getCountUrl), false, true).then((json) => {
         resolve(json.count);
@@ -26,7 +25,7 @@ class TempoStormSpider {
     });
   }
 
-  getPageSlug(page) {
+  getPageSlug(page, snapshotType) {
     const params = {
       "order": "createdDate+DESC",
       "fields": ["id", "snapshotType", "isActive", "publishDate"],
@@ -34,7 +33,7 @@ class TempoStormSpider {
         "isActive": true,
         "publishDate": {"lte": new Date().toJSON()},
         "snapNum": page,
-        "snapshotType": "wild"
+        "snapshotType": snapshotType
       },
       "include": [{"relation": "slugs"}]
     };
@@ -48,9 +47,9 @@ class TempoStormSpider {
     });
   }
 
-  getDeckSlugList(slug) {
+  getDeckSlugList(slug, snapshotType) {
     const params = {
-      "where": {"slug": slug, "snapshotType": "wild"},
+      "where": {"slug": slug, "snapshotType": snapshotType},
       "include": [{
         "relation": "comments",
         "scope": {
@@ -163,39 +162,25 @@ class TempoStormSpider {
     return deckCode.getCodeFromDeck(_deck);
   }
 
-  zhCN() {
-    let dir = require("../../storage/tempo-storm/dir.json");
-    Object.keys(dir).forEach(pageName => {
-      Object.keys(dir[pageName]).forEach(occupationName => {
-        dir[pageName][occupationName].forEach(item => {
-          item.cards.forEach(item => {
-            item.cnName = cardZhCNJson[item.dbfId];
-          });
-        })
-      })
-    });
-    utils.writeFile(path.join(rootDir, `dir.json`), JSON.stringify(dir));
-  }
-
-  run() {
+  runStandard() {
+    let dir = require("../../storage/tempo-storm/standard-dir.json");
     let _this = this;
-    co(function* () {
+    return co(function* () {
       console.info(`开始获取count`);
-      let count = yield _this.getCount();
+      let count = yield _this.getCount("standard");
       console.info(`获取count成功：${count}`);
-
-      for (let i = 1; i <= count; i++) {
-        console.info(`开始获取pageSlug`);
-        let slug = yield _this.getPageSlug(i);
-        console.info(`获取pageSlug成功：${slug}`);
-
-        const dirPageName = `tempo-storm-${slug}`;
-        dir[dirPageName] = {};
-
+      console.info(`开始获取pageSlug`);
+      let slug = yield _this.getPageSlug(count, "standard");
+      console.info(`获取pageSlug成功：${slug}`);
+      const dirPageName = `tempo-storm-${slug}`;
+      if (dir[dirPageName]) {
+        console.info("TS标准无最新内容");
+      } else {
+        dir = {};
         console.info(`开始获取deckSlugList`);
-        let deckSlugList = yield _this.getDeckSlugList(slug);
+        let deckSlugList = yield _this.getDeckSlugList(slug, "standard");
         console.info(`获取deckSlugList成功：${deckSlugList}`);
-
+        dir[dirPageName] = {};
         for (let j = 0; j < deckSlugList.length; j++) {
           console.info(`开始获取deck`);
           let deck = yield _this.getDeck(deckSlugList[j]);
@@ -212,13 +197,57 @@ class TempoStormSpider {
           dir[dirPageName][deck.playerClass].push(deck);
         }
         yield utils.makeDirs(rootDir);
-        yield utils.writeFile(path.join(rootDir, `dir.json`), JSON.stringify(dir));
+        yield utils.writeFile(path.join(rootDir, `standard-dir.json`), JSON.stringify(dir));
+      }
+      console.info(`${dirPageName} done`);
+    });
+  }
+
+  runWild() {
+    const dir = require("../../storage/tempo-storm/wild-dir.json");
+    let _this = this;
+    return co(function* () {
+      console.info(`开始获取count`);
+      let count = yield _this.getCount("wild");
+      console.info(`获取count成功：${count}`);
+      let length = Object.keys(dir).length;
+      if (length === count) {
+        console.info("TS狂野无最新内容");
+        return false;
+      }
+      for (let i = length + 1; i <= count; i++) {
+        console.info(`开始获取pageSlug`);
+        let slug = yield _this.getPageSlug(i, "wild");
+        console.info(`获取pageSlug成功：${slug}`);
+
+        const dirPageName = `tempo-storm-${slug}`;
+
+        console.info(`开始获取deckSlugList`);
+        let deckSlugList = yield _this.getDeckSlugList(slug, "wild");
+        console.info(`获取deckSlugList成功：${deckSlugList}`);
+
+        dir[dirPageName] = {};
+        for (let j = 0; j < deckSlugList.length; j++) {
+          console.info(`开始获取deck`);
+          let deck = yield _this.getDeck(deckSlugList[j]);
+          console.info(`获取deck成功：${JSON.stringify(deck)}`);
+
+          //构建dir对象
+          if (!dir[dirPageName][deck.playerClass]) {
+            dir[dirPageName][deck.playerClass] = [];
+          }
+          deck.code = _this.getDeckcode(deck);
+          deck.cards.forEach(item => {
+            item.cnName = cardZhCNJson[item.dbfId];
+          });
+          dir[dirPageName][deck.playerClass].push(deck);
+        }
+        yield utils.makeDirs(rootDir);
+        yield utils.writeFile(path.join(rootDir, `wild-dir.json`), JSON.stringify(dir));
       }
     });
   }
 }
 
-// new TempoStormSpider().run();
-new TempoStormSpider().zhCN();
 
-
+module.exports = TempoStormSpider;

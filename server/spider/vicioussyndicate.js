@@ -32,6 +32,9 @@ class ViciousSyndicateSpider {
             code: code,
             occupation: occupation,
           })
+        } else {
+          console.info(`${url}：no data`);
+          resolve(null);
         }
       }).catch(err => {
         reject(err);
@@ -54,9 +57,7 @@ class ViciousSyndicateSpider {
           });
           resolve(hrefList);
         } else {
-          //请求到的页面没有我们想要的东西，默认视为404了，开始解析目录
-          console.info(`未解析到数据，程序终止`);
-          reject({notFind: true});
+          reject("not found deck href list");
         }
       }).catch(err => {
         reject(err);
@@ -64,66 +65,118 @@ class ViciousSyndicateSpider {
     });
   }
 
-  run() {
-    let _this = this;
-    let dir = {};
-    let errorUrlArr = [];
-    co(function* () {
-      for (let i = 1; ; i++) {
-        let itemName = `wild-vs-data-reaper-report-${i}`;
-        dir[itemName] = {};
-        let itemDir = path.join(rootDir, itemName);
-        let url = `https://www.vicioussyndicate.com/${itemName}/`;
-        try {
-          console.info(`${url}开始读取`);
-          let hrefList = yield _this.readHomePage(url);
-          for (let j = 0; j < hrefList.length; j++) {
-            console.info(`${hrefList[j]}开始读取`);
-            let deckInfo = yield _this.readChildPage(hrefList[j]);
+  getLastStandardPageUrl() {
+    const homeUrl = `https://www.vicioussyndicate.com/`;
+    const standardTitleReg = /^(vS Data Reaper Report #){1}\d{3}$/;
+    return new Promise((resolve, reject) => {
+      utils.startRequest(homeUrl).then(($) => {
+        let titles = $(".mh-posts-grid-title,.mh-custom-posts-xl-title").find("a");
+        let reportUrl;
+        titles.each(function () {
+          let title = $(this).attr("title");
+          let href = $(this).attr("href");
+          if (standardTitleReg.test(title)) {
+            reportUrl = href;
+            return false;
+          }
+        });
+        resolve(reportUrl);
+      }).catch(err => {
+        reject(err);
+      });
+    });
+  }
 
+  runStandard() {
+    let _this = this;
+    let dir = require("../../storage/vicious-syndicate/standard-dir.json");
+    return co(function* () {
+      let url = yield _this.getLastStandardPageUrl();
+      let itemName = url.split("/")[3];
+      if (dir[itemName]) {
+        console.info("VS标准无最新内容");
+      } else {
+        dir = {};
+        let hrefList = yield _this.readHomePage(url);
+        dir[itemName] = {};
+        for (let j = 0; j < hrefList.length; j++) {
+          console.info(`${hrefList[j]}开始读取`);
+          let deckInfo = yield _this.readChildPage(hrefList[j]);
+          if (deckInfo) {
             //构建dir对象
             if (!dir[itemName][deckInfo.occupation]) {
               dir[itemName][deckInfo.occupation] = [];
             }
-
+            //通过code调用ts的接口获取卡组信息
             let cards = yield _this.getCardInfoByCode(deckInfo.code);
             dir[itemName][deckInfo.occupation].push({name: deckInfo.name, cards: cards, code: deckInfo.code});
+          }
+          console.info(`该篇周报剩余：${hrefList.length - j - 1}`);
+        }
+        yield utils.writeFile(path.join(rootDir, `standard-dir.json`), JSON.stringify(dir));
+      }
+      console.info(`${url} done`);
+    });
+  }
 
-            //定义文件夹路径和文件路径
-            const fileDir = path.join(itemDir, deckInfo.occupation);
-            const filePath = path.join(fileDir, `${deckInfo.name}.png`);
-            //创建文件夹
-            yield utils.makeDirs(fileDir);
+  runWild() {
+    let _this = this;
+    let dir = require("../../storage/vicious-syndicate/wild-dir.json");
+    return co(function* () {
+      for (let i = 1; ; i++) {
+        let itemName = `wild-vs-data-reaper-report-${i}`;
+        // let itemDir = path.join(rootDir, itemName);
+        let url = `https://www.vicioussyndicate.com/${itemName}/`;
+        try {
+          console.info(`${url}开始读取`);
+          if (!dir[itemName]) {
+            let hrefList = yield _this.readHomePage(url);
+            dir[itemName] = {};
+            for (let j = 0; j < hrefList.length; j++) {
+              console.info(`${hrefList[j]}开始读取`);
+              let deckInfo = yield _this.readChildPage(hrefList[j]);
 
-            //判断文件是否存在
-            const isExists = yield utils.existsFile(filePath);
-            if (isExists) {
-              console.info(`${deckInfo.name}.png已经存在，跳过下载`);
-            } else {
-              //tinify读取图片
-              try {
-                console.info(`${deckInfo.name}.png开始写入`);
-                const source = tinify.fromUrl(encodeURI(deckInfo.imgUrl));
-                yield source.toFile(filePath);
-                console.info(`${deckInfo.name}.png写入成功`);
-              } catch (e) {
-                console.error(e);
-                console.error(`${deckInfo.name}.png写入失败`);
-                console.error(`imgUrl：${deckInfo.imgUrl}`);
-                errorUrlArr.push({imgUrl: deckInfo.imgUrl, filePath: filePath});
+              //构建dir对象
+              if (!dir[itemName][deckInfo.occupation]) {
+                dir[itemName][deckInfo.occupation] = [];
               }
+              //通过code调用ts的接口获取卡组信息
+              let cards = yield _this.getCardInfoByCode(deckInfo.code);
+              dir[itemName][deckInfo.occupation].push({name: deckInfo.name, cards: cards, code: deckInfo.code});
+              yield utils.writeFile(path.join(rootDir, `wild-dir.json`), JSON.stringify(dir));
+
+              //---------------------------------已经舍弃的图片方案----------------------------------------
+              //定义文件夹路径和文件路径
+              // const fileDir = path.join(itemDir, deckInfo.occupation);
+              // const filePath = path.join(fileDir, `${deckInfo.name}.png`);
+              // //创建文件夹
+              // yield utils.makeDirs(fileDir);
+              //
+              // //判断文件是否存在
+              // const isExists = yield utils.existsFile(filePath);
+              // if (isExists) {
+              //   console.info(`${deckInfo.name}.png已经存在，跳过下载`);
+              // } else {
+              //   //tinify读取图片
+              //   try {
+              //     console.info(`${deckInfo.name}.png开始写入`);
+              //     const source = tinify.fromUrl(encodeURI(deckInfo.imgUrl));
+              //     yield source.toFile(filePath);
+              //     console.info(`${deckInfo.name}.png写入成功`);
+              //   } catch (e) {
+              //     console.error(e);
+              //     console.error(`${deckInfo.name}.png写入失败`);
+              //     console.error(`imgUrl：${deckInfo.imgUrl}`);
+              //   }
+              // }
+              //---------------------------------已经舍弃的图片方案----------------------------------------
+              console.info(`该篇周报剩余：${hrefList.length - j - 1}`);
             }
-            console.info(`该篇周报剩余：${hrefList.length - j - 1}`);
           }
+          console.info(`${url} done`);
         } catch (e) {
-          console.error(e);
-          if (e.notFind) {
-            yield utils.writeFile(path.join(rootDir, `dir.json`), JSON.stringify(dir));
-            console.info(`dir写入成功`);
-            console.info(`写入失败：${errorUrlArr}`);
-            console.info(`完成`);
-            break;
-          }
+          console.error(`${url}:${e}`);
+          break;
         }
       }
     });
@@ -168,29 +221,6 @@ class ViciousSyndicateSpider {
       });
     });
   }
-
-  reBuildJson() {
-    let _this = this;
-    co(function* () {
-      let dir = require("../../storage/vicious-syndicate/dir.json");
-      for (let pageName in dir) {
-        if (!dir[pageName]["Druid"][0].cards) {
-          for (let occupationName in dir[pageName]) {
-            for (let i = 0; i < dir[pageName][occupationName].length; i++) {
-              let item = dir[pageName][occupationName][i];
-              if (item.code) {
-                item.cards = yield _this.getCardInfoByCode(item.code);
-                console.info(`卡组信息获取成功：${JSON.stringify(item.cards)}`);
-              }
-            }
-          }
-          yield utils.writeFile(path.join(rootDir, `dir.json`), JSON.stringify(dir));
-        }
-        console.info(`${pageName} done`);
-      }
-    });
-  }
 }
 
-// new ViciousSyndicateSpider().run();
-new ViciousSyndicateSpider().reBuildJson();
+module.exports = ViciousSyndicateSpider;

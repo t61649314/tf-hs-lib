@@ -3,7 +3,7 @@
     <page-header title="ViciousSyndicate狂野战报"></page-header>
     <div class="list">
       <router-link class="item" v-for="(item) in Object.keys(dirs).reverse()"
-                   :key="item" :to="{path:'/OccupationList', query:{page:item,type:'vicious-syndicate'}}">{{item}}
+                   :key="item" :to="{path:'/OccupationList', query:{page:item,form:'vicious-syndicate',type:$route.query.type}}">{{item}}
       </router-link>
     </div>
   </div>
@@ -11,7 +11,8 @@
 
 <script>
   import PageHeader from '../components/PageHeader.vue'
-  import dirs from '../../storage/vicious-syndicate/dir.json'
+  import wildDirs from '../../storage/vicious-syndicate/wild-dir.json'
+  import standardDir from '../../storage/vicious-syndicate/standard-dir'
 
   export default {
     name: 'ViciousSyndicate',
@@ -20,7 +21,7 @@
     },
     data() {
       return {
-        dirs: dirs
+        dirs: this.$route.query.type === 'wild' ? wildDirs : standardDir
       }
     },
     mounted: function () {

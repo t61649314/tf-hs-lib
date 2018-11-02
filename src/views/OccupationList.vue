@@ -6,6 +6,7 @@
                    :to="{
                    path:'/DeckList',
                    query:{
+                   form:form,
                    page:page,
                    type:type,
                    occupation:key
@@ -30,6 +31,7 @@
         Const: Const,
         page: this.$route.query.page,
         type: this.$route.query.type,
+        form: this.$route.query.form,
       }
     },
     mounted: function () {

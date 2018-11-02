@@ -33,7 +33,7 @@
     },
     data() {
       return {
-        obj: require(`../../storage/${this.$route.query.type}/dir.json`)[this.$route.query.page][this.$route.query.occupation],
+        obj: require(`../../storage/${this.$route.query.form}/${this.$route.query.type+'-dir.json'}`)[this.$route.query.page][this.$route.query.occupation],
       }
     },
     methods: {
