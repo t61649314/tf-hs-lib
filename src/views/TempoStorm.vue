@@ -1,6 +1,6 @@
 <template>
   <div>
-    <page-header title="TempoStorm狂野战报"></page-header>
+    <page-header title="TS战报"></page-header>
     <div class="list">
       <router-link class="item" v-for="(item) in Object.keys(dirs).reverse()"
                    :key="item" :to="{path:'/OccupationList', query:{page:item,form:'tempo-storm',type:$route.query.type}}">{{item}}
