@@ -140,10 +140,13 @@ class ViciousSyndicateSpider {
               if (!dir[itemName][deckInfo.occupation]) {
                 dir[itemName][deckInfo.occupation] = [];
               }
+              //VS有些卡组code是空的
+              // if(hrefList[j]==='https://www.vicioussyndicate.com/odd-rogue-2/'){
+              //   deckInfo.code="AAEBAYO6AgavBPoOkbwCyssC/eoCnvgCDIwCqAXUBd0I8xG6E5sVkrYCgcIC68IC0eECpu8CAA==";
+              // }
               //通过code调用ts的接口获取卡组信息
               let cards = yield _this.getCardInfoByCode(deckInfo.code);
               dir[itemName][deckInfo.occupation].push({name: deckInfo.name, cards: cards, code: deckInfo.code});
-              yield utils.writeFile(path.join(rootDir, `wild-dir.json`), JSON.stringify(dir));
 
               //---------------------------------已经舍弃的图片方案----------------------------------------
               //定义文件夹路径和文件路径
@@ -174,6 +177,7 @@ class ViciousSyndicateSpider {
             }
           }
           console.info(`${url} done`);
+          yield utils.writeFile(path.join(rootDir, `wild-dir.json`), JSON.stringify(dir));
         } catch (e) {
           console.error(`${url}:${e}`);
           break;
