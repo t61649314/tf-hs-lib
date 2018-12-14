@@ -86,12 +86,14 @@
   "Fire": "火",
   "pirate": "海盗",
   "Pirate": "海盗",
-  "Exodia": "无限火球",
+  "Exodia": "OTK",
   "Mecha’thun": "机械克苏恩",
   "Mecha'thun": "机械克苏恩",
   "Big-Spell": "控制",
   "Odd-Taunt": "奇数嘲讽",
   "Recruit": "招募",
   "odd": "奇数",
-  "DMH": "无限"
+  "DMH": "无限",
+  "APM": "手速",
+  "Rush": "突袭"
 }
