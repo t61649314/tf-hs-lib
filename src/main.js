@@ -8,7 +8,7 @@ import './assets/css/base.less'
 import App from './App'
 import router from './router'
 import './assets/lib/clipboard.min'
-import './assets/lib/flexible'
+import './assets/lib/rem.js'
 import './assets/font/fontawesome-webfont.woff2'
 
 const FastClick = require('fastclick');

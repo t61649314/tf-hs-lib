@@ -1,8 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import Home from '@/views/Home'
-import ViciousSyndicate from '@/views/ViciousSyndicate'
-import TempoStorm from '@/views/TempoStorm'
+import ReportList from '@/views/ReportList'
 import OccupationList from '@/views/OccupationList'
 import DeckList from '@/views/DeckList'
 
@@ -17,14 +16,9 @@ export default new Router({
       component: Home
     },
     {
-      path: '/ViciousSyndicate',
-      name: 'ViciousSyndicate',
-      component: ViciousSyndicate
-    },
-    {
-      path: '/TempoStorm',
-      name: 'TempoStorm',
-      component: TempoStorm
+      path: '/ReportList',
+      name: 'ReportList',
+      component: ReportList
     },
     {
       path: '/OccupationList',

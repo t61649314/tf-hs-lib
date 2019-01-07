@@ -1,9 +1,11 @@
 <template>
   <div>
-    <page-header title="TS战报"></page-header>
+    <page-header :title="reportTitleMap[$route.query.form]+typeTitleMap[$route.query.type]+'战报'"></page-header>
     <div class="list">
       <router-link class="item" v-for="(item) in Object.keys(dirs).reverse()"
-                   :key="item" :to="{path:'/OccupationList', query:{page:item,form:'tempo-storm',type:$route.query.type}}">{{item}}
+                   :key="item"
+                   :to="{path:'/OccupationList', query:{page:item,form:$route.query.form,type:$route.query.type}}">
+        {{item}}
       </router-link>
     </div>
   </div>
@@ -11,8 +13,6 @@
 
 <script>
   import PageHeader from '../components/PageHeader.vue'
-  import wildDirs from '../../storage/tempo-storm/wild-dir.json'
-  import standardDir from '../../storage/tempo-storm/standard-dir'
 
   export default {
     name: 'TempoStorm',
@@ -21,7 +21,9 @@
     },
     data() {
       return {
-        dirs: this.$route.query.type === 'wild' ? wildDirs : standardDir
+        reportTitleMap: {"vicious-syndicate": "VS", "tempo-storm": "TS"},
+        typeTitleMap: {"wild": "狂野", "standard": "标准"},
+        dirs: require(`../../storage/${this.$route.query.form}/${this.$route.query.type + '-dir.json'}`),
       }
     },
     mounted: function () {

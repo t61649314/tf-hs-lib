@@ -1,37 +1,50 @@
 <template>
   <div class="home">
-    <page-header title="主页" noBack="true"></page-header>
+    <page-header title="TF套牌库" noBack="true"></page-header>
+    <mt-navbar v-model="selected">
+      <mt-tab-item id="1">狂野模式</mt-tab-item>
+      <mt-tab-item id="2">标准模式</mt-tab-item>
+    </mt-navbar>
     <div class="list">
-      <div class="wild-box">
-        <h3>狂野</h3>
-        <router-link class="item" :to="{path:'/ViciousSyndicate', query:{type:'wild'}}">VS战报</router-link>
-        <router-link class="item" :to="{path:'/TempoStorm', query:{type:'wild'}}">TS战报</router-link>
-      </div>
-      <div class="standard-box">
-        <h3>标准</h3>
-        <router-link class="item" :to="{path:'/ViciousSyndicate', query:{type:'standard'}}">VS战报</router-link>
-        <router-link class="item" :to="{path:'/TempoStorm', query:{type:'standard'}}">TS战报</router-link>
-      </div>
+      <router-link class="item"
+                   :to="{path:'/ReportList', query:{type:selected==='1'?'wild':'standard',form:'vicious-syndicate'}}">
+        VS战报
+      </router-link>
+      <router-link class="item"
+                   :to="{path:'/ReportList', query:{type:selected==='1'?'wild':'standard',form:'tempo-storm'}}">
+        TS战报
+      </router-link>
     </div>
   </div>
 </template>
 
 <script>
   import PageHeader from '../components/PageHeader.vue'
+  import Const from '../../server/spider/const.js'
 
   export default {
     name: 'Home',
     components: {
       PageHeader
     },
+    watch: {
+      selected: function (val) {
+        localStorage.setItem("selected", val);
+      },
+    },
     data() {
-      return {}
+      return {
+        Const: Const,
+        selected: localStorage.getItem("selected") || '1'
+      }
     }
   }
 </script>
 
 <style lang="less" rel="stylesheet/less" scoped>
+
   .list {
+    top: 2.2rem;
     h3 {
       text-align: left;
       background-color: #fafafa;

@@ -1,7 +1,7 @@
 <template>
   <div>
     <page-header title="卡组列表"></page-header>
-    <div class="list">
+    <div class="list" v-if="obj&&obj.length">
       <div class="deck-item" v-for="(value ,key) in obj" :key="key">
         <div class="deck-info-box">
           {{formatDeckName(value.name)}}
@@ -20,6 +20,9 @@
         <button class="btn clipboard-btn" :data-clipboard-text="value.code">复制卡组</button>
       </div>
     </div>
+    <div class="no-data-content">
+      暂无数据
+    </div>
   </div>
 </template>
 <script>
@@ -33,7 +36,7 @@
     },
     data() {
       return {
-        obj: require(`../../storage/${this.$route.query.form}/${this.$route.query.type+'-dir.json'}`)[this.$route.query.page][this.$route.query.occupation],
+        obj: require(`../../storage/${this.$route.query.form}/${this.$route.query.type + '-dir.json'}`)[this.$route.query.page][this.$route.query.occupation],
       }
     },
     methods: {
@@ -141,7 +144,7 @@
           }
         }
       }
-      button{
+      button {
         width: 100%;
         height: 40px;
         line-height: 40px;
