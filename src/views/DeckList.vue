@@ -3,13 +3,14 @@
     <page-header title="卡组列表"></page-header>
     <div class="list" v-if="obj&&obj.length">
       <div class="deck-item" v-for="(value ,key) in obj" :key="key">
-        <div class="deck-info-box">
-          {{formatDeckName(value.name)}}
+        <div class="deck-info-box" :occupation="occupation">
+          <div class="occupation-icon"></div>
+          <span class="deck-name-content">{{formatDeckName(value.name,value.cards)}}</span>
         </div>
         <div class="card-box">
           <div class="card-item clearfix" v-for="(value ,key) in value.cards.slice().sort(cardsSort)" :key="key">
             <div class="fl card-cost">{{value.cost}}</div>
-            <div class="fl card-name">{{value.cnName}}</div>
+            <div class="fl card-name">{{value.cnName}}{{value.dbfId}}</div>
             <div class="fr card-quantity">
               <i v-if="value.rarity==='Legendary'" class="fa fa-star"></i>
               <span v-else>{{value.quantity}}</span>
@@ -27,7 +28,7 @@
 </template>
 <script>
   import PageHeader from '../components/PageHeader.vue'
-  import deckZhCNJson from '../../server/zhCN/deckZhCNJson'
+  import {formatDeckName} from '../assets/utils'
 
   export default {
     name: 'DeckList',
@@ -36,6 +37,7 @@
     },
     data() {
       return {
+        occupation: this.$route.query.occupation,
         obj: require(`../../storage/${this.$route.query.form}/${this.$route.query.type + '-dir.json'}`)[this.$route.query.page][this.$route.query.occupation],
       }
     },
@@ -43,16 +45,8 @@
       cardsSort(a, b) {
         return a.cost - b.cost
       },
-      formatDeckName(name) {
-        let formatName = "";
-        name.split(" ").forEach(item => {
-          if (deckZhCNJson[item]) {
-            formatName += deckZhCNJson[item];
-          } else {
-            formatName += item + " ";
-          }
-        });
-        return formatName;
+      formatDeckName(name, cards) {
+        return formatDeckName(name, cards, this.occupation);
       }
     }
   }
@@ -71,9 +65,14 @@
       font-size: 0.3rem;
       font-weight: bold;
       text-align: left;
-      padding: 0.3rem;
+      padding: 0.2rem 0.3rem;
       box-sizing: border-box;
       word-break: break-all;
+      display: flex;
+      align-items: center;
+      .deck-name-content {
+        max-width: 3rem;
+      }
     }
     .card-box {
       width: 4.5rem;

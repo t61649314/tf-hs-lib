@@ -2,7 +2,7 @@
   <div>
     <page-header title="职业列表"></page-header>
     <div class="list">
-      <router-link class="item" v-for="(value ,key) in Const.occupationInfo" :key="key"
+      <router-link class="item" :occupation="key" v-for="(value ,key) in Const.occupationInfo" :key="key"
                    :to="{
                    path:'/DeckList',
                    query:{
@@ -11,6 +11,7 @@
                    type:type,
                    occupation:key
                    }}">
+        <div class="occupation-icon"></div>
         {{value.cnName}}
       </router-link>
     </div>
@@ -45,4 +46,10 @@
 </script>
 
 <style lang="less" rel="stylesheet/less" scoped>
+  .item {
+    display: flex;
+    align-items: center;
+    padding: 0.2rem 0.32rem;
+  }
+
 </style>

@@ -98,7 +98,10 @@ class TempoStormSpider {
         json.deckTiers.forEach(item => {
           arr.push(item.deck.slugs[0].slug);
         });
-        resolve(arr);
+        resolve({
+          deckSlugList: arr,
+          time: new Date(json.publishDate).getTime(),
+        });
       }).catch(err => {
         reject(err);
       });
@@ -178,9 +181,11 @@ class TempoStormSpider {
       } else {
         dir = {};
         console.info(`开始获取deckSlugList`);
-        let deckSlugList = yield _this.getDeckSlugList(slug, "standard");
+        let {deckSlugList, time} = yield _this.getDeckSlugList(slug, "standard");
         console.info(`获取deckSlugList成功：${deckSlugList}`);
-        dir[dirPageName] = {};
+        dir[dirPageName] = {
+          time: time
+        };
         for (let j = 0; j < deckSlugList.length; j++) {
           console.info(`开始获取deck`);
           let deck = yield _this.getDeck(deckSlugList[j]);
@@ -223,10 +228,12 @@ class TempoStormSpider {
         const dirPageName = `tempo-storm-${slug}`;
 
         console.info(`开始获取deckSlugList`);
-        let deckSlugList = yield _this.getDeckSlugList(slug, "wild");
+        let {deckSlugList, time} = yield _this.getDeckSlugList(slug, "wild");
         console.info(`获取deckSlugList成功：${deckSlugList}`);
 
-        dir[dirPageName] = {};
+        dir[dirPageName] = {
+          time: time
+        };
         for (let j = 0; j < deckSlugList.length; j++) {
           console.info(`开始获取deck`);
           let deck = yield _this.getDeck(deckSlugList[j]);

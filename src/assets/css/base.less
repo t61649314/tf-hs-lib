@@ -15,6 +15,18 @@
     text-decoration: initial;
     font-size: 0.32rem;
     position: relative;
+    text-align: left;
+    .has-time-title {
+      position: relative;
+      top: -0.1rem;
+    }
+    .time-text {
+      position: absolute;
+      bottom: 0.1rem;
+      left: 0.32rem;
+      font-size: 0.28rem;
+      color: #919191;
+    }
     &:active:before {
       opacity: 0.1;
     }
@@ -46,6 +58,50 @@
       transform: scaleX(-1);
     }
   }
+}
+
+.occupation-icon {
+  width: 30px;
+  height: 30px;
+  display: inline-block;
+  background: url(../img/class-icons.png) no-repeat;
+  margin-right: 0.2rem;
+}
+
+&[occupation='Druid'] .occupation-icon {
+  background-position: -125px -225px;
+}
+
+&[occupation='Hunter'] .occupation-icon {
+  background-position: -125px -65px;
+}
+
+&[occupation='Mage'] .occupation-icon {
+  background-position: -125px -193px;
+}
+
+&[occupation='Paladin'] .occupation-icon {
+  background-position: -125px -161px;
+}
+
+&[occupation='Priest'] .occupation-icon {
+  background-position: -125px -129px;
+}
+
+&[occupation='Rogue'] .occupation-icon {
+  background-position: -125px -97px;
+}
+
+&[occupation='Shaman'] .occupation-icon {
+  background-position: -125px -257px;
+}
+
+&[occupation='Warlock'] .occupation-icon {
+  background-position: -125px -1px;
+}
+
+&[occupation='Warrior'] .occupation-icon {
+  background-position: -125px -33px;
 }
 
 .no-data-content {

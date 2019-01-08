@@ -5,7 +5,8 @@
       <router-link class="item" v-for="(item) in Object.keys(dirs).reverse()"
                    :key="item"
                    :to="{path:'/OccupationList', query:{page:item,form:$route.query.form,type:$route.query.type}}">
-        {{item}}
+        <span class="has-time-title">{{item}}</span>
+        <span class="time-text">{{formatTime(dirs[item].time)}}</span>
       </router-link>
     </div>
   </div>
@@ -13,6 +14,7 @@
 
 <script>
   import PageHeader from '../components/PageHeader.vue'
+  import moment from 'moment'
 
   export default {
     name: 'TempoStorm',
@@ -26,11 +28,9 @@
         dirs: require(`../../storage/${this.$route.query.form}/${this.$route.query.type + '-dir.json'}`),
       }
     },
-    mounted: function () {
-      this.init();
-    },
     methods: {
-      init: function () {
+      formatTime(time) {
+        return moment(time).format("YYYY-MM-DD")
       }
     }
   }

@@ -47,6 +47,7 @@ class ViciousSyndicateSpider {
       utils.startRequest(url).then(($) => {
         console.info(`${url}读取成功`);
         const deckHrefList = $('.tag-analysis').children('.entry-content').children('ul').find("a");
+        const time = $("meta[property='article:published_time']").attr("content");
         if (deckHrefList.length) {
           let hrefList = [];
           deckHrefList.each(function () {
@@ -55,7 +56,10 @@ class ViciousSyndicateSpider {
               hrefList.push(href);
             }
           });
-          resolve(hrefList);
+          resolve({
+            time: new Date(time).getTime(),
+            hrefList: hrefList
+          });
         } else {
           reject("not found deck href list");
         }
@@ -97,8 +101,10 @@ class ViciousSyndicateSpider {
         console.info("VS标准无最新内容");
       } else {
         dir = {};
-        let hrefList = yield _this.readHomePage(url);
-        dir[itemName] = {};
+        let {hrefList, time} = yield _this.readHomePage(url);
+        dir[itemName] = {
+          time: time
+        };
         for (let j = 0; j < hrefList.length; j++) {
           console.info(`${hrefList[j]}开始读取`);
           let deckInfo = yield _this.readChildPage(hrefList[j]);
@@ -130,8 +136,10 @@ class ViciousSyndicateSpider {
         try {
           console.info(`${url}开始读取`);
           if (!dir[itemName]) {
-            let hrefList = yield _this.readHomePage(url);
-            dir[itemName] = {};
+            let {hrefList, time} = yield _this.readHomePage(url);
+            dir[itemName] = {
+              time: time
+            };
             for (let j = 0; j < hrefList.length; j++) {
               console.info(`${hrefList[j]}开始读取`);
               let deckInfo = yield _this.readChildPage(hrefList[j]);

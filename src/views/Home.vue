@@ -5,13 +5,15 @@
       <mt-tab-item id="1">狂野模式</mt-tab-item>
       <mt-tab-item id="2">标准模式</mt-tab-item>
     </mt-navbar>
-    <div class="list">
+    <div class="list" :class="selected==='1'?'wild-list':'standard-list'">
       <router-link class="item"
                    :to="{path:'/ReportList', query:{type:selected==='1'?'wild':'standard',form:'vicious-syndicate'}}">
+        <div class="type-icon"></div>
         VS战报
       </router-link>
       <router-link class="item"
                    :to="{path:'/ReportList', query:{type:selected==='1'?'wild':'standard',form:'tempo-storm'}}">
+        <div class="type-icon"></div>
         TS战报
       </router-link>
     </div>
@@ -42,9 +44,31 @@
 </script>
 
 <style lang="less" rel="stylesheet/less" scoped>
+  .type-icon {
+    display: inline-block;
+    width: 0.6rem;
+    height: 0.6rem;
+    background-size: contain;
+    margin-right: 0.1rem;
+    position: relative;
+    top: -0.03rem;
+  }
+
+  .wild-list .type-icon {
+    background-image: url("../assets/img/wild-icon.png");
+  }
+
+  .standard-list .type-icon {
+    background-image: url("../assets/img/standard-icon.png");
+  }
 
   .list {
     top: 2.2rem;
+    .item {
+      padding: 0.2rem 0.32rem;
+      display: flex;
+      align-items: center;
+    }
     h3 {
       text-align: left;
       background-color: #fafafa;
