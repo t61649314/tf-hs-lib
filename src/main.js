@@ -22,10 +22,16 @@ window.addEventListener('touchstart', function () {
 window.onload = function () {
   var clipboard = new Clipboard('.clipboard-btn');
   clipboard.on('success', function (e) {
-    console.log(e);
+    MintUI.Toast({
+      message: '复制卡组成功',
+      iconClass: 'mintui mintui-success'
+    });
   });
   clipboard.on('error', function (e) {
-    console.log(e);
+    MintUI.Toast({
+      message: '复制卡组失败',
+      iconClass: 'mintui mintui-field-error'
+    });
   });
 }
 /* eslint-disable no-new */

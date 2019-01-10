@@ -1,6 +1,6 @@
 <template>
   <div>
-    <page-header title="职业列表"></page-header>
+    <page-header :title="page"></page-header>
     <div class="list">
       <router-link class="item" :occupation="key" v-for="(value ,key) in Const.occupationInfo" :key="key"
                    :to="{
@@ -9,7 +9,8 @@
                    form:form,
                    page:page,
                    type:type,
-                   occupation:key
+                   occupation:key,
+                   time:time
                    }}">
         <div class="occupation-icon"></div>
         {{value.cnName}}
@@ -30,6 +31,7 @@
     data() {
       return {
         Const: Const,
+        time: this.$route.query.time,
         page: this.$route.query.page,
         type: this.$route.query.type,
         form: this.$route.query.form,

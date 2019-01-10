@@ -39,11 +39,15 @@ module.exports = class Deckcode {
 
   getDeckFromCode($code) {
 
+    if (!$code) {
+      throw new Error("code is empty");
+    }
+
     let $varint = new VarInt();
     let $data = $varint.decode($code);
 
     if ($data[0] !== 0) {
-      throw new Error();
+      throw new Error("code is error");
     }
 
     let $version = $data[1];

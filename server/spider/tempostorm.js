@@ -1,6 +1,7 @@
 const _ = require("lodash");
 const utils = require("../utils/utils");
 const path = require("path");
+const moment = require("moment");
 const Const = require("./const.js");
 const storagePath = path.resolve(__dirname, '../../storage');
 const co = require('co');
@@ -16,13 +17,9 @@ const rootDir = path.join(storagePath, "tempo-storm");
 class TempoStormSpider {
   getCount(snapshotType) {
     const getCountUrl = `https://tempostorm.com/api/snapshots/count?where={"snapshotType":"${snapshotType}","isActive":true}`;
-    return new Promise((resolve, reject) => {
-      utils.startRequest(encodeURI(getCountUrl), false, true).then((json) => {
-        resolve(json.count);
-      }).catch(err => {
-        reject(err);
-      });
-    });
+    return utils.startRequest(encodeURI(getCountUrl), false, true).then((json) => {
+      return json.count;
+    })
   }
 
   getPageSlug(page, snapshotType) {
@@ -38,13 +35,9 @@ class TempoStormSpider {
       "include": [{"relation": "slugs"}]
     };
     const getPageDateUrl = `https://tempostorm.com/api/snapshots/findOne?filter=${JSON.stringify(params)}`;
-    return new Promise((resolve, reject) => {
-      utils.startRequest(encodeURI(getPageDateUrl), false, true).then((json) => {
-        resolve(json.slugs[0].slug);
-      }).catch(err => {
-        reject(err);
-      });
-    });
+    return utils.startRequest(encodeURI(getPageDateUrl), false, true).then((json) => {
+      return json.slugs[0].slug;
+    })
   }
 
   getDeckSlugList(slug, snapshotType) {
@@ -93,19 +86,15 @@ class TempoStormSpider {
     };
     const getPageDateUrl = `https://tempostorm.com/api/snapshots/findOne?filter=${JSON.stringify(params)}`;
     let arr = [];
-    return new Promise((resolve, reject) => {
-      utils.startRequest(encodeURI(getPageDateUrl), false, true).then(json => {
-        json.deckTiers.forEach(item => {
-          arr.push(item.deck.slugs[0].slug);
-        });
-        resolve({
-          deckSlugList: arr,
-          time: new Date(json.publishDate).getTime(),
-        });
-      }).catch(err => {
-        reject(err);
+    return utils.startRequest(encodeURI(getPageDateUrl), false, true).then(json => {
+      json.deckTiers.forEach(item => {
+        arr.push(item.deck.slugs[0].slug);
       });
-    });
+      return {
+        deckSlugList: arr,
+        time: new Date(json.publishDate).getTime(),
+      };
+    })
   }
 
   getDeck(slug) {
@@ -133,26 +122,22 @@ class TempoStormSpider {
     const getPageDateUrl = `https://tempostorm.com/api/decks/findOne?filter=${JSON.stringify(params)}`;
     let deck = {};
     let arr = [];
-    return new Promise((resolve, reject) => {
-      utils.startRequest(encodeURI(getPageDateUrl), false, true).then(json => {
-        deck.name = json.description;
-        deck.playerClass = json.playerClass;
-        json.cards.forEach(item => {
-          arr.push({
-            dbfId: item.card.dbfId,
-            name: item.card.name,
-            img: item.card.photoNames.small,
-            quantity: item.cardQuantity,
-            rarity: item.card.rarity,//Legendary
-            cost: item.card.cost
-          });
+    return utils.startRequest(encodeURI(getPageDateUrl), false, true).then(json => {
+      deck.name = json.description;
+      deck.playerClass = json.playerClass;
+      json.cards.forEach(item => {
+        arr.push({
+          dbfId: item.card.dbfId,
+          name: item.card.name,
+          img: item.card.photoNames.small,
+          quantity: item.cardQuantity,
+          rarity: item.card.rarity,//Legendary
+          cost: item.card.cost
         });
-        deck.cards = arr;
-        resolve(deck);
-      }).catch(err => {
-        reject(err);
       });
-    });
+      deck.cards = arr;
+      return deck;
+    })
   }
 
   getDeckcode(deck) {
@@ -166,7 +151,7 @@ class TempoStormSpider {
   }
 
   runStandard() {
-    let dir = require("../../storage/tempo-storm/standard-dir.json");
+    let list = require("../../storage/tempo-storm/standard/report/newest-list");
     let _this = this;
     return co(function* () {
       console.info(`开始获取count`);
@@ -175,47 +160,48 @@ class TempoStormSpider {
       console.info(`开始获取pageSlug`);
       let slug = yield _this.getPageSlug(count, "standard");
       console.info(`获取pageSlug成功：${slug}`);
-      const dirPageName = `tempo-storm-${slug}`;
-      if (dir[dirPageName]) {
+      const reportName = `tempo-storm-${slug}`;
+      const exist = !!list.find(item => {
+        return item.name === reportName;
+      });
+      if (exist) {
         console.info("TS标准无最新内容");
       } else {
-        dir = {};
         console.info(`开始获取deckSlugList`);
         let {deckSlugList, time} = yield _this.getDeckSlugList(slug, "standard");
         console.info(`获取deckSlugList成功：${deckSlugList}`);
-        dir[dirPageName] = {
-          time: time
-        };
+        let reportContent = {};
+        list = [{"name": reportName, "time": time}];
         for (let j = 0; j < deckSlugList.length; j++) {
           console.info(`开始获取deck`);
           let deck = yield _this.getDeck(deckSlugList[j]);
           console.info(`获取deck成功：${JSON.stringify(deck)}`);
 
           //构建dir对象
-          if (!dir[dirPageName][deck.playerClass]) {
-            dir[dirPageName][deck.playerClass] = [];
+          if (!reportContent[deck.playerClass]) {
+            reportContent[deck.playerClass] = [];
           }
           deck.code = _this.getDeckcode(deck);
           deck.cards.forEach(item => {
             item.cnName = cardZhCNJson[item.dbfId];
           });
-          dir[dirPageName][deck.playerClass].push(deck);
+          reportContent[deck.playerClass].push(deck);
         }
-        yield utils.makeDirs(rootDir);
-        yield utils.writeFile(path.join(rootDir, `standard-dir.json`), JSON.stringify(dir));
+        yield utils.writeFile(path.join(rootDir, "standard", "deck", `${reportName}.json`), JSON.stringify(reportContent));
+        yield utils.writeFile(path.join(rootDir, "standard", "report", "newest-list.json"), JSON.stringify(list));
       }
-      console.info(`${dirPageName} done`);
+      console.info(`${reportName} done`);
     });
   }
 
   runWild() {
-    const dir = require("../../storage/tempo-storm/wild-dir.json");
+    let list = require("../../storage/tempo-storm/wild/report/list");
     let _this = this;
     return co(function* () {
       console.info(`开始获取count`);
       let count = yield _this.getCount("wild");
       console.info(`获取count成功：${count}`);
-      let length = Object.keys(dir).length;
+      let length = list.length;
       if (length === count) {
         console.info("TS狂野无最新内容");
         return false;
@@ -225,32 +211,31 @@ class TempoStormSpider {
         let slug = yield _this.getPageSlug(i, "wild");
         console.info(`获取pageSlug成功：${slug}`);
 
-        const dirPageName = `tempo-storm-${slug}`;
+        const reportName = `tempo-storm-${slug}`;
 
         console.info(`开始获取deckSlugList`);
         let {deckSlugList, time} = yield _this.getDeckSlugList(slug, "wild");
         console.info(`获取deckSlugList成功：${deckSlugList}`);
 
-        dir[dirPageName] = {
-          time: time
-        };
+        let reportContent = {};
+        list.unshift({"name": reportName, "time": time});
         for (let j = 0; j < deckSlugList.length; j++) {
           console.info(`开始获取deck`);
           let deck = yield _this.getDeck(deckSlugList[j]);
           console.info(`获取deck成功：${JSON.stringify(deck)}`);
 
           //构建dir对象
-          if (!dir[dirPageName][deck.playerClass]) {
-            dir[dirPageName][deck.playerClass] = [];
+          if (!reportContent[deck.playerClass]) {
+            reportContent[deck.playerClass] = [];
           }
           deck.code = _this.getDeckcode(deck);
           deck.cards.forEach(item => {
             item.cnName = cardZhCNJson[item.dbfId];
           });
-          dir[dirPageName][deck.playerClass].push(deck);
+          reportContent[deck.playerClass].push(deck);
         }
-        yield utils.makeDirs(rootDir);
-        yield utils.writeFile(path.join(rootDir, `wild-dir.json`), JSON.stringify(dir));
+        yield utils.writeFile(path.join(rootDir, "wild", "deck", `${reportName}.json`), JSON.stringify(reportContent));
+        yield utils.writeFile(path.join(rootDir, "wild", "report", "list.json"), JSON.stringify(list));
       }
     });
   }

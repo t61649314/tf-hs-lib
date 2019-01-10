@@ -16,6 +16,9 @@ const formatDeckName = function (name, decks, occupation) {
   });
   if (!canFormatZh) {
     for (let i = 0; i < deckKeyCardMapArr.length; i++) {
+      if (deckKeyCardMapArr[i].occupation && deckKeyCardMapArr[i].occupation.length && !deckKeyCardMapArr[i].occupation.includes(occupation)) {
+        continue;
+      }
       let matching;
       if (deckKeyCardMapArr[i].anyOneId) {
         matching = false;
@@ -37,7 +40,7 @@ const formatDeckName = function (name, decks, occupation) {
   if (formatName) {
     return formatName + occupationInfo[occupation].simpleName;
   } else {
-    return occupationInfo[occupation].cnName
+    return occupationInfo[occupation].cnName;
   }
 };
 

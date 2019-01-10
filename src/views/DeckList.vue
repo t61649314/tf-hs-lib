@@ -1,27 +1,30 @@
 <template>
   <div>
-    <page-header title="卡组列表"></page-header>
-    <div class="list" v-if="obj&&obj.length">
-      <div class="deck-item" v-for="(value ,key) in obj" :key="key">
+    <page-header :title="$route.query.page"></page-header>
+    <div class="list" v-if="deckList&&deckList.length&&isInit">
+      <div class="deck-item" v-for="(deckItem,index) in deckList" :key="index">
         <div class="deck-info-box" :occupation="occupation">
           <div class="occupation-icon"></div>
-          <span class="deck-name-content">{{formatDeckName(value.name,value.cards)}}</span>
+          <span class="deck-name-content">{{deckItem.alreadyFormatName?deckItem.name:formatDeckName(deckItem.name,deckItem.cards)}}</span>
         </div>
         <div class="card-box">
-          <div class="card-item clearfix" v-for="(value ,key) in value.cards.slice().sort(cardsSort)" :key="key">
-            <div class="fl card-cost">{{value.cost}}</div>
-            <div class="fl card-name">{{value.cnName}}{{value.dbfId}}</div>
+          <div class="card-item clearfix"
+               v-for="(cardItem,index) in deckItem.cards.slice().sort(cardsSort)"
+               :key="index">
+            <div class="is-weaken-text" v-if="isWeaken(cardItem.dbfId)">已削弱</div>
+            <div class="fl card-cost">{{cardItem.cost}}</div>
+            <div class="fl card-name">{{cardItem.cnName}}</div>
             <div class="fr card-quantity">
-              <i v-if="value.rarity==='Legendary'" class="fa fa-star"></i>
-              <span v-else>{{value.quantity}}</span>
+              <i v-if="cardItem.rarity==='Legendary'" class="fa fa-star"></i>
+              <span v-else>{{cardItem.quantity}}</span>
             </div>
-            <img class="fr card-img" :src="`https://cdn.tempostorm.com/cards/${value.img}`"/>
+            <img class="fr card-img" :src="`https://cdn.tempostorm.com/cards/${cardItem.img}`"/>
           </div>
         </div>
-        <button class="btn clipboard-btn" :data-clipboard-text="value.code">复制卡组</button>
+        <button class="btn clipboard-btn" :data-clipboard-text="deckItem.code">复制卡组</button>
       </div>
     </div>
-    <div class="no-data-content">
+    <div class="no-data-content" v-else-if="isInit">
       暂无数据
     </div>
   </div>
@@ -29,6 +32,10 @@
 <script>
   import PageHeader from '../components/PageHeader.vue'
   import {formatDeckName} from '../assets/utils'
+  import moment from 'moment'
+  import {timeNode} from '../../server/spider/const'
+  import {Indicator} from 'mint-ui'
+  import axios from 'axios'
 
   export default {
     name: 'DeckList',
@@ -37,16 +44,43 @@
     },
     data() {
       return {
+        weakenArr: [],
+        time: parseInt(this.$route.query.time),
+        isInit: false,
         occupation: this.$route.query.occupation,
-        obj: require(`../../storage/${this.$route.query.form}/${this.$route.query.type + '-dir.json'}`)[this.$route.query.page][this.$route.query.occupation],
+        deckList: [],
       }
     },
+    created: function () {
+      this.init();
+    },
     methods: {
+      init: function () {
+        let weakenArr = timeNode.filter(item => {
+          return moment(item.time).isAfter(moment(new Date(this.time))) && item.weakenCardArr;
+        });
+        weakenArr.forEach(item => {
+          this.weakenArr = this.weakenArr.concat(item.weakenCardArr)
+        });
+        Indicator.open();
+        axios.get(`/my-h5-page/storage/${this.$route.query.form}/${this.$route.query.type}/deck/${this.$route.query.page}.json`).then(({data}) => {
+          Indicator.close();
+          this.isInit = true;
+          if (data) {
+            this.deckList = data[this.occupation];
+          }
+        })
+        // this.deckList = require(`../../storage/${this.$route.query.form}/${this.$route.query.type}/deck/${this.$route.query.page}.json`)[this.occupation];
+        // this.isInit = true;
+      },
       cardsSort(a, b) {
         return a.cost - b.cost
       },
       formatDeckName(name, cards) {
         return formatDeckName(name, cards, this.occupation);
+      },
+      isWeaken(dbfId) {
+        return this.weakenArr.includes(dbfId);
       }
     }
   }
@@ -102,6 +136,25 @@
         .card-name {
           position: absolute;
           left: 0.7rem;
+          color: #fff;
+        }
+        .is-weaken-text {
+          position: absolute;
+          left: 4.7rem;
+          color: #ff4545;
+          word-break: keep-all;
+          &:before {
+            content: "";
+            display: block;
+            position: absolute;
+            height: 0.04rem;
+            background-color: #ff4545;
+            top: 0;
+            bottom: 0;
+            left: -4.7rem;
+            width: 4.5rem;
+            margin: auto;
+          }
         }
       }
     }
