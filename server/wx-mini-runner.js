@@ -37,11 +37,13 @@ function writeWxJson(from, type, fileName) {
               deckFormat._id = uuid.v1();
               deckFormat.from = from;
               deckFormat.type = type;
+              deckFormat.page = report.name;
               deckFormat.occupation = occupation;
-              deckFormat.name = deck.name;
-              deckFormat.cards = deck.cards;
+              deckFormat.name = deck.alreadyFormatName ? deck.name : utils.formatDeckName(deck.name, deck.cards, occupation);
+              deckFormat.cards = deck.cards.sort((a, b) => {
+                return a.cost - b.cost
+              });
               deckFormat.code = deck.code;
-              deckFormat.time = report.time;
               jsonStr += (JSON.stringify(deckFormat) + "\n");
               // deckJsonStr += (JSON.stringify(deckFormat) + "\n");
             }
@@ -55,6 +57,7 @@ function writeWxJson(from, type, fileName) {
       listFormat._id = report.name;
       listFormat.name = report.name;
       listFormat.time = report.time;
+      listFormat.jumpUrl = report.jumpUrl;
       listFormat.type = type;
       listFormat.from = from;
       listFormat.fileName = fileName;
