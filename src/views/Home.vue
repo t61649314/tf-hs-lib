@@ -17,6 +17,10 @@
         TS战报
       </router-link>
     </div>
+    <div class="mini-code-content">
+      <p>小程序版：</p>
+      <img src="../assets/img/mini-code.jpg">
+    </div>
   </div>
 </template>
 
@@ -44,6 +48,12 @@
 </script>
 
 <style lang="less" rel="stylesheet/less" scoped>
+  .mini-code-content{
+    margin-top: 4rem;
+    img{
+      width: 4rem;
+    }
+  }
   .type-icon {
     display: inline-block;
     width: 0.6rem;
