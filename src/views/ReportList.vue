@@ -10,6 +10,7 @@
         <router-link class="item" v-else-if="item.name"
                      :to="{path:'/OccupationList', query:{page:item.name,form:$route.query.form,type:$route.query.type,time:item.time}}">
           <span class="has-time-title">{{item.name}}</span>
+          <span class="new-icon" v-if="isNew(item.time)">new!</span>
           <span class="time-text">{{formatTime(item.time)}}</span>
         </router-link>
         <div v-else class="time-node-text">
@@ -43,7 +44,9 @@
     },
     computed: {
       reportGroup() {
-        let reportGroup = this.reportList.concat(timeNode).sort((a, b) => {
+        let reportGroup = this.reportList.filter(item=>{
+          return !item.jumpUrl;   //todo 暂时取消78期之前的内容，直接跳转还是不太好，之后有时间自己弄吧
+        }).concat(timeNode).sort((a, b) => {
           return new Date(b.time).getTime() - new Date(a.time).getTime()
         });
         return reportGroup.filter((item, index) => {
@@ -61,6 +64,10 @@
       this.init();
     },
     methods: {
+      isNew: function (time) {
+        let now = moment();
+        return now.diff(moment(time), 'days') <= 3;
+      },
       init: function () {
         Indicator.open();
         if (this.$route.query.type === 'wild') {
@@ -101,6 +108,23 @@
     .item {
       &:first-child {
         border-top: initial;
+      }
+      .has-time-title {
+        position: relative;
+        top: -0.1rem;
+      }
+      .new-icon{
+        position: relative;
+        top: -0.2rem;
+        color: red;
+        font-style: italic;
+      }
+      .time-text {
+        position: absolute;
+        bottom: 0.1rem;
+        left: 0.32rem;
+        font-size: 0.28rem;
+        color: #919191;
       }
     }
     .time-node-text {
