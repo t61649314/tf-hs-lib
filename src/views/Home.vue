@@ -23,7 +23,7 @@
       </router-link>
     </div>
     <div class="mini-code-content">
-      <p>更多新功能，更流程请体验小程序版：</p>
+      <p>更多新功能，更流畅请体验小程序版：</p>
       <img src="../assets/img/mini-code.jpg">
     </div>
   </div>
