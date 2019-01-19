@@ -2,47 +2,47 @@ const occupationInfo = {
   Druid: {
     cnName: "德鲁伊",
     simpleName: "德",
-    dbfId: 274
+    dbfId: [274,50484]
   },
   Hunter: {
     cnName: "猎人",
     simpleName: "猎",
-    dbfId: 31
+    dbfId: [31,2826]
   },
   Mage: {
     cnName: "法师",
     simpleName: "法",
-    dbfId: 637
+    dbfId: [637,2829,39117]
   },
   Paladin: {
     cnName: "骑士",
     simpleName: "骑",
-    dbfId: 671
+    dbfId:[671,2827,46116,53187]
   },
   Priest: {
     cnName: "牧师",
     simpleName: "牧",
-    dbfId: 813
+    dbfId: [813,41887]
   },
   Rogue: {
     cnName: "盗贼",
     simpleName: "贼",
-    dbfId: 930
+    dbfId: [930,40195]
   },
   Shaman: {
     cnName: "萨满",
     simpleName: "萨",
-    dbfId: 1066
+    dbfId: [1066,40183,53237]
   },
   Warlock: {
     cnName: "术士",
     simpleName: "术",
-    dbfId: 893
+    dbfId: [893,47817,51834]
   },
   Warrior: {
     cnName: "战士",
     simpleName: "战",
-    dbfId: 7
+    dbfId: [7,2828]
   },
 };
 

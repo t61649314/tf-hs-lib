@@ -36,7 +36,7 @@
     },
     data() {
       return {
-        reportTitleMap: {"vicious-syndicate": "VS", "tempo-storm": "TS"},
+        reportTitleMap: {"vicious-syndicate": "VS", "tempo-storm": "TS", "shengerkuangye": "生而"},
         typeTitleMap: {"wild": "狂野", "standard": "标准"},
         reportList: [],
         timeNode: timeNode
@@ -44,20 +44,26 @@
     },
     computed: {
       reportGroup() {
-        let reportGroup = this.reportList.filter(item=>{
-          return !item.jumpUrl;   //todo 暂时取消78期之前的内容，直接跳转还是不太好，之后有时间自己弄吧
-        }).concat(timeNode).sort((a, b) => {
-          return new Date(b.time).getTime() - new Date(a.time).getTime()
-        });
-        return reportGroup.filter((item, index) => {
-          if (item.name) {
-            return true;
-          } else {
-            let preItem = reportGroup[index - 1];
-            let nextItem = reportGroup[index + 1];
-            return !!((preItem && preItem.name) || (nextItem && nextItem.name));
-          }
-        })
+        if (this.reportList && this.reportList.length) {
+          let reportList = this.reportList.filter(item => {
+            return !item.jumpUrl;   //todo 暂时取消78期之前的内容，直接跳转还是不太好，之后有时间自己弄吧
+          }).sort((a, b) => {
+            return b.time - a.time
+          });
+          let lastTime = reportList[reportList.length - 1].time;
+          let reportGroup = reportList.concat(timeNode).sort((a, b) => {
+            return new Date(b.time).getTime() - new Date(a.time).getTime()
+          });
+          return reportGroup.filter((item, index) => {
+            if (item.name) {
+              return true;
+            } else {
+              return new Date(reportGroup[index].time).getTime() > lastTime || new Date(reportGroup[index - 1].time).getTime() === lastTime
+            }
+          })
+        } else {
+          return [];
+        }
       }
     },
     created: function () {
@@ -113,7 +119,7 @@
         position: relative;
         top: -0.1rem;
       }
-      .new-icon{
+      .new-icon {
         position: relative;
         top: -0.2rem;
         color: red;

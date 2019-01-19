@@ -16,9 +16,14 @@
         <div class="type-icon"></div>
         TS战报
       </router-link>
+      <router-link class="item" v-if="selected==='1'"
+                   :to="{path:'/ReportList', query:{type:selected==='1'?'wild':'standard',form:'shengerkuangye'}}">
+        <div class="type-icon"></div>
+        生而狂野战报
+      </router-link>
     </div>
     <div class="mini-code-content">
-      <p>小程序版：</p>
+      <p>更多新功能，更流程请体验小程序版：</p>
       <img src="../assets/img/mini-code.jpg">
     </div>
   </div>
@@ -50,6 +55,7 @@
 <style lang="less" rel="stylesheet/less" scoped>
   .mini-code-content{
     margin-top: 4rem;
+    color: red;
     img{
       width: 4rem;
     }

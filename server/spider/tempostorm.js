@@ -142,7 +142,7 @@ class TempoStormSpider {
 
   getDeckcode(deck) {
     let _deck = new Deck(FORMAT_WILD);
-    _deck.addHero(new Hero(Const.occupationInfo[deck.playerClass].dbfId));
+    _deck.addHero(new Hero(Const.occupationInfo[deck.playerClass].dbfId[0]));
     deck.cards.forEach(item => {
       _deck.addCard(new Card(item.dbfId, item.quantity));
     });
@@ -171,7 +171,11 @@ class TempoStormSpider {
         let {deckSlugList, time} = yield _this.getDeckSlugList(slug, "standard");
         console.info(`获取deckSlugList成功：${deckSlugList}`);
         let reportContent = {};
-        list = [{"name": reportName, "time": time}];
+        list = [{
+          "name": reportName,
+          "time": time,
+          "fromUrl": `https://tempostorm.com/hearthstone/meta-snapshot/standard/${slug}`
+        }];
         for (let j = 0; j < deckSlugList.length; j++) {
           console.info(`开始获取deck`);
           let deck = yield _this.getDeck(deckSlugList[j]);
@@ -218,7 +222,11 @@ class TempoStormSpider {
         console.info(`获取deckSlugList成功：${deckSlugList}`);
 
         let reportContent = {};
-        list.unshift({"name": reportName, "time": time});
+        list.unshift({
+          "name": reportName,
+          "time": time,
+          "fromUrl": `https://tempostorm.com/hearthstone/meta-snapshot/wild/${slug}`
+        });
         for (let j = 0; j < deckSlugList.length; j++) {
           console.info(`开始获取deck`);
           let deck = yield _this.getDeck(deckSlugList[j]);

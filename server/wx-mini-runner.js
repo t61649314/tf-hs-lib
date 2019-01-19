@@ -14,6 +14,7 @@ co(function* () {
   yield writeWxJson("tempo-storm", "standard", "newest-list");
   yield writeWxJson("tempo-storm", "standard", "old-list");
   yield writeWxJson("tempo-storm", "wild", "list");
+  yield writeWxJson("shengerkuangye", "wild", "list");
 });
 
 function writeWxJson(from, type, fileName) {
@@ -39,6 +40,7 @@ function writeWxJson(from, type, fileName) {
               deckFormat.type = type;
               deckFormat.page = report.name;
               deckFormat.occupation = occupation;
+              deckFormat.time = report.time;
               deckFormat.name = deck.alreadyFormatName ? deck.name : utils.formatDeckName(deck.name, deck.cards, occupation);
               deckFormat.cards = deck.cards.sort((a, b) => {
                 return a.cost - b.cost
@@ -54,9 +56,14 @@ function writeWxJson(from, type, fileName) {
       }
 
       let listFormat = {};
-      listFormat._id = report.name;
+      if (fileName === "newest-list") {
+        listFormat._id = `${from}-${type}-${fileName}`;
+      } else {
+        listFormat._id = report.name;
+      }
       listFormat.name = report.name;
       listFormat.time = report.time;
+      listFormat.fromUrl = report.fromUrl;
       listFormat.jumpUrl = report.jumpUrl;
       listFormat.type = type;
       listFormat.from = from;

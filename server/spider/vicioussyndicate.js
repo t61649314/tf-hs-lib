@@ -91,7 +91,11 @@ class ViciousSyndicateSpider {
       } else {
         let {hrefList, time} = yield _this.readHomePage(url);
         let reportContent = {};
-        list = [{"name": reportName, "time": time}];
+        list = [{
+          "name": reportName,
+          "time": time,
+          "fromUrl": url
+        }];
         for (let j = 0; j < hrefList.length; j++) {
           console.info(`${hrefList[j]}开始读取`);
           let deckInfo = yield _this.readChildPage(hrefList[j]);
@@ -128,7 +132,7 @@ class ViciousSyndicateSpider {
           if (!exist) {
             let {hrefList, time} = yield _this.readHomePage(url);
             let reportContent = {};
-            list.unshift({"name": reportName, "time": time});
+            list.unshift({"name": reportName, "time": time, "fromUrl": url});
             for (let j = 0; j < hrefList.length; j++) {
               console.info(`${hrefList[j]}开始读取`);
               let deckInfo = yield _this.readChildPage(hrefList[j]);
