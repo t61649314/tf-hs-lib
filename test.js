@@ -11,39 +11,8 @@ const list = require("./storage/vicious-syndicate/standard/report/old-list");
 const VS = require("./server/spider/vicioussyndicate");
 let vs = new VS();
 
-// let deckJsonStr = "";
-co(function* () {
-  yield addFrom("vicious-syndicate", "standard", "newest-list");
-  yield addFrom("vicious-syndicate", "standard", "old-list");
-  yield addFrom("vicious-syndicate", "wild", "list");
-  yield addFrom("tempo-storm", "standard", "newest-list");
-  yield addFrom("tempo-storm", "standard", "old-list");
-  yield addFrom("tempo-storm", "wild", "list");
-  yield addFrom("shengerkuangye", "wild", "list");
-});
-const homePageSearchId = [68573, 60767, 58190, 56065, 52702, 51596, 50430, 49165, 47149, 44758, 43020, 42204];
 
-function addFrom(from, type, fileName) {
-  const list = require(`./storage/${from}/${type}/report/${fileName}`);
-  return co(function* () {
-    for (let i = 0; i < list.length; i++) {
-      if (from === "shengerkuangye") {
-        list[i].fromUrl = `https://www.iyingdi.com/web/article/search/${homePageSearchId[12 - i - 1]}`;
-      }
-      if (from === "tempo-storm") {
-        if (type === "wild") {
-          list[i].fromUrl = `https://tempostorm.com/hearthstone/meta-snapshot/wild/${list[i].name.replace("tempo-storm-", "")}`;
-        } else {
-          list[i].fromUrl = `https://tempostorm.com/hearthstone/meta-snapshot/standard/${list[i].name.replace("tempo-storm-", "")}`;
-        }
-      }
-      if (from === "vicious-syndicate") {
-        list[i].fromUrl = `https://www.vicioussyndicate.com/${list[i].name}/`;
-      }
-    }
-    yield utils.writeFile(path.join(storagePath, from, type, "report", fileName + ".json"), JSON.stringify(list));
-  });
-}
+// let deckJsonStr = "";
 
 
 // return co(function* () {
