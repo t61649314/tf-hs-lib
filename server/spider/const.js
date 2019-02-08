@@ -49,6 +49,11 @@ const occupationInfo = {
 
 const timeNode = [
   {
+    time: "2019-02-06",
+    title: "冷血、火舌图腾、生而平等、猎人印记、法术翡翠削弱",
+    weakenCardArr: [268, 1008, 756, 141, 43363]
+  },
+  {
     time: "2018-12-20",
     title: "吸血药膏、野性成长、滋养、萨隆苦囚、等级提升削弱",
     weakenCardArr: [42665, 1124, 95, 42395, 45877]
