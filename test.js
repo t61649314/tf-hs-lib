@@ -1,7 +1,8 @@
 const {occupationInfo} = require("./server/spider/const")
 const deckZhCNJson = require('./server/zhCN/deckZhCNJson')
-const deckKeyCardMapArr = require('./server/zhCN/deckKeyCardMapArr')
+const cardZhCNJson = require('./server/zhCN/cardZhCNJson.json')
 const co = require("co");
+const fs = require("fs");
 const cheerio = require("cheerio");
 const path = require("path");
 const superagent = require("superagent-charset");
@@ -12,6 +13,19 @@ const VS = require("./server/spider/vicioussyndicate");
 let vs = new VS();
 
 
+fs.readFile('./database_export-4_Or3sVyZhKO.json', 'utf8', function (err, data) {
+  let dataArr = data.split("\n");
+  dataArr = dataArr.slice(0, dataArr.length - 1);
+  let arr = []
+  dataArr.forEach(item => {
+    let deck = JSON.parse(item);
+    deck.cards.forEach(item => {
+      item.cardSet = cardZhCNJson[item.dbfId].cardSet
+    })
+    arr.push(deck);
+  })
+  utils.writeFile(path.resolve(__dirname, './format.json'), arr.map(item=>JSON.stringify(item)).join("\n")+"\n");
+});
 // let deckJsonStr = "";
 
 

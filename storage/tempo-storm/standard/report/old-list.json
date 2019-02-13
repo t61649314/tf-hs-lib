@@ -1,1 +1,87 @@
-[{"name":"tempo-storm-2018-12-18","time":1545170400208,"fromUrl":"https://tempostorm.com/hearthstone/meta-snapshot/standard/2018-12-18"},{"name":"tempo-storm-2018-11-24","time":1543082428028,"fromUrl":"https://tempostorm.com/hearthstone/meta-snapshot/standard/2018-11-24"},{"name":"tempo-storm-2018-10-14","time":1539543641591,"fromUrl":"https://tempostorm.com/hearthstone/meta-snapshot/standard/2018-10-14"},{"name":"tempo-storm-2018-07-22","time":1532285889487,"fromUrl":"https://tempostorm.com/hearthstone/meta-snapshot/standard/2018-07-22"},{"name":"tempo-storm-2018-05-09","time":1526684544056,"fromUrl":"https://tempostorm.com/hearthstone/meta-snapshot/standard/2018-05-09"},{"name":"tempo-storm-2018-03-16","time":1521189983970,"fromUrl":"https://tempostorm.com/hearthstone/meta-snapshot/standard/2018-03-16"},{"name":"tempo-storm-2018-01-26","time":1516956836792,"fromUrl":"https://tempostorm.com/hearthstone/meta-snapshot/standard/2018-01-26"},{"name":"tempo-storm-2017-11-19","time":1511129819624,"fromUrl":"https://tempostorm.com/hearthstone/meta-snapshot/standard/2017-11-19"},{"name":"tempo-storm-2017-09-03","time":1504457301782,"fromUrl":"https://tempostorm.com/hearthstone/meta-snapshot/standard/2017-09-03"},{"name":"tempo-storm-2017-07-31","time":1501488969100,"fromUrl":"https://tempostorm.com/hearthstone/meta-snapshot/standard/2017-07-31"},{"name":"tempo-storm-2017-07-05","time":1499242369007,"fromUrl":"https://tempostorm.com/hearthstone/meta-snapshot/standard/2017-07-05"},{"name":"tempo-storm-2017-03-19","time":1489901972462,"fromUrl":"https://tempostorm.com/hearthstone/meta-snapshot/standard/2017-03-19"},{"name":"tempo-storm-2017-02-12","time":1486866088959,"fromUrl":"https://tempostorm.com/hearthstone/meta-snapshot/standard/2017-02-12"},{"name":"tempo-storm-2016-11-19","time":1479481860099,"fromUrl":"https://tempostorm.com/hearthstone/meta-snapshot/standard/2016-11-19"},{"name":"tempo-storm-2016-09-18","time":1474063946001,"fromUrl":"https://tempostorm.com/hearthstone/meta-snapshot/standard/2016-09-18"},{"name":"tempo-storm-2016-07-31","time":1469851750564,"fromUrl":"https://tempostorm.com/hearthstone/meta-snapshot/standard/2016-07-31"}]
+[
+  {
+    "name": "tempo-storm-2019-01-27",
+    "time": 1548637249959,
+    "fromUrl": "https://tempostorm.com/hearthstone/meta-snapshot/standard/2019-01-27"
+  },
+  {
+    "name": "tempo-storm-2018-12-18",
+    "time": 1545170400208,
+    "fromUrl": "https://tempostorm.com/hearthstone/meta-snapshot/standard/2018-12-18"
+  },
+  {
+    "name": "tempo-storm-2018-11-24",
+    "time": 1543082428028,
+    "fromUrl": "https://tempostorm.com/hearthstone/meta-snapshot/standard/2018-11-24"
+  },
+  {
+    "name": "tempo-storm-2018-10-14",
+    "time": 1539543641591,
+    "fromUrl": "https://tempostorm.com/hearthstone/meta-snapshot/standard/2018-10-14"
+  },
+  {
+    "name": "tempo-storm-2018-07-22",
+    "time": 1532285889487,
+    "fromUrl": "https://tempostorm.com/hearthstone/meta-snapshot/standard/2018-07-22"
+  },
+  {
+    "name": "tempo-storm-2018-05-09",
+    "time": 1526684544056,
+    "fromUrl": "https://tempostorm.com/hearthstone/meta-snapshot/standard/2018-05-09"
+  },
+  {
+    "name": "tempo-storm-2018-03-16",
+    "time": 1521189983970,
+    "fromUrl": "https://tempostorm.com/hearthstone/meta-snapshot/standard/2018-03-16"
+  },
+  {
+    "name": "tempo-storm-2018-01-26",
+    "time": 1516956836792,
+    "fromUrl": "https://tempostorm.com/hearthstone/meta-snapshot/standard/2018-01-26"
+  },
+  {
+    "name": "tempo-storm-2017-11-19",
+    "time": 1511129819624,
+    "fromUrl": "https://tempostorm.com/hearthstone/meta-snapshot/standard/2017-11-19"
+  },
+  {
+    "name": "tempo-storm-2017-09-03",
+    "time": 1504457301782,
+    "fromUrl": "https://tempostorm.com/hearthstone/meta-snapshot/standard/2017-09-03"
+  },
+  {
+    "name": "tempo-storm-2017-07-31",
+    "time": 1501488969100,
+    "fromUrl": "https://tempostorm.com/hearthstone/meta-snapshot/standard/2017-07-31"
+  },
+  {
+    "name": "tempo-storm-2017-07-05",
+    "time": 1499242369007,
+    "fromUrl": "https://tempostorm.com/hearthstone/meta-snapshot/standard/2017-07-05"
+  },
+  {
+    "name": "tempo-storm-2017-03-19",
+    "time": 1489901972462,
+    "fromUrl": "https://tempostorm.com/hearthstone/meta-snapshot/standard/2017-03-19"
+  },
+  {
+    "name": "tempo-storm-2017-02-12",
+    "time": 1486866088959,
+    "fromUrl": "https://tempostorm.com/hearthstone/meta-snapshot/standard/2017-02-12"
+  },
+  {
+    "name": "tempo-storm-2016-11-19",
+    "time": 1479481860099,
+    "fromUrl": "https://tempostorm.com/hearthstone/meta-snapshot/standard/2016-11-19"
+  },
+  {
+    "name": "tempo-storm-2016-09-18",
+    "time": 1474063946001,
+    "fromUrl": "https://tempostorm.com/hearthstone/meta-snapshot/standard/2016-09-18"
+  },
+  {
+    "name": "tempo-storm-2016-07-31",
+    "time": 1469851750564,
+    "fromUrl": "https://tempostorm.com/hearthstone/meta-snapshot/standard/2016-07-31"
+  }
+]

@@ -103,7 +103,8 @@ class ShengErKuangYe {
         arr.push({
           dbfId: item.dbfId,
           name: item.name,
-          cnName: cardZhCNJson[item.dbfId],
+          cnName: cardZhCNJson[item.dbfId].cnName,
+          cardSet: cardZhCNJson[item.dbfId].cardSet,
           img: item.photoNames.small,
           quantity: deckFromCode.cards.find(deckFromCodeItem => {
             return deckFromCodeItem.id === item.dbfId

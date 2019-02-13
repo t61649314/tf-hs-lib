@@ -15,6 +15,7 @@ co(function* () {
   yield writeWxJson("tempo-storm", "standard", "old-list");
   yield writeWxJson("tempo-storm", "wild", "list");
   yield writeWxJson("shengerkuangye", "wild", "list");
+  yield writeWxJson("fengtian", "wild", "list");
 });
 
 function writeWxJson(from, type, fileName) {

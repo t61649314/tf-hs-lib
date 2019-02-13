@@ -187,7 +187,8 @@ class TempoStormSpider {
           }
           deck.code = _this.getDeckcode(deck);
           deck.cards.forEach(item => {
-            item.cnName = cardZhCNJson[item.dbfId];
+            item.cnName = cardZhCNJson[item.dbfId].cnName;
+            item.cardSet = cardZhCNJson[item.dbfId].cardSet;
           });
           reportContent[deck.playerClass].push(deck);
         }
@@ -238,7 +239,8 @@ class TempoStormSpider {
           }
           deck.code = _this.getDeckcode(deck);
           deck.cards.forEach(item => {
-            item.cnName = cardZhCNJson[item.dbfId];
+            item.cnName = cardZhCNJson[item.dbfId].cnName;
+            item.cardSet = cardZhCNJson[item.dbfId].cardSet;
           });
           reportContent[deck.playerClass].push(deck);
         }
