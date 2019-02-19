@@ -26,10 +26,15 @@
         <div class="type-icon"></div>
         奉天狂野战报
       </router-link>
-    </div>
-    <div class="mini-code-content">
-      <p>更多新功能，更流畅请体验小程序版：</p>
-      <img src="../assets/img/mini-code.jpg">
+      <router-link class="item" v-if="selected==='1'"
+                   :to="{path:'/ReportList', query:{type:selected==='1'?'wild':'standard',form:'other'}}">
+        <div class="type-icon"></div>
+        其他
+      </router-link>
+      <div class="mini-code-content">
+        <p>更多新功能，更流畅请体验小程序版：</p>
+        <img src="../assets/img/mini-code.jpg">
+      </div>
     </div>
   </div>
 </template>
@@ -59,7 +64,6 @@
 
 <style lang="less" rel="stylesheet/less" scoped>
   .mini-code-content{
-    margin-top: 5rem;
     color: red;
     img{
       width: 4rem;

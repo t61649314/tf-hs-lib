@@ -36,7 +36,13 @@
     },
     data() {
       return {
-        reportTitleMap: {"vicious-syndicate": "VS", "tempo-storm": "TS", "shengerkuangye": "生而", "fengtian": "奉天"},
+        reportTitleMap: {
+          "vicious-syndicate": "VS",
+          "tempo-storm": "TS",
+          "shengerkuangye": "生而",
+          "fengtian": "奉天",
+          "other": "其他"
+        },
         typeTitleMap: {"wild": "狂野", "standard": "标准"},
         reportList: [],
         timeNode: timeNode

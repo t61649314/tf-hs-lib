@@ -1,52 +1,47 @@
 const utils = require("../utils/utils");
 const Const = require("./const.js");
 const path = require("path");
-const moment = require("moment");
 const storagePath = path.resolve(__dirname, '../../storage');
 const cardZhCNJson = require("../../server/zhCN/cardZhCNJson.json");
 const Deckcode = require("../utils/deckcode/Deckcode");
 const co = require('co');
-let rootDir = path.join(storagePath, "fengtian");
-const homePageSearchId = [69619];
 
-class FengTian {
-  readArticle(url) {
+
+class YingDiDecksSpider {
+  readDecks(url) {
     return utils.startRequest(url, false, true).then((res) => {
-      let {created, content} = res.article;
-      let contentObj = JSON.parse(content);
       return {
-        deckList: contentObj.filter(item => {
-          return item.type === "deckCode";
-        }).map(item => {
+        deckList: res.list.map(item => {
           return {
-            name: item.deckname,
-            code: item.code
+            name: item.deck.name,
+            code: item.deck.code
           }
         }),
-        time: created * 1000
+        time: res.list[0].deck.created * 1000
       };
     })
   }
 
-  run() {
+  run(type, yingDiDecksInfoList) {
     let _this = this;
-    let list = require("../../storage/fengtian/wild/report/list");
+    let rootDir = path.join(storagePath, "other");
+    let list = require(`../../storage/other/${type}/report/list`);
     return co(function* () {
-      for (let i = 0; i < homePageSearchId.length; i++) {
-        let reportName = `奉天战队狂野战报第${homePageSearchId.length - i}期`;
-        let url = `https://www.iyingdi.com/article/${homePageSearchId[i]}?time=1547867333211&token=0d27fe4a9a834c3abcff23a7caf6f0ec&system=web/`;
+      for (let i = 0; i < yingDiDecksInfoList.length; i++) {
+        let reportName = yingDiDecksInfoList[i].name;
+        let url = `https://www.iyingdi.com/hearthstone/set/${yingDiDecksInfoList[i].id}/decks?token=&page=0&size=100`;
         try {
           console.info(`${url}开始读取`);
           const exist = !!list.find(item => {
             return item.name === reportName;
           });
           if (!exist) {
-            let {deckList, time} = yield _this.readArticle(url);
+            let {deckList, time} = yield _this.readDecks(url);
             let reportContent = {};
             list.unshift({
               "name": reportName,
               "time": time,
-              "fromUrl": `https://www.iyingdi.com/web/article/search/${homePageSearchId[i]}`
+              "fromUrl": `https://www.iyingdi.com/web/tools/hearthstone/decks/setdetail?btypes=home_allset&setid=${yingDiDecksInfoList[i].id}`
             });
             for (let j = 0; j < deckList.length; j++) {
               //通过code调用ts的接口获取卡组信息
@@ -61,10 +56,10 @@ class FengTian {
                 code: deckList[j].code,
                 alreadyFormatName: true
               });
-              console.info(`该篇周报剩余：${deckList.length - j - 1}`);
+              console.info(`剩余：${deckList.length - j - 1}`);
             }
-            yield utils.writeFile(path.join(rootDir, "wild", "deck", `${reportName}.json`), JSON.stringify(reportContent));
-            yield utils.writeFile(path.join(rootDir, "wild", "report", "list.json"), JSON.stringify(list));
+            yield utils.writeFile(path.join(rootDir, type, "deck", `${reportName}.json`), JSON.stringify(reportContent));
+            yield utils.writeFile(path.join(rootDir, type, "report", "list.json"), JSON.stringify(list));
           }
           console.info(`${url} done`);
         } catch (e) {
@@ -121,5 +116,11 @@ class FengTian {
   }
 }
 
-new FengTian().run();
-module.exports = FengTian;
+const yingDiDecksInfoList = [
+  {id: 763129, name: "2019狂野公开赛亚太区预选赛八强"},
+  {id: 763345, name: "2019狂野公开赛欧洲区预选赛八强"},
+  {id: 763469, name: "2019狂野公开赛美洲区预选赛八强"}
+];
+let yingDiDecksSpider = new YingDiDecksSpider();
+yingDiDecksSpider.run("wild", yingDiDecksInfoList);
+module.exports = YingDiDecksSpider;

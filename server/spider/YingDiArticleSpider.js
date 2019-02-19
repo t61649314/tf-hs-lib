@@ -1,15 +1,13 @@
 const utils = require("../utils/utils");
 const Const = require("./const.js");
 const path = require("path");
-const moment = require("moment");
 const storagePath = path.resolve(__dirname, '../../storage');
 const cardZhCNJson = require("../../server/zhCN/cardZhCNJson.json");
 const Deckcode = require("../utils/deckcode/Deckcode");
 const co = require('co');
-let rootDir = path.join(storagePath, "shengerkuangye");
-const homePageSearchId = [68573, 60767, 58190, 56065, 52702, 51596, 50430, 49165, 47149, 44758, 43020, 42204];
 
-class ShengErKuangYe {
+
+class YingDiArticleSpider {
   readArticle(url) {
     return utils.startRequest(url, false, true).then((res) => {
       let {created, content} = res.article;
@@ -28,13 +26,14 @@ class ShengErKuangYe {
     })
   }
 
-  run() {
+  run(keyWord, cnName, articleIdList) {
     let _this = this;
-    let list = require("../../storage/shengerkuangye/wild/report/list");
+    let rootDir = path.join(storagePath, keyWord);
+    let list = require(`../../storage/${keyWord}/wild/report/list`);
     return co(function* () {
-      for (let i = 0; i < homePageSearchId.length; i++) {
-        let reportName = `生而狂野战报第${homePageSearchId.length - i}期`;
-        let url = `https://www.iyingdi.com/article/${homePageSearchId[i]}?time=1547867333211&token=0d27fe4a9a834c3abcff23a7caf6f0ec&system=web/`;
+      for (let i = 0; i < articleIdList.length; i++) {
+        let reportName = `${cnName}第${articleIdList.length - i}期`;
+        let url = `https://www.iyingdi.com/article/${articleIdList[i]}?time=1547867333211&token=0d27fe4a9a834c3abcff23a7caf6f0ec&system=web/`;
         try {
           console.info(`${url}开始读取`);
           const exist = !!list.find(item => {
@@ -46,7 +45,7 @@ class ShengErKuangYe {
             list.unshift({
               "name": reportName,
               "time": time,
-              "fromUrl": `https://www.iyingdi.com/web/article/search/${homePageSearchId[i]}`
+              "fromUrl": `https://www.iyingdi.com/web/article/search/${articleIdList[i]}`
             });
             for (let j = 0; j < deckList.length; j++) {
               //通过code调用ts的接口获取卡组信息
@@ -121,5 +120,9 @@ class ShengErKuangYe {
   }
 }
 
-new ShengErKuangYe().run();
-module.exports = ShengErKuangYe;
+const shengerkuangyeArticleIdList = [68573, 60767, 58190, 56065, 52702, 51596, 50430, 49165, 47149, 44758, 43020, 42204];
+const fengtianArticleIdList = [69619];
+let yingDiArticleSpider = new YingDiArticleSpider();
+yingDiArticleSpider.run("shengerkuangye", "生而狂野战报", shengerkuangyeArticleIdList);
+yingDiArticleSpider.run("fengtian", "奉天战队狂野战报", fengtianArticleIdList);
+module.exports = YingDiArticleSpider;
