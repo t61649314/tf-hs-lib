@@ -1,5 +1,5 @@
-const ViciousSyndicateSpider = require("./spider/vicioussyndicate");
-const TempoStormSpider = require("./spider/tempostorm");
+const ViciousSyndicateSpider = require("./spider/ViciousSyndicateSpider");
+const TempoStormSpider = require("./spider/TempoStormSpider");
 const co = require('co');
 co(function* () {
   const vs = new ViciousSyndicateSpider();

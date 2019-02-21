@@ -8,6 +8,7 @@ const co = require('co');
 let listJsonStr = "";
 // let deckJsonStr = "";
 co(function* () {
+  yield writeWxJson("other", "wild", "list");
   yield writeWxJson("vicious-syndicate", "standard", "newest-list");
   yield writeWxJson("vicious-syndicate", "standard", "old-list");
   yield writeWxJson("vicious-syndicate", "wild", "list");
