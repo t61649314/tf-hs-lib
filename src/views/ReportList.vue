@@ -41,6 +41,8 @@
           "tempo-storm": "TS",
           "shengerkuangye": "生而",
           "fengtian": "奉天",
+          "zaowuzhe": "造物者",
+          "suzhijicha": "素质极差",
           "other": "其他"
         },
         typeTitleMap: {"wild": "狂野", "standard": "标准"},

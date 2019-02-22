@@ -27,6 +27,16 @@
         奉天狂野战报
       </router-link>
       <router-link class="item" v-if="selected==='1'"
+                   :to="{path:'/ReportList', query:{type:selected==='1'?'wild':'standard',form:'zaowuzhe'}}">
+        <div class="type-icon"></div>
+        造物者狂野战报
+      </router-link>
+      <router-link class="item" v-if="selected==='1'"
+                   :to="{path:'/ReportList', query:{type:selected==='1'?'wild':'standard',form:'suzhijicha'}}">
+        <div class="type-icon"></div>
+        素质极差狂野战报
+      </router-link>
+      <router-link class="item" v-if="selected==='1'"
                    :to="{path:'/ReportList', query:{type:selected==='1'?'wild':'standard',form:'other'}}">
         <div class="type-icon"></div>
         其他

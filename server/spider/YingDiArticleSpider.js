@@ -26,13 +26,19 @@ class YingDiArticleSpider {
     })
   }
 
-  run(keyWord, cnName, articleIdList) {
+  run(keyWord, cnName, articleIdList, onlyOne) {
     let _this = this;
     let rootDir = path.join(storagePath, keyWord);
     let list = require(`../../storage/${keyWord}/wild/report/list`);
     return co(function* () {
       for (let i = 0; i < articleIdList.length; i++) {
-        let reportName = `${cnName}第${articleIdList.length - i}期`;
+        let reportName;
+        if (onlyOne) {
+          reportName = cnName;
+        } else {
+          reportName = `${cnName}第${articleIdList.length - i}期`;
+        }
+
         let url = `https://www.iyingdi.com/article/${articleIdList[i]}?time=1547867333211&token=0d27fe4a9a834c3abcff23a7caf6f0ec&system=web/`;
         try {
           console.info(`${url}开始读取`);
@@ -122,7 +128,15 @@ class YingDiArticleSpider {
 
 const shengerkuangyeArticleIdList = [68573, 60767, 58190, 56065, 52702, 51596, 50430, 49165, 47149, 44758, 43020, 42204];
 const fengtianArticleIdList = [69619];
+const zaowuzheArticleIdList = [67497, 64253];
+const suzhijichaArticleIdList = [67565];
+const other1 = [62865];
+const other2 = [60747];
 let yingDiArticleSpider = new YingDiArticleSpider();
-yingDiArticleSpider.run("shengerkuangye", "生而狂野战报", shengerkuangyeArticleIdList);
-yingDiArticleSpider.run("fengtian", "奉天战队狂野战报", fengtianArticleIdList);
+yingDiArticleSpider.run("other", "【旅法师营地】十月狂野传说指南——天下武功唯快不破", other1, true);
+yingDiArticleSpider.run("other", "【旅法师营地】狂野的新挑战者们", other2, true);
+// yingDiArticleSpider.run("zaowuzhe", "造物者狂野战报", zaowuzheArticleIdList);
+// yingDiArticleSpider.run("suzhijicha", "素质极差狂野战报", suzhijichaArticleIdList);
+// yingDiArticleSpider.run("shengerkuangye", "生而狂野战报", shengerkuangyeArticleIdList);
+// yingDiArticleSpider.run("fengtian", "奉天战队狂野战报", fengtianArticleIdList);
 module.exports = YingDiArticleSpider;
