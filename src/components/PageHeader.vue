@@ -1,7 +1,7 @@
 <template>
   <div class="page-header">
     <i v-if="!noBack" class="mintui mintui-back" @click="goBack"></i>
-    <h1>{{ title }}</h1>
+    <h1><span class="title-text">{{ title }}</span></h1>
   </div>
 </template>
 
@@ -30,6 +30,14 @@
       font-size: 0.4rem;
       line-height: 1.2rem;
       margin: 0;
+      .title-text{
+        display: block;
+        margin: auto;
+        max-width: 5rem;
+        overflow: hidden;
+        text-overflow:ellipsis;
+        white-space: nowrap;
+      }
     }
     .mintui-back {
       display: inline-block;

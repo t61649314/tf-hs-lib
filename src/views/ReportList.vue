@@ -1,6 +1,6 @@
 <template>
   <div>
-    <page-header :title="reportTitleMap[$route.query.form]+typeTitleMap[$route.query.type]+'战报'"></page-header>
+    <page-header :title="$route.query.name"></page-header>
     <div class="list">
       <div v-for="(item,index) in reportGroup" :key="index" class="item-box">
         <a class="item" v-if="item.jumpUrl" target="_blank" :href="item.jumpUrl">
@@ -36,15 +36,6 @@
     },
     data() {
       return {
-        reportTitleMap: {
-          "vicious-syndicate": "VS",
-          "tempo-storm": "TS",
-          "shengerkuangye": "生而",
-          "fengtian": "奉天",
-          "zaowuzhe": "造物者",
-          "suzhijicha": "素质极差",
-          "other": "其他"
-        },
         typeTitleMap: {"wild": "狂野", "standard": "标准"},
         reportList: [],
         timeNode: timeNode

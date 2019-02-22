@@ -7,37 +7,42 @@
     </mt-navbar>
     <div class="list" :class="selected==='1'?'wild-list':'standard-list'">
       <router-link class="item"
-                   :to="{path:'/ReportList', query:{type:selected==='1'?'wild':'standard',form:'vicious-syndicate'}}">
+                   :to="{path:'/ReportList', query:{type:selected==='1'?'wild':'standard',form:'vicious-syndicate',name:'VS战报'}}">
         <div class="type-icon"></div>
         VS战报
       </router-link>
       <router-link class="item"
-                   :to="{path:'/ReportList', query:{type:selected==='1'?'wild':'standard',form:'tempo-storm'}}">
+                   :to="{path:'/ReportList', query:{type:selected==='1'?'wild':'standard',form:'tempo-storm',name:'TS战报'}}">
         <div class="type-icon"></div>
         TS战报
       </router-link>
       <router-link class="item" v-if="selected==='1'"
-                   :to="{path:'/ReportList', query:{type:selected==='1'?'wild':'standard',form:'shengerkuangye'}}">
+                   :to="{path:'/ReportList', query:{type:'wild',form:'shengerkuangye',name:'生而狂野战报'}}">
         <div class="type-icon"></div>
         生而狂野战报
       </router-link>
       <router-link class="item" v-if="selected==='1'"
-                   :to="{path:'/ReportList', query:{type:selected==='1'?'wild':'standard',form:'fengtian'}}">
+                   :to="{path:'/ReportList', query:{type:'wild',form:'fengtian',name:'奉天狂野战报'}}">
         <div class="type-icon"></div>
         奉天狂野战报
       </router-link>
       <router-link class="item" v-if="selected==='1'"
-                   :to="{path:'/ReportList', query:{type:selected==='1'?'wild':'standard',form:'zaowuzhe'}}">
+                   :to="{path:'/ReportList', query:{type:'wild',form:'zaowuzhe',name:'造物者狂野战报'}}">
         <div class="type-icon"></div>
         造物者狂野战报
       </router-link>
       <router-link class="item" v-if="selected==='1'"
-                   :to="{path:'/ReportList', query:{type:selected==='1'?'wild':'standard',form:'suzhijicha'}}">
+                   :to="{path:'/ReportList', query:{type:'wild',form:'suzhijicha',name:'素质极差狂野战报'}}">
         <div class="type-icon"></div>
         素质极差狂野战报
       </router-link>
       <router-link class="item" v-if="selected==='1'"
-                   :to="{path:'/ReportList', query:{type:selected==='1'?'wild':'standard',form:'other'}}">
+                   :to="{path:'/ReportList', query:{type:'wild',form:'nga-carry',name:'NGA搬运'}}">
+        <div class="type-icon"></div>
+        NGA搬运
+      </router-link>
+      <router-link class="item" v-if="selected==='1'"
+                   :to="{path:'/ReportList', query:{type:'wild',form:'other',name:'其他'}}">
         <div class="type-icon"></div>
         其他
       </router-link>
