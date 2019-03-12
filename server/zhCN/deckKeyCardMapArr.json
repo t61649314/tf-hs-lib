@@ -152,6 +152,15 @@
     ]
   },
   {
+    "name": "奥秘",
+    "anyOneId": true,
+    "ids": [
+      748,
+      40583,
+      50421
+    ]
+  },
+  {
     "name": "中速",
     "anyOneId": true,
     "ids": [
