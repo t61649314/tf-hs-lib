@@ -87,6 +87,9 @@ class YingDiArticleSpider {
     let occupation = Object.keys(occupationInfo).find(item => {
       return occupationInfo[item].dbfId.includes(occupationId);
     });
+    if(!occupation){
+      console.warn(`not find this occupation : ${occupationId}`)
+    }
     const params = {
       "where": {
         "dbfId": {

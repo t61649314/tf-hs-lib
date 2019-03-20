@@ -22,7 +22,7 @@ const occupationInfo = {
   Priest: {
     cnName: "牧师",
     simpleName: "牧",
-    dbfId: [813,41887]
+    dbfId: [813,41887,54816]
   },
   Rogue: {
     cnName: "盗贼",
