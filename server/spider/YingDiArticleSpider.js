@@ -126,7 +126,7 @@ class YingDiArticleSpider {
   }
 }
 
-const shengerkuangyeArticleIdList = [68573, 60767, 58190, 56065, 52702, 51596, 50430, 49165, 47149, 44758, 43020, 42204];
+const shengerkuangyeArticleIdList = [72307,68573, 60767, 58190, 56065, 52702, 51596, 50430, 49165, 47149, 44758, 43020, 42204];
 const fengtianArticleIdList = [71751,69619];
 const zaowuzheArticleIdList = [70829, 67497, 64253];
 const suzhijichaArticleIdList = [67565];
@@ -137,6 +137,6 @@ let yingDiArticleSpider = new YingDiArticleSpider();
 // yingDiArticleSpider.run("other", "【旅法师营地】狂野的新挑战者们", other2, true);
 // yingDiArticleSpider.run("zaowuzhe", "造物者狂野战报", zaowuzheArticleIdList);
 // yingDiArticleSpider.run("suzhijicha", "素质极差狂野战报", suzhijichaArticleIdList);
-// yingDiArticleSpider.run("shengerkuangye", "生而狂野战报", shengerkuangyeArticleIdList);
-yingDiArticleSpider.run("fengtian", "奉天战队狂野战报", fengtianArticleIdList);
+yingDiArticleSpider.run("shengerkuangye", "生而狂野战报", shengerkuangyeArticleIdList);
+// yingDiArticleSpider.run("fengtian", "奉天战队狂野战报", fengtianArticleIdList);
 module.exports = YingDiArticleSpider;
