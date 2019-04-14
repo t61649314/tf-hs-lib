@@ -2,52 +2,56 @@ const occupationInfo = {
   Druid: {
     cnName: "德鲁伊",
     simpleName: "德",
-    dbfId: [274,50484]
+    dbfId: [274, 50484]
   },
   Hunter: {
     cnName: "猎人",
     simpleName: "猎",
-    dbfId: [31,2826]
+    dbfId: [31, 2826]
   },
   Mage: {
     cnName: "法师",
     simpleName: "法",
-    dbfId: [637,2829,39117]
+    dbfId: [637, 2829, 39117]
   },
   Paladin: {
     cnName: "骑士",
     simpleName: "骑",
-    dbfId:[671,2827,46116,53187]
+    dbfId: [671, 2827, 46116, 53187]
   },
   Priest: {
     cnName: "牧师",
     simpleName: "牧",
-    dbfId: [813,41887,54816]
+    dbfId: [813, 41887, 54816]
   },
   Rogue: {
     cnName: "盗贼",
     simpleName: "贼",
-    dbfId: [930,40195]
+    dbfId: [930, 40195]
   },
   Shaman: {
     cnName: "萨满",
     simpleName: "萨",
-    dbfId: [1066,40183,53237]
+    dbfId: [1066, 40183, 53237]
   },
   Warlock: {
     cnName: "术士",
     simpleName: "术",
-    dbfId: [893,47817,51834]
+    dbfId: [893, 47817, 51834]
   },
   Warrior: {
     cnName: "战士",
     simpleName: "战",
-    dbfId: [7,2828]
+    dbfId: [7, 2828]
   },
 };
 
 
 const timeNode = [
+  {
+    time: "2019-04-10",
+    title: "《暗影崛起》上线",
+  },
   {
     time: "2019-02-06",
     title: "冷血、火舌图腾、生而平等、猎人印记、法术翡翠削弱",
