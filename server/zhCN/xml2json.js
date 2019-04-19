@@ -1,10 +1,11 @@
 var xml2js = require('xml2js');
 const fs = require('fs');
+const path = require('path');
 const utils = require("../utils/utils");
 const xmlParser = new xml2js.Parser({
   explicitArray: false
 }); // xml -> json
-fs.readFile('./HearthDb.CardDefs.xml', 'utf-8', function (err, result) {
+fs.readFile(path.resolve(__dirname, './HearthDb.CardDefs.xml'), 'utf-8', function (err, result) {
   xmlParser.parseString(result, function (err, result) {
     const cardZhCNJson = {};
     result.CardDefs.Entity.forEach(item => {
@@ -18,6 +19,6 @@ fs.readFile('./HearthDb.CardDefs.xml', 'utf-8', function (err, result) {
         }
       }
     });
-    utils.writeFile('./cardZhCNJson.json', JSON.stringify(cardZhCNJson));
+    utils.writeFile(path.resolve(__dirname, './cardZhCNJson.json'), JSON.stringify(cardZhCNJson));
   });
 });
