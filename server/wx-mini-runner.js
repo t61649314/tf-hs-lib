@@ -2,11 +2,16 @@ const path = require("path");
 const storagePath = path.resolve(__dirname, '../storage');
 let rootDir = path.join(storagePath, "wx-mini");
 const utils = require("./utils/utils");
-
+const {occupationInfo} = require('../server/spider/const');
 const uuid = require('uuid');
 const co = require('co');
 let listJsonStr = "";
 // let deckJsonStr = "";
+
+
+let occupationList = Object.keys(occupationInfo).map(key => {
+  return occupationInfo[key].cnName;
+});
 co(function* () {
   yield writeWxJson("nga-carry", "wild", "list");
   yield writeWxJson("other", "wild", "list");
@@ -51,6 +56,9 @@ function writeWxJson(from, type, fileName) {
                 return a.cost - b.cost
               });
               deckFormat.code = deck.code;
+              if (occupationList.includes(deckFormat.name)) {
+                throw new Error(JSON.stringify(deckFormat));
+              }
               jsonStr += (JSON.stringify(deckFormat) + "\n");
               // deckJsonStr += (JSON.stringify(deckFormat) + "\n");
             }
