@@ -16,6 +16,11 @@
         <div class="type-icon"></div>
         TS战报
       </router-link>
+      <router-link class="item"
+                   :to="{path:'/ReportList', query:{type:'wild',form:'team-rankstar',name:'TeamRankstar战报'}}">
+        <div class="type-icon"></div>
+        TeamRankstar战报
+      </router-link>
       <router-link class="item" v-if="selected==='1'"
                    :to="{path:'/ReportList', query:{type:'wild',form:'shengerkuangye',name:'生而狂野战报'}}">
         <div class="type-icon"></div>
