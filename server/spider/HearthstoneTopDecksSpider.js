@@ -70,21 +70,25 @@ class HearthstoneTopDecksSpider {
     let _this = this;
     let list = require("../../storage/hearthstone-top-decks/wild/report/list");
     return co(function* () {
-      for (let i = 1; ; i++) {
-        let url;
-        if (i === 1) {
-          url = 'https://hearthstone-decks.net/wild-decks/';
-        } else {
-          url = `https://hearthstone-decks.net/wild-decks/page/${i}/`;
-        }
-        try {
+      try {
+        for (let i = 1; ; i++) {
+          let url;
+          if (i === 1) {
+            url = 'https://hearthstone-decks.net/wild-decks/';
+          } else {
+            url = `https://hearthstone-decks.net/wild-decks/page/${i}/`;
+          }
           console.info(`${url}开始读取`);
           let hrefList = yield _this.readHomePage(url);
           for (let j = 0; j < hrefList.length; j++) {
             let item = hrefList[j];
             let timeStr = moment(item.time).format("YYYY-MM-DD");
 
-            let report = {"name": timeStr, "time": new Date(item.time).getTime(), "fromUrl": 'https://hearthstone-decks.net/wild-decks/'};
+            let report = {
+              "name": timeStr,
+              "time": new Date(item.time).getTime(),
+              "fromUrl": 'https://hearthstone-decks.net/wild-decks/'
+            };
             let findReport = list.find(item => item.name === timeStr);
             let reportContent;
             if (findReport) {
@@ -108,6 +112,8 @@ class HearthstoneTopDecksSpider {
                   yield utils.writeFile(path.join(rootDir, "wild", "deck", `${timeStr}.json`), JSON.stringify(reportContent));
                 }
                 console.info(`该篇周报剩余：${hrefList.length - j - 1}`);
+              } else {
+                throw new Error(`HearthstoneTopDecks 无最新内容`);
               }
             } else {
               reportContent = {};
@@ -130,10 +136,9 @@ class HearthstoneTopDecksSpider {
             }
           }
           console.info(`${url} done`);
-        } catch (e) {
-          console.error(`${url}:${e}`);
-          break;
         }
+      } catch (e) {
+        console.error(`${e}`);
       }
     });
   }
@@ -186,7 +191,5 @@ class HearthstoneTopDecksSpider {
     })
   }
 }
-
-new HearthstoneTopDecksSpider().run();
 
 module.exports = HearthstoneTopDecksSpider;

@@ -258,6 +258,4 @@ class TeamRankstarSpider {
   }
 }
 
-new TeamRankstarSpider().run();
-
 module.exports = TeamRankstarSpider;
