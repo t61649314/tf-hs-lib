@@ -108,7 +108,7 @@ class TeamRankstarSpider {
     })
   }
 
-  checkExits(reportContent,name) {
+  checkExits(reportContent, name) {
     let flag = false;
     Object.keys(reportContent).forEach(key => {
       if (reportContent[key].find(item => item.name === name)) {
@@ -117,6 +117,7 @@ class TeamRankstarSpider {
     });
     return flag;
   }
+
   run() {
     let _this = this;
     let list = require("../../storage/team-rankstar/wild/report/list");
@@ -134,7 +135,7 @@ class TeamRankstarSpider {
         list.unshift({"name": reportName, "time": time, "fromUrl": url});
         for (let j = 0; j < tier34DeckList.length; j++) {
           console.info(`${tier34DeckList[j].name}开始读取`);
-          if (_this.checkExits(reportContent,tier34DeckList[j].name)) {
+          if (_this.checkExits(reportContent, tier34DeckList[j].name)) {
             continue;
           }
           let {cards, occupation} = yield _this.getCardInfoByCode(tier34DeckList[j].code);
@@ -149,7 +150,7 @@ class TeamRankstarSpider {
         }
         for (let j = 0; j < hrefList.length; j++) {
           console.info(`${hrefList[j].href}开始读取`);
-          if (_this.checkExits(reportContent,hrefList[j].name)) {
+          if (_this.checkExits(reportContent, hrefList[j].name)) {
             continue;
           }
           let deckInfo = yield _this.readChildPage(hrefList[j].href);
@@ -167,7 +168,7 @@ class TeamRankstarSpider {
         }
         for (let j = 0; j < otherHrefList.length; j++) {
           console.info(`${otherHrefList[j].href}开始读取`);
-          if (_this.checkExits(reportContent,otherHrefList[j].name)) {
+          if (_this.checkExits(reportContent, otherHrefList[j].name)) {
             continue;
           }
           let deckInfo = yield _this.readOtherChildPage(otherHrefList[j].href);
@@ -184,10 +185,10 @@ class TeamRankstarSpider {
           yield utils.writeFile(path.join(rootDir, "wild", "deck", `${reportName}.json`), JSON.stringify(reportContent));
         }
         let otherCodeList = otherCode[reportName];
-        if(otherCodeList){
+        if (otherCodeList) {
           for (let j = 0; j < otherCodeList.length; j++) {
             console.info(`${otherCodeList[j].name}开始读取`);
-            if (_this.checkExits(reportContent,otherCodeList[j].name)) {
+            if (_this.checkExits(reportContent, otherCodeList[j].name)) {
               continue;
             }
             let {cards, occupation} = yield _this.getCardInfoByCode(otherCodeList[j].code);
@@ -203,8 +204,8 @@ class TeamRankstarSpider {
         }
 
         yield utils.writeFile(path.join(rootDir, "wild", "report", "list.json"), JSON.stringify(list));
+        console.info(`${url} done`);
       }
-      console.info(`${url} done`);
     });
   }
 
