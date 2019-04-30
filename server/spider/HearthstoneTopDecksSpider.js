@@ -82,17 +82,17 @@ class HearthstoneTopDecksSpider {
           let hrefList = yield _this.readHomePage(url);
           for (let j = 0; j < hrefList.length; j++) {
             let item = hrefList[j];
-            let timeStr = moment(item.time).format("YYYY-MM-DD");
+            let reportName = "hearthstone-top-" + moment(item.time).format("YYYY-MM-DD");
 
             let report = {
-              "name": timeStr,
+              "name": reportName,
               "time": new Date(item.time).getTime(),
               "fromUrl": 'https://hearthstone-decks.net/wild-decks/'
             };
-            let findReport = list.find(item => item.name === timeStr);
+            let findReport = list.find(item => item.name === reportName);
             let reportContent;
             if (findReport) {
-              reportContent = require(`../../storage/hearthstone-top-decks/wild/deck/${timeStr}.json`);
+              reportContent = require(`../../storage/hearthstone-top-decks/wild/deck/${reportName}.json`);
               let findDeck = false;
               Object.keys(reportContent).forEach(key => {
                 let occupationItem = reportContent[key];
@@ -109,7 +109,7 @@ class HearthstoneTopDecksSpider {
                     reportContent[occupation] = [];
                   }
                   reportContent[occupation].push({name: item.name, cards: cards, code: deckInfo.code});
-                  yield utils.writeFile(path.join(rootDir, "wild", "deck", `${timeStr}.json`), JSON.stringify(reportContent));
+                  yield utils.writeFile(path.join(rootDir, "wild", "deck", `${reportName}.json`), JSON.stringify(reportContent));
                 }
                 console.info(`该篇周报剩余：${hrefList.length - j - 1}`);
               } else {
@@ -128,7 +128,7 @@ class HearthstoneTopDecksSpider {
                   reportContent[occupation] = [];
                 }
                 reportContent[occupation].push({name: item.name, cards: cards, code: deckInfo.code});
-                yield utils.writeFile(path.join(rootDir, "wild", "deck", `${timeStr}.json`), JSON.stringify(reportContent));
+                yield utils.writeFile(path.join(rootDir, "wild", "deck", `${reportName}.json`), JSON.stringify(reportContent));
               }
               console.info(`该篇周报剩余：${hrefList.length - j - 1}`);
               list.unshift(report);
