@@ -16,10 +16,20 @@
         <div class="type-icon"></div>
         TS战报
       </router-link>
-      <router-link class="item"
+      <router-link class="item"  v-if="selected==='1'"
+                   :to="{path:'/ReportList', query:{type:'wild',form:'hearthstone-top-decks',name:'Hearthstone Top Decks'}}">
+        <div class="type-icon"></div>
+        Hearthstone Top Decks
+      </router-link>
+      <router-link class="item"  v-if="selected==='1'"
                    :to="{path:'/ReportList', query:{type:'wild',form:'team-rankstar',name:'TeamRankstar战报'}}">
         <div class="type-icon"></div>
         TeamRankstar战报
+      </router-link>
+      <router-link class="item" v-if="selected==='1'"
+                   :to="{path:'/ReportList', query:{type:'wild',form:'suzhijicha',name:'素质极差狂野战报'}}">
+        <div class="type-icon"></div>
+        素质极差狂野战报
       </router-link>
       <router-link class="item" v-if="selected==='1'"
                    :to="{path:'/ReportList', query:{type:'wild',form:'shengerkuangye',name:'生而狂野战报'}}">
@@ -35,11 +45,6 @@
                    :to="{path:'/ReportList', query:{type:'wild',form:'zaowuzhe',name:'造物者狂野战报'}}">
         <div class="type-icon"></div>
         造物者狂野战报
-      </router-link>
-      <router-link class="item" v-if="selected==='1'"
-                   :to="{path:'/ReportList', query:{type:'wild',form:'suzhijicha',name:'素质极差狂野战报'}}">
-        <div class="type-icon"></div>
-        素质极差狂野战报
       </router-link>
       <router-link class="item" v-if="selected==='1'"
                    :to="{path:'/ReportList', query:{type:'wild',form:'nga-carry',name:'NGA搬运'}}">

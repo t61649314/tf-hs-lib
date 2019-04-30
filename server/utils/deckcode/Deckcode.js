@@ -47,11 +47,14 @@ module.exports = class Deckcode {
     let $data = $varint.decode($code);
 
     if ($data[0] !== 0) {
+      console.error($code);
       throw new Error("code is error");
     }
 
     let $version = $data[1];
     if ($version !== this.DECKCODE_VERSION) {
+      console.error($code);
+      console.error($version);
       throw new Error("Unsupported version: {$version}");
     }
 

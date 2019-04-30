@@ -13,6 +13,7 @@ let occupationList = Object.keys(occupationInfo).map(key => {
   return occupationInfo[key].cnName;
 });
 co(function* () {
+  yield writeWxJson("hearthstone-top-decks", "wild", "list");
   yield writeWxJson("team-rankstar", "wild", "list");
   yield writeWxJson("nga-carry", "wild", "list");
   yield writeWxJson("other", "wild", "list");
