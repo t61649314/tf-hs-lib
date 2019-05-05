@@ -46,14 +46,14 @@
     },
     methods: {
       init: function () {
-        // Indicator.open();
-        // axios.get(`/my-h5-page/storage/${this.$route.query.form}/${this.$route.query.type}/deck/${this.$route.query.page}.json`).then(({data}) => {
-        //   Indicator.close();
-        //   if (data) {
-        //     this.deckList = data;
-        //   }
-        // })
-        this.deckList = require(`../../storage/${this.$route.query.form}/${this.$route.query.type}/deck/${this.$route.query.page}.json`);
+        Indicator.open();
+        axios.get(`/my-h5-page/storage/${this.$route.query.form}/${this.$route.query.type}/deck/${this.$route.query.page}.json`).then(({data}) => {
+          Indicator.close();
+          if (data) {
+            this.deckList = data;
+          }
+        })
+        // this.deckList = require(`../../storage/${this.$route.query.form}/${this.$route.query.type}/deck/${this.$route.query.page}.json`);
       }
     }
   }
