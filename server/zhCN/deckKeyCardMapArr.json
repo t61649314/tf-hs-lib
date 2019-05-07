@@ -273,6 +273,9 @@
   },
   {
     "name": "王子",
+    "occupation": [
+      "Rogue"
+    ],
     "ids": [
       45340
     ]
