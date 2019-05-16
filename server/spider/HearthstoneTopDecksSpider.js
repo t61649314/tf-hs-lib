@@ -28,17 +28,17 @@ class HearthstoneTopDecksSpider {
   readHomePage(url) {
     return utils.startRequest(url).then(($) => {
       console.info(`${url}读取成功`);
-      const deckHrefList = $('.blog-box-2');
+      const deckHrefList = $('.medium-content');
       if (deckHrefList.length) {
         let hrefList = [];
         deckHrefList.each(function () {
-          const href = $(this).find(".blog-title").attr("href");
-          const name = $(this).find(".blog-title").html();
-          const time = $(this).find(".entry-date").attr("datetime");
+          const href = $(this).find(".entry-title").find("a").attr("href");
+          const name = $(this).find(".entry-title").find("a").html();
+          const time = $(this).find(".meta-date").html();
           hrefList.push({
             href: href,
             name: name,
-            time: time
+            time: moment(new Date(time)).add(1, 'days')
           });
         });
         return hrefList;
@@ -82,11 +82,11 @@ class HearthstoneTopDecksSpider {
           let hrefList = yield _this.readHomePage(url);
           for (let j = 0; j < hrefList.length; j++) {
             let item = hrefList[j];
-            let reportName = "hearthstone-top-" + moment(item.time).format("YYYY-MM-DD");
+            let reportName = "hearthstone-top-" + item.time.format("YYYY-MM-DD");
 
             let report = {
               "name": reportName,
-              "time": new Date(item.time).getTime(),
+              "time": item.time.valueOf(),
               "fromUrl": 'https://hearthstone-decks.net/wild-decks/'
             };
             let findReport = list.find(item => item.name === reportName);
