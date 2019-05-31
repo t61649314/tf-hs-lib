@@ -67,7 +67,12 @@ class TeamRankstarSpider {
         });
         tier34DeckDomList.each(function () {
           const code = $(this).next().html();
-          const name = $(this).find("strong").html();
+          let name;
+          if ($(this).find("strong").find("a").length) {
+            name = $(this).find("strong").find("a").html();
+          } else {
+            name = $(this).find("strong").html();
+          }
           if (name.indexOf("Tier 1") === -1 &&
             name.indexOf("Tier 2") === -1 &&
             name.indexOf("Tier 3") === -1 &&
