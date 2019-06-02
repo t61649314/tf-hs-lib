@@ -1,3 +1,4 @@
+{"_id":"hearthstone-top-2019-06-01","name":"hearthstone-top-2019-06-01","time":1559318400000,"fromUrl":"https://hearthstone-decks.net/wild-decks/","type":"wild","from":"hearthstone-top-decks","fileName":"list"}
 {"_id":"hearthstone-top-2019-05-30","name":"hearthstone-top-2019-05-30","time":1559145600000,"fromUrl":"https://hearthstone-decks.net/wild-decks/","type":"wild","from":"hearthstone-top-decks","fileName":"list"}
 {"_id":"hearthstone-top-2019-05-31","name":"hearthstone-top-2019-05-31","time":1559232000000,"fromUrl":"https://hearthstone-decks.net/wild-decks/","type":"wild","from":"hearthstone-top-decks","fileName":"list"}
 {"_id":"hearthstone-top-2019-05-26","name":"hearthstone-top-2019-05-26","time":1558800000000,"fromUrl":"https://hearthstone-decks.net/wild-decks/","type":"wild","from":"hearthstone-top-decks","fileName":"list"}
@@ -62,7 +63,8 @@
 {"_id":"2019狂野公开赛美洲区预选赛八强","name":"2019狂野公开赛美洲区预选赛八强","time":1550377866000,"fromUrl":"https://www.iyingdi.com/web/tools/hearthstone/decks/setdetail?btypes=home_allset&setid=763469","type":"wild","from":"other","fileName":"list"}
 {"_id":"2019狂野公开赛欧洲区预选赛八强","name":"2019狂野公开赛欧洲区预选赛八强","time":1550334208000,"fromUrl":"https://www.iyingdi.com/web/tools/hearthstone/decks/setdetail?btypes=home_allset&setid=763345","type":"wild","from":"other","fileName":"list"}
 {"_id":"2019狂野公开赛亚太区预选赛八强","name":"2019狂野公开赛亚太区预选赛八强","time":1550303093000,"fromUrl":"https://www.iyingdi.com/web/tools/hearthstone/decks/setdetail?btypes=home_allset&setid=763129","type":"wild","from":"other","fileName":"list"}
-{"_id":"vicious-syndicate-standard-newest-list","name":"vs-data-reaper-report-130","time":1558022430000,"fromUrl":"https://www.vicioussyndicate.com/vs-data-reaper-report-130/","type":"standard","from":"vicious-syndicate","fileName":"newest-list"}
+{"_id":"vicious-syndicate-standard-newest-list","name":"vs-data-reaper-report-131","time":1559404843000,"fromUrl":"https://www.vicioussyndicate.com/vs-data-reaper-report-131/","type":"standard","from":"vicious-syndicate","fileName":"newest-list"}
+{"_id":"vs-data-reaper-report-130","name":"vs-data-reaper-report-130","time":1558022430000,"fromUrl":"https://www.vicioussyndicate.com/vs-data-reaper-report-130/","type":"standard","from":"vicious-syndicate","fileName":"old-list"}
 {"_id":"vs-data-reaper-report-125","name":"vs-data-reaper-report-125","time":1552579232000,"fromUrl":"https://www.vicioussyndicate.com/vs-data-reaper-report-125/","type":"standard","from":"vicious-syndicate","fileName":"old-list"}
 {"_id":"vs-data-reaper-report-120","name":"vs-data-reaper-report-120","time":1548954027000,"fromUrl":"https://www.vicioussyndicate.com/vs-data-reaper-report-120/","type":"standard","from":"vicious-syndicate","fileName":"old-list"}
 {"_id":"vs-data-reaper-report-114","name":"vs-data-reaper-report-114","time":1544720423000,"fromUrl":"https://www.vicioussyndicate.com/vs-data-reaper-report-114/","type":"standard","from":"vicious-syndicate","fileName":"old-list"}
@@ -118,6 +120,7 @@
 {"_id":"tempo-storm-2016-11-19","name":"tempo-storm-2016-11-19","time":1479481860099,"fromUrl":"https://tempostorm.com/hearthstone/meta-snapshot/standard/2016-11-19","type":"standard","from":"tempo-storm","fileName":"old-list"}
 {"_id":"tempo-storm-2016-09-18","name":"tempo-storm-2016-09-18","time":1474063946001,"fromUrl":"https://tempostorm.com/hearthstone/meta-snapshot/standard/2016-09-18","type":"standard","from":"tempo-storm","fileName":"old-list"}
 {"_id":"tempo-storm-2016-07-31","name":"tempo-storm-2016-07-31","time":1469851750564,"fromUrl":"https://tempostorm.com/hearthstone/meta-snapshot/standard/2016-07-31","type":"standard","from":"tempo-storm","fileName":"old-list"}
+{"_id":"tempo-storm-2019-05-31","name":"tempo-storm-2019-05-31","time":1559325658226,"fromUrl":"https://tempostorm.com/hearthstone/meta-snapshot/wild/2019-05-31","type":"wild","from":"tempo-storm","fileName":"list"}
 {"_id":"tempo-storm-2019-05-18","name":"tempo-storm-2019-05-18","time":1558198819848,"fromUrl":"https://tempostorm.com/hearthstone/meta-snapshot/wild/2019-05-18","type":"wild","from":"tempo-storm","fileName":"list"}
 {"_id":"tempo-storm-2019-05-06","name":"tempo-storm-2019-05-06","time":1557162057243,"fromUrl":"https://tempostorm.com/hearthstone/meta-snapshot/wild/2019-05-06","type":"wild","from":"tempo-storm","fileName":"list"}
 {"_id":"tempo-storm-2019-04-23","name":"tempo-storm-2019-04-23","time":1556038821267,"fromUrl":"https://tempostorm.com/hearthstone/meta-snapshot/wild/2019-04-23","type":"wild","from":"tempo-storm","fileName":"list"}
