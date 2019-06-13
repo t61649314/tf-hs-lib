@@ -32,7 +32,7 @@ const occupationInfo = {
   Shaman: {
     cnName: "萨满",
     simpleName: "萨",
-    dbfId: [1066, 40183, 53237]
+    dbfId: [1066, 40183, 53237, 55963]
   },
   Warlock: {
     cnName: "术士",

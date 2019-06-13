@@ -43,10 +43,14 @@ function formatDeckName(name, decks, occupation) {
       }
     });
   }
-  if (formatName) {
-    return formatName + occupationInfo[occupation].simpleName;
-  } else {
-    return occupationInfo[occupation].cnName;
+  try{
+    if (formatName) {
+      return formatName + occupationInfo[occupation].simpleName;
+    } else {
+      return occupationInfo[occupation].cnName;
+    }
+  }catch (e) {
+    console.log(e)
   }
 };
 
