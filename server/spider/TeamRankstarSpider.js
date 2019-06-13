@@ -44,7 +44,7 @@ class TeamRankstarSpider {
     return utils.startRequest(url).then(($) => {
       console.info(`${url}读取成功`);
       const deckHrefList = $('a');
-      const tier34DeckDomList = $('.has-text-color');
+      const tier34DeckDomList = $('.has-text-color:not(.has-medium-font-size)');
       const time = $("meta[property='article:published_time']").attr("content");
       if (deckHrefList.length) {
         let hrefList = [];
