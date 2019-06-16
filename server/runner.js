@@ -8,8 +8,8 @@ co(function* () {
   const ts = new TempoStormSpider();
   const tr = new TeamRankstarSpider();
   const htd = new HearthstoneTopDecksSpider();
-  // yield vs.runStandard();
-  // yield vs.runWild();
+  yield vs.runStandard();
+  yield vs.runWild();
   yield ts.runStandard();
   yield ts.runWild();
   yield tr.run();
