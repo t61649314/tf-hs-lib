@@ -524,6 +524,16 @@
     ]
   },
   {
+    "name": "机械海盗",
+    "occupation": [
+      "Rogue"
+    ],
+    "ids": [
+      56223,
+      50774
+    ]
+  },
+  {
     "name": "机械",
     "occupation": [
       "Rogue"
