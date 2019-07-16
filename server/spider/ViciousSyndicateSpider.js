@@ -45,7 +45,7 @@ class ViciousSyndicateSpider {
         let hrefList = [];
         deckHrefList.each(function () {
           const href = $(this).attr("href");
-          if (href && href.indexOf("www.vicioussyndicate.com") > -1) {
+          if (href && href.indexOf("www.vicioussyndicate.com") > -1 && href.indexOf("wild-vs-data-reaper-report") === -1) {
             hrefList.push(href);
           }
         });
@@ -135,19 +135,24 @@ class ViciousSyndicateSpider {
             list.unshift({"name": reportName, "time": time, "fromUrl": url});
             for (let j = 0; j < hrefList.length; j++) {
               console.info(`${hrefList[j]}开始读取`);
-              let deckInfo = yield _this.readChildPage(hrefList[j]);
-              if (deckInfo) {
-                //构建dir对象
-                if (!reportContent[deckInfo.occupation]) {
-                  reportContent[deckInfo.occupation] = [];
+              try {
+                let deckInfo = yield _this.readChildPage(hrefList[j]);
+                if (deckInfo) {
+                  //构建dir对象
+                  if (!reportContent[deckInfo.occupation]) {
+                    reportContent[deckInfo.occupation] = [];
+                  }
+                  //VS有些卡组code是空的
+                  // if (hrefList[j] === 'https://www.vicioussyndicate.com/odd-rogue-2/') {
+                  //   deckInfo.code = "AAEBAYO6AgavBPoOkbwCyssC/eoCnvgCDIwCqAXUBd0I8xG6E5sVkrYCgcIC68IC0eECpu8CAA==";
+                  // }
+                  //通过code调用ts的接口获取卡组信息
+                  let cards = yield _this.getCardInfoByCode(deckInfo.code);
+                  reportContent[deckInfo.occupation].push({name: deckInfo.name, cards: cards, code: deckInfo.code});
                 }
-                //VS有些卡组code是空的
-                // if (hrefList[j] === 'https://www.vicioussyndicate.com/odd-rogue-2/') {
-                //   deckInfo.code = "AAEBAYO6AgavBPoOkbwCyssC/eoCnvgCDIwCqAXUBd0I8xG6E5sVkrYCgcIC68IC0eECpu8CAA==";
-                // }
-                //通过code调用ts的接口获取卡组信息
-                let cards = yield _this.getCardInfoByCode(deckInfo.code);
-                reportContent[deckInfo.occupation].push({name: deckInfo.name, cards: cards, code: deckInfo.code});
+              } catch (e) {
+                console.error(`${hrefList[j]}:${e}`);
+                break;
               }
               console.info(`该篇周报剩余：${hrefList.length - j - 1}`);
             }
