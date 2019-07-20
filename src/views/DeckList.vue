@@ -5,7 +5,7 @@
       <div class="deck-item" v-for="(deckItem,index) in deckList" :key="index">
         <div class="deck-info-box" :occupation="occupation">
           <div class="occupation-icon"></div>
-          <span class="deck-name-content">{{deckItem.alreadyFormatName?deckItem.name:formatDeckName(deckItem.name,deckItem.cards)}}</span>
+          <span class="deck-name-content">{{deckItem.alreadyFormatName?deckItem.name:formatDeckName(deckItem.name,deckItem.cards)}}{{deckItem.name}}</span>
         </div>
         <div class="card-box">
           <div class="card-item clearfix"
@@ -13,7 +13,7 @@
                :key="index">
             <div class="is-weaken-text" v-if="isWeaken(cardItem.dbfId)">已削弱</div>
             <div class="fl card-cost">{{cardItem.cost}}</div>
-            <div class="fl card-name">{{cardItem.cnName}}</div>
+            <div class="fl card-name">{{cardItem.name}}{{cardItem.dbfId}}</div>
             <div class="fr card-quantity">
               <i v-if="cardItem.rarity==='Legendary'" class="fa fa-star"></i>
               <span v-else>{{cardItem.quantity}}</span>
@@ -62,16 +62,16 @@
         weakenArr.forEach(item => {
           this.weakenArr = this.weakenArr.concat(item.weakenCardArr)
         });
-        Indicator.open();
-        axios.get(`/my-h5-page/storage/${this.$route.query.form}/${this.$route.query.type}/deck/${this.$route.query.page}.json`).then(({data}) => {
-          Indicator.close();
-          this.isInit = true;
-          if (data) {
-            this.deckList = data[this.occupation];
-          }
-        })
-        // this.deckList = require(`../../storage/${this.$route.query.form}/${this.$route.query.type}/deck/${this.$route.query.page}.json`)[this.occupation];
-        // this.isInit = true;
+        // Indicator.open();
+        // axios.get(`/my-h5-page/storage/${this.$route.query.form}/${this.$route.query.type}/deck/${this.$route.query.page}.json`).then(({data}) => {
+        //   Indicator.close();
+        //   this.isInit = true;
+        //   if (data) {
+        //     this.deckList = data[this.occupation];
+        //   }
+        // })
+        this.deckList = require(`../../storage/${this.$route.query.form}/${this.$route.query.type}/deck/${this.$route.query.page}.json`)[this.occupation];
+        this.isInit = true;
       },
       cardsSort(a, b) {
         return a.cost - b.cost
