@@ -128,6 +128,10 @@ class TeamRankstarSpider {
     let list = require("../../storage/team-rankstar/wild/report/list");
     return co(function* () {
       let url = yield _this.getLastStandardPageUrl();
+      if(!url){
+        console.info("TeamRankstar无最新内容");
+        return false;
+      }
       let reportName = url.split("/")[3].replace("hearthstone-wild-meta-snapshot-", "team-rankstar-");
       const exist = !!list.find(item => {
         return item.name === reportName;
