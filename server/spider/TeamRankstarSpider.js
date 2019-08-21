@@ -73,10 +73,17 @@ class TeamRankstarSpider {
           } else {
             name = $(this).find("strong").html();
           }
-          if (name.indexOf("Tier 1") === -1 &&
+          if (name&&name.indexOf("Tier 0") === -1 &&
+            name.indexOf("Tier 5") === -1 &&
+            name.indexOf("Tier 1") === -1 &&
             name.indexOf("Tier 2") === -1 &&
             name.indexOf("Tier 3") === -1 &&
-            name.indexOf("Tier 4") === -1) {
+            name.indexOf("Tier 4") === -1 &&
+            code.indexOf("Ranked") === -1) {
+            console.log("~~~~~~~~~~~~~~~")
+            console.log(name)
+            console.log(code)
+            console.log("~~~~~~~~~~~~~~~")
             tier34DeckList.push({
               code: code,
               name: name
@@ -128,7 +135,7 @@ class TeamRankstarSpider {
     let list = require("../../storage/team-rankstar/wild/report/list");
     return co(function* () {
       let url = yield _this.getLastStandardPageUrl();
-      if(!url){
+      if (!url) {
         console.info("TeamRankstar无最新内容");
         return false;
       }
