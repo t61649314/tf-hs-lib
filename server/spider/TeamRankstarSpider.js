@@ -66,7 +66,10 @@ class TeamRankstarSpider {
           }
         });
         tier34DeckDomList.each(function () {
-          const code = $(this).next().html();
+          let code = $(this).next().html();
+          if(code==="<strong>Pirate Warrior</strong>"){
+            code="AAEBAa0GDvYCpQnTCtcKkg+oqwKhrAKFuALCzgLo0ALWmQOTmwOZmwPfqQMI+hHRwQLlzALmzAK0zgLwzwLj6QKXhwMA";
+          }
           let name;
           if ($(this).find("strong").find("a").length) {
             name = $(this).find("strong").find("a").html();
@@ -80,10 +83,6 @@ class TeamRankstarSpider {
             name.indexOf("Tier 3") === -1 &&
             name.indexOf("Tier 4") === -1 &&
             code.indexOf("Ranked") === -1) {
-            console.log("~~~~~~~~~~~~~~~")
-            console.log(name)
-            console.log(code)
-            console.log("~~~~~~~~~~~~~~~")
             tier34DeckList.push({
               code: code,
               name: name
