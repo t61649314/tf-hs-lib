@@ -887,203 +887,6 @@
       ],
       "code": "AAEBAf0EBskDxQT3DdDBAoOWA9aZAwyKAcABqwTLBPgH3AqCtAKYxAK0/ALSiQOfmwP/nQMA",
       "alreadyFormatName": true
-    },
-    {
-      "name": "换家德",
-      "cards": [
-        {
-          "dbfId": 233,
-          "name": "Naturalize",
-          "cnName": "自然平衡",
-          "cardSet": "4",
-          "img": "naturalize.small.png",
-          "quantity": 2,
-          "rarity": "Common",
-          "cost": 1
-        },
-        {
-          "dbfId": 836,
-          "name": "Wrath",
-          "cnName": "愤怒",
-          "cardSet": "3",
-          "img": "wrath.small.png",
-          "quantity": 2,
-          "rarity": "Common",
-          "cost": 2
-        },
-        {
-          "dbfId": 64,
-          "name": "Swipe",
-          "cnName": "横扫",
-          "cardSet": "2",
-          "img": "swipe.small.png",
-          "quantity": 2,
-          "rarity": "Basic",
-          "cost": 4
-        },
-        {
-          "dbfId": 254,
-          "name": "Innervate",
-          "cnName": "激活",
-          "cardSet": "2",
-          "img": "innervate.small.png",
-          "quantity": 2,
-          "rarity": "Basic",
-          "cost": 0
-        },
-        {
-          "dbfId": 1802,
-          "name": "Poison Seeds",
-          "cnName": "剧毒之种",
-          "cardSet": "12",
-          "img": "poison-seed.small.png",
-          "quantity": 2,
-          "rarity": "Common",
-          "cost": 4
-        },
-        {
-          "dbfId": 2796,
-          "name": "Aviana",
-          "cnName": "艾维娜",
-          "cardSet": "15",
-          "img": "aviana.small.png",
-          "quantity": 1,
-          "rarity": "Legendary",
-          "cost": 10
-        },
-        {
-          "dbfId": 39941,
-          "name": "Barnes",
-          "cnName": "巴内斯",
-          "cardSet": "23",
-          "img": "barnes.small.png",
-          "quantity": 1,
-          "rarity": "Legendary",
-          "cost": 4
-        },
-        {
-          "dbfId": 40416,
-          "name": "Kun the Forgotten King",
-          "cnName": "遗忘之王库恩",
-          "cardSet": "25",
-          "img": "kun-the-forgotten-king.small.png",
-          "quantity": 1,
-          "rarity": "Legendary",
-          "cost": 10
-        },
-        {
-          "dbfId": 42656,
-          "name": "Spreading Plague",
-          "cnName": "传播瘟疫",
-          "cardSet": "1001",
-          "img": "spreading-plague-tab.small.png",
-          "quantity": 2,
-          "rarity": "Rare",
-          "cost": 6
-        },
-        {
-          "dbfId": 42759,
-          "name": "Ultimate Infestation",
-          "cnName": "终极感染",
-          "cardSet": "1001",
-          "img": "ultimate-infestation-tab.small.png",
-          "quantity": 1,
-          "rarity": "Epic",
-          "cost": 10
-        },
-        {
-          "dbfId": 43288,
-          "name": "Lesser Jasper Spellstone",
-          "cnName": "小型法术玉石",
-          "cardSet": "1004",
-          "img": "lesser-jasper-spellstone-tab.small.png",
-          "quantity": 2,
-          "rarity": "Rare",
-          "cost": 1
-        },
-        {
-          "dbfId": 43294,
-          "name": "Branching Paths",
-          "cnName": "分岔路口",
-          "cardSet": "1004",
-          "img": "branching-paths-tab.small.png",
-          "quantity": 2,
-          "rarity": "Epic",
-          "cost": 4
-        },
-        {
-          "dbfId": 46107,
-          "name": "Twig of the World Tree",
-          "cnName": "世界之树的嫩枝",
-          "cardSet": "1004",
-          "img": "twig-of-the-world-tree-tab.small.png",
-          "quantity": 1,
-          "rarity": "Legendary",
-          "cost": 4
-        },
-        {
-          "dbfId": 46589,
-          "name": "King Togwaggle",
-          "cnName": "托瓦格尔国王",
-          "cardSet": "1004",
-          "img": "kingtogwaggle-tab.small.png",
-          "quantity": 1,
-          "rarity": "Legendary",
-          "cost": 8
-        },
-        {
-          "dbfId": 46874,
-          "name": "Azalina Soulthief",
-          "cnName": "窃魂者阿扎莉娜",
-          "cardSet": "1125",
-          "img": "azaline-soultheif-tab.small.png",
-          "quantity": 1,
-          "rarity": "Legendary",
-          "cost": 7
-        },
-        {
-          "dbfId": 47423,
-          "name": "Ferocious Howl",
-          "cnName": "凶猛咆哮",
-          "cardSet": "1125",
-          "img": "ferocious-howl.small.png",
-          "quantity": 2,
-          "rarity": "Common",
-          "cost": 3
-        },
-        {
-          "dbfId": 47887,
-          "name": "Biology Project",
-          "cnName": "生物计划",
-          "cardSet": "1127",
-          "img": "biology-project-tab.small.png",
-          "quantity": 2,
-          "rarity": "Common",
-          "cost": 1
-        },
-        {
-          "dbfId": 48524,
-          "name": "Juicy Psychmelon",
-          "cnName": "香甜的灵力瓜",
-          "cardSet": "1127",
-          "img": "juicy-psychmelon-tab.small.png",
-          "quantity": 2,
-          "rarity": "Epic",
-          "cost": 4
-        },
-        {
-          "dbfId": 53979,
-          "name": "Overflow",
-          "cnName": "溢流",
-          "cardSet": "1158",
-          "img": "overflow.small.png",
-          "quantity": 1,
-          "rarity": "Rare",
-          "cost": 7
-        }
-      ],
-      "code": "AAEBAZICCOwVhbgC4LsCh84Cm+gC/esCmu4C26UDC0DpAf4BxAaKDqDNApjSAp7SAr/yAo/2Aoz7AgA=",
-      "alreadyFormatName": true
     }
   ],
   "Warlock": [
@@ -4209,6 +4012,203 @@
         }
       ],
       "code": "AAEBAZICCED6Do4QkbwChsEC5MICkdACyZwDC/cD5gXlB94V6BXBqwLNuwLrwgKbzQKL5QLDlAMA",
+      "alreadyFormatName": true
+    },
+    {
+      "name": "换家德",
+      "cards": [
+        {
+          "dbfId": 233,
+          "name": "Naturalize",
+          "cnName": "自然平衡",
+          "cardSet": "4",
+          "img": "naturalize.small.png",
+          "quantity": 2,
+          "rarity": "Common",
+          "cost": 1
+        },
+        {
+          "dbfId": 836,
+          "name": "Wrath",
+          "cnName": "愤怒",
+          "cardSet": "3",
+          "img": "wrath.small.png",
+          "quantity": 2,
+          "rarity": "Common",
+          "cost": 2
+        },
+        {
+          "dbfId": 64,
+          "name": "Swipe",
+          "cnName": "横扫",
+          "cardSet": "2",
+          "img": "swipe.small.png",
+          "quantity": 2,
+          "rarity": "Basic",
+          "cost": 4
+        },
+        {
+          "dbfId": 254,
+          "name": "Innervate",
+          "cnName": "激活",
+          "cardSet": "2",
+          "img": "innervate.small.png",
+          "quantity": 2,
+          "rarity": "Basic",
+          "cost": 0
+        },
+        {
+          "dbfId": 1802,
+          "name": "Poison Seeds",
+          "cnName": "剧毒之种",
+          "cardSet": "12",
+          "img": "poison-seed.small.png",
+          "quantity": 2,
+          "rarity": "Common",
+          "cost": 4
+        },
+        {
+          "dbfId": 2796,
+          "name": "Aviana",
+          "cnName": "艾维娜",
+          "cardSet": "15",
+          "img": "aviana.small.png",
+          "quantity": 1,
+          "rarity": "Legendary",
+          "cost": 10
+        },
+        {
+          "dbfId": 39941,
+          "name": "Barnes",
+          "cnName": "巴内斯",
+          "cardSet": "23",
+          "img": "barnes.small.png",
+          "quantity": 1,
+          "rarity": "Legendary",
+          "cost": 4
+        },
+        {
+          "dbfId": 40416,
+          "name": "Kun the Forgotten King",
+          "cnName": "遗忘之王库恩",
+          "cardSet": "25",
+          "img": "kun-the-forgotten-king.small.png",
+          "quantity": 1,
+          "rarity": "Legendary",
+          "cost": 10
+        },
+        {
+          "dbfId": 42656,
+          "name": "Spreading Plague",
+          "cnName": "传播瘟疫",
+          "cardSet": "1001",
+          "img": "spreading-plague-tab.small.png",
+          "quantity": 2,
+          "rarity": "Rare",
+          "cost": 6
+        },
+        {
+          "dbfId": 42759,
+          "name": "Ultimate Infestation",
+          "cnName": "终极感染",
+          "cardSet": "1001",
+          "img": "ultimate-infestation-tab.small.png",
+          "quantity": 1,
+          "rarity": "Epic",
+          "cost": 10
+        },
+        {
+          "dbfId": 43288,
+          "name": "Lesser Jasper Spellstone",
+          "cnName": "小型法术玉石",
+          "cardSet": "1004",
+          "img": "lesser-jasper-spellstone-tab.small.png",
+          "quantity": 2,
+          "rarity": "Rare",
+          "cost": 1
+        },
+        {
+          "dbfId": 43294,
+          "name": "Branching Paths",
+          "cnName": "分岔路口",
+          "cardSet": "1004",
+          "img": "branching-paths-tab.small.png",
+          "quantity": 2,
+          "rarity": "Epic",
+          "cost": 4
+        },
+        {
+          "dbfId": 46107,
+          "name": "Twig of the World Tree",
+          "cnName": "世界之树的嫩枝",
+          "cardSet": "1004",
+          "img": "twig-of-the-world-tree-tab.small.png",
+          "quantity": 1,
+          "rarity": "Legendary",
+          "cost": 4
+        },
+        {
+          "dbfId": 46589,
+          "name": "King Togwaggle",
+          "cnName": "托瓦格尔国王",
+          "cardSet": "1004",
+          "img": "kingtogwaggle-tab.small.png",
+          "quantity": 1,
+          "rarity": "Legendary",
+          "cost": 8
+        },
+        {
+          "dbfId": 46874,
+          "name": "Azalina Soulthief",
+          "cnName": "窃魂者阿扎莉娜",
+          "cardSet": "1125",
+          "img": "azaline-soultheif-tab.small.png",
+          "quantity": 1,
+          "rarity": "Legendary",
+          "cost": 7
+        },
+        {
+          "dbfId": 47423,
+          "name": "Ferocious Howl",
+          "cnName": "凶猛咆哮",
+          "cardSet": "1125",
+          "img": "ferocious-howl.small.png",
+          "quantity": 2,
+          "rarity": "Common",
+          "cost": 3
+        },
+        {
+          "dbfId": 47887,
+          "name": "Biology Project",
+          "cnName": "生物计划",
+          "cardSet": "1127",
+          "img": "biology-project-tab.small.png",
+          "quantity": 2,
+          "rarity": "Common",
+          "cost": 1
+        },
+        {
+          "dbfId": 48524,
+          "name": "Juicy Psychmelon",
+          "cnName": "香甜的灵力瓜",
+          "cardSet": "1127",
+          "img": "juicy-psychmelon-tab.small.png",
+          "quantity": 2,
+          "rarity": "Epic",
+          "cost": 4
+        },
+        {
+          "dbfId": 53979,
+          "name": "Overflow",
+          "cnName": "溢流",
+          "cardSet": "1158",
+          "img": "overflow.small.png",
+          "quantity": 1,
+          "rarity": "Rare",
+          "cost": 7
+        }
+      ],
+      "code": "AAEBAZICCOwVhbgC4LsCh84Cm+gC/esCmu4C26UDC0DpAf4BxAaKDqDNApjSAp7SAr/yAo/2Aoz7AgA=",
       "alreadyFormatName": true
     }
   ],
