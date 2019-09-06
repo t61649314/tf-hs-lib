@@ -2,7 +2,7 @@ const occupationInfo = {
   Druid: {
     cnName: "德鲁伊",
     simpleName: "德",
-    dbfId: [274, 50484]
+    dbfId: [274, 50484, 56358]
   },
   Hunter: {
     cnName: "猎人",
