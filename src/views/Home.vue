@@ -57,7 +57,7 @@
         其他
       </router-link>
       <div class="mini-code-content">
-        <p>更多新功能，更流畅请体验小程序版：</p>
+        <p style="padding: 0 1rem">考虑到性能、功能和工作量等因素以后会只更新小程序版，还没关注的请快快关注哟，H5版本将在一周后停掉：</p>
         <img src="../assets/img/mini-code.jpg">
       </div>
     </div>

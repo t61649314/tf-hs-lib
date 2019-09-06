@@ -49,6 +49,11 @@ const occupationInfo = {
 
 const timeNode = [
   {
+    time: "2019-08-27",
+    title: "咒术师的召唤、露娜的口袋银河、“科学狂人”砰砰博士、增生手臂、巴内斯削弱",
+    weakenCardArr: [51971, 48198, 48146, 48101, 39941]
+  },
+  {
     time: "2019-08-06",
     title: "《奥丹姆奇兵》上线",
   },
