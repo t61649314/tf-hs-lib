@@ -74,29 +74,29 @@
         return now.diff(moment(time), 'days') <= 3;
       },
       init: function () {
-        Indicator.open();
-        if (this.$route.query.type === 'wild') {
-          axios.get(`/my-h5-page/storage/${this.$route.query.form}/wild/report/list.json`).then(({data}) => {
-            Indicator.close();
-            if (data) {
-              this.reportList = data;
-            }
-          })
-        } else {
-          let newPromise = axios.get(`/my-h5-page/storage/${this.$route.query.form}/standard/report/newest-list.json`);
-          let oldPromise = axios.get(`/my-h5-page/storage/${this.$route.query.form}/standard/report/old-list.json`);
-          Promise.all([newPromise, oldPromise]).then(([{data: newestList}, {data: oldList}]) => {
-            Indicator.close();
-            if (newestList && oldList) {
-              this.reportList = newestList.concat(oldList);
-            }
-          })
-        }
+        // Indicator.open();
         // if (this.$route.query.type === 'wild') {
-        //   this.reportList = require(`../../storage/${this.$route.query.form}/wild/report/list.json`)
+        //   axios.get(`/my-h5-page/storage/${this.$route.query.form}/wild/report/list.json`).then(({data}) => {
+        //     Indicator.close();
+        //     if (data) {
+        //       this.reportList = data;
+        //     }
+        //   })
         // } else {
-        //   this.reportList = require(`../../storage/${this.$route.query.form}/standard/report/newest-list.json`).concat(require(`../../storage/${this.$route.query.form}/standard/report/old-list.json`))
+        //   let newPromise = axios.get(`/my-h5-page/storage/${this.$route.query.form}/standard/report/newest-list.json`);
+        //   let oldPromise = axios.get(`/my-h5-page/storage/${this.$route.query.form}/standard/report/old-list.json`);
+        //   Promise.all([newPromise, oldPromise]).then(([{data: newestList}, {data: oldList}]) => {
+        //     Indicator.close();
+        //     if (newestList && oldList) {
+        //       this.reportList = newestList.concat(oldList);
+        //     }
+        //   })
         // }
+        if (this.$route.query.type === 'wild') {
+          this.reportList = require(`../../storage/${this.$route.query.form}/wild/report/list.json`)
+        } else {
+          this.reportList = require(`../../storage/${this.$route.query.form}/standard/report/newest-list.json`).concat(require(`../../storage/${this.$route.query.form}/standard/report/old-list.json`))
+        }
       },
       formatTime(time) {
         return moment(time).format("YYYY-MM-DD")
