@@ -12,23 +12,12 @@ class ViciousSyndicateSpider {
   readChildPage(url) {
     return utils.startRequest(url).then(($) => {
       console.info(`${url}读取成功`);
-      const attachmentMediumDom = $('.attachment-medium');
-      if (attachmentMediumDom.length) {
-        const name = attachmentMediumDom.attr("alt");
-        const imgUrl = attachmentMediumDom.attr("data-cfsrc");
-        const code = attachmentMediumDom.parent().parent().next().attr("data-clipboard-text");
-        let occupation = "Other";
-        Object.keys(Const.occupationInfo).forEach(item => {
-          if (name.indexOf(item) > -1) {
-            occupation = item;
-            return false;
-          }
-        });
+      const nameDom = $('.entry-title');
+      const codeDom =$('.copy-deck');
+      if (nameDom.length && codeDom.length) {
         return {
-          name: name,
-          imgUrl: imgUrl,
-          code: code,
-          occupation: occupation,
+          name: nameDom.text(),
+          code: codeDom.attr("data-clipboard-text"),
         };
       } else {
         console.info(`${url}：no data`);
@@ -45,7 +34,7 @@ class ViciousSyndicateSpider {
         let hrefList = [];
         deckHrefList.each(function () {
           const href = $(this).attr("href");
-          if (href && href.indexOf("www.vicioussyndicate.com") > -1 && href.indexOf("wild-vs-data-reaper-report") === -1) {
+          if (href && href.indexOf("www.vicioussyndicate.com") > -1 && href.indexOf("wild-vs-data-reaper-report") === -1 && href.indexOf("deck-library") === -1) {
             hrefList.push(href);
           }
         });
@@ -100,13 +89,13 @@ class ViciousSyndicateSpider {
           console.info(`${hrefList[j]}开始读取`);
           let deckInfo = yield _this.readChildPage(hrefList[j]);
           if (deckInfo) {
-            //构建dir对象
-            if (!reportContent[deckInfo.occupation]) {
-              reportContent[deckInfo.occupation] = [];
-            }
             //通过code调用ts的接口获取卡组信息
-            let cards = yield _this.getCardInfoByCode(deckInfo.code);
-            reportContent[deckInfo.occupation].push({name: deckInfo.name, cards: cards, code: deckInfo.code});
+            let {cards, occupation} = yield _this.getCardInfoByCode(deckInfo.code);
+            //构建dir对象
+            if (!reportContent[occupation]) {
+              reportContent[occupation] = [];
+            }
+            reportContent[occupation].push({name: deckInfo.name, cards: cards, code: deckInfo.code});
           }
           console.info(`该篇周报剩余：${hrefList.length - j - 1}`);
         }
@@ -138,17 +127,13 @@ class ViciousSyndicateSpider {
               try {
                 let deckInfo = yield _this.readChildPage(hrefList[j]);
                 if (deckInfo) {
-                  //构建dir对象
-                  if (!reportContent[deckInfo.occupation]) {
-                    reportContent[deckInfo.occupation] = [];
-                  }
-                  //VS有些卡组code是空的
-                  // if (hrefList[j] === 'https://www.vicioussyndicate.com/odd-rogue-2/') {
-                  //   deckInfo.code = "AAEBAYO6AgavBPoOkbwCyssC/eoCnvgCDIwCqAXUBd0I8xG6E5sVkrYCgcIC68IC0eECpu8CAA==";
-                  // }
                   //通过code调用ts的接口获取卡组信息
-                  let cards = yield _this.getCardInfoByCode(deckInfo.code);
-                  reportContent[deckInfo.occupation].push({name: deckInfo.name, cards: cards, code: deckInfo.code});
+                  let {cards, occupation} = yield _this.getCardInfoByCode(deckInfo.code);
+                  //构建dir对象
+                  if (!reportContent[occupation]) {
+                    reportContent[occupation] = [];
+                  }
+                  reportContent[occupation].push({name: deckInfo.name, cards: cards, code: deckInfo.code});
                 }
               } catch (e) {
                 console.error(`${hrefList[j]}:${e}`);
@@ -170,6 +155,14 @@ class ViciousSyndicateSpider {
 
   getCardInfoByCode(code) {
     let deckFromCode = new Deckcode().getDeckFromCode(code);
+    let occupationInfo = Const.occupationInfo;
+    let occupationId = deckFromCode.heroes[0].id;
+    let occupation = Object.keys(occupationInfo).find(item => {
+      return occupationInfo[item].dbfId.includes(occupationId);
+    });
+    if (!occupation) {
+      console.warn(`not find this occupation : ${occupationId}`)
+    }
     const params = {
       "where": {
         "dbfId": {
@@ -201,7 +194,10 @@ class ViciousSyndicateSpider {
           cost: item.cost
         });
       });
-      return arr;
+      return {
+        cards: arr,
+        occupation: occupation
+      };
     })
   }
 }

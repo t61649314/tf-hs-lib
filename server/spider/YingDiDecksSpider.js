@@ -117,10 +117,7 @@ class YingDiDecksSpider {
 }
 
 const yingDiDecksInfoList = [
-  {id: 763129, name: "2019狂野公开赛亚太区预选赛八强"},
-  {id: 763345, name: "2019狂野公开赛欧洲区预选赛八强"},
-  {id: 763469, name: "2019狂野公开赛美洲区预选赛八强"},
-  {id: 765947, name: "2019狂野公开赛总决赛"}
+  {id: 871123, name: "GetMeowth的46套狂野卡组推荐"}
 ];
 let yingDiDecksSpider = new YingDiDecksSpider();
 yingDiDecksSpider.run("wild", yingDiDecksInfoList);
