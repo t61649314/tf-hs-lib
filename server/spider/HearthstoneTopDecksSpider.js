@@ -113,15 +113,12 @@ class HearthstoneTopDecksSpider {
                 }
                 console.info(`该篇周报剩余：${hrefList.length - j - 1}`);
               } else {
-                throw new Error(`HearthstoneTopDecks 无最新内容`);
+                console.warn(`${reportName} ${item.name} done`)
               }
             } else {
               reportContent = {};
               console.info(`${item.href}开始读取`);
               let deckInfo = yield _this.readChildPage(item.href);
-              if (deckInfo.code === "AAAEBAQcIhRfTxQLD6gKS+AKe+ALx/AKggAOblAMLS6IE+Af/B4KtApvCAqLHAo77Ap77AvWAA5eUAwA=") {
-                deckInfo.code = "AAEBAQcInhCFF/i/AtPFAsPqAp74AqCAA5uUAwtLogT4B/8Hgq0Cm8ICoscCjvsCnvsC9YADl5QDAA==";
-              }
               if (deckInfo) {
                 let {cards, occupation} = yield _this.getCardInfoByCode(deckInfo.code);
                 if (!reportContent[occupation]) {

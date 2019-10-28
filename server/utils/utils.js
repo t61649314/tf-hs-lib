@@ -161,8 +161,21 @@ function existsFile(filepath) {
   });
 }
 
+function readFile(filepath) {
+  return new Promise(function (resolve, reject) {
+    fs.readFile(filepath, 'utf-8',  (err, result)=> {
+      if (err) {
+        reject(err);
+      } else {
+        resolve(result);
+      }
+    })
+  });
+}
+
 
 module.exports = {
+  readFile,
   formatDeckName,
   existsFile,
   writeFileFormUrl,
