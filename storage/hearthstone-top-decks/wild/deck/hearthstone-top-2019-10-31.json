@@ -1,0 +1,368 @@
+{
+  "Paladin": [
+    {
+      "name": "Mech Handbuff Paladin #69 Legend &#x2013; slizzle466",
+      "cards": [
+        {
+          "dbfId": 679,
+          "name": "Divine Favor",
+          "cnName": "神恩术",
+          "cardSet": "4",
+          "img": "divine-favor.small.png",
+          "quantity": 1,
+          "rarity": "Rare",
+          "cost": 3
+        },
+        {
+          "dbfId": 2026,
+          "name": "Shielded Minibot",
+          "cnName": "护盾机器人",
+          "cardSet": "13",
+          "img": "shield-mini-bot.small.png",
+          "quantity": 2,
+          "rarity": "Common",
+          "cost": 2
+        },
+        {
+          "dbfId": 2053,
+          "name": "Annoy-o-Tron",
+          "cnName": "吵吵机器人",
+          "cardSet": "13",
+          "img": "annoy-o-tron.small.png",
+          "quantity": 2,
+          "rarity": "Common",
+          "cost": 2
+        },
+        {
+          "dbfId": 2052,
+          "name": "Flying Machine",
+          "cnName": "飞行器",
+          "cardSet": "13",
+          "img": "flying-machine.small.png",
+          "quantity": 2,
+          "rarity": "Common",
+          "cost": 3
+        },
+        {
+          "dbfId": 2062,
+          "name": "Jeeves",
+          "cnName": "基维斯",
+          "cardSet": "13",
+          "img": "jeeves.small.png",
+          "quantity": 1,
+          "rarity": "Rare",
+          "cost": 4
+        },
+        {
+          "dbfId": 1940,
+          "name": "Mechwarper",
+          "cnName": "机械跃迁者",
+          "cardSet": "13",
+          "img": "mechwarper.small.png",
+          "quantity": 2,
+          "rarity": "Common",
+          "cost": 2
+        },
+        {
+          "dbfId": 40567,
+          "name": "Grimestreet Outfitter",
+          "cnName": "污手街供货商",
+          "cardSet": "25",
+          "img": "grimestreet-outfitter.small.png",
+          "quantity": 2,
+          "rarity": "Common",
+          "cost": 2
+        },
+        {
+          "dbfId": 40371,
+          "name": "Smuggler's Run",
+          "cnName": "风驰电掣",
+          "cardSet": "25",
+          "img": "smugglers-run.small.png",
+          "quantity": 2,
+          "rarity": "Common",
+          "cost": 1
+        },
+        {
+          "dbfId": 48993,
+          "name": "Annoy-o-Module",
+          "cnName": "吵吵模组",
+          "cardSet": "1127",
+          "img": "annoy-o-module-tab.small.png",
+          "quantity": 2,
+          "rarity": "Rare",
+          "cost": 4
+        },
+        {
+          "dbfId": 48985,
+          "name": "Crystology",
+          "cnName": "水晶学",
+          "cardSet": "1127",
+          "img": "crystology-tab.small.png",
+          "quantity": 2,
+          "rarity": "Rare",
+          "cost": 1
+        },
+        {
+          "dbfId": 48536,
+          "name": "Replicating Menace",
+          "cnName": "量产型恐吓机",
+          "cardSet": "1127",
+          "img": "replicating-menace-tab.small.png",
+          "quantity": 2,
+          "rarity": "Rare",
+          "cost": 4
+        },
+        {
+          "dbfId": 49356,
+          "name": "Wargear",
+          "cnName": "战争机兵",
+          "cardSet": "1127",
+          "img": "wargear-tab.small.png",
+          "quantity": 2,
+          "rarity": "Common",
+          "cost": 5
+        },
+        {
+          "dbfId": 49184,
+          "name": "Zilliax",
+          "cnName": "奇利亚斯",
+          "cardSet": "1127",
+          "img": "zilliax-tab.small.png",
+          "quantity": 1,
+          "rarity": "Legendary",
+          "cost": 5
+        },
+        {
+          "dbfId": 48983,
+          "name": "Galvanizer",
+          "cnName": "通电机器人",
+          "cardSet": "1127",
+          "img": "galvanizer-tab.small.png",
+          "quantity": 2,
+          "rarity": "Rare",
+          "cost": 2
+        },
+        {
+          "dbfId": 48982,
+          "name": "Glow-Tron",
+          "cnName": "格洛顿",
+          "cardSet": "1127",
+          "img": "glow-tron-tab.small.png",
+          "quantity": 2,
+          "rarity": "Common",
+          "cost": 1
+        },
+        {
+          "dbfId": 47775,
+          "name": "Skaterbot",
+          "cnName": "滑板机器人",
+          "cardSet": "1127",
+          "img": "skaterbot-tab.small.png",
+          "quantity": 2,
+          "rarity": "Common",
+          "cost": 1
+        },
+        {
+          "dbfId": 56223,
+          "name": "SN1P-SN4P",
+          "cnName": "大铡蟹",
+          "cardSet": "1127",
+          "img": "SN1P-SN4P.small.png",
+          "quantity": 1,
+          "rarity": "Legendary",
+          "cost": 3
+        }
+      ],
+      "code": "AAEBAZ8FBKcFjhCggAOftwMNlA/qD4QQhRCzuwL3vAKf9QKY+wLW/gLX/gLZ/gLh/gLMgQMA"
+    }
+  ],
+  "Warlock": [
+    {
+      "name": "Sn1p-Sn4p Warlock #142 Legend &#x2013; awedragonHS",
+      "cards": [
+        {
+          "dbfId": 969,
+          "name": "Summoning Portal",
+          "cnName": "召唤传送门",
+          "cardSet": "3",
+          "img": "summoning-portal.small.png",
+          "quantity": 2,
+          "rarity": "Common",
+          "cost": 4
+        },
+        {
+          "dbfId": 1092,
+          "name": "Mortal Coil",
+          "cnName": "死亡缠绕",
+          "cardSet": "2",
+          "img": "mortal-coil.small.png",
+          "quantity": 2,
+          "rarity": "Basic",
+          "cost": 1
+        },
+        {
+          "dbfId": 749,
+          "name": "Bloodmage Thalnos",
+          "cnName": "血法师萨尔诺斯",
+          "cardSet": "3",
+          "img": "bloodmage-thalanos.small.png",
+          "quantity": 1,
+          "rarity": "Legendary",
+          "cost": 2
+        },
+        {
+          "dbfId": 251,
+          "name": "Loot Hoarder",
+          "cnName": "战利品贮藏者",
+          "cardSet": "3",
+          "img": "loot-hoarder.small.png",
+          "quantity": 2,
+          "rarity": "Common",
+          "cost": 2
+        },
+        {
+          "dbfId": 284,
+          "name": "Novice Engineer",
+          "cnName": "工程师学徒",
+          "cardSet": "2",
+          "img": "novice-engineer.small.png",
+          "quantity": 2,
+          "rarity": "Basic",
+          "cost": 2
+        },
+        {
+          "dbfId": 1940,
+          "name": "Mechwarper",
+          "cnName": "机械跃迁者",
+          "cardSet": "13",
+          "img": "mechwarper.small.png",
+          "quantity": 2,
+          "rarity": "Common",
+          "cost": 2
+        },
+        {
+          "dbfId": 2061,
+          "name": "Target Dummy",
+          "cnName": "活动假人",
+          "cardSet": "13",
+          "img": "target-dummy.small.png",
+          "quantity": 2,
+          "rarity": "Rare",
+          "cost": 0
+        },
+        {
+          "dbfId": 41566,
+          "name": "Mistress of Mixtures",
+          "cnName": "亡灵药剂师",
+          "cardSet": "25",
+          "img": "mistress-of-mixtures.small.png",
+          "quantity": 1,
+          "rarity": "Common",
+          "cost": 1
+        },
+        {
+          "dbfId": 42471,
+          "name": "Defile",
+          "cnName": "亵渎",
+          "cardSet": "1001",
+          "img": "defile-tab.small.png",
+          "quantity": 2,
+          "rarity": "Rare",
+          "cost": 2
+        },
+        {
+          "dbfId": 43122,
+          "name": "Kobold Librarian",
+          "cnName": "狗头人图书管理员",
+          "cardSet": "1004",
+          "img": "kobold-librarian-tab.small.png",
+          "quantity": 2,
+          "rarity": "Common",
+          "cost": 1
+        },
+        {
+          "dbfId": 47295,
+          "name": "Glinda Crowskin",
+          "cnName": "格林达·鸦羽",
+          "cardSet": "1125",
+          "img": "glinda-crowskin-tab.small.png",
+          "quantity": 1,
+          "rarity": "Legendary",
+          "cost": 6
+        },
+        {
+          "dbfId": 49184,
+          "name": "Zilliax",
+          "cnName": "奇利亚斯",
+          "cardSet": "1127",
+          "img": "zilliax-tab.small.png",
+          "quantity": 1,
+          "rarity": "Legendary",
+          "cost": 5
+        },
+        {
+          "dbfId": 48983,
+          "name": "Galvanizer",
+          "cnName": "通电机器人",
+          "cardSet": "1127",
+          "img": "galvanizer-tab.small.png",
+          "quantity": 2,
+          "rarity": "Rare",
+          "cost": 2
+        },
+        {
+          "dbfId": 48886,
+          "name": "Mecharoo",
+          "cnName": "机械袋鼠",
+          "cardSet": "1127",
+          "img": "mecharoo-tab.small.png",
+          "quantity": 2,
+          "rarity": "Common",
+          "cost": 1
+        },
+        {
+          "dbfId": 47775,
+          "name": "Skaterbot",
+          "cnName": "滑板机器人",
+          "cardSet": "1127",
+          "img": "skaterbot-tab.small.png",
+          "quantity": 2,
+          "rarity": "Common",
+          "cost": 1
+        },
+        {
+          "dbfId": 49423,
+          "name": "The Soularium",
+          "cnName": "莫瑞甘的灵界",
+          "cardSet": "1127",
+          "img": "the-soularium-tab.small.png",
+          "quantity": 1,
+          "rarity": "Legendary",
+          "cost": 1
+        },
+        {
+          "dbfId": 56223,
+          "name": "SN1P-SN4P",
+          "cnName": "大铡蟹",
+          "cardSet": "1127",
+          "img": "SN1P-SN4P.small.png",
+          "quantity": 1,
+          "rarity": "Legendary",
+          "cost": 3
+        },
+        {
+          "dbfId": 54429,
+          "name": "Plague of Flames",
+          "cnName": "火焰之灾祸",
+          "cardSet": "1158",
+          "img": "plague-of-flames.small.png",
+          "quantity": 2,
+          "rarity": "Rare",
+          "cost": 1
+        }
+      ],
+      "code": "AAEBAf0GBu0F3sQCv/ECoIADj4IDn7cDDPsBnALJB8QIlA+NEOfLAvLQAp/1Avb9Atf+Ap2pAwA="
+    }
+  ]
+}
