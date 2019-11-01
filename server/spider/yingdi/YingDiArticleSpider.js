@@ -1,14 +1,14 @@
-const utils = require("../utils/utils");
-const Const = require("./const.js");
+const utils = require("../../utils/utils");
+const Const = require("../const.js");
 const path = require("path");
-const storagePath = path.resolve(__dirname, '../../storage');
-const cardZhCNJson = require("../../server/zhCN/cardZhCNJson.json");
-const Deckcode = require("../utils/deckcode/Deckcode");
+const storagePath = path.resolve(__dirname, '../../../storage');
+const cardZhCNJson = require("../../zhCN/cardZhCNJson.json");
+const Deckcode = require("../../utils/deckcode/Deckcode");
 const co = require('co');
 
 
 class YingDiArticleSpider {
-  readArticle(url) {
+  static readArticle(url) {
     return utils.startRequest(url, false, true).then((res) => {
       let {created, content} = res.article;
       let contentObj = JSON.parse(content);
@@ -29,7 +29,7 @@ class YingDiArticleSpider {
   run(keyWord, cnName, articleIdList, onlyOne) {
     let _this = this;
     let rootDir = path.join(storagePath, keyWord);
-    let list = require(`../../storage/${keyWord}/wild/report/list`);
+    let list = require(`../../../storage/${keyWord}/wild/report/list`);
     return co(function* () {
       for (let i = 0; i < articleIdList.length; i++) {
         let reportName;
@@ -46,7 +46,7 @@ class YingDiArticleSpider {
             return item.name === reportName;
           });
           if (!exist) {
-            let {deckList, time} = yield _this.readArticle(url);
+            let {deckList, time} = yield YingDiArticleSpider.readArticle(url);
             let reportContent = {};
             list.unshift({
               "name": reportName,

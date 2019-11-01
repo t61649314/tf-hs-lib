@@ -6,7 +6,6 @@ const storagePath = path.resolve(__dirname, '../../storage');
 const cardZhCNJson = require("../../server/zhCN/cardZhCNJson.json");
 const Deckcode = require("../utils/deckcode/Deckcode");
 const co = require('co');
-const otherCode = require('./otherCode');
 let rootDir = path.join(storagePath, "team-rankstar");
 
 class TeamRankstarSpider {

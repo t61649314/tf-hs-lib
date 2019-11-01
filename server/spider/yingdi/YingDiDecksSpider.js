@@ -1,13 +1,13 @@
-const utils = require("../utils/utils");
-const Const = require("./const.js");
+const utils = require("../../utils/utils");
+const Const = require("../const.js");
 const path = require("path");
-const storagePath = path.resolve(__dirname, '../../storage');
-const cardZhCNJson = require("../../server/zhCN/cardZhCNJson.json");
-const Deckcode = require("../utils/deckcode/Deckcode");
+const storagePath = path.resolve(__dirname, '../../../storage');
+const cardZhCNJson = require("../../zhCN/cardZhCNJson.json");
+const Deckcode = require("../../utils/deckcode/Deckcode");
 const co = require('co');
 
 
-class YingDiDecksSearchSpider {
+class YingDiDecksSpider {
   readDecks(url) {
     return utils.startRequest(url, false, true).then((res) => {
       return {
@@ -25,7 +25,7 @@ class YingDiDecksSearchSpider {
   run(type, yingDiDecksInfoList) {
     let _this = this;
     let rootDir = path.join(storagePath, "other");
-    let list = require(`../../storage/other/${type}/report/list`);
+    let list = require(`../../../storage/other/${type}/report/list`);
     return co(function* () {
       for (let i = 0; i < yingDiDecksInfoList.length; i++) {
         let reportName = yingDiDecksInfoList[i].name;
@@ -116,6 +116,9 @@ class YingDiDecksSearchSpider {
   }
 }
 
-let yingDiDecksSpider = new YingDiDecksSearchSpider();
-yingDiDecksSpider.run();
-module.exports = YingDiDecksSearchSpider;
+const yingDiDecksInfoList = [
+  {id: 871123, name: "GetMeowth的46套狂野卡组推荐"}
+];
+let yingDiDecksSpider = new YingDiDecksSpider();
+yingDiDecksSpider.run("wild", yingDiDecksInfoList);
+module.exports = YingDiDecksSpider;

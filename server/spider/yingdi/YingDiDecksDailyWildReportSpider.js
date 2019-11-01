@@ -1,47 +1,53 @@
-const utils = require("../utils/utils");
-const Const = require("./const.js");
+const utils = require("../../utils/utils");
+const Const = require("../const.js");
 const path = require("path");
-const storagePath = path.resolve(__dirname, '../../storage');
-const cardZhCNJson = require("../../server/zhCN/cardZhCNJson.json");
-const Deckcode = require("../utils/deckcode/Deckcode");
+const storagePath = path.resolve(__dirname, '../../../storage');
+const cardZhCNJson = require("../../zhCN/cardZhCNJson.json");
+const Deckcode = require("../../utils/deckcode/Deckcode");
+const YingDiArticleSpider = require("./YingDiArticleSpider");
 const co = require('co');
+let rootDir = path.join(storagePath, "yingdi-daily-wild-report");
 
-
-class YingDiDecksSpider {
-  readDecks(url) {
-    return utils.startRequest(url, false, true).then((res) => {
-      return {
-        deckList: res.list.map(item => {
+class YingDiDecksDailyWildReportSpider {
+  static readHomePage(url) {
+    return utils.startRequest(url, false, true).then((data) => {
+      if (data.success) {
+        return data.list.filter(item => {
+          return item.title.indexOf("狂野") > -1
+        }).map(item => {
           return {
-            name: item.deck.name,
-            code: item.deck.code
+            title: item.title,
+            id: item.id
           }
-        }),
-        time: res.list[0].deck.created * 1000
-      };
-    })
+        });
+      }
+    });
   }
 
-  run(type, yingDiDecksInfoList) {
+  run() {
     let _this = this;
-    let rootDir = path.join(storagePath, "other");
-    let list = require(`../../storage/other/${type}/report/list`);
+    let list = require(`../../../storage/yingdi-daily-wild-report/wild/report/list`);
     return co(function* () {
-      for (let i = 0; i < yingDiDecksInfoList.length; i++) {
-        let reportName = yingDiDecksInfoList[i].name;
-        let url = `https://www.iyingdi.com/hearthstone/set/${yingDiDecksInfoList[i].id}/decks?token=&page=0&size=100`;
+      let url = "https://www.iyingdi.com/article/opensearch?page=0&q=%E8%90%A5%E5%9C%B0%E7%82%89%E7%9F%B3%E7%8B%82%E9%87%8E%E6%97%A5%E6%8A%A5&size=100&visible=1";
+      console.info(`${url}开始读取`);
+      let articleList = yield YingDiDecksDailyWildReportSpider.readHomePage(url);
+
+      for (let i = 0; i < articleList.length; i++) {
+        let reportName = articleList[i].title;
+
+        let articleUrl = `https://www.iyingdi.com/article/${articleList[i].id}?time=1547867333211&token=0d27fe4a9a834c3abcff23a7caf6f0ec&system=web/`;
         try {
-          console.info(`${url}开始读取`);
+          console.info(`${articleUrl}开始读取`);
           const exist = !!list.find(item => {
             return item.name === reportName;
           });
           if (!exist) {
-            let {deckList, time} = yield _this.readDecks(url);
+            let {deckList, time} = yield YingDiArticleSpider.readArticle(articleUrl);
             let reportContent = {};
             list.unshift({
               "name": reportName,
               "time": time,
-              "fromUrl": `https://www.iyingdi.com/web/tools/hearthstone/decks/setdetail?btypes=home_allset&setid=${yingDiDecksInfoList[i].id}`
+              "fromUrl": `https://www.iyingdi.com/web/article/search/${articleList[i].id}`
             });
             for (let j = 0; j < deckList.length; j++) {
               //通过code调用ts的接口获取卡组信息
@@ -56,14 +62,14 @@ class YingDiDecksSpider {
                 code: deckList[j].code,
                 alreadyFormatName: true
               });
-              console.info(`剩余：${deckList.length - j - 1}`);
+              console.info(`该篇周报剩余：${deckList.length - j - 1}`);
             }
-            yield utils.writeFile(path.join(rootDir, type, "deck", `${reportName}.json`), JSON.stringify(reportContent));
-            yield utils.writeFile(path.join(rootDir, type, "report", "list.json"), JSON.stringify(list));
+            yield utils.writeFile(path.join(rootDir, "wild", "deck", `${reportName}.json`), JSON.stringify(reportContent));
+            yield utils.writeFile(path.join(rootDir, "wild", "report", "list.json"), JSON.stringify(list));
           }
-          console.info(`${url} done`);
+          console.info(`${articleUrl} done`);
         } catch (e) {
-          console.error(`${url}:${e}`);
+          console.error(`${articleUrl}:${e}`);
           break;
         }
       }
@@ -116,9 +122,4 @@ class YingDiDecksSpider {
   }
 }
 
-const yingDiDecksInfoList = [
-  {id: 871123, name: "GetMeowth的46套狂野卡组推荐"}
-];
-let yingDiDecksSpider = new YingDiDecksSpider();
-yingDiDecksSpider.run("wild", yingDiDecksInfoList);
-module.exports = YingDiDecksSpider;
+module.exports = YingDiDecksDailyWildReportSpider;

@@ -1,10 +1,10 @@
-const utils = require("../../utils/utils");
-const Const = require("../const.js");
+const utils = require("../../../utils/utils");
+const Const = require("../../const.js");
 const path = require("path");
-const storagePath = path.resolve(__dirname, '../../../storage');
-const cardZhCNJson = require("../../zhCN/cardZhCNJson.json");
+const storagePath = path.resolve(__dirname, '../../../../storage');
+const cardZhCNJson = require("../../../zhCN/cardZhCNJson.json");
 const codeList = require("./codeList");
-const Deckcode = require("../../utils/deckcode/Deckcode");
+const Deckcode = require("../../../utils/deckcode/Deckcode");
 const co = require('co');
 
 
@@ -12,7 +12,7 @@ class CodeReader {
   run(type, keyWork, codeList) {
     let _this = this;
     let rootDir = path.join(storagePath, keyWork);
-    let list = require(`../../../storage/${keyWork}/${type}/report/list`);
+    let list = require(`../../../../storage/${keyWork}/${type}/report/list`);
     return co(function* () {
       for (let i = 0; i < codeList.length; i++) {
         let reportName = codeList[i].name;
@@ -97,5 +97,5 @@ class CodeReader {
 }
 
 let codeReader = new CodeReader();
-codeReader.run("wild", "nga-carry", codeList);
+codeReader.run("wild", "zuiqianxian-and-wudu", codeList);
 module.exports = CodeReader;
