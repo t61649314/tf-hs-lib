@@ -143,7 +143,7 @@ let yingDiArticleSpider = new YingDiArticleSpider();
 // yingDiArticleSpider.run("other", "【旅法师营地】十月狂野传说指南——天下武功唯快不破", other1, true);
 // yingDiArticleSpider.run("other", "【旅法师营地】狂野的新挑战者们", other2, true);
 // yingDiArticleSpider.run("zaowuzhe", "造物者狂野战报", zaowuzheArticleIdList);
-yingDiArticleSpider.run("suzhijicha", "素质极差狂野战报", suzhijichaArticleIdList);
+// yingDiArticleSpider.run("suzhijicha", "素质极差狂野战报", suzhijichaArticleIdList);
 // yingDiArticleSpider.run("shengerkuangye", "生而狂野战报", shengerkuangyeArticleIdList);
 // yingDiArticleSpider.run("fengtian", "奉天战队狂野战报", fengtianArticleIdList);
 module.exports = YingDiArticleSpider;

@@ -27,6 +27,8 @@ co(function* () {
   yield writeWxJson("fengtian", "wild", "list");
   yield writeWxJson("zaowuzhe", "wild", "list");
   yield writeWxJson("suzhijicha", "wild", "list");
+  yield writeWxJson("yingdi-daily-wild-report", "wild", "list");
+  yield writeWxJson("zuiqianxian-and-wudu", "wild", "list");
 });
 
 function writeWxJson(from, type, fileName) {

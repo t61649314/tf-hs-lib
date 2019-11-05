@@ -26,6 +26,16 @@
         <div class="type-icon"></div>
         TeamRankstar战报
       </router-link>
+      <router-link class="item"  v-if="selected==='1'"
+                   :to="{path:'/ReportList', query:{type:'wild',form:'yingdi-daily-wild-report',name:'营地狂野日报'}}">
+        <div class="type-icon"></div>
+        营地狂野日报
+      </router-link>
+      <router-link class="item"  v-if="selected==='1'"
+                   :to="{path:'/ReportList', query:{type:'wild',form:'zuiqianxian-and-wudu',name:'最前线和雾都战报'}}">
+        <div class="type-icon"></div>
+        最前线和雾都战报
+      </router-link>
       <router-link class="item" v-if="selected==='1'"
                    :to="{path:'/ReportList', query:{type:'wild',form:'suzhijicha',name:'素质极差狂野战报'}}">
         <div class="type-icon"></div>
