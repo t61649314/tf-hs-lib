@@ -133,12 +133,12 @@ const shengerkuangyeArticleIdList = [75317, 72307, 68573, 60767, 58190, 56065, 5
 const fengtianArticleIdList = [71751, 69619];
 const zaowuzheArticleIdList = [80753, 78627, 70829, 67497, 64253];
 const suzhijichaArticleIdList = [85163,78225, 76281, 74671, 67565];
+const lajiArticleIdList = [85163,84583];
 const other1 = [62865];
 const other2 = [60747];
 const other3 = [73839];
-const other4 = [84583];
 let yingDiArticleSpider = new YingDiArticleSpider();
-// yingDiArticleSpider.run("other", "【狂野环境辣鸡战报】奥丹姆奇兵01", other4, true);
+yingDiArticleSpider.run("laji", "狂野环境辣鸡战报", lajiArticleIdList);
 // yingDiArticleSpider.run("other", "【旅法师营地】暗影崛起卡组速报", other3, true);
 // yingDiArticleSpider.run("other", "【旅法师营地】十月狂野传说指南——天下武功唯快不破", other1, true);
 // yingDiArticleSpider.run("other", "【旅法师营地】狂野的新挑战者们", other2, true);
