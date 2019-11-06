@@ -39,7 +39,7 @@ class YingDiArticleSpider {
           reportName = `${cnName}第${articleIdList.length - i}期`;
         }
 
-        let url = `https://www.iyingdi.com/article/${articleIdList[i]}?time=1547867333211&token=0d27fe4a9a834c3abcff23a7caf6f0ec&system=web/`;
+        let url = `https://www.iyingdi.com/article/${articleIdList[i]}?time=${new Date().getTime()}&system=web&remark=seed`;
         try {
           console.info(`${url}开始读取`);
           const exist = !!list.find(item => {
@@ -133,7 +133,7 @@ const shengerkuangyeArticleIdList = [75317, 72307, 68573, 60767, 58190, 56065, 5
 const fengtianArticleIdList = [71751, 69619];
 const zaowuzheArticleIdList = [80753, 78627, 70829, 67497, 64253];
 const suzhijichaArticleIdList = [85163,78225, 76281, 74671, 67565];
-const lajiArticleIdList = [85163,84583];
+const lajiArticleIdList = [88815,84583];
 const other1 = [62865];
 const other2 = [60747];
 const other3 = [73839];
