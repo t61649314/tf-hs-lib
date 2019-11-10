@@ -138,7 +138,7 @@ const other1 = [62865];
 const other2 = [60747];
 const other3 = [73839];
 let yingDiArticleSpider = new YingDiArticleSpider();
-yingDiArticleSpider.run("laji", "狂野环境辣鸡战报", lajiArticleIdList);
+// yingDiArticleSpider.run("laji", "狂野环境辣鸡战报", lajiArticleIdList);
 // yingDiArticleSpider.run("other", "【旅法师营地】暗影崛起卡组速报", other3, true);
 // yingDiArticleSpider.run("other", "【旅法师营地】十月狂野传说指南——天下武功唯快不破", other1, true);
 // yingDiArticleSpider.run("other", "【旅法师营地】狂野的新挑战者们", other2, true);
