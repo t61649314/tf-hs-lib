@@ -1,11 +1,7 @@
 const utils = require("../utils/utils");
-const Const = require("./const.js");
 const path = require("path");
-const moment = require("moment");
 const otherCode = require("./otherCode");
 const storagePath = path.resolve(__dirname, '../../storage');
-const cardZhCNJson = require("../../server/zhCN/cardZhCNJson.json");
-const Deckcode = require("../utils/deckcode/Deckcode");
 const co = require('co');
 let rootDir = path.join(storagePath, "team-rankstar");
 
@@ -130,7 +126,7 @@ class TeamRankstarSpider {
           if (_this.checkExits(reportContent, hrefList[j].name)) {
             continue;
           }
-          let {cards, occupation} = yield _this.getCardInfoByCode(hrefList[j].code);
+          let {cards, occupation} = utils.getCardInfoByCode(hrefList[j].code);
           //构建dir对象
           if (!reportContent[occupation]) {
             reportContent[occupation] = [];
@@ -147,7 +143,7 @@ class TeamRankstarSpider {
             if (_this.checkExits(reportContent, otherCodeList[j].name)) {
               continue;
             }
-            let {cards, occupation} = yield _this.getCardInfoByCode(otherCodeList[j].code);
+            let {cards, occupation} = utils.getCardInfoByCode(otherCodeList[j].code);
             //构建dir对象
             if (!reportContent[occupation]) {
               reportContent[occupation] = [];
@@ -163,54 +159,6 @@ class TeamRankstarSpider {
         console.info(`${url} done`);
       }
     });
-  }
-
-  getCardInfoByCode(code) {
-    let deckFromCode = new Deckcode().getDeckFromCode(code);
-    let occupationInfo = Const.occupationInfo;
-    let occupationId = deckFromCode.heroes[0].id;
-    let occupation = Object.keys(occupationInfo).find(item => {
-      return occupationInfo[item].dbfId.includes(occupationId);
-    });
-    if (!occupation) {
-      console.warn(`not find this occupation : ${occupationId}`)
-    }
-    const params = {
-      "where": {
-        "dbfId": {
-          "inq": deckFromCode.cards.map(item => {
-            return item.id
-          })
-        },
-        "deckable": true,
-        "isActive": true
-      },
-      "fields": ["id", "name", "cost", "rarity", "playerClass", "dust", "mechanics", "cardType", "deckable", "expansion", "isActive", "photoNames", "isTriClass", "triClasses", "isHallOfFame", "dbfId"],
-      "sort": ["cost", "name"],
-      "limit": 30
-    };
-    const getPageDateUrl = `https://tempostorm.com/api/cards?filter=${JSON.stringify(params)}`;
-    return utils.startRequest(encodeURI(getPageDateUrl), false, true).then(json => {
-      let arr = [];
-      json.forEach(item => {
-        arr.push({
-          dbfId: item.dbfId,
-          name: item.name,
-          cnName: cardZhCNJson[item.dbfId].cnName,
-          cardSet: cardZhCNJson[item.dbfId].cardSet,
-          img: item.photoNames.small,
-          quantity: deckFromCode.cards.find(deckFromCodeItem => {
-            return deckFromCodeItem.id === item.dbfId
-          }).count,
-          rarity: item.rarity,//Legendary
-          cost: item.cost
-        });
-      });
-      return {
-        cards: arr,
-        occupation: occupation
-      };
-    })
   }
 }
 

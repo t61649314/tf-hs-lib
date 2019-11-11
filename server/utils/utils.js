@@ -1,7 +1,8 @@
 const {occupationInfo} = require('../../server/spider/const');
 const deckZhCNJson = require('../../server/zhCN/deckZhCNJson');
+const cardZhCNJson = require('../../server/zhCN/cardZhCNJson.json')
 const deckKeyCardMapArr = require('../../server/zhCN/deckKeyCardMapArr');
-
+const Deckcode = require("../../server/utils/deckcode/Deckcode");
 const https = require('https');
 const http = require('http');
 const fs = require("fs");
@@ -9,6 +10,7 @@ const path = require("path");
 const cheerio = require('cheerio');
 const request = require('request');
 const _ = require("lodash");
+const Const = require("../../server/spider/const");
 
 function formatDeckName(name, decks, occupation) {
   let formatName = "";
@@ -43,13 +45,13 @@ function formatDeckName(name, decks, occupation) {
       }
     });
   }
-  try{
+  try {
     if (formatName) {
       return formatName + occupationInfo[occupation].simpleName;
     } else {
       return occupationInfo[occupation].cnName;
     }
-  }catch (e) {
+  } catch (e) {
     console.log(e)
   }
 };
@@ -146,7 +148,7 @@ function existsFile(filepath) {
 
 function readFile(filepath) {
   return new Promise(function (resolve, reject) {
-    fs.readFile(filepath, 'utf-8',  (err, result)=> {
+    fs.readFile(filepath, 'utf-8', (err, result) => {
       if (err) {
         reject(err);
       } else {
@@ -156,8 +158,36 @@ function readFile(filepath) {
   });
 }
 
+function getCardInfoByCode(code) {
+  let deckFromCode = new Deckcode().getDeckFromCode(code);
+  let occupationInfo = Const.occupationInfo;
+  let occupationId = deckFromCode.heroes[0].id;
+  let occupation = Object.keys(occupationInfo).find(item => {
+    return occupationInfo[item].dbfId.includes(occupationId);
+  });
+  if (!occupation) {
+    console.warn(`not find this occupation : ${occupationId}`)
+  }
+  let arr = deckFromCode.cards.map(item => {
+    return {
+      dbfId: item.id,
+      cnName: cardZhCNJson[item.id].cnName,
+      cardSet: cardZhCNJson[item.id].cardSet,
+      img2: cardZhCNJson[item.id].img,
+      quantity: item.count,
+      rarity: cardZhCNJson[item.id].rarity,
+      cost: cardZhCNJson[item.id].cost
+    }
+  });
+  return {
+    cards: arr,
+    occupation: occupation
+  };
+}
+
 
 module.exports = {
+  getCardInfoByCode,
   readFile,
   formatDeckName,
   existsFile,

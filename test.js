@@ -16,68 +16,48 @@ fs.readFile('./format.json', 'utf8', function (err, data) {
   let arr = [];
   dataArr.forEach(item => {
     let deck = JSON.parse(item);
-    let count=0;
-    if(!deck.cards){
+    let count = 0;
+    if (!deck.cards) {
       console.log(item);
-    }else{
-      deck.cards.forEach(item=>{
-        count+=item.quantity
+    } else {
+      deck.cards.forEach(item => {
+        count += item.quantity
       });
-      if(count<30){
+      if (count < 30) {
         console.log(item);
       }
     }
   })
 });
-// function getCardInfoByCode(code) {
-//   let deckFromCode = new Deckcode().getDeckFromCode(code);
-//   let occupationInfo = Const.occupationInfo;
-//   let occupationId = deckFromCode.heroes[0].id;
-//   let occupation = Object.keys(occupationInfo).find(item => {
-//     return occupationInfo[item].dbfId.includes(occupationId);
-//   });
-//   if (!occupation) {
-//     console.warn(`not find this occupation : ${occupationId}`)
-//   }
-//   const params = {
-//     "where": {
-//       "dbfId": {
-//         "inq": deckFromCode.cards.map(item => {
-//           return item.id
-//         })
-//       },
-//       "deckable": true,
-//       "isActive": true
-//     },
-//     "fields": ["id", "name", "cost", "rarity", "playerClass", "dust", "mechanics", "cardType", "deckable", "expansion", "isActive", "photoNames", "isTriClass", "triClasses", "isHallOfFame", "dbfId"],
-//     "sort": ["cost", "name"],
-//     "limit": 30
-//   };
-//   const getPageDateUrl = `https://tempostorm.com/api/cards?filter=${JSON.stringify(params)}`;
-//   return utils.startRequest(encodeURI(getPageDateUrl), false, true).then(json => {
-//     let arr = [];
-//     json.forEach(item => {
-//       arr.push({
-//         dbfId: item.dbfId,
-//         name: item.name,
-//         cnName: cardZhCNJson[item.dbfId].cnName,
-//         cardSet: cardZhCNJson[item.dbfId].cardSet,
-//         img: item.photoNames.small,
-//         quantity: deckFromCode.cards.find(deckFromCodeItem => {
-//           return deckFromCodeItem.id === item.dbfId
-//         }).count,
-//         rarity: item.rarity,//Legendary
-//         cost: item.cost
-//       });
-//     });
-//     return {
-//       cards: arr,
-//       occupation: occupation
-//     };
-//   })
-// }
-//
-//
+
+function getCardInfoByCode(code) {
+  let deckFromCode = new Deckcode().getDeckFromCode(code);
+  let occupationInfo = Const.occupationInfo;
+  let occupationId = deckFromCode.heroes[0].id;
+  let occupation = Object.keys(occupationInfo).find(item => {
+    return occupationInfo[item].dbfId.includes(occupationId);
+  });
+  if (!occupation) {
+    console.warn(`not find this occupation : ${occupationId}`)
+  }
+  let arr = deckFromCode.cards.map(item => {
+    return {
+      dbfId: item.id,
+      cnName: cardZhCNJson[item.id].cnName,
+      cardSet: cardZhCNJson[item.id].cardSet,
+      img2: cardZhCNJson[item.id].img,
+      quantity: item.count,
+      rarity: cardZhCNJson[item.id].rarity,
+      cost: cardZhCNJson[item.id].cost
+    }
+  });
+  return {
+    cards: arr,
+    occupation: occupation
+  };
+}
+
+
 // fs.readFile('./error.json', 'utf8', function (err, data) {
 //   co(function* () {
 //     let dataArr = data.split("\n");
@@ -89,19 +69,10 @@ fs.readFile('./format.json', 'utf8', function (err, data) {
 //       let {cards} = yield getCardInfoByCode(deck.code);
 //       deck.cards = cards;
 //       arr.push(deck);
-//       console.log("~~~~~~~~~~~~~~~~")
-//       console.log(arr.map(item => JSON.stringify(item)).join("\n"))
-//       console.log("~~~~~~~~~~~~~~~~")
 //     }
-//     // yield utils.writeFile(path.resolve(__dirname, './format.json'), arr.map(item => JSON.stringify(item)).join("\n") + "\n");
+//     yield utils.writeFile(path.resolve(__dirname, './format.json'), arr.map(item => JSON.stringify(item)).join("\n") + "\n");
 //   });
 // });
-
-
-
-
-
-
 
 
 // let deckJsonStr = "";

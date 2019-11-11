@@ -1,10 +1,7 @@
 const utils = require("../../../utils/utils");
-const Const = require("../../const.js");
 const path = require("path");
 const storagePath = path.resolve(__dirname, '../../../../storage');
-const cardZhCNJson = require("../../../zhCN/cardZhCNJson.json");
 const codeList = require("./codeList");
-const Deckcode = require("../../../utils/deckcode/Deckcode");
 const co = require('co');
 
 
@@ -30,7 +27,7 @@ class CodeReader {
             "fromUrl": fromUrl
           });
           for (let j = 0; j < deckList.length; j++) {
-            let {cards, occupation} = yield _this.getCardInfoByCode(deckList[j].code);
+            let {cards, occupation} = utils.getCardInfoByCode(deckList[j].code);
             // 构建dir对象
             if (!reportContent[occupation]) {
               reportContent[occupation] = [];
@@ -48,51 +45,6 @@ class CodeReader {
         }
       }
     });
-  }
-
-  getCardInfoByCode(code) {
-    let deckFromCode = new Deckcode().getDeckFromCode(code);
-    let occupationInfo = Const.occupationInfo;
-    let occupationId = deckFromCode.heroes[0].id;
-    let occupation = Object.keys(occupationInfo).find(item => {
-      return occupationInfo[item].dbfId.includes(occupationId);
-    });
-    const params = {
-      "where": {
-        "dbfId": {
-          "inq": deckFromCode.cards.map(item => {
-            return item.id
-          })
-        },
-        "deckable": true,
-        "isActive": true
-      },
-      "fields": ["id", "name", "cost", "rarity", "playerClass", "dust", "mechanics", "cardType", "deckable", "expansion", "isActive", "photoNames", "isTriClass", "triClasses", "isHallOfFame", "dbfId"],
-      "sort": ["cost", "name"],
-      "limit": 30
-    };
-    const getPageDateUrl = `https://tempostorm.com/api/cards?filter=${JSON.stringify(params)}`;
-    return utils.startRequest(encodeURI(getPageDateUrl), false, true).then(json => {
-      let arr = [];
-      json.forEach(item => {
-        arr.push({
-          dbfId: item.dbfId,
-          name: item.name,
-          cnName: cardZhCNJson[item.dbfId].cnName,
-          cardSet: cardZhCNJson[item.dbfId].cardSet,
-          img: item.photoNames.small,
-          quantity: deckFromCode.cards.find(deckFromCodeItem => {
-            return deckFromCodeItem.id === item.dbfId
-          }).count,
-          rarity: item.rarity,//Legendary
-          cost: item.cost
-        });
-      });
-      return {
-        cards: arr,
-        occupation: occupation
-      };
-    })
   }
 }
 
