@@ -10,25 +10,25 @@ const list = require("./storage/hearthstone-top-decks/wild/report/list");
 let rootDir = path.join(storagePath, "hearthstone-top-decks");
 const Deckcode = require("./server/utils/deckcode/Deckcode");
 const Const = require("./server/spider/const");
-fs.readFile('./format.json', 'utf8', function (err, data) {
-  let dataArr = data.split("\n");
-  dataArr = dataArr.slice(0, dataArr.length - 1);
-  let arr = [];
-  dataArr.forEach(item => {
-    let deck = JSON.parse(item);
-    let count = 0;
-    if (!deck.cards) {
-      console.log(item);
-    } else {
-      deck.cards.forEach(item => {
-        count += item.quantity
-      });
-      if (count < 30) {
-        console.log(item);
-      }
-    }
-  })
-});
+// fs.readFile('./20191112.json', 'utf8', function (err, data) {
+//   let dataArr = data.split("\n");
+//   dataArr = dataArr.slice(0, dataArr.length - 1);
+//   let arr = [];
+//   dataArr.forEach(item => {
+//     let deck = JSON.parse(item);
+//     let count = 0;
+//     if (!deck.cards) {
+//       console.log(item);
+//     } else {
+//       deck.cards.forEach(item => {
+//         count += item.quantity
+//       });
+//       if (count < 30) {
+//         console.log(item);
+//       }
+//     }
+//   })
+// });
 
 function getCardInfoByCode(code) {
   let deckFromCode = new Deckcode().getDeckFromCode(code);
@@ -57,7 +57,7 @@ function getCardInfoByCode(code) {
   };
 }
 
-
+//
 // fs.readFile('./error.json', 'utf8', function (err, data) {
 //   co(function* () {
 //     let dataArr = data.split("\n");
