@@ -13,12 +13,13 @@
                :key="index">
             <div class="is-weaken-text" v-if="isWeaken(cardItem.dbfId)">已削弱</div>
             <div class="fl card-cost">{{cardItem.cost}}</div>
-            <div class="fl card-name">{{cardItem.name}}{{cardItem.dbfId}}</div>
+            <div class="fl card-name">{{cardItem.cnName}}{{cardItem.dbfId}}</div>
             <div class="fr card-quantity">
               <i v-if="cardItem.rarity==='Legendary'" class="fa fa-star"></i>
               <span v-else>{{cardItem.quantity}}</span>
             </div>
-            <img class="fr card-img" :src="`https://cdn.tempostorm.com/cards/${cardItem.img}`"/>
+            <img v-if="cardItem.img2" class="fr card-img" :src="`${cardItem.img2}`"/>
+            <img v-else class="fr card-img" :src="`https://cdn.tempostorm.com/cards/${cardItem.img}`"/>
           </div>
         </div>
         <button class="btn clipboard-btn" :data-clipboard-text="deckItem.code">复制卡组</button>

@@ -169,15 +169,20 @@ function getCardInfoByCode(code) {
     console.warn(`not find this occupation : ${occupationId}`)
   }
   let arr = deckFromCode.cards.map(item => {
-    return {
+    let card = {
       dbfId: item.id,
       cnName: cardZhCNJson[item.id].cnName,
       cardSet: cardZhCNJson[item.id].cardSet,
-      img2: cardZhCNJson[item.id].img,
       quantity: item.count,
       rarity: cardZhCNJson[item.id].rarity,
       cost: cardZhCNJson[item.id].cost
+    };
+    if (cardZhCNJson[item.id].img) {
+      card.img2 = cardZhCNJson[item.id].img
+    } else if (cardZhCNJson[item.id].oldImg) {
+      card.img = cardZhCNJson[item.id].oldImg
     }
+    return card;
   });
   return {
     cards: arr,
