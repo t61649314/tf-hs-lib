@@ -5,6 +5,13 @@ const utils = require("./utils/utils");
 const {occupationInfo} = require('../server/spider/const');
 const uuid = require('uuid');
 const co = require('co');
+const preConstructionList = [
+  "hearthstone-top-2019-12-07",
+  "hearthstone-top-2019-12-08",
+  "hearthstone-top-2019-12-09",
+  "hearthstone-top-2019-12-10"
+];
+
 let listJsonStr = "";
 // let deckJsonStr = "";
 
@@ -80,6 +87,7 @@ function writeWxJson(from, type, fileName) {
       } else {
         listFormat._id = report.name;
       }
+      listFormat.preConstruction = preConstructionList.includes(report.name);
       listFormat.name = report.name;
       listFormat.time = report.time;
       listFormat.fromUrl = report.fromUrl;
