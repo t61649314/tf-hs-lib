@@ -50,6 +50,10 @@ const occupationInfo = {
 
 const timeNode = [
   {
+    time: "2019-12-11",
+    title: "《巨龙降临》补丁上线",
+  },
+  {
     time: "2019-10-09",
     title: "《古墓怪谭》补丁上线",
   },

@@ -18,7 +18,7 @@
               <i v-if="cardItem.rarity==='Legendary'" class="fa fa-star"></i>
               <span v-else>{{cardItem.quantity}}</span>
             </div>
-            <img v-if="cardItem.img2" class="fr card-img" :src="`${cardItem.img2}`"/>
+            <div v-if="cardItem.img2" class="fr card-img2" :style="`background-image:url('${cardItem.img2}')`"></div>
             <img v-else class="fr card-img" :src="`https://cdn.tempostorm.com/cards/${cardItem.img}`"/>
           </div>
         </div>
@@ -35,8 +35,6 @@
   import {formatDeckName} from '../assets/utils'
   import moment from 'moment'
   import {timeNode} from '../../server/spider/const'
-  import {Indicator} from 'mint-ui'
-  import axios from 'axios'
 
   export default {
     name: 'DeckList',
@@ -92,6 +90,7 @@
     padding: 0.5rem 0;
     border-bottom: 0.01rem solid #ddd;
     background-color: #fff;
+
     .deck-info-box {
       width: 4.5rem;
       margin: auto;
@@ -105,13 +104,16 @@
       word-break: break-all;
       display: flex;
       align-items: center;
+
       .deck-name-content {
         max-width: 3rem;
       }
     }
+
     .card-box {
       width: 4.5rem;
       margin: auto;
+
       .card-item {
         height: 0.5rem;
         line-height: 0.5rem;
@@ -120,30 +122,43 @@
         border-top: 1px solid rgba(0, 0, 0, .3);
         border-bottom: 1px solid rgba(255, 255, 255, .1);
         position: relative;
+
         .card-img {
           height: 0.5rem;
         }
+
+        .card-img2 {
+          height: 0.5rem;
+          width: 2.7rem;
+          background-position: 0 -0.8rem;
+          background-size: 100%;
+        }
+
         .card-quantity {
           width: 0.5rem;
           color: #fba31b;
           font-weight: 700;
         }
+
         .card-cost {
           color: #fff;
           width: 0.5rem;
           background-color: #2766ad;
           font-weight: 700;
         }
+
         .card-name {
           position: absolute;
           left: 0.7rem;
           color: #fff;
         }
+
         .is-weaken-text {
           position: absolute;
           left: 4.7rem;
           color: #ff4545;
           word-break: keep-all;
+
           &:before {
             content: "";
             display: block;
@@ -170,33 +185,41 @@
       width: 200px;
       display: inline-block;
       padding: 20px;
+
       .deck-info-box {
         width: 100%;
         font-size: 14px;
         padding: 15px;
       }
+
       .card-box {
         width: 100%;
         font-size: 12px;
+
         .card-item {
           height: 25px;
           line-height: 25px;
+
           .card-img {
             height: 25px;
           }
+
           .card-quantity {
             width: 25px;
             text-align: center;
           }
+
           .card-cost {
             width: 25px;
             text-align: center;
           }
+
           .card-name {
             left: 35px;
           }
         }
       }
+
       button {
         width: 100%;
         height: 40px;

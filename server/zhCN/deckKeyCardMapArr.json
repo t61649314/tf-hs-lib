@@ -266,6 +266,13 @@
     ]
   },
   {
+    "name": "树人",
+    "anyOneId": true,
+    "ids": [
+      48831,55031
+    ]
+  },
+  {
     "name": "铺场",
     "anyOneId": true,
     "ids": [

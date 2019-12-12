@@ -169,6 +169,9 @@ function getCardInfoByCode(code) {
     console.warn(`not find this occupation : ${occupationId}`)
   }
   let arr = deckFromCode.cards.map(item => {
+    if (!cardZhCNJson[item.id]) {
+      console.warn(`not find this dbfId : ${item.id}`)
+    }
     let card = {
       dbfId: item.id,
       cnName: cardZhCNJson[item.id].cnName,
