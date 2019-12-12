@@ -32,8 +32,8 @@ class YingDiDecksSpider {
           const exist = !!list.find(item => {
             return item.name === reportName;
           });
+          let {deckList, time} = yield _this.readDecks(url);
           if (!exist) {
-            let {deckList, time} = yield _this.readDecks(url);
             let reportContent = {};
             list.unshift({
               "name": reportName,
@@ -57,6 +57,36 @@ class YingDiDecksSpider {
             }
             yield utils.writeFile(path.join(rootDir, type, "deck", `${reportName}.json`), JSON.stringify(reportContent));
             yield utils.writeFile(path.join(rootDir, type, "report", "list.json"), JSON.stringify(list));
+          } else {
+            let reportContent = require(`../../../storage/other/wild/deck/${reportName}.json`);
+            for (let j = 0; j < deckList.length; j++) {
+              let findDeck = false;
+              let item = deckList[j];
+              Object.keys(reportContent).forEach(key => {
+                let occupationItem = reportContent[key];
+                if (occupationItem.find(occupationDeckItem => occupationDeckItem.code === item.code)) {
+                  findDeck = true;
+                }
+              });
+              if (!findDeck) {
+                //通过code调用ts的接口获取卡组信息
+                let {cards, occupation} = utils.getCardInfoByCode(deckList[j].code);
+                // 构建dir对象
+                if (!reportContent[occupation]) {
+                  reportContent[occupation] = [];
+                }
+                reportContent[occupation].push({
+                  name: deckList[j].name,
+                  cards: cards,
+                  code: deckList[j].code,
+                  alreadyFormatName: true
+                });
+                console.info(`${reportName} ${item.name} new`)
+              } else {
+                console.warn(`${reportName} ${item.name} done`)
+              }
+            }
+            yield utils.writeFile(path.join(rootDir, type, "deck", `${reportName}.json`), JSON.stringify(reportContent));
           }
           console.info(`${url} done`);
         } catch (e) {
@@ -68,8 +98,11 @@ class YingDiDecksSpider {
   }
 }
 
+// const yingDiDecksInfoList = [
+//   {id: 871123, name: "GetMeowth的46套狂野卡组推荐"}
+// ];
 const yingDiDecksInfoList = [
-  {id: 871123, name: "GetMeowth的46套狂野卡组推荐"}
+  {id: 894643, name: "【旅法师营地】【狂野】巨龙降临卡组速递"}
 ];
 let yingDiDecksSpider = new YingDiDecksSpider();
 yingDiDecksSpider.run("wild", yingDiDecksInfoList);

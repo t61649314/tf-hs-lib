@@ -23,7 +23,7 @@ class YingDiArticleSpider {
     })
   }
 
-  run(keyWord, cnName, articleIdList, onlyOne) {
+  run(keyWord, cnName, articleIdList, onlyOne, canRefresh) {
     let _this = this;
     let rootDir = path.join(storagePath, keyWord);
     let list = require(`../../../storage/${keyWord}/wild/report/list`);
@@ -42,8 +42,8 @@ class YingDiArticleSpider {
           const exist = !!list.find(item => {
             return item.name === reportName;
           });
+          let {deckList, time} = yield YingDiArticleSpider.readArticle(url);
           if (!exist) {
-            let {deckList, time} = yield YingDiArticleSpider.readArticle(url);
             let reportContent = {};
             list.unshift({
               "name": reportName,
@@ -67,6 +67,34 @@ class YingDiArticleSpider {
             }
             yield utils.writeFile(path.join(rootDir, "wild", "deck", `${reportName}.json`), JSON.stringify(reportContent));
             yield utils.writeFile(path.join(rootDir, "wild", "report", "list.json"), JSON.stringify(list));
+          } else if (canRefresh) {
+            let reportContent = require(`../../../storage/${keyWord}/wild/deck/${reportName}.json`);
+            for (let j = 0; j < deckList.length; j++) {
+              let findDeck = false;
+              let item = deckList[j];
+              Object.keys(reportContent).forEach(key => {
+                let occupationItem = reportContent[key];
+                if (occupationItem.find(occupationDeckItem => occupationDeckItem.code === item.code)) {
+                  findDeck = true;
+                }
+              });
+              if (!findDeck) {
+                let {cards, occupation} = utils.getCardInfoByCode(deckList[j].code);
+                if (!reportContent[occupation]) {
+                  reportContent[occupation] = [];
+                }
+                reportContent[occupation].push({
+                  name: deckList[j].name,
+                  cards: cards,
+                  code: deckList[j].code,
+                  alreadyFormatName: true
+                });
+                console.info(`${reportName} ${item.name} new`)
+              } else {
+                console.warn(`${reportName} ${item.name} done`)
+              }
+            }
+            yield utils.writeFile(path.join(rootDir, "wild", "deck", `${reportName}.json`), JSON.stringify(reportContent));
           }
           console.info(`${url} done`);
         } catch (e) {
@@ -81,14 +109,13 @@ class YingDiArticleSpider {
 const shengerkuangyeArticleIdList = [75317, 72307, 68573, 60767, 58190, 56065, 52702, 51596, 50430, 49165, 47149, 44758, 43020, 42204];
 const fengtianArticleIdList = [71751, 69619];
 const zaowuzheArticleIdList = [80753, 78627, 70829, 67497, 64253];
-const suzhijichaArticleIdList = [85163,78225, 76281, 74671, 67565];
-const lajiArticleIdList = [88815,84583];
-const other1 = [62865];
-const other2 = [60747];
-const other3 = [73839];
+const suzhijichaArticleIdList = [85163, 78225, 76281, 74671, 67565];
+const lajiArticleIdList = [88815, 84583];
 let yingDiArticleSpider = new YingDiArticleSpider();
 // yingDiArticleSpider.run("laji", "狂野环境辣鸡战报", lajiArticleIdList);
-// yingDiArticleSpider.run("other", "【旅法师营地】暗影崛起卡组速报", other3, true);
+// yingDiArticleSpider.run("other", "【旅法师营地】【狂野】巨龙降临卡组速递", [73839], true, true);
+yingDiArticleSpider.run("other", "【旅法师营地】【狂野】奥丹姆奇兵卡组速递", [82391], true, true);
+yingDiArticleSpider.run("other", "【旅法师营地】【狂野】暗影崛起卡组速递", [73839], true, true);
 // yingDiArticleSpider.run("other", "【旅法师营地】十月狂野传说指南——天下武功唯快不破", other1, true);
 // yingDiArticleSpider.run("other", "【旅法师营地】狂野的新挑战者们", other2, true);
 // yingDiArticleSpider.run("zaowuzhe", "造物者狂野战报", zaowuzheArticleIdList);
