@@ -1,4 +1,5 @@
 {
+  "Aggro/Token": "快攻",
   "Galakrond": "GK",
   "Reno": "宇宙",
   "Kazakus/Highlander": "宇宙",
@@ -107,8 +108,9 @@
   "Gallery": "克隆展",
   "SN1P-SN4P": "大铡蟹",
   "Sn1p-Sn4p": "大铡蟹",
+  "Togwaggle": "换家",
   "Thermometer": "冰",
   "Bloodsworn": "激怒",
-  "Hand": "污手",
+  "Hand": "手牌",
   "Enrage": "激怒"
 }
