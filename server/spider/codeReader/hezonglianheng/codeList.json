@@ -265,7 +265,23 @@
       },
       {
         "name": "宇宙奥秘法",
-        "code": "AAEBAf0EBIS7AtDBAu72AtaZAw2rBOYEvAjjEYK0ApjEAsiHA5+bA+KbA/+dA7ulA/usA/2sAwA="
+        "code": "AAEBAaXDAx5xwAG7ApYF7AX3DYkO+g7uE7oWwxaFF9e2Auu6Ati7Atm7Aoe9AsHBAuTCAo/TAqLTAu72Ar2ZA/yjA5KkA76kA7+kA92pA/SrA/usAwAA"
+      },
+      {
+        "name": "大哥牧",
+        "code": "AAEBAa0GCqirAtHBAsLOAqCAA42CA4KUA9aZA5ObA5mbA/KsAwr6EeXMAubMArTOAvDPAujQAuPpApeHA5ioA5mpAwA="
+      },
+      {
+        "name": "蓝龙德",
+        "code": "AAEBAZICELQD0wPFBIoO1hHsFeC7AsnHAqDNAp7SApnTAr/yAo/2Auj8AtaZA9qdAwdA/gHoFYTmAoz7AoyuA/awAwA="
+      },
+      {
+        "name": "蓝龙换家德",
+        "code": "AAEBAZICEF/pAbQDxQSKDuwV4LsCoM0CntICmdMC/esCmu4C1pkD2p0DjK4D9rADB0D+AegVhOYCv/ICj/YCjPsCAA=="
+      },
+      {
+        "name": "快攻德",
+        "code": "AAEBAZICBIgOhBeRvALrwgIN9wOoBdQF5gXlB44Q3hXNuwLkwgKL5QLDlAP7rQPpsAMA"
       }
     ]
   }
