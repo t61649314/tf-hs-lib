@@ -50,6 +50,9 @@ class HearthstoneTopDecksSpider {
     return co(function* () {
       try {
         for (let i = 1; ; i++) {
+          if (i > 2) {
+            break;
+          }
           let url;
           if (i === 1) {
             url = 'https://hearthstone-decks.net/wild-decks/';
