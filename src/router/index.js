@@ -1,9 +1,5 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Home from '@/views/Home'
-import ReportList from '@/views/ReportList'
-import OccupationList from '@/views/OccupationList'
-import DeckList from '@/views/DeckList'
 
 
 Vue.use(Router)
@@ -13,22 +9,22 @@ export default new Router({
     {
       path: '/',
       name: 'Home',
-      component: Home
+      component: () => import('@/views/Home')
     },
     {
       path: '/ReportList',
       name: 'ReportList',
-      component: ReportList
+      component: () => import('@/views/ReportList')
     },
     {
       path: '/OccupationList',
       name: 'OccupationList',
-      component: OccupationList
+      component: () => import('@/views/OccupationList')
     },
     {
       path: '/DeckList',
       name: 'DeckList',
-      component: DeckList
+      component: () => import('@/views/DeckList')
     }
   ]
 })
