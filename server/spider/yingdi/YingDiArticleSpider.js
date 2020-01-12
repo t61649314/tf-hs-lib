@@ -113,7 +113,7 @@ const suzhijichaArticleIdList = [85163, 78225, 76281, 74671, 67565];
 const lajiArticleIdList = [88815, 84583];
 let yingDiArticleSpider = new YingDiArticleSpider();
 // yingDiArticleSpider.run("laji", "狂野环境辣鸡战报", lajiArticleIdList);
-// yingDiArticleSpider.run("other", "【旅法师营地】【狂野】巨龙降临卡组速递", [73839], true, true);
+yingDiArticleSpider.run("other", "虎牙和咕咕咕文案组狂野联合战报", [93623], true);
 // yingDiArticleSpider.run("other", "【旅法师营地】【狂野】奥丹姆奇兵卡组速递", [82391], true, true);
 // yingDiArticleSpider.run("other", "【旅法师营地】【狂野】暗影崛起卡组速递", [73839], true, true);
 // yingDiArticleSpider.run("other", "【旅法师营地】十月狂野传说指南——天下武功唯快不破", other1, true);
