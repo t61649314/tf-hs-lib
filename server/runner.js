@@ -7,7 +7,7 @@ const co = require('co');
 co(function* () {
   const vs = new ViciousSyndicateSpider();
   const ts = new TempoStormSpider();
-  const tr = new TeamRankstarSpider()
+  const tr = new TeamRankstarSpider();
   const htd = new HearthstoneTopDecksSpider();
   const ydddwr = new YingDiDecksDailyWildReportSpider();
   yield ydddwr.run();
