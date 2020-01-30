@@ -431,5 +431,28 @@
         "code": "AAEBAf0EHnHAAbsClgXsBYoHvwj3DYkO+g7uE8MWhRfXtgLYuwLZuwL9vQLBwQKP0wLAjwO9mQOgmwP8owOSpAO+pAO/pAPdqQP0qwP9sAORsQMAAA=="
       }
     ]
+  },
+  {
+    "name": "合纵连横狂野战报第4期",
+    "time": "2020-01-25",
+    "fromUrl": "https://nga.178.com/read.php?tid=20144058",
+    "deckList": [
+      {
+        "name": "迦拉克隆海盗战",
+        "code": "AAEBAQcIHPIFhReRvALerQP9sAPjtAPFwAML1AXGFYKwAp3wAtitA9qtA92tA/6uA6qvA9KvA6u2AwA="
+      },
+      {
+        "name": "迦拉克隆炸弹战",
+        "code": "AAEBAQcGHPIFhBeFF+O0A8XAAwzGFZ3wArP8ApeUA5qUA9itA9mtA9qtA/6uA6qvA9KvA6u2AwA="
+      },
+      {
+        "name": "海盗快攻德",
+        "code": "AAEBAZICApG8AsOUAw73A6gF1AXmBeUH+w+OEN4VzbsC68ICi+UC/acD+60D6bADAA=="
+      },
+      {
+        "name": "火妖任务法",
+        "code": "AAEBAf0EBLwI0MECzu8C7vYCDasE5gTjEYK0ApjEArT8AsiHA5+bA+KbA/+dA/usA/2sA7i2AwA="
+      }
+    ]
   }
 ]
