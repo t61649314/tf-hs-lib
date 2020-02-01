@@ -13,10 +13,26 @@ class HearthstoneTopDecksSpider {
       if (attachmentMediumDom.length) {
         const code = attachmentMediumDom.attr("value");
         return {
-          code: code,
+          code: [code],
         };
       } else {
-        console.info(`${url}：no data`);
+        let codeList = [];
+        for (let i = 1; i < 10; i++) {
+          const attachmentMediumDom = $('#foo' + i);
+          if (attachmentMediumDom.length) {
+            const code = attachmentMediumDom.attr("value");
+            codeList.push(code);
+          } else {
+            break;
+          }
+        }
+        if (codeList.length) {
+          return {
+            code: codeList,
+          };
+        } else {
+          console.info(`${url}：no data`);
+        }
       }
     })
   }
@@ -101,12 +117,14 @@ class HearthstoneTopDecksSpider {
               console.info(`${item.href}开始读取`);
               let deckInfo = yield _this.readChildPage(item.href);
               if (deckInfo) {
-                let {cards, occupation} = utils.getCardInfoByCode(deckInfo.code);
-                if (!reportContent[occupation]) {
-                  reportContent[occupation] = [];
+                for (let i = 0; i < deckInfo.code.length; i++) {
+                  let {cards, occupation} = utils.getCardInfoByCode(deckInfo.code[i]);
+                  if (!reportContent[occupation]) {
+                    reportContent[occupation] = [];
+                  }
+                  reportContent[occupation].push({name: item.name, cards: cards, code: deckInfo.code});
+                  yield utils.writeFile(path.join(rootDir, "wild", "deck", `${reportName}.json`), JSON.stringify(reportContent));
                 }
-                reportContent[occupation].push({name: item.name, cards: cards, code: deckInfo.code});
-                yield utils.writeFile(path.join(rootDir, "wild", "deck", `${reportName}.json`), JSON.stringify(reportContent));
               }
               console.info(`该篇周报剩余：${hrefList.length - j - 1}`);
               list.unshift(report);
