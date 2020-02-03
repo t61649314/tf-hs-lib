@@ -2,7 +2,7 @@
   <div>
     <page-header :title="page"></page-header>
     <div class="list">
-      <router-link v-if="deckList[key]" class="item" :occupation="key" v-for="(value ,key) in Const.occupationInfo"
+      <router-link  class="item" :occupation="key" v-for="(value ,key) in Const.occupationInfo"
                    :key="key"
                    :to="{
                    path:'/DeckList',
@@ -53,7 +53,7 @@
         //     this.deckList = data;
         //   }
         // })
-        this.deckList = require(`../../storage/${this.$route.query.form}/${this.$route.query.type}/deck/${this.$route.query.page}.json`);
+        // this.deckList = require(`../../storage/${this.$route.query.form}/${this.$route.query.type}/deck/${this.$route.query.page}.json`);
       }
     }
   }

@@ -14,7 +14,30 @@ const formatDeckName = function (name, decks, occupation) {
   let formatName = "";
   name.split(" ").forEach(item => {
     if (deckZhCNJson[item]) {
-      formatName += deckZhCNJson[item];
+      let name = deckZhCNJson[item];
+      if (name === "OTK") {
+        if (occupation === "Paladin") {
+          let find435 = decks.find(item => {
+            return item.dbfId === 435
+          });
+          if(find435){
+            name = "元气";
+          }else{
+            name = "天启";
+          }
+        }
+        if (occupation === "Mage") {
+          name = "无限火球";
+        }
+      }
+      if (item === "Hand") {
+        if (occupation === "Warrior") {
+          name = "无限";
+        } else {
+          name = "手牌";
+        }
+      }
+      formatName += name;
     } else if (deckZhCNWordGroupValueList.includes(item)) {
       formatName += item;
     }
