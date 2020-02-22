@@ -896,5 +896,142 @@
         "code": "AAEBAaIHBIbCAoDTAs/hAsPqAg3EAZwC7QKfA9QFhgmNEPi9ApfBAvbsArSRA4+XA8ebAwA="
       }
     ]
+  },
+  {
+    "name": "NGA搬运狂野卡组（2019-08-06补丁前）",
+    "time": "2019-08-06",
+    "fromUrl": "https://nga.178.com/thread.php?authorid=34269423&key=%E7%8B%82%E9%87%8E",
+    "deckList": [
+      {
+        "name": "机械猎",
+        "code": "AAEBAR8CoIADn7cDDvsBlwiUD4UQ080Cxs4C4vUC8PUCmPsC9v0C1/4CpIgD8pYDtpwDAA=="
+      },
+      {
+        "name": "机械术",
+        "code": "AAEBAf0GCvsB7QXECPoO9Q/exAK/8QKggAOPggOftwMKnALJB5QPrRDnywLy0AKf9QKl9QL2/QLX/gIA"
+      }
+    ]
+  },
+  {
+    "name": "NGA搬运狂野卡组（2019-12-20补丁前）",
+    "time": "2019-12-20",
+    "fromUrl": "https://nga.178.com/thread.php?authorid=34269423&key=%E7%8B%82%E9%87%8E",
+    "deckList": [
+      {
+        "name": "换家牧",
+        "code": "AAEBAa0GBu0FlsQCkNMC/esCoIADjrEDDPsB5QT8D7cXtbsC0cEC8M8C6NACqeICof4Cu6UDmakDAA=="
+      },
+      {
+        "name": "大哥贼",
+        "code": "AAEBAaIHCusCmwPFBKIJsq0Cn7ACm8gC3+MCpvAChKYDCrQBxAGGCfW7AsnHAubTAt76ApetA7uuA72uAwA="
+      }
+    ]
+  },
+  {
+    "name": "狂野线上赛卡组推荐合集",
+    "time": "2020-02-14",
+    "fromUrl": "https://nga.178.com/read.php?tid=20391034",
+    "deckList": [
+      {
+        "name": "至暗术",
+        "code": "AAEBAf0GCoIOwg/dD6irAsLOAqCAA4+CA/qkA52pA9+pAwqjAY4OkMcC58sCp84C6OcCkO4Cq5ED/pUD66wDAA=="
+      },
+      {
+        "name": "任务法",
+        "code": "AAEBAf0EBrwI0MECzu8C7vYC1pkD/awDDKsE5gTjEYK0ApjEArT8AsiHA5+bA+KbA/+dA/usA7i2AwA="
+      },
+      {
+        "name": "奇数战",
+        "code": "AAEBAQcGogKFF9PFAp74AqCAA/KoAwxLogT4B/8H/g2pFYKtAsrnAo77Ap77ArP8AtmtAwA="
+      },
+      {
+        "name": "机克术",
+        "code": "AAEBAf0GDvsB7QXECNYRwxaQxwLO6QLC8QKc+ALx+wKPggProwP8owO7pQMIibQC3sQC58sC8tAC2pYD2psDnakD66wDAA=="
+      },
+      {
+        "name": "JK战",
+        "code": "AAEBAQcG+g6FF5G8ApqUA+O0A8XAAwwc1AXyBYKwAp3wAtitA9qtA92tA/6uA6qvA9KvA6u2AwA="
+      },
+      {
+        "name": "偶数萨",
+        "code": "AAEBAaoIBDPkwgLN9AKh+AIN0wG+BtYPshS1FPuqAqC2Ava9ApTvArDwAp2jA9qlA/mlAwA="
+      },
+      {
+        "name": "JK战",
+        "code": "AAEBAQcG8gX6DoUXkbwC47QDxcADDBzUBYKwAp3wAtitA9qtA92tA/6uA6qvA9KvA/2wA6u2AwA="
+      },
+      {
+        "name": "偶数萨",
+        "code": "AAEBAaoIBogOiK8C5MICsPACzfQCofgCDNMBvgbWD7IUtRT7qgKgtgL2vQKU7wKdowPapQP5pQMA"
+      },
+      {
+        "name": "污手骑",
+        "code": "AAEBAZ8FBr0DpwWLEIQXoIADn7cDDJQP6g+EELO7Ave8Ap/1Apj7Atb+Atf+Atn+AuH+AsyBAwA="
+      },
+      {
+        "name": "魔块术",
+        "code": "AAEBAf0GDJMBowGTBM4Gwg/exAKX0wKd4gLb6QKggAP9pAPwrAMJ9wT6DY4O58sC8tACi+EC6OcCiJ0DnakDAA=="
+      },
+      {
+        "name": "青玉德",
+        "code": "AAEBAZICBlbpAZnTAr/yAtaZA/atAwxAig60uwLLvAKgzQKHzgKY0gKe0gKE5gKVlAP9rQOMrgMA"
+      },
+      {
+        "name": "偶数萨",
+        "code": "AAEBAaoIAs30AqH4Ag7TAb4G1g+yFLUU+6oCoLYC9r0C5MIClO8CsPACnaMD2qUD+aUDAA=="
+      },
+      {
+        "name": "奥秘法",
+        "code": "AAEBAf0EBMABiQ6i0wK/pAMNcbsC7AX3Dde2Auu6Aoe9AsHBAo/TAr6kA92pA/SrA4i2AwA="
+      },
+      {
+        "name": "宇宙蓝龙术",
+        "code": "AAEBAf0GHooBtAPFBO0FzgfhB40IxAj6Dq0Q1hHDFoUX2LsC08UC58sC8tACw+oCnPgCoIAD/KMD5awD66wD7KwD7qwD8KwDiLAD/bADhbEDkbEDAAA="
+      },
+      {
+        "name": "宇宙任务法",
+        "code": "AAEBAf0EHooBwAGrBMUEywT4B/cNwxaFF4K0Ati7AtDBApjEAs7vArT8AtKJA+iJA9aZA5+bA/+dA/yjA5KkA7+kA7ulA/qsA/2sA4GxA5GxA7i2A+G2AwAA"
+      },
+      {
+        "name": "JK战",
+        "code": "AAEBAQcGhReRvALerQPSrwPjtAPFwAMMHNQF+w+CsAKd8ALYrQParQPdrQP+rgOqrwPpsAO6tgMA"
+      },
+      {
+        "name": "过载偶数萨",
+        "code": "AAEBAaoIBPa9As30AualA4OnAw3TAdYP8hGyFPeqAvuqApTvAvbwAo/7AvaKA8+lA9qlA7q2AwA="
+      },
+      {
+        "name": "奇数贼",
+        "code": "AAEBAaIHCK8E3Qj6DvMRkbwCgcICz+ECnvgCC9QFmBCbFevCAvvTAtHhAqbvAo+XA7WfA/2nA7+uAwA="
+      },
+      {
+        "name": "图腾偶数萨",
+        "code": "AAEBAaoIBDOgtgLN9AKh+AIN0wG+BtYPshS1FPuqAva9AuTCApTvArDwAp2jA9qlA/mlAwA="
+      },
+      {
+        "name": "青玉龙德",
+        "code": "AAEBAZICBpS9ApnTAtaZA9igA9ulA/atAwxAig60uwLLvAKgzQKHzgKe0gKE5gL9rQOMrgP2sAOBsQMA"
+      },
+      {
+        "name": "至暗术",
+        "code": "AAEBAf0GBoIOwg+oqwLCzgKggAPfqQMMowGODpDHAufLAqfOAujnApDuAquRA/6VA/qkA52pA+usAwA="
+      },
+      {
+        "name": "魔块术",
+        "code": "AAEBAf0GCqMBkwTOBsIPl9MCneIC2+kCoIAD/aQD8KwDCvcE+g2ODt7EAufLAvLQAovhAujnAoidA52pAwA="
+      },
+      {
+        "name": "JK战",
+        "code": "AAEBAQcGkAPGFYUXkbwC47QDxcADDBzUBfIFgrACnfAC2K0D2q0D3a0D/q4Dqq8D0q8Dq7YDAA=="
+      },
+      {
+        "name": "奇数骑",
+        "code": "AAEBAZ8FCqICrwSnBfoO/68CkbwCg8cC+9MC0eECnvgCCkbUBewP7Q/TE7jHAuPLAo6aA4ytA4KxAwA="
+      },
+      {
+        "name": "宇宙战吼萨",
+        "code": "AAEBAaoIHpwCgQTeBf4Fsgb4B/oO+g/DFva9At/EAtPFAu/3Aq2RA72ZA8aZA/yjA7ulA8+lA+GlA5CnA+GoA7mtA/6uA6qvA5GxA+O0A4S2A/O3A9PAAwAA"
+      }
+    ]
   }
 ]
