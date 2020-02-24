@@ -9,7 +9,7 @@ class ViciousSyndicateSpider {
     return utils.startRequest(url).then(($) => {
       console.info(`${url}读取成功`);
       const nameDom = $('.entry-title');
-      const codeDom =$('.copy-deck');
+      const codeDom = $('.copy-deck');
       if (nameDom.length && codeDom.length) {
         return {
           name: nameDom.text(),
@@ -106,17 +106,44 @@ class ViciousSyndicateSpider {
     let _this = this;
     let list = require("../../storage/vicious-syndicate/wild/report/list");
     return co(function* () {
-      for (let i = 1; ; i++) {
+      for (let i = list.length; ; i++) {
         let reportName = `wild-vs-data-reaper-report-${i}`;
         let url = `https://www.vicioussyndicate.com/${reportName}/`;
         try {
           console.info(`${url}开始读取`);
-          const exist = !!list.find(item => {
-            return item.name === reportName;
-          });
-          if (!exist) {
-            let {hrefList, time} = yield _this.readHomePage(url);
-            let reportContent = {};
+          let {hrefList, time} = yield _this.readHomePage(url);
+          let findReport = list.find(item => item.name === reportName);
+          let reportContent;
+          if (findReport) {
+            reportContent = require(`../../storage/vicious-syndicate/wild/deck/${reportName}.json`);
+            let count = 0;
+            Object.keys(reportContent).forEach(key => {
+              let occupationItem = reportContent[key];
+              count += occupationItem.length;
+            });
+            for (let j = count; j < hrefList.length; j++) {
+              console.info(`${hrefList[j]}开始读取`);
+              try {
+                let deckInfo = yield _this.readChildPage(hrefList[j]);
+                if (deckInfo) {
+                  //通过code调用ts的接口获取卡组信息
+                  let {cards, occupation} = utils.getCardInfoByCode(deckInfo.code);
+                  //构建dir对象
+                  if (!reportContent[occupation]) {
+                    reportContent[occupation] = [];
+                  }
+                  reportContent[occupation].push({name: deckInfo.name, cards: cards, code: deckInfo.code});
+                }
+              } catch (e) {
+                console.error(`${hrefList[j]}:${e}`);
+                break;
+              }
+              console.info(`该篇周报剩余：${hrefList.length - j - 1}`);
+              yield utils.writeFile(path.join(rootDir, "wild", "deck", `${reportName}.json`), JSON.stringify(reportContent));
+              yield utils.writeFile(path.join(rootDir, "wild", "report", "list.json"), JSON.stringify(list));
+            }
+          } else {
+            reportContent = {};
             list.unshift({"name": reportName, "time": time, "fromUrl": url});
             for (let j = 0; j < hrefList.length; j++) {
               console.info(`${hrefList[j]}开始读取`);
@@ -136,9 +163,9 @@ class ViciousSyndicateSpider {
                 break;
               }
               console.info(`该篇周报剩余：${hrefList.length - j - 1}`);
+              yield utils.writeFile(path.join(rootDir, "wild", "deck", `${reportName}.json`), JSON.stringify(reportContent));
+              yield utils.writeFile(path.join(rootDir, "wild", "report", "list.json"), JSON.stringify(list));
             }
-            yield utils.writeFile(path.join(rootDir, "wild", "deck", `${reportName}.json`), JSON.stringify(reportContent));
-            yield utils.writeFile(path.join(rootDir, "wild", "report", "list.json"), JSON.stringify(list));
           }
           console.info(`${url} done`);
         } catch (e) {
