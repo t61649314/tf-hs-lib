@@ -150,6 +150,31 @@ class TempoStormSpider {
     return deckCode.getCodeFromDeck(_deck);
   }
 
+  build(count, deckSlugList, reportContent, list, reportName, type) {
+    let _this = this;
+    return co(function* () {
+      for (let j = count; j < deckSlugList.length; j++) {
+        console.info(`开始获取deck`);
+        let deck = yield _this.getDeck(deckSlugList[j]);
+        console.info(`获取deck成功：${JSON.stringify(deck)}`);
+
+        //构建dir对象
+        if (!reportContent[deck.playerClass]) {
+          reportContent[deck.playerClass] = [];
+        }
+        deck.code = _this.getDeckcode(deck);
+        deck.cards.forEach(item => {
+          item.img2 = cardZhCNJson[item.dbfId].img;
+          item.cnName = cardZhCNJson[item.dbfId].cnName;
+          item.cardSet = cardZhCNJson[item.dbfId].cardSet;
+        });
+        reportContent[deck.playerClass].push(deck);
+        yield utils.writeFile(path.join(rootDir, type, "deck", `${reportName}.json`), JSON.stringify(reportContent));
+        yield utils.writeFile(path.join(rootDir, type, "report", type === "standard" ? "newest-list.json" : "list.json"), JSON.stringify(list));
+      }
+    })
+  }
+
   runStandard() {
     let list = require("../../storage/tempo-storm/standard/report/newest-list");
     let _this = this;
@@ -161,40 +186,27 @@ class TempoStormSpider {
       let slug = yield _this.getPageSlug(count, "standard");
       console.info(`获取pageSlug成功：${slug}`);
       const reportName = `tempo-storm-${slug}`;
-      const exist = !!list.find(item => {
-        return item.name === reportName;
-      });
-      if (exist) {
-        console.info("TS标准无最新内容");
+      console.info(`开始获取deckSlugList`);
+      let {deckSlugList, time} = yield _this.getDeckSlugList(slug, "standard");
+      console.info(`获取deckSlugList成功：${deckSlugList}`);
+      let findReport = list.find(item => item.name === reportName);
+      let reportContent;
+      if (findReport) {
+        reportContent = require(`../../storage/tempo-storm/standard/deck/${reportName}.json`);
+        let count = 0;
+        Object.keys(reportContent).forEach(key => {
+          let occupationItem = reportContent[key];
+          count += occupationItem.length;
+        });
+        yield _this.build(count, deckSlugList, reportContent, list, reportName, "standard");
       } else {
-        console.info(`开始获取deckSlugList`);
-        let {deckSlugList, time} = yield _this.getDeckSlugList(slug, "standard");
-        console.info(`获取deckSlugList成功：${deckSlugList}`);
-        let reportContent = {};
+        reportContent = {};
         list = [{
           "name": reportName,
           "time": time,
           "fromUrl": `https://tempostorm.com/hearthstone/meta-snapshot/standard/${slug}`
         }];
-        for (let j = 0; j < deckSlugList.length; j++) {
-          console.info(`开始获取deck`);
-          let deck = yield _this.getDeck(deckSlugList[j]);
-          console.info(`获取deck成功：${JSON.stringify(deck)}`);
-
-          //构建dir对象
-          if (!reportContent[deck.playerClass]) {
-            reportContent[deck.playerClass] = [];
-          }
-          deck.code = _this.getDeckcode(deck);
-          deck.cards.forEach(item => {
-            item.img2 = cardZhCNJson[item.dbfId].img;
-            item.cnName = cardZhCNJson[item.dbfId].cnName;
-            item.cardSet = cardZhCNJson[item.dbfId].cardSet;
-          });
-          reportContent[deck.playerClass].push(deck);
-        }
-        yield utils.writeFile(path.join(rootDir, "standard", "deck", `${reportName}.json`), JSON.stringify(reportContent));
-        yield utils.writeFile(path.join(rootDir, "standard", "report", "newest-list.json"), JSON.stringify(list));
+        yield _this.build(0, deckSlugList, reportContent, list, reportName, "standard");
       }
       console.info(`${reportName} done`);
     });
@@ -207,48 +219,33 @@ class TempoStormSpider {
       console.info(`开始获取count`);
       let count = yield _this.getCount("wild");
       console.info(`获取count成功：${count}`);
-      let length = list.length;
-      if (length === count) {
-        console.info("TS狂野无最新内容");
-        return false;
-      }
-      for (let i = length + 1; i <= count; i++) {
-        console.info(`开始获取pageSlug`);
-        let slug = yield _this.getPageSlug(i, "wild");
-        console.info(`获取pageSlug成功：${slug}`);
-
-        const reportName = `tempo-storm-${slug}`;
-
-        console.info(`开始获取deckSlugList`);
-        let {deckSlugList, time} = yield _this.getDeckSlugList(slug, "wild");
-        console.info(`获取deckSlugList成功：${deckSlugList}`);
-
-        let reportContent = {};
+      console.info(`开始获取pageSlug`);
+      let slug = yield _this.getPageSlug(count, "wild");
+      console.info(`获取pageSlug成功：${slug}`);
+      const reportName = `tempo-storm-${slug}`;
+      console.info(`开始获取deckSlugList`);
+      let {deckSlugList, time} = yield _this.getDeckSlugList(slug, "wild");
+      console.info(`获取deckSlugList成功：${deckSlugList.length}`);
+      let findReport = list.find(item => item.name === reportName);
+      let reportContent;
+      if (findReport) {
+        reportContent = require(`../../storage/tempo-storm/wild/deck/${reportName}.json`);
+        let count = 0;
+        Object.keys(reportContent).forEach(key => {
+          let occupationItem = reportContent[key];
+          count += occupationItem.length;
+        });
+        yield _this.build(count, deckSlugList, reportContent, list, reportName, "wild");
+      } else {
+        reportContent = {};
         list.unshift({
           "name": reportName,
           "time": time,
           "fromUrl": `https://tempostorm.com/hearthstone/meta-snapshot/wild/${slug}`
         });
-        for (let j = 0; j < deckSlugList.length; j++) {
-          console.info(`开始获取deck`);
-          let deck = yield _this.getDeck(deckSlugList[j]);
-          console.info(`获取deck成功：${JSON.stringify(deck)}`);
-
-          //构建dir对象
-          if (!reportContent[deck.playerClass]) {
-            reportContent[deck.playerClass] = [];
-          }
-          deck.code = _this.getDeckcode(deck);
-          deck.cards.forEach(item => {
-            item.img2 = cardZhCNJson[item.dbfId].img;
-            item.cnName = cardZhCNJson[item.dbfId].cnName;
-            item.cardSet = cardZhCNJson[item.dbfId].cardSet;
-          });
-          reportContent[deck.playerClass].push(deck);
-        }
-        yield utils.writeFile(path.join(rootDir, "wild", "deck", `${reportName}.json`), JSON.stringify(reportContent));
-        yield utils.writeFile(path.join(rootDir, "wild", "report", "list.json"), JSON.stringify(list));
+        yield _this.build(0, deckSlugList, reportContent, list, reportName, "wild");
       }
+      console.info(`${reportName} done`);
     });
   }
 }
