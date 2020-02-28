@@ -22,6 +22,7 @@ let occupationList = Object.keys(occupationInfo).map(key => {
   return occupationInfo[key].cnName;
 });
 co(function* () {
+  yield writeWxJson("shuxing", "wild", "list");
   yield writeWxJson("hezonglianheng", "wild", "list");
   yield writeWxJson("laji", "wild", "list");
   yield writeWxJson("hearthstone-top-decks", "wild", "list");
