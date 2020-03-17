@@ -30,7 +30,13 @@ class ViciousSyndicateSpider {
         let hrefList = [];
         deckHrefList.each(function () {
           const href = $(this).attr("href");
-          if (href && href.indexOf("www.vicioussyndicate.com") > -1 && href.indexOf("wild-vs-data-reaper-report") === -1 && href.indexOf("deck-library") === -1) {
+          if (href && href.indexOf("www.vicioussyndicate.com") > -1 &&
+            href.indexOf("wild-vs-data-reaper-report") === -1 &&
+            href.indexOf("deck-library") === -1&&
+            href.indexOf("share=twitter") === -1&&
+            href.indexOf("share=facebook") === -1&&
+            href.indexOf("share=reddit") === -1
+          ) {
             hrefList.push(href);
           }
         });
