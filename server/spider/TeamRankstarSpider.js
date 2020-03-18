@@ -43,7 +43,7 @@ class TeamRankstarSpider {
       const time = $("meta[property='article:published_time']").attr("content");
       let hrefList = [];
       hrefDomList.each(function () {
-        let code = $(this).next().html();
+        let code = $(this).nextAll("p").eq(0).html();
         let name;
         if ($(this).find("strong").find("a").length) {
           name = $(this).find("strong").find("a").html();
