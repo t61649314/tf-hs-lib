@@ -15,7 +15,7 @@ co(function* () {
   // yield vs.runWild();
   // yield ts.runStandard();
   // yield ts.runWild();
-  yield tr.run();
+  // yield tr.run();
   yield htd.run();
 });
 
