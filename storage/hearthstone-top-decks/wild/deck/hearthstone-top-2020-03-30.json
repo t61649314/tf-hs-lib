@@ -1,0 +1,342 @@
+{
+  "Warlock": [
+    {
+      "name": "[Theorycraft] Cube Warlock &#x2013; ejSvqujhuOHsH0W",
+      "cards": [
+        {
+          "dbfId": 531,
+          "cnName": "无面操纵者",
+          "cardSet": "3",
+          "quantity": 1,
+          "rarity": "Epic",
+          "cost": "5",
+          "img2": "https://hearthstone.nosdn.127.net/hearthstone/1d1cc20bcbb4cceba6e0b6123540d5bc7322b5f52637a837ba90acf32a66fd0a.png"
+        },
+        {
+          "dbfId": 860,
+          "cnName": "感知恶魔",
+          "cardSet": "3",
+          "quantity": 1,
+          "rarity": "Common",
+          "cost": "3",
+          "img2": "https://hearthstone.nosdn.127.net/hearthstone/d38a2b213e9e08092342cb277519ab6a5e88f65a3e11b5c85c05e1c6c11b1ba6.png"
+        },
+        {
+          "dbfId": 1986,
+          "cnName": "玛尔加尼斯",
+          "cardSet": "13",
+          "quantity": 1,
+          "rarity": "Legendary",
+          "cost": "9",
+          "img2": "https://hearthstone.nosdn.127.net/hearthstone/7e43ece4dd4eeb62c6faf3336884bbdd8d3902d32a0470e3109e33013c9e280e.png"
+        },
+        {
+          "dbfId": 43415,
+          "cnName": "鲜血掠夺者古尔丹",
+          "cardSet": "1001",
+          "quantity": 1,
+          "rarity": "Legendary",
+          "cost": "10",
+          "img2": "https://hearthstone.nosdn.127.net/hearthstone/9b944f65d3017d8ae96c95a40b34e3f9cb08ab7684094cf4c8fe0336af82304d.png"
+        },
+        {
+          "dbfId": 46299,
+          "cnName": "堕落者之颅",
+          "cardSet": "1004",
+          "quantity": 1,
+          "rarity": "Legendary",
+          "cost": "5",
+          "img2": "https://hearthstone.nosdn.127.net/hearthstone/4d6f6a012f947869d1ef95de3a8067f5d9c922342aa089b9642bfa3f506ed0bb.png"
+        },
+        {
+          "dbfId": 56660,
+          "cnName": "塔隆·血魔",
+          "cardSet": "1414",
+          "quantity": 1,
+          "rarity": "Legendary",
+          "cost": "3",
+          "img2": "https://hearthstone.nosdn.127.net/hearthstone/67fb357b59124d365ccd6ce229e9a7d452876d7d077bc729dbbe50e3f7297b2c.png"
+        },
+        {
+          "dbfId": 631,
+          "cnName": "末日守卫",
+          "cardSet": "4",
+          "quantity": 2,
+          "rarity": "Rare",
+          "cost": "5",
+          "img2": "https://hearthstone.nosdn.127.net/hearthstone/d0708f94ce9a48504a40ae3d736ecce790afa699fb6144bf8e258e9af79b74ba.png"
+        },
+        {
+          "dbfId": 1786,
+          "cnName": "蛛魔之卵",
+          "cardSet": "12",
+          "quantity": 2,
+          "rarity": "Rare",
+          "cost": "2",
+          "img2": "https://hearthstone.nosdn.127.net/hearthstone/811dcd52cc66418b4e9c33ede5cbae8a989a83581874591459aae4605095d32c.png"
+        },
+        {
+          "dbfId": 1806,
+          "cnName": "空灵召唤者",
+          "cardSet": "12",
+          "quantity": 2,
+          "rarity": "Common",
+          "cost": "4",
+          "img2": "https://hearthstone.nosdn.127.net/hearthstone/d5f97bced01b1b3bb0976b236da8a3a0414445c06405583d4e6e3d704d6e6d15.png"
+        },
+        {
+          "dbfId": 41566,
+          "cnName": "亡灵药剂师",
+          "cardSet": "25",
+          "quantity": 2,
+          "rarity": "Common",
+          "cost": "1",
+          "img2": "https://hearthstone.nosdn.127.net/hearthstone/a1cc1bb3b6447b504c0fa26df4af3533c667e34d6b6156c9af64902b643addad.png"
+        },
+        {
+          "dbfId": 42471,
+          "cnName": "亵渎",
+          "cardSet": "1001",
+          "quantity": 2,
+          "rarity": "Rare",
+          "cost": "2",
+          "img2": "https://hearthstone.nosdn.127.net/hearthstone/7bc856a769abe60262c3aa150c03abef7431e996c0f1625b5508b6ddedaf5cb2.png"
+        },
+        {
+          "dbfId": 43122,
+          "cnName": "狗头人图书管理员",
+          "cardSet": "1004",
+          "quantity": 2,
+          "rarity": "Common",
+          "cost": "1",
+          "img2": "https://hearthstone.nosdn.127.net/hearthstone/9721e5b06b72aad3185b843f228b5b5b63aa7415d27a93c68e13b35322462287.png"
+        },
+        {
+          "dbfId": 45195,
+          "cnName": "食肉魔块",
+          "cardSet": "1004",
+          "quantity": 2,
+          "rarity": "Epic",
+          "cost": "5",
+          "img2": "https://hearthstone.nosdn.127.net/hearthstone/3b8656b1143b7cf6523f6caa1d03bc38a8c53c9eedc5e7c4f541286dae515452.png"
+        },
+        {
+          "dbfId": 46056,
+          "cnName": "虚空领主",
+          "cardSet": "1004",
+          "quantity": 2,
+          "rarity": "Epic",
+          "cost": "9",
+          "img2": "https://hearthstone.nosdn.127.net/hearthstone/57f66cc725c97e3edf72f2092864de45bbbde237c968d7dc38b8a150bf80e90d.png"
+        },
+        {
+          "dbfId": 52872,
+          "cnName": "怪盗天才",
+          "cardSet": "1130",
+          "quantity": 2,
+          "rarity": "Common",
+          "cost": "2",
+          "img2": "https://hearthstone.nosdn.127.net/hearthstone/388b8c0711eac0fe84b7c397695a60317179660285560f16d8d06b6172ecc1af.png"
+        },
+        {
+          "dbfId": 54077,
+          "cnName": "海蛇蛋",
+          "cardSet": "1158",
+          "quantity": 2,
+          "rarity": "Common",
+          "cost": "2",
+          "img2": "https://hearthstone.nosdn.127.net/hearthstone/fab3c3e2e32dfac281a73082b5a5fb47f002cfebc4157bdba70a0f4a3c89e3d2.png"
+        },
+        {
+          "dbfId": 54429,
+          "cnName": "火焰之灾祸",
+          "cardSet": "1158",
+          "quantity": 2,
+          "rarity": "Rare",
+          "cost": "1",
+          "img2": "https://hearthstone.nosdn.127.net/hearthstone/6e796b6459a555bfad9da8ff32db33283ad17d73071529318d137b6eb8865cce.png"
+        },
+        {
+          "dbfId": 55421,
+          "cnName": "厄运信天翁",
+          "cardSet": "1347",
+          "quantity": 2,
+          "rarity": "Rare",
+          "cost": "3",
+          "img2": "https://hearthstone.nosdn.127.net/hearthstone/053460de80b3397643f96b79a24fa462f87079dff95386cb107bd6316dd2e416.png"
+        }
+      ],
+      "code": "AAEBAf0GBpME3AbCD5fTAtvpAtS6Awz3BPoNjg7exALnywLy0AKL4QLo5wKInQO9pgOdqQP9sAMA"
+    }
+  ],
+  "Warrior": [
+    {
+      "name": "[Theorycraft] Odd Warrior &#x2013; ejSvqujhuOHsH0W",
+      "cards": [
+        {
+          "dbfId": 1790,
+          "cnName": "死亡领主",
+          "cardSet": "12",
+          "quantity": 1,
+          "rarity": "Rare",
+          "cost": "3",
+          "img2": "https://hearthstone.nosdn.127.net/hearthstone/656bab2efef6d842848f79897dcb1c93427bd5fb0677b3c70c88f1217f20e734.png"
+        },
+        {
+          "dbfId": 2949,
+          "cnName": "布莱恩·铜须",
+          "cardSet": "20",
+          "quantity": 1,
+          "rarity": "Legendary",
+          "cost": "3",
+          "img2": "https://hearthstone.nosdn.127.net/hearthstone/d30479f631a8a962d588e477ad64ca1f81d81719f7bfee76665c52053b1a9647.png"
+        },
+        {
+          "dbfId": 46874,
+          "cnName": "窃魂者阿扎莉娜",
+          "cardSet": "1125",
+          "quantity": 1,
+          "rarity": "Legendary",
+          "cost": "7",
+          "img2": "https://hearthstone.nosdn.127.net/hearthstone/90b90f3c78f11ebd121529b1cddfa40383c073f4f97db1eb7d2ea7701d74b433.png"
+        },
+        {
+          "dbfId": 48158,
+          "cnName": "噬月者巴库",
+          "cardSet": "4",
+          "quantity": 1,
+          "rarity": "Legendary",
+          "cost": "9",
+          "img2": "https://hearthstone.nosdn.127.net/hearthstone/1858f5526275dec732e7c2f1d3fb931b76cb3ffac99b62d1c098f9e56bfbaa79.png"
+        },
+        {
+          "dbfId": 49184,
+          "cnName": "奇利亚斯",
+          "cardSet": "1127",
+          "quantity": 1,
+          "rarity": "Legendary",
+          "cost": "5",
+          "img2": "https://hearthstone.nosdn.127.net/hearthstone/d7e0096ced92d3e058f630d57aad224b04501508a6e16a58c4cb0d11061d1e6b.png"
+        },
+        {
+          "dbfId": 57721,
+          "cnName": "埃辛诺斯壁垒",
+          "cardSet": "1414",
+          "quantity": 1,
+          "rarity": "Legendary",
+          "cost": "3",
+          "img2": "https://hearthstone.nosdn.127.net/hearthstone/6079b813fe5af9f8cf59053320fc5b6261ea8feb383a462ab0157b6e5d3003bf.png"
+        },
+        {
+          "dbfId": 75,
+          "cnName": "绝命乱斗",
+          "cardSet": "3",
+          "quantity": 2,
+          "rarity": "Epic",
+          "cost": "5",
+          "img2": "https://hearthstone.nosdn.127.net/hearthstone/3d48edaa437e193bba93fa349064227682410c039c547a97f5e305b814009ee3.png"
+        },
+        {
+          "dbfId": 546,
+          "cnName": "盾牌猛击",
+          "cardSet": "3",
+          "quantity": 2,
+          "rarity": "Epic",
+          "cost": "1",
+          "img2": "https://hearthstone.nosdn.127.net/hearthstone/a6fc6561c1ae7f577e7827b560cc5f47847f046e7a8b9666690f66cdea98574c.png"
+        },
+        {
+          "dbfId": 1016,
+          "cnName": "寒光智者",
+          "cardSet": "4",
+          "quantity": 2,
+          "rarity": "Rare",
+          "cost": "3",
+          "img2": "https://hearthstone.nosdn.127.net/hearthstone/6b8d45e905b799aa5238f6fb77cb9e0db192058e21c3a06cc80c1e73b4859486.png"
+        },
+        {
+          "dbfId": 1023,
+          "cnName": "盾牌格挡",
+          "cardSet": "2",
+          "quantity": 2,
+          "rarity": "Basic",
+          "cost": "3",
+          "img2": "https://hearthstone.nosdn.127.net/hearthstone/8bbcc6f1ead6a217f280de47b27dc441a1fa5c4580850adc2d344ef4654d6a77.png"
+        },
+        {
+          "dbfId": 2729,
+          "cnName": "怒袭",
+          "cardSet": "15",
+          "quantity": 2,
+          "rarity": "Common",
+          "cost": "3",
+          "img2": "https://hearthstone.nosdn.127.net/hearthstone/8b88a0249ce47a9e0dc59503bf3127ecf0a5e0da8a74bc1a0564b022e4ff1c30.png"
+        },
+        {
+          "dbfId": 38530,
+          "cnName": "暴虐食尸鬼",
+          "cardSet": "21",
+          "quantity": 2,
+          "rarity": "Common",
+          "cost": "3",
+          "img2": "https://hearthstone.nosdn.127.net/hearthstone/2ed8f871c3f2b676824f697a9559ffc4aedce64fdec66aace1bb07c88eeed063.png"
+        },
+        {
+          "dbfId": 46026,
+          "cnName": "鲁莽风暴",
+          "cardSet": "1004",
+          "quantity": 2,
+          "rarity": "Epic",
+          "cost": "3",
+          "img2": "https://hearthstone.nosdn.127.net/hearthstone/07ec72fe85352ccb6712292bbe94eb727feea4b2bf7d3d4c9475092c7f142e7c.png"
+        },
+        {
+          "dbfId": 48526,
+          "cnName": "超级对撞器",
+          "cardSet": "1127",
+          "quantity": 2,
+          "rarity": "Epic",
+          "cost": "5",
+          "img2": "https://hearthstone.nosdn.127.net/hearthstone/ba0319773b53c69853c63b054b638fc0e7773f7d1a2573df4653fcef0c7e7150.png"
+        },
+        {
+          "dbfId": 48542,
+          "cnName": "掷弹机器人",
+          "cardSet": "1127",
+          "quantity": 2,
+          "rarity": "Rare",
+          "cost": "5",
+          "img2": "https://hearthstone.nosdn.127.net/hearthstone/59b091196bbf2092bbadc00fafe1a5b4bd4c38fddf7cd620dd819bafa8c60137.png"
+        },
+        {
+          "dbfId": 48691,
+          "cnName": "恒金巡游者",
+          "cardSet": "1127",
+          "quantity": 2,
+          "rarity": "Common",
+          "cost": "1",
+          "img2": "https://hearthstone.nosdn.127.net/hearthstone/a023fa9ad74bf7003648228ddb94433cda9f4ee755a862c5a33683c91eeccba4.png"
+        },
+        {
+          "dbfId": 54386,
+          "cnName": "愤怒之灾祸",
+          "cardSet": "1158",
+          "quantity": 2,
+          "rarity": "Rare",
+          "cost": "5",
+          "img2": "https://hearthstone.nosdn.127.net/hearthstone/0c0e2a0765130db3219ca687c67fd7cdd6f0096b55458fc972f3500165f7a6b8.png"
+        },
+        {
+          "dbfId": 56504,
+          "cnName": "剑刃风暴",
+          "cardSet": "1414",
+          "quantity": 2,
+          "rarity": "Epic",
+          "cost": "3",
+          "img2": "https://hearthstone.nosdn.127.net/hearthstone/00e5f1ad8edea511558dc90e143acc9215fe5a146833f9d823b35f2e01e25940.png"
+        }
+      ],
+      "code": "AAEBAQcG/g2FF5ruAp74AqCAA/nCAwxLogT4B/8HqRWCrQLK5wKO+wKe+wKz/ALyqAO4uQMA"
+    }
+  ]
+}

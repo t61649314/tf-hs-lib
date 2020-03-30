@@ -6,6 +6,9 @@ const {occupationInfo} = require('../server/spider/const');
 const uuid = require('uuid');
 const co = require('co');
 const preConstructionList = [
+  "hearthstone-top-2020-03-28",
+  "hearthstone-top-2020-03-29",
+  "hearthstone-top-2020-03-30",
   "hearthstone-top-2019-08-03",
   "hearthstone-top-2019-08-05",
   "hearthstone-top-2019-12-07",

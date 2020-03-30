@@ -6,6 +6,15 @@ const json = require("./2_json_cards_cards_new");
 const xmlParser = new xml2js.Parser({
   explicitArray: false
 }); // xml -> json
+let jsonFormat = {};
+let keys = Object.keys(json);
+keys.forEach(key => {
+  let itemObj = json[key];
+  let itemObjKeys = Object.keys(itemObj);
+  itemObjKeys.forEach(key => {
+    jsonFormat[key] = itemObj[key];
+  })
+});
 const occupationMap = {
   "HERO_01": "Warrior",
   "HERO_02": "Shaman",
@@ -15,7 +24,8 @@ const occupationMap = {
   "HERO_06": "Druid",
   "HERO_07": "Warlock",
   "HERO_08": "Mage",
-  "HERO_09": "Priest"
+  "HERO_09": "Priest",
+  "HERO_10": "Demon Hunter"
 };
 const rarityMap = {
   "0": "Null",
@@ -30,7 +40,7 @@ fs.readFile(path.resolve(__dirname, './HearthDb.CardDefs.xml'), 'utf-8', functio
     const cardZhCNJson = {};
     const occupationIdJson = {};
     result.CardDefs.Entity.forEach(item => {
-      if (item.$.CardID.indexOf("HERO_0") > -1) {
+      if (item.$.CardID.indexOf("HERO_") > -1) {
         Object.keys(occupationMap).forEach(key => {
           if (item.$.CardID.indexOf(key) > -1) {
             if (!occupationIdJson[occupationMap[key]]) {
@@ -41,9 +51,16 @@ fs.readFile(path.resolve(__dirname, './HearthDb.CardDefs.xml'), 'utf-8', functio
         })
       }
       if (item.Tag) {
-        const cardSetTag = item.Tag.find(item => {
+        let cardSetTag = item.Tag.find(item => {
           return item.$.name === "CARD_SET"
         });
+        if (!cardSetTag) {
+          cardSetTag = {
+            $: {
+              value: "4"
+            }
+          }
+        }
         const costTag = item.Tag.find(item => {
           return item.$.name === "COST"
         }) || {$: {value: 0}};
@@ -54,12 +71,14 @@ fs.readFile(path.resolve(__dirname, './HearthDb.CardDefs.xml'), 'utf-8', functio
         if (id === "57918") {
           id = "1144";
         }
-        cardZhCNJson[item.$.ID] = {
-          rarity: rarityMap[rarityTag.$.value],
-          cost: costTag.$.value,
-          cnName: item.Tag[0].zhCN,
-          cardSet: cardSetTag.$.value,
-          img: (json[id] && json[id].fullImgUrl) || ""
+        if(jsonFormat[id]){
+          cardZhCNJson[item.$.ID] = {
+            rarity: rarityMap[rarityTag.$.value],
+            cost: costTag.$.value,
+            cnName: item.Tag[0].zhCN,
+            cardSet: cardSetTag.$.value,
+            img: (jsonFormat[id] && jsonFormat[id].fullImgUrl) || ""
+          }
         }
       }
     });

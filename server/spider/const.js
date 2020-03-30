@@ -1,5 +1,10 @@
 const occupationIdJson = require("../zhCN/occupationIdJson.json");
 const occupationInfo = {
+  "Demon Hunter": {
+    cnName: "恶魔猎手",
+    simpleName: "瞎",
+    dbfId: occupationIdJson["Demon Hunter"]
+  },
   Druid: {
     cnName: "德鲁伊",
     simpleName: "德",
