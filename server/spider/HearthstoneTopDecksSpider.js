@@ -69,79 +69,84 @@ class HearthstoneTopDecksSpider {
     let _this = this;
     let list = require("../../storage/hearthstone-top-decks/wild/report/list");
     return co(function* () {
-      try {
-        for (let i = 1; ; i++) {
-          if (i > 2) {
-            break;
-          }
-          let url;
-          if (i === 1) {
-            url = 'https://hearthstone-decks.net/wild-decks/';
-          } else {
-            url = `https://hearthstone-decks.net/wild-decks/page/${i}/`;
-          }
-          console.info(`${url}开始读取`);
-          let hrefList = yield _this.readHomePage(url);
-          for (let j = 0; j < hrefList.length; j++) {
-            let item = hrefList[j];
-            let reportName = "hearthstone-top-" + item.time.format("YYYY-MM-DD");
 
-            let report = {
-              "name": reportName,
-              "time": item.time.valueOf(),
-              "fromUrl": 'https://hearthstone-decks.net/wild-decks/'
-            };
-            let findReport = list.find(item => item.name === reportName);
-            let reportContent;
-            if (findReport) {
-              reportContent = require(`../../storage/hearthstone-top-decks/wild/deck/${reportName}.json`);
-              let findDeck = false;
-              Object.keys(reportContent).forEach(key => {
-                let occupationItem = reportContent[key];
-                if (occupationItem.find(occupationDeckItem => occupationDeckItem.name === item.name)) {
-                  findDeck = true;
-                }
-              });
-              if (!findDeck) {
-                console.info(`${item.href}开始读取`);
-                let deckInfo = yield _this.readChildPage(item.href);
-                if (deckInfo) {
-                  for (let i = 0; i < deckInfo.code.length; i++) {
+      for (let i = 1; ; i++) {
+        if (i > 2) {
+          break;
+        }
+        let url;
+        if (i === 1) {
+          url = 'https://hearthstone-decks.net/wild-decks/';
+        } else {
+          url = `https://hearthstone-decks.net/wild-decks/page/${i}/`;
+        }
+        console.info(`${url}开始读取`);
+        let hrefList = yield _this.readHomePage(url);
+        for (let j = 0; j < hrefList.length; j++) {
+          let item = hrefList[j];
+          let reportName = "hearthstone-top-" + item.time.format("YYYY-MM-DD");
+
+          let report = {
+            "name": reportName,
+            "time": item.time.valueOf(),
+            "fromUrl": 'https://hearthstone-decks.net/wild-decks/'
+          };
+          let findReport = list.find(item => item.name === reportName);
+          let reportContent;
+          if (findReport) {
+            reportContent = require(`../../storage/hearthstone-top-decks/wild/deck/${reportName}.json`);
+            let findDeck = false;
+            Object.keys(reportContent).forEach(key => {
+              let occupationItem = reportContent[key];
+              if (occupationItem.find(occupationDeckItem => occupationDeckItem.name === item.name)) {
+                findDeck = true;
+              }
+            });
+            if (!findDeck) {
+              console.info(`${item.href}开始读取`);
+              let deckInfo = yield _this.readChildPage(item.href);
+              if (deckInfo) {
+                for (let i = 0; i < deckInfo.code.length; i++) {
+                  try {
                     let {cards, occupation} = utils.getCardInfoByCode(deckInfo.code[i]);
                     if (!reportContent[occupation]) {
                       reportContent[occupation] = [];
                     }
                     reportContent[occupation].push({name: item.name, cards: cards, code: deckInfo.code[i]});
                     yield utils.writeFile(path.join(rootDir, "wild", "deck", `${reportName}.json`), JSON.stringify(reportContent));
+                  } catch (e) {
+                    console.error(`${e}`);
                   }
                 }
-                console.info(`该篇周报剩余：${hrefList.length - j - 1}`);
-              } else {
-                console.warn(`${reportName} ${item.name} done`)
               }
+              console.info(`该篇周报剩余：${hrefList.length - j - 1}`);
             } else {
-              reportContent = {};
-              console.info(`${item.href}开始读取`);
-              let deckInfo = yield _this.readChildPage(item.href);
-              if (deckInfo) {
-                for (let i = 0; i < deckInfo.code.length; i++) {
+              console.warn(`${reportName} ${item.name} done`)
+            }
+          } else {
+            reportContent = {};
+            console.info(`${item.href}开始读取`);
+            let deckInfo = yield _this.readChildPage(item.href);
+            if (deckInfo) {
+              for (let i = 0; i < deckInfo.code.length; i++) {
+                try {
                   let {cards, occupation} = utils.getCardInfoByCode(deckInfo.code[i]);
                   if (!reportContent[occupation]) {
                     reportContent[occupation] = [];
                   }
                   reportContent[occupation].push({name: item.name, cards: cards, code: deckInfo.code[i]});
                   yield utils.writeFile(path.join(rootDir, "wild", "deck", `${reportName}.json`), JSON.stringify(reportContent));
+                } catch (e) {
+                  console.error(`${e}`);
                 }
               }
-              console.info(`该篇周报剩余：${hrefList.length - j - 1}`);
-              list.unshift(report);
-              yield utils.writeFile(path.join(rootDir, "wild", "report", "list.json"), JSON.stringify(list));
             }
+            console.info(`该篇周报剩余：${hrefList.length - j - 1}`);
+            list.unshift(report);
+            yield utils.writeFile(path.join(rootDir, "wild", "report", "list.json"), JSON.stringify(list));
           }
-          console.info(`${url} done`);
         }
-      } catch (e) {
-        console.error(`${e}`);
+        console.info(`${url} done`);
       }
     });
   }
