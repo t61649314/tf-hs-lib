@@ -12,6 +12,7 @@ const formatDeckName = function (name, decks, occupation) {
     }
   });
   let formatName = "";
+  name = name.replace(occupation, "");
   name.split(" ").forEach(item => {
     if (deckZhCNJson[item]) {
       let name = deckZhCNJson[item];

@@ -22,6 +22,7 @@ function formatDeckName(name, decks, occupation) {
     }
   });
   let formatName = "";
+  name = name.replace(occupation, "");
   name.split(" ").forEach(item => {
     if (deckZhCNJson[item]) {
       let name = deckZhCNJson[item];
@@ -87,7 +88,7 @@ function formatDeckName(name, decks, occupation) {
   } catch (e) {
     console.log(e)
   }
-};
+}
 
 //请求url并写到文件
 function writeFileFormUrl(reqUrl, fileUrl) {
