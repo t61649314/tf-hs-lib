@@ -3,6 +3,7 @@ const TempoStormSpider = require("./spider/TempoStormSpider");
 const TeamRankstarSpider = require("./spider/TeamRankstarSpider");
 const HearthstoneTopDecksSpider = require("./spider/HearthstoneTopDecksSpider");
 const YingDiDecksDailyWildReportSpider = require("./spider/yingdi/YingDiDecksDailyWildReportSpider");
+require("./spider/yingdi/YingDiArticleSpider");
 const co = require('co');
 co(function* () {
   const vs = new ViciousSyndicateSpider();
