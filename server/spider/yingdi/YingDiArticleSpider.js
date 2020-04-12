@@ -5,9 +5,16 @@ const co = require('co');
 
 
 class YingDiArticleSpider {
-  static readArticle(url) {
+  static readArticle(url, bbsplus) {
     return utils.startRequest(url, false, true).then((res) => {
-      let {created, content} = res.article;
+      let created, content;
+      if (bbsplus) {
+        created = res.post.bbsPost.created;
+        content = res.post.bbsPost.content;
+      } else {
+        created = res.article.created;
+        content = res.article.content;
+      }
       let contentObj = JSON.parse(content);
       return {
         deckList: contentObj.filter(item => {
@@ -23,7 +30,7 @@ class YingDiArticleSpider {
     })
   }
 
-  run(keyWord, cnName, articleIdList, onlyOne, canRefresh) {
+  run(keyWord, cnName, articleIdList, onlyOne, canRefresh, bbsplus) {
     let _this = this;
     let rootDir = path.join(storagePath, keyWord);
     let list = require(`../../../storage/${keyWord}/wild/report/list`);
@@ -35,14 +42,19 @@ class YingDiArticleSpider {
         } else {
           reportName = `${cnName}第${articleIdList.length - i}期`;
         }
-        let url = `https://www.iyingdi.com/article/${articleIdList[i]}?time=${new Date().getTime()}&system=web&remark=seed`;
-        // let url = `https://www.iyingdi.com/bbsplus/comment/list/post?postId=${articleIdList[i]}&token=23fad3cd67cf45c5b2bb84c5d9efb2fa&system=web&size=10&page=0&voteFaction=-1&_=1586495614993`;
+        let url;
+        if (bbsplus) {
+          url = `https://www.iyingdi.com/bbsplus/comment/list/post?postId=${articleIdList[i]}&token=4cc2cfefa54f464393d0174cdd4f2ac9&system=web&page=0`;
+        } else {
+          url = `https://www.iyingdi.com/article/${articleIdList[i]}?time=${new Date().getTime()}&system=web&remark=seed`;
+        }
+
         try {
           console.info(`${url}开始读取`);
           const exist = !!list.find(item => {
             return item.name === reportName;
           });
-          let {deckList, time} = yield YingDiArticleSpider.readArticle(url);
+          let {deckList, time} = yield YingDiArticleSpider.readArticle(url, bbsplus);
           if (!exist) {
             let reportContent = {};
             list.unshift({
@@ -109,11 +121,11 @@ class YingDiArticleSpider {
 const shengerkuangyeArticleIdList = [75317, 72307, 68573, 60767, 58190, 56065, 52702, 51596, 50430, 49165, 47149, 44758, 43020, 42204];
 const fengtianArticleIdList = [71751, 69619];
 const zaowuzheArticleIdList = [80753, 78627, 70829, 67497, 64253];
-const suzhijichaArticleIdList = [96311,85163, 78225, 76281, 74671, 67565];
+const suzhijichaArticleIdList = [96311, 85163, 78225, 76281, 74671, 67565];
 const lajiArticleIdList = [88815, 84583];
 let yingDiArticleSpider = new YingDiArticleSpider();
-// yingDiArticleSpider.run("other", "【旅法师营地】【狂野】外域的灰烬卡组速递（第二日）", [2214425], true, true);
-// yingDiArticleSpider.run("other", "【旅法师营地】【狂野】外域的灰烬卡组速递（第一日）", [2210833], true, true);
+yingDiArticleSpider.run("other", "【旅法师营地】【狂野】外域的灰烬卡组速递（第二日）", [2214425], true, true, true);
+yingDiArticleSpider.run("other", "【旅法师营地】【狂野】外域的灰烬卡组速递（第一日）", [2210833], true, true, true);
 // yingDiArticleSpider.run("laji", "狂野环境辣鸡战报", lajiArticleIdList);
 // yingDiArticleSpider.run("other", "虎牙和咕咕咕文案组狂野联合战报", [93623], true);
 // yingDiArticleSpider.run("other", "【旅法师营地】魔都战队狂野上分卡组推荐合集", [96623], true, true);
