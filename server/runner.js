@@ -3,7 +3,6 @@ const TempoStormSpider = require("./spider/TempoStormSpider");
 const TeamRankstarSpider = require("./spider/TeamRankstarSpider");
 const HearthstoneTopDecksSpider = require("./spider/HearthstoneTopDecksSpider");
 const YingDiDecksDailyWildReportSpider = require("./spider/yingdi/YingDiDecksDailyWildReportSpider");
-require("./spider/yingdi/YingDiArticleSpider");
 const co = require('co');
 co(function* () {
   const vs = new ViciousSyndicateSpider();
@@ -11,10 +10,10 @@ co(function* () {
   const tr = new TeamRankstarSpider();
   const htd = new HearthstoneTopDecksSpider();
   const ydddwr = new YingDiDecksDailyWildReportSpider();
-  yield ydddwr.run();
-  yield vs.runStandard();
-  yield vs.runWild();
-  yield ts.runStandard();
+  // yield ydddwr.run();
+  // yield vs.runStandard();
+  // yield vs.runWild();
+  // yield ts.runStandard();
   yield ts.runWild();
   yield tr.run();
   yield htd.run();
