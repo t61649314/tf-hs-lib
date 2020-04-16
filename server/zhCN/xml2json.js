@@ -71,13 +71,23 @@ fs.readFile(path.resolve(__dirname, './HearthDb.CardDefs.xml'), 'utf-8', functio
         if (id === "57918") {
           id = "1144";
         }
-        if(jsonFormat[id]){
+        if (jsonFormat[id]) {
           cardZhCNJson[item.$.ID] = {
             rarity: rarityMap[rarityTag.$.value],
             cost: costTag.$.value,
             cnName: item.Tag[0].zhCN,
             cardSet: cardSetTag.$.value,
             img: (jsonFormat[id] && jsonFormat[id].fullImgUrl) || ""
+          };
+        } else {
+          if (id === "56066") {
+            cardZhCNJson[id] = {
+              rarity: rarityMap[rarityTag.$.value],
+              cost: costTag.$.value,
+              cnName: item.Tag[0].zhCN,
+              cardSet: cardSetTag.$.value,
+              img: (jsonFormat["56067"] && jsonFormat["56067"].fullImgUrl) || ""
+            };
           }
         }
       }
