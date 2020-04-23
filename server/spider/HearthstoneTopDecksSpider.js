@@ -9,7 +9,11 @@ class HearthstoneTopDecksSpider {
   readChildPage(url) {
     return utils.startRequest(url).then(($) => {
       console.info(`${url}读取成功`);
-      const attachmentMediumDom = $('.deck-code');
+      const attachmentMediumDom = $('#Code1');
+      const attachmentMediumDom2 = $('#Code2');
+      if (attachmentMediumDom2.length) {
+        console.error(`${url}：code2！！！！！！！！！！！！！！！！！！！！！`);
+      }
       if (attachmentMediumDom.length) {
         let code;
         if (url === "https://hearthstone-decks.net/mech-hand-buff-paladin-222-legend-darkseeker83/") {
@@ -21,23 +25,7 @@ class HearthstoneTopDecksSpider {
           code: [code],
         };
       } else {
-        let codeList = [];
-        for (let i = 1; i < 10; i++) {
-          const attachmentMediumDom = $('#foo' + i);
-          if (attachmentMediumDom.length) {
-            const code = attachmentMediumDom.attr("value");
-            codeList.push(code);
-          } else {
-            break;
-          }
-        }
-        if (codeList.length) {
-          return {
-            code: codeList,
-          };
-        } else {
-          console.info(`${url}：no data`);
-        }
+        console.info(`${url}：no data`);
       }
     })
   }
