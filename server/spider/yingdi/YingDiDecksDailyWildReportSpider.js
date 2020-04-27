@@ -9,8 +9,9 @@ class YingDiDecksDailyWildReportSpider {
   static readHomePage(url) {
     return utils.startRequest(url, false, true).then((data) => {
       if (data.success) {
+        debugger
         return data.list.filter(item => {
-          return item.title.indexOf("狂野") > -1
+          return item.title.indexOf("狂野日报") > -1 || item.title.indexOf("狂野外服特辑") > -1
         }).map(item => {
           return {
             title: item.title,
@@ -25,7 +26,7 @@ class YingDiDecksDailyWildReportSpider {
     let _this = this;
     let list = require(`../../../storage/yingdi-daily-wild-report/wild/report/list`);
     return co(function* () {
-      let url = "https://www.iyingdi.com/article/opensearch?page=0&q=%E8%90%A5%E5%9C%B0%E7%82%89%E7%9F%B3%E7%8B%82%E9%87%8E%E6%97%A5%E6%8A%A5&size=100&visible=1";
+      let url = "https://www.iyingdi.com/article/opensearch?q=%E8%90%A5%E5%9C%B0%E7%8B%82%E9%87%8E&size=10&visible=1&page=0";
       console.info(`${url}开始读取`);
       let articleList = yield YingDiDecksDailyWildReportSpider.readHomePage(url);
 
@@ -36,7 +37,7 @@ class YingDiDecksDailyWildReportSpider {
         try {
           console.info(`${articleUrl}开始读取`);
           const exist = !!list.find(item => {
-            return item.name === reportName.replace("&","和");
+            return item.name === reportName.replace("&", "和");
           });
           if (!exist) {
             let {deckList, time} = yield YingDiArticleSpider.readArticle(articleUrl);
