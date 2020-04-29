@@ -9,7 +9,6 @@ class YingDiDecksDailyWildReportSpider {
   static readHomePage(url) {
     return utils.startRequest(url, false, true).then((data) => {
       if (data.success) {
-        debugger
         return data.list.filter(item => {
           return item.title.indexOf("狂野日报") > -1 || item.title.indexOf("狂野外服特辑") > -1
         }).map(item => {

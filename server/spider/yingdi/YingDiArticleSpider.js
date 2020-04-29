@@ -44,7 +44,7 @@ class YingDiArticleSpider {
         }
         let url;
         if (bbsplus) {
-          url = `https://www.iyingdi.com/bbsplus/comment/list/post?postId=${articleIdList[i]}&token=4cc2cfefa54f464393d0174cdd4f2ac9&system=web&page=0`;
+          url = `https://www.iyingdi.com/bbsplus/comment/list/post?postId=${articleIdList[i]}&&token=&system=web&size=10&page=0&voteFaction=-1&_=1588133006023`;
         } else {
           url = `https://www.iyingdi.com/article/${articleIdList[i]}?time=${new Date().getTime()}&system=web&remark=seed`;
         }
@@ -123,10 +123,13 @@ const fengtianArticleIdList = [71751, 69619];
 const zaowuzheArticleIdList = [80753, 78627, 70829, 67497, 64253];
 const suzhijichaArticleIdList = [96311, 85163, 78225, 76281, 74671, 67565];
 const lajiArticleIdList = [88815, 84583];
+const qianjinsiArticleIdList = [101655];
 let yingDiArticleSpider = new YingDiArticleSpider();
+// yingDiArticleSpider.run("other", "【旅法师营地】外域的灰烬盗贼卡组与思路整合", [2240983], true, false, true);
 // yingDiArticleSpider.run("other", "【旅法师营地】【狂野】外域的灰烬卡组速递（第二日）", [2214425], true, true, true);
 // yingDiArticleSpider.run("other", "【旅法师营地】【狂野】外域的灰烬卡组速递（第一日）", [2210833], true, true, true);
 // yingDiArticleSpider.run("laji", "狂野环境辣鸡战报", lajiArticleIdList);
+// yingDiArticleSpider.run("qianjinsi", "前进四狂野环境报", qianjinsiArticleIdList);
 // yingDiArticleSpider.run("other", "虎牙和咕咕咕文案组狂野联合战报", [93623], true);
 // yingDiArticleSpider.run("other", "【旅法师营地】魔都战队狂野上分卡组推荐合集", [96623], true, true);
 // yingDiArticleSpider.run("other", "【旅法师营地】【狂野】奥丹姆奇兵卡组速递", [82391], true, true);
