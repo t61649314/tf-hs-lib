@@ -59,7 +59,7 @@ class HearthstoneTopDecksSpider {
     return co(function* () {
 
       for (let i = 1; ; i++) {
-        if (i > 2) {
+        if (i > 5) {
           break;
         }
         let url;
