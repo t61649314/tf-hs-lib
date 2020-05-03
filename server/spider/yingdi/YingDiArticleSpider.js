@@ -125,6 +125,7 @@ const suzhijichaArticleIdList = [96311, 85163, 78225, 76281, 74671, 67565];
 const lajiArticleIdList = [88815, 84583];
 const qianjinsiArticleIdList = [101655];
 let yingDiArticleSpider = new YingDiArticleSpider();
+yingDiArticleSpider.run("other", "【狂野赛报】咕咕和虎牙麦抖·虎牙联赛战报", [101907], true, false, false);
 // yingDiArticleSpider.run("other", "【旅法师营地】外域的灰烬盗贼卡组与思路整合", [2240983], true, false, true);
 // yingDiArticleSpider.run("other", "【旅法师营地】【狂野】外域的灰烬卡组速递（第二日）", [2214425], true, true, true);
 // yingDiArticleSpider.run("other", "【旅法师营地】【狂野】外域的灰烬卡组速递（第一日）", [2210833], true, true, true);
