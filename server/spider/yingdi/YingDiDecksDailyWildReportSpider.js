@@ -25,10 +25,11 @@ class YingDiDecksDailyWildReportSpider {
     let _this = this;
     let list = require(`../../../storage/yingdi-daily-wild-report/wild/report/list`);
     return co(function* () {
-      let url = "https://www.iyingdi.com/article/opensearch?q=%E8%90%A5%E5%9C%B0%E7%8B%82%E9%87%8E&size=10&visible=1&page=0";
-      console.info(`${url}开始读取`);
-      let articleList = yield YingDiDecksDailyWildReportSpider.readHomePage(url);
-
+      let url1 = "https://www.iyingdi.com/article/opensearch?q=%E8%90%A5%E5%9C%B0%E7%8B%82%E9%87%8E%E5%A4%96%E6%9C%8D&size=10&visible=1&page=0";
+      let url2 = "https://www.iyingdi.com/article/opensearch?q=%E8%90%A5%E5%9C%B0%E7%8B%82%E9%87%8E%E6%97%A5%E6%8A%A5&size=10&visible=1&page=0";
+      let articleList1 = yield YingDiDecksDailyWildReportSpider.readHomePage(url1);
+      let articleList2 = yield YingDiDecksDailyWildReportSpider.readHomePage(url2);
+      let articleList = [...articleList1, ...articleList2];
       for (let i = 0; i < articleList.length; i++) {
         let reportName = articleList[i].title;
 
