@@ -193,6 +193,9 @@ function readFile(filepath) {
 }
 
 function getCardInfoByCode(code) {
+  if(code==="AAEBAZ/DAwSJFIbTAonxAoutAw3hBMeuAoK1AonDAtDnAtfrAuiJA/muA/6vA+ewA4exA6+3A/"){
+    code="AAEBAR8EiRSG0wKJ8QKLrQMN4QTHrgKCtQKJwwLQ5wLX6wLoiQP5rgP+rwPnsAOHsQOvtwP7uwMA";
+  }
   let deckFromCode = new Deckcode().getDeckFromCode(code);
   let occupationInfo = Const.occupationInfo;
   let occupationId = deckFromCode.heroes[0].id;
@@ -204,7 +207,8 @@ function getCardInfoByCode(code) {
   }
   let arr = deckFromCode.cards.map(item => {
     if (!cardZhCNJson[item.id]) {
-      console.warn(`not find this dbfId : ${item.id}`)
+      console.warn(`not find this dbfId : ${code}`);
+      console.warn(`not find this dbfId : ${JSON.stringify(item)}`)
     }
     let card = {
       dbfId: item.id,
