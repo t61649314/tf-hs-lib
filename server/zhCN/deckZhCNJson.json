@@ -1,4 +1,5 @@
 {
+  "Box": "剧本",
   "Forest": "树人",
   "Galarkrond": "迦拉克隆",
   "Burst": "打脸",
@@ -6,6 +7,7 @@
   "Razakus": "宇宙",
   "Armor": "千甲",
   "Aggro/Token": "快攻",
+  "Gala": "迦拉克隆",
   "Galakrond": "迦拉克隆",
   "GalaZoo": "迦拉克隆动物园",
   "Kael&#x2019;thas": "凯尔萨斯",
@@ -22,6 +24,7 @@
   "control": "控制",
   "Beast": "野兽",
   "Secret": "奥秘",
+  "(Dragon": "龙",
   "Dragon": "龙",
   "Purify": "净化",
   "Bomb": "炸弹",
