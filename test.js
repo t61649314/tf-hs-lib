@@ -10,6 +10,27 @@ const list = require("./storage/hearthstone-top-decks/wild/report/list");
 let rootDir = path.join(storagePath, "hearthstone-top-decks");
 const Deckcode = require("./server/utils/deckcode/Deckcode");
 const Const = require("./server/spider/const");
+
+
+return co(function* () {
+  let arr = [];
+  for (let i = 1; i <= 200; i++) {
+    let $ = yield utils.startRequest(`http://38.103.161.230/bbs/forumdisplay.php?fid=229&filter=type&typeid=1255&page=${i}`, true);
+    $("tbody").each(function () {
+      const span = $(this).find(".lock,.common,.new").find("span:not(.threadpages)");
+      if (span.length) {
+        let text = span.find("a").html();
+        if (text.toLowerCase().indexOf("seamless") > -1) {
+          console.error(text);
+          console.error(i);
+        }
+      }
+    });
+    console.log(i);
+  }
+  yield utils.writeFile(path.resolve(__dirname, './xxx.txt'), arr.join("\n") + "\n");
+});
+
 // fs.readFile('./20191112.json', 'utf8', function (err, data) {
 //   let dataArr = data.split("\n");
 //   dataArr = dataArr.slice(0, dataArr.length - 1);
@@ -30,32 +51,32 @@ const Const = require("./server/spider/const");
 //   })
 // });
 
-function getCardInfoByCode(code) {
-  let deckFromCode = new Deckcode().getDeckFromCode(code);
-  let occupationInfo = Const.occupationInfo;
-  let occupationId = deckFromCode.heroes[0].id;
-  let occupation = Object.keys(occupationInfo).find(item => {
-    return occupationInfo[item].dbfId.includes(occupationId);
-  });
-  if (!occupation) {
-    console.warn(`not find this occupation : ${occupationId}`)
-  }
-  let arr = deckFromCode.cards.map(item => {
-    return {
-      dbfId: item.id,
-      cnName: cardZhCNJson[item.id].cnName,
-      cardSet: cardZhCNJson[item.id].cardSet,
-      img2: cardZhCNJson[item.id].img,
-      quantity: item.count,
-      rarity: cardZhCNJson[item.id].rarity,
-      cost: cardZhCNJson[item.id].cost
-    }
-  });
-  return {
-    cards: arr,
-    occupation: occupation
-  };
-}
+// function getCardInfoByCode(code) {
+//   let deckFromCode = new Deckcode().getDeckFromCode(code);
+//   let occupationInfo = Const.occupationInfo;
+//   let occupationId = deckFromCode.heroes[0].id;
+//   let occupation = Object.keys(occupationInfo).find(item => {
+//     return occupationInfo[item].dbfId.includes(occupationId);
+//   });
+//   if (!occupation) {
+//     console.warn(`not find this occupation : ${occupationId}`)
+//   }
+//   let arr = deckFromCode.cards.map(item => {
+//     return {
+//       dbfId: item.id,
+//       cnName: cardZhCNJson[item.id].cnName,
+//       cardSet: cardZhCNJson[item.id].cardSet,
+//       img2: cardZhCNJson[item.id].img,
+//       quantity: item.count,
+//       rarity: cardZhCNJson[item.id].rarity,
+//       cost: cardZhCNJson[item.id].cost
+//     }
+//   });
+//   return {
+//     cards: arr,
+//     occupation: occupation
+//   };
+// }
 
 //
 // fs.readFile('./error.json', 'utf8', function (err, data) {
