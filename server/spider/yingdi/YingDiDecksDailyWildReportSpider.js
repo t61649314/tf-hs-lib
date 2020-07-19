@@ -48,6 +48,9 @@ class YingDiDecksDailyWildReportSpider {
               "fromUrl": `https://www.iyingdi.com/web/article/search/${articleList[i].id}`
             });
             for (let j = 0; j < deckList.length; j++) {
+              if(deckList[j].code==="AAEBAf0EHooBwAGrBOYE9w3DFoK0Aum6Ati7AtDBApjEAsPqAv3qAs7vAtKJA9aZA5+bA+KbA/+dA6WhA/yjA5KkA7+kA7ulA/2sA+yvA7i2A8W4A/e4A8PMAwAA"){
+                continue
+              }
               //通过code调用ts的接口获取卡组信息
               let {cards, occupation} = utils.getCardInfoByCode(deckList[j].code);
               // 构建dir对象
