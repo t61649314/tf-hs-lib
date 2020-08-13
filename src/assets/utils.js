@@ -28,7 +28,14 @@ const formatDeckName = function (name, decks, occupation) {
           }
         }
         if (occupation === "Mage") {
-          name = "无限火球";
+          let find58770 = decks.find(item => {
+            return item.dbfId === 58770
+          });
+          if(find58770){
+            name = "冰";
+          }else{
+            name = "无限火球";
+          }
         }
       }
       if (item === "Hand") {
