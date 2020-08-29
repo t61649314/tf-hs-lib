@@ -36,6 +36,9 @@ class YingDiArticleSpider {
     let list = require(`../../../storage/${keyWord}/wild/report/list`);
     return co(function* () {
       for (let i = 0; i < articleIdList.length; i++) {
+        if (articleIdList[i] === 0) {
+          continue
+        }
         let reportName;
         if (onlyOne) {
           reportName = cnName;
@@ -123,8 +126,9 @@ const fengtianArticleIdList = [71751, 69619];
 const zaowuzheArticleIdList = [80753, 78627, 70829, 67497, 64253];
 const suzhijichaArticleIdList = [101923, 96311, 85163, 78225, 76281, 74671, 67565];
 const lajiArticleIdList = [88815, 84583];
-const qianjinsiArticleIdList = [101655];
+const qianjinsiArticleIdList = [106233, 0, 105279, 101655];
 let yingDiArticleSpider = new YingDiArticleSpider();
+yingDiArticleSpider.run("other", "【狂野环境报】虎牙和雾都狂野环境报第二期", [106268], true);
 // yingDiArticleSpider.run("other", "【旅法师营地】【狂野】通灵学园卡组速递（第一天）", [2287418], true, true, true);
 // yingDiArticleSpider.run("other", "【旅法师营地】【狂野】通灵学园卡组速递（第二天）", [2288346], true, true, true);
 // yingDiArticleSpider.run("other", "【旅法师营地】【狂野】通灵学园卡组速递（第三天）", [2289015], true, true, true);
@@ -135,6 +139,7 @@ let yingDiArticleSpider = new YingDiArticleSpider();
 // yingDiArticleSpider.run("other", "【旅法师营地】【狂野】外域的灰烬卡组速递（第一日）", [2210833], true, true, true);
 // yingDiArticleSpider.run("laji", "狂野环境辣鸡战报", lajiArticleIdList);
 // yingDiArticleSpider.run("qianjinsi", "前进四狂野环境报", qianjinsiArticleIdList);
+// yingDiArticleSpider.run("qianjinsi", "前进四狂野环境报第3期", [2289613], true, false, true);
 // yingDiArticleSpider.run("other", "虎牙和咕咕咕文案组狂野联合战报", [93623], true);
 // yingDiArticleSpider.run("other", "【旅法师营地】魔都战队狂野上分卡组推荐合集", [96623], true, true);
 // yingDiArticleSpider.run("other", "【旅法师营地】【狂野】奥丹姆奇兵卡组速递", [82391], true, true);
