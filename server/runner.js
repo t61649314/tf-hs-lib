@@ -13,8 +13,8 @@ co(function* () {
   // yield ydddwr.run();
   // yield vs.runStandard();
   // yield vs.runWild();
-  yield ts.runStandard();
-  yield ts.runWild();
+  // yield ts.runStandard();
+  // yield ts.runWild();
   yield htd.run();
 });
 
