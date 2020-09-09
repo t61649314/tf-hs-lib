@@ -9,12 +9,10 @@ class YingDiDecksDailyWildReportSpider {
   static readHomePage(url) {
     return utils.startRequest(url, false, true).then((data) => {
       if (data.success) {
-        return data.list.filter(item => {
-          return (item.title.indexOf("狂野日报") > -1 || item.title.indexOf("狂野外服特辑") > -1) && item.title.indexOf("TS战报") === -1
-        }).map(item => {
+        return data.list.map(item => {
           return {
             title: item.title,
-            id: item.id
+            id: item.sourceId
           }
         });
       }
@@ -25,8 +23,8 @@ class YingDiDecksDailyWildReportSpider {
     let _this = this;
     let list = require(`../../../storage/yingdi-daily-wild-report/wild/report/list`);
     return co(function* () {
-      let url1 = "https://www.iyingdi.com/article/opensearch?q=%E8%90%A5%E5%9C%B0%E7%8B%82%E9%87%8E%E5%A4%96%E6%9C%8D&size=10&visible=1&page=0";
-      let url2 = "https://www.iyingdi.com/article/opensearch?q=%E8%90%A5%E5%9C%B0%E7%8B%82%E9%87%8E%E6%97%A5%E6%8A%A5&size=10&visible=1&page=0";
+      let url1 = "https://www.iyingdi.com/common/search?version=820&type=feed&key=%E8%90%A5%E5%9C%B0%E7%8B%82%E9%87%8E%E5%A4%96%E6%9C%8D%E7%89%B9%E8%BE%91%E3%80%91+%E7%AC%AC&page=0&size=10";
+      let url2 = "https://www.iyingdi.com/common/search?version=820&type=feed&key=%E8%90%A5%E5%9C%B0%E7%8B%82%E9%87%8E%E6%97%A5%E6%8A%A5&page=0&size=10";
       let articleList1 = yield YingDiDecksDailyWildReportSpider.readHomePage(url1);
       let articleList2 = yield YingDiDecksDailyWildReportSpider.readHomePage(url2);
       let articleList = [...articleList1, ...articleList2];
