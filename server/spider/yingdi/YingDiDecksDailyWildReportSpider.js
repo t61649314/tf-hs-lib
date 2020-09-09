@@ -24,12 +24,12 @@ class YingDiDecksDailyWildReportSpider {
     let list = require(`../../../storage/yingdi-daily-wild-report/wild/report/list`);
     return co(function* () {
       let url1 = "https://www.iyingdi.com/common/search?version=820&type=feed&key=%E8%90%A5%E5%9C%B0%E7%8B%82%E9%87%8E%E5%A4%96%E6%9C%8D%E7%89%B9%E8%BE%91%E3%80%91+%E7%AC%AC&page=0&size=10";
-      let url2 = "https://www.iyingdi.com/common/search?version=820&type=feed&key=%E8%90%A5%E5%9C%B0%E7%8B%82%E9%87%8E%E6%97%A5%E6%8A%A5&page=0&size=10";
+      let url2 = "https://www.iyingdi.com/common/search?version=820&type=feed&key=%E8%90%A5%E5%9C%B0%E7%82%89%E7%9F%B3%E7%8B%82%E9%87%8E%E6%97%A5%E6%8A%A5&page=0&size=10";
       let articleList1 = yield YingDiDecksDailyWildReportSpider.readHomePage(url1);
       let articleList2 = yield YingDiDecksDailyWildReportSpider.readHomePage(url2);
       let articleList = [...articleList1, ...articleList2];
       for (let i = 0; i < articleList.length; i++) {
-        let reportName = articleList[i].title;
+        let reportName = articleList[i].title.replace(new RegExp("<em>","g"), "").replace(new RegExp("</em>","g"), "");;
 
         let articleUrl = `https://www.iyingdi.com/article/${articleList[i].id}?time=1547867333211&token=0d27fe4a9a834c3abcff23a7caf6f0ec&system=web/`;
         try {
