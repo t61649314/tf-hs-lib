@@ -8,7 +8,7 @@
           <span class="time-text">{{formatTime(item.time)}}</span>
         </a>
         <router-link class="item" v-else-if="item.name"
-                     :to="{path:'/OccupationList', query:{page:item.name,form:$route.query.form,type:$route.query.type,time:item.time}}">
+                     :to="{path:'/DeckList', query:{page:item.name,form:$route.query.form,type:$route.query.type,time:item.time}}">
           <span class="has-time-title">{{item.name}}</span>
           <span class="new-icon" v-if="isNew(item.time)">new!</span>
           <span class="time-text">{{formatTime(item.time)}}</span>

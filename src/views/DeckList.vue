@@ -3,9 +3,9 @@
     <page-header :title="$route.query.page"></page-header>
     <div class="list" v-if="deckList&&deckList.length&&isInit">
       <div class="deck-item" v-for="(deckItem,index) in deckList" :key="index">
-        <div class="deck-info-box" :occupation="occupation">
+        <div class="deck-info-box">
           <div class="occupation-icon"></div>
-          <span class="deck-name-content">{{deckItem.alreadyFormatName?deckItem.name:formatDeckName(deckItem.name,deckItem.cards)}}{{deckItem.name}}</span>
+          <span class="deck-name-content">{{deckItem.alreadyFormatName?deckItem.name:formatDeckName(deckItem.name,deckItem.cards,deckItem.occupation)}}{{deckItem.name}}</span>
         </div>
         <div class="card-box">
           <div class="card-item clearfix"
@@ -46,7 +46,6 @@
         weakenArr: [],
         time: parseInt(this.$route.query.time),
         isInit: false,
-        occupation: this.$route.query.occupation,
         deckList: [],
       }
     },
@@ -69,14 +68,23 @@
         //     this.deckList = data[this.occupation];
         //   }
         // })
-        this.deckList = require(`../../storage/${this.$route.query.form}/${this.$route.query.type}/deck/${this.$route.query.page}.json`)[this.occupation];
+        let deckList=[]
+        let source = require(`../../storage/${this.$route.query.form}/${this.$route.query.type}/deck/${this.$route.query.page}.json`);
+        Object.keys(source).forEach(key=>{
+          source[key].map(item=>{
+            item.occupation=key;
+            return item;
+          })
+          deckList= [...deckList,...source[key]]
+        })
+        this.deckList=deckList
         this.isInit = true;
       },
       cardsSort(a, b) {
         return a.cost - b.cost
       },
-      formatDeckName(name, cards) {
-        return formatDeckName(name, cards, this.occupation);
+      formatDeckName(name, cards,occupation) {
+        return formatDeckName(name, cards, occupation);
       },
       isWeaken(dbfId) {
         return this.weakenArr.includes(dbfId);
