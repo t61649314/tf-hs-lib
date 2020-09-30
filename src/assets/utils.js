@@ -6,13 +6,15 @@ import deckZhCNWordGroupJson from '../../server/zhCN/deckZhCNWordGroupJson'
 const formatDeckName = function (name, decks, occupation) {
   let deckZhCNWordGroupKeyList = Object.keys(deckZhCNWordGroupJson);
   let deckZhCNWordGroupValueList = Object.values(deckZhCNWordGroupJson);
+  if(name.indexOf(occupation)>-1){
+    name = name.split(occupation)[0];
+  }
   deckZhCNWordGroupKeyList.forEach(item => {
     if (name.indexOf(item) > -1) {
       name = name.replace(item, deckZhCNWordGroupJson[item]);
     }
   });
   let formatName = "";
-  name = name.replace(occupation, "");
   name.split(" ").forEach(item => {
     if (deckZhCNJson[item]) {
       let name = deckZhCNJson[item];
