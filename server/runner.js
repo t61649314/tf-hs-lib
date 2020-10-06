@@ -9,12 +9,12 @@ co(function* () {
   const ts = new TempoStormSpider();
   const tr = new TeamRankstarSpider();
   const htd = new HearthstoneTopDecksSpider();
-  // const ydddwr = new YingDiDecksDailyWildReportSpider();
+  const ydddwr = new YingDiDecksDailyWildReportSpider();
   // yield ydddwr.run();
   // yield vs.runStandard();
   // yield vs.runWild();
-  yield ts.runStandard();
-  yield ts.runWild();
+  // yield ts.runStandard();
+  // yield ts.runWild();
   yield htd.run();
 });
 

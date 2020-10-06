@@ -2,11 +2,12 @@ const utils = require("../../utils/utils");
 const path = require("path");
 const storagePath = path.resolve(__dirname, '../../../storage');
 const co = require('co');
-
+const cheerio = require('cheerio');
 
 class YingDiArticleSpider {
   static readArticle(url, bbsplus) {
-    return utils.startRequest(url, false, true).then((res) => {
+    return co(function* () {
+      let res = yield utils.startRequest(url, false, true);
       let created, content;
       if (bbsplus) {
         created = res.post.bbsPost.created;
@@ -15,19 +16,35 @@ class YingDiArticleSpider {
         created = res.article.created;
         content = res.article.content;
       }
-      let contentObj = JSON.parse(content);
-      return {
-        deckList: contentObj.filter(item => {
-          return item.type === "deckCode";
-        }).map(item => {
-          return {
-            name: item.deckname,
-            code: item.code
-          }
-        }),
-        time: created * 1000
-      };
-    })
+      if (bbsplus) {
+        let $ = cheerio.load(content)
+        let deckList = [];
+        for (var i = 0; i < $("aside").length; i++) {
+          let code = $("aside")[i].children[0].data;
+          deckList.push({
+            name:"",
+            code
+          })
+        }
+        return {
+          deckList:deckList,
+          time: created * 1000
+        };
+      } else {
+        let contentObj = JSON.parse(content);
+        return {
+          deckList: contentObj.filter(item => {
+            return item.type === "deckCode";
+          }).map(item => {
+            return {
+              name: item.deckname,
+              code: item.code
+            }
+          }),
+          time: created * 1000
+        };
+      }
+    });
   }
 
   run(keyWord, cnName, articleIdList, onlyOne, canRefresh, bbsplus) {
@@ -47,7 +64,7 @@ class YingDiArticleSpider {
         }
         let url;
         if (bbsplus) {
-          url = `https://www.iyingdi.com/bbsplus/comment/list/post?postId=${articleIdList[i]}&&token=&system=web&size=10&page=0&voteFaction=-1&_=1588133006023`;
+          url = `https://www.iyingdi.com/bbsplus/comment/list/post?postId=${articleIdList[i]}&token=&system=web&page=0`;
         } else {
           url = `https://www.iyingdi.com/article/${articleIdList[i]}?time=${new Date().getTime()}&system=web&remark=seed`;
         }
@@ -124,11 +141,11 @@ class YingDiArticleSpider {
 const shengerkuangyeArticleIdList = [75317, 72307, 68573, 60767, 58190, 56065, 52702, 51596, 50430, 49165, 47149, 44758, 43020, 42204];
 const fengtianArticleIdList = [71751, 69619];
 const zaowuzheArticleIdList = [80753, 78627, 70829, 67497, 64253];
-const suzhijichaArticleIdList = [101923, 96311, 85163, 78225, 76281, 74671, 67565];
+const suzhijichaArticleIdList = [2305496, 101923, 96311, 85163, 78225, 76281, 74671, 67565];
 const lajiArticleIdList = [88815, 84583];
 const qianjinsiArticleIdList = [106233, 0, 105279, 101655];
 let yingDiArticleSpider = new YingDiArticleSpider();
-yingDiArticleSpider.run("other", "【狂野环境报】虎牙和雾都狂野环境报第二期", [106268], true);
+// yingDiArticleSpider.run("other", "【狂野环境报】虎牙和雾都狂野环境报第二期", [106268], true);
 // yingDiArticleSpider.run("other", "【旅法师营地】【狂野】通灵学园卡组速递（第一天）", [2287418], true, true, true);
 // yingDiArticleSpider.run("other", "【旅法师营地】【狂野】通灵学园卡组速递（第二天）", [2288346], true, true, true);
 // yingDiArticleSpider.run("other", "【旅法师营地】【狂野】通灵学园卡组速递（第三天）", [2289015], true, true, true);
@@ -147,7 +164,7 @@ yingDiArticleSpider.run("other", "【狂野环境报】虎牙和雾都狂野环�
 // yingDiArticleSpider.run("other", "【旅法师营地】十月狂野传说指南——天下武功唯快不破", other1, true);
 // yingDiArticleSpider.run("other", "【旅法师营地】狂野的新挑战者们", other2, true);
 // yingDiArticleSpider.run("zaowuzhe", "造物者狂野战报", zaowuzheArticleIdList);
-// yingDiArticleSpider.run("suzhijicha", "素质极差狂野战报", suzhijichaArticleIdList);
+yingDiArticleSpider.run("suzhijicha", "素质极差狂野战报", suzhijichaArticleIdList, false, false, true);
 // yingDiArticleSpider.run("shengerkuangye", "生而狂野战报", shengerkuangyeArticleIdList);
 // yingDiArticleSpider.run("fengtian", "奉天战队狂野战报", fengtianArticleIdList);
 module.exports = YingDiArticleSpider;
