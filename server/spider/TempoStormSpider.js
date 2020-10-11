@@ -23,6 +23,9 @@ class TempoStormSpider {
   }
 
   getPageSlug(page, snapshotType) {
+    if(page===110){
+      return Promise.resolve("2020-10-05");
+    }
     if(page===109){
       return Promise.resolve("2020-09-21");
     }
