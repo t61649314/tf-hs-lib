@@ -15,6 +15,6 @@ co(function* () {
   yield vs.runWild();
   yield ts.runStandard();
   yield ts.runWild();
-  // yield ydddwr.run();
+  yield ydddwr.run();
 });
 
