@@ -2,6 +2,14 @@
   "_id": "const",
   "timeNode": [
     {
+      "time": "2020-10-23",
+      "title": "唤醒、星术师索兰莉安削弱",
+      "weakenCardArr": [
+        56389,
+        56717
+      ]
+    },
+    {
       "time": "2020-09-30",
       "title": "始祖龟朝圣者、动物保镖削弱",
       "weakenCardArr": [

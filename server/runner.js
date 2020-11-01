@@ -10,11 +10,11 @@ co(function* () {
   const tr = new TeamRankstarSpider();
   const htd = new HearthstoneTopDecksSpider();
   const ydddwr = new YingDiDecksDailyWildReportSpider();
-  yield htd.run();
-  yield vs.runStandard();
-  yield vs.runWild();
+  // yield htd.run();
+  // yield vs.runStandard();
+  // yield vs.runWild();
   yield ts.runStandard();
   yield ts.runWild();
-  yield ydddwr.run();
+  // yield ydddwr.run();
 });
 
