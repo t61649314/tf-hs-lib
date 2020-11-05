@@ -58,8 +58,8 @@ class HearthstoneTopDecksSpider {
     let list = require("../../storage/hearthstone-top-decks/wild/report/list");
     return co(function* () {
 
-      for (let i = 3; ; i++) {
-        if (i > 9) {
+      for (let i = 1; ; i++) {
+        if (i > 3) {
           break;
         }
         let url;
