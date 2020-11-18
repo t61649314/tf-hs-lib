@@ -60,6 +60,7 @@ function writeWxJson(from, type, fileName) {
   return co(function* () {
     for (let i = 0; i < list.length; i++) {
       let report = list[i];
+      let preConstruction = false;
       if (!report.jumpUrl) {
         let decks = require(`../storage/${from}/${type}/deck/${report.name}`);
         let occupations = Object.keys(decks);
@@ -72,6 +73,9 @@ function writeWxJson(from, type, fileName) {
             let occupation = occupations[j];
             for (let k = 0; k < decks[occupation].length; k++) {
               let deck = decks[occupation][k];
+              if (deck.name.indexOf("[Theorycraft]") > -1) {
+                preConstruction = true;
+              }
               let deckFormat = {};
               deckFormat._id = uuid.v1();
               deckFormat.from = from;
@@ -102,7 +106,7 @@ function writeWxJson(from, type, fileName) {
       } else {
         listFormat._id = report.name;
       }
-      listFormat.preConstruction = preConstructionList.includes(report.name);
+      listFormat.preConstruction = preConstruction;
       listFormat.name = report.name;
       listFormat.time = report.time;
       listFormat.fromUrl = report.fromUrl;

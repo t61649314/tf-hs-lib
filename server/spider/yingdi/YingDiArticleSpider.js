@@ -8,6 +8,12 @@ class YingDiArticleSpider {
   static readArticle(url, bbsplus) {
     return co(function* () {
       let res = yield utils.startRequest(url, false, true);
+      if(!res.success){
+        return {
+          deckList:[],
+          time: null
+        };
+      }
       let created, content;
       if (bbsplus) {
         created = res.post.bbsPost.created;
@@ -16,34 +22,18 @@ class YingDiArticleSpider {
         created = res.article.created;
         content = res.article.content;
       }
-      if (bbsplus) {
-        let $ = cheerio.load(content)
-        let deckList = [];
-        for (var i = 0; i < $("aside").length; i++) {
-          let code = $("aside")[i].children[0].data;
-          deckList.push({
-            name:"",
-            code
-          })
-        }
-        return {
-          deckList:deckList,
-          time: created * 1000
-        };
-      } else {
-        let contentObj = JSON.parse(content);
-        return {
-          deckList: contentObj.filter(item => {
-            return item.type === "deckCode";
-          }).map(item => {
-            return {
-              name: item.deckname,
-              code: item.code
-            }
-          }),
-          time: created * 1000
-        };
-      }
+      let contentObj = JSON.parse(content);
+      return {
+        deckList: contentObj.filter(item => {
+          return item.type === "deckCode";
+        }).map(item => {
+          return {
+            name: item.deckname,
+            code: item.code
+          }
+        }),
+        time: created * 1000
+      };
     });
   }
 
@@ -145,6 +135,7 @@ const suzhijichaArticleIdList = [2305496, 101923, 96311, 85163, 78225, 76281, 74
 const lajiArticleIdList = [88815, 84583];
 const qianjinsiArticleIdList = [106233, 0, 105279, 101655];
 let yingDiArticleSpider = new YingDiArticleSpider();
+yingDiArticleSpider.run("yingdi-daily-wild-report", "【咕咕·营地狂野外服特辑】第27期", [2319548], true,true,true);
 // yingDiArticleSpider.run("other", "【狂野环境报】虎牙和雾都狂野环境报第二期", [106268], true);
 // yingDiArticleSpider.run("other", "【旅法师营地】【狂野】通灵学园卡组速递（第一天）", [2287418], true, true, true);
 // yingDiArticleSpider.run("other", "【旅法师营地】【狂野】通灵学园卡组速递（第二天）", [2288346], true, true, true);

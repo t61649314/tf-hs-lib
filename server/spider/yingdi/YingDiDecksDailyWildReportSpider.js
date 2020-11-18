@@ -39,6 +39,9 @@ class YingDiDecksDailyWildReportSpider {
           });
           if (!exist) {
             let {deckList, time} = yield YingDiArticleSpider.readArticle(articleUrl);
+            if(!deckList.length){
+              continue;
+            }
             let reportContent = {};
             list.unshift({
               "name": reportName,
