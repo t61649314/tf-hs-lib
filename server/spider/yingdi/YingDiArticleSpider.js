@@ -99,7 +99,7 @@ class YingDiArticleSpider {
                 name: deckList[j].name,
                 cards: cards,
                 code: deckList[j].code,
-                alreadyFormatName: true
+                alreadyFormatName: !bbsplus
               });
               console.info(`该篇周报剩余：${deckList.length - j - 1}`);
             }
@@ -125,7 +125,7 @@ class YingDiArticleSpider {
                   name: deckList[j].name,
                   cards: cards,
                   code: deckList[j].code,
-                  alreadyFormatName: true
+                  alreadyFormatName: !bbsplus
                 });
                 console.info(`${reportName} ${item.name} new`)
               } else {

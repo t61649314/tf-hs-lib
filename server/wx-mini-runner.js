@@ -5,25 +5,6 @@ const utils = require("./utils/utils");
 const {occupationInfo} = require('../server/spider/const');
 const uuid = require('uuid');
 const co = require('co');
-const preConstructionList = [
-  "hearthstone-top-2020-08-06",
-  "hearthstone-top-2020-08-05",
-  "hearthstone-top-2020-08-04",
-  "hearthstone-top-2020-08-03",
-  "hearthstone-top-2020-08-02",
-  "hearthstone-top-2020-04-07",
-  "hearthstone-top-2020-04-04",
-  "hearthstone-top-2020-03-31",
-  "hearthstone-top-2020-03-28",
-  "hearthstone-top-2020-03-29",
-  "hearthstone-top-2020-03-30",
-  "hearthstone-top-2019-08-03",
-  "hearthstone-top-2019-08-05",
-  "hearthstone-top-2019-12-07",
-  "hearthstone-top-2019-12-08",
-  "hearthstone-top-2019-12-09",
-  "hearthstone-top-2019-12-10"
-];
 
 let listJsonStr = "";
 // let deckJsonStr = "";
@@ -73,9 +54,6 @@ function writeWxJson(from, type, fileName) {
             let occupation = occupations[j];
             for (let k = 0; k < decks[occupation].length; k++) {
               let deck = decks[occupation][k];
-              if (deck.name.indexOf("[Theorycraft]") > -1) {
-                preConstruction = true;
-              }
               let deckFormat = {};
               deckFormat._id = uuid.v1();
               deckFormat.from = from;
@@ -97,6 +75,9 @@ function writeWxJson(from, type, fileName) {
           }
           yield utils.makeDirs(dirPath);
           yield utils.writeFile(filePath, jsonStr);
+        }
+        if(occupations[0]){
+          preConstruction = !!decks[occupations[0]].find(item=>item.name.indexOf("[Theorycraft]") > -1);
         }
       }
 
