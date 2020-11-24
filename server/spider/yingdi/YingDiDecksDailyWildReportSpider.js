@@ -38,9 +38,18 @@ class YingDiDecksDailyWildReportSpider {
             return item.name === reportName.replace("&", "和");
           });
           if (!exist) {
-            let {deckList, time} = yield YingDiArticleSpider.readArticle(articleUrl);
+            let deckList,time;
+            let res = yield YingDiArticleSpider.readArticle(articleUrl);
+            deckList=res.deckList;
+            time=res.time;
             if(!deckList.length){
-              continue;
+              articleUrl = `https://www.iyingdi.com/bbsplus/comment/list/post?postId=${articleList[i].id}&token=&system=web&page=0`;
+              res = yield YingDiArticleSpider.readArticle(articleUrl,true);
+              deckList=res.deckList;
+              time=res.time;
+              if(!deckList.length){
+                continue
+              }
             }
             let reportContent = {};
             list.unshift({
