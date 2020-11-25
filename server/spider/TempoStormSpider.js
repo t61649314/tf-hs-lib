@@ -169,6 +169,9 @@ class TempoStormSpider {
         }
         deck.code = _this.getDeckcode(deck);
         deck.cards.forEach(item => {
+          if(item.dbfId===9726){
+            item.dbfId=59726
+          }
           item.img2 = cardZhCNJson[item.dbfId].img;
           item.cnName = cardZhCNJson[item.dbfId].cnName;
           item.cardSet = cardZhCNJson[item.dbfId].cardSet;
