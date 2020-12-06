@@ -71,7 +71,7 @@ class YingDiDecksDailyWildReportSpider {
                 name: deckList[j].name,
                 cards: cards,
                 code: deckList[j].code,
-                alreadyFormatName: true
+                alreadyFormatName: !!deckList[j].name
               });
               console.info(`该篇周报剩余：${deckList.length - j - 1}`);
             }
