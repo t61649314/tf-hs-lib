@@ -24,7 +24,7 @@ class ViciousSyndicateSpider {
   readHomePage(url) {
     return utils.startRequest(url).then(($) => {
       console.info(`${url}读取成功`);
-      const deckHrefList = $('.tag-analysis').children('.entry-content').find('ul').find("a");
+      const deckHrefList = $('.tag-analysis').children('.entry-content').find("a");
       const time = $("meta[property='article:published_time']").attr("content");
       if (deckHrefList.length) {
         let hrefList = [];
@@ -35,7 +35,8 @@ class ViciousSyndicateSpider {
             href.indexOf("deck-library") === -1&&
             href.indexOf("share=twitter") === -1&&
             href.indexOf("share=facebook") === -1&&
-            href.indexOf("share=reddit") === -1
+            href.indexOf("share=reddit") === -1&&
+            href.indexOf("decks") >-1
           ) {
             hrefList.push(href);
           }
