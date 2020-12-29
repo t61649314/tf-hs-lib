@@ -160,6 +160,7 @@ class YingDiArticleSpider {
 }
 
 const shengerkuangyeArticleIdList = [75317, 72307, 68573, 60767, 58190, 56065, 52702, 51596, 50430, 49165, 47149, 44758, 43020, 42204];
+const yuebangArticleIdList = [2334748];
 const fengtianArticleIdList = [71751, 69619];
 const zaowuzheArticleIdList = [80753, 78627, 70829, 67497, 64253];
 const suzhijichaArticleIdList = [109364,2305496, 101923, 96311, 85163, 78225, 76281, 74671, 67565];
@@ -191,4 +192,5 @@ let yingDiArticleSpider = new YingDiArticleSpider();
 // yingDiArticleSpider.run("suzhijicha", "素质极差狂野战报", suzhijichaArticleIdList, false, false, false);
 // yingDiArticleSpider.run("shengerkuangye", "生而狂野战报", shengerkuangyeArticleIdList);
 // yingDiArticleSpider.run("fengtian", "奉天战队狂野战报", fengtianArticleIdList);
+yingDiArticleSpider.run("yuebang", "月榜群狂野战报", yuebangArticleIdList, false, false, true);
 module.exports = YingDiArticleSpider;

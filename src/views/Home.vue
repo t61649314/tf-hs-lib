@@ -66,6 +66,11 @@
         <div class="type-icon"></div>
         其他
       </router-link>
+      <router-link class="item" v-if="selected==='1'"
+                   :to="{path:'/ReportList', query:{type:'wild',form:'yuebang',name:'月榜'}}">
+        <div class="type-icon"></div>
+        月榜
+      </router-link>
     </div>
   </div>
 </template>
