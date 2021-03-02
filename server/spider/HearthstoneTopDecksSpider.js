@@ -7,6 +7,9 @@ let rootDir = path.join(storagePath, "hearthstone-top-decks");
 
 class HearthstoneTopDecksSpider {
   readChildPage(url) {
+    if (url === "https://hearthstone-decks.net/pain-zoo-warlock-1-legend-lasagne_hs-6/") {
+      url = "https://hearthstone-decks.net/discard-warlock-1-legend-lasagne-hs-6/"
+    }
     return utils.startRequest(url).then(($) => {
       console.info(`${url}读取成功`);
       const attachmentMediumDom = $('#Code1');
@@ -58,7 +61,7 @@ class HearthstoneTopDecksSpider {
     let list = require("../../storage/hearthstone-top-decks/wild/report/list");
     return co(function* () {
 
-      for (let i = 1; ; i++) {
+      for (let i = 2; ; i++) {
         if (i > 6) {
           break;
         }

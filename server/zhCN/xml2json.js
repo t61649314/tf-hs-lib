@@ -76,6 +76,7 @@ fs.readFile(path.resolve(__dirname, './HearthDb.CardDefs.xml'), 'utf-8', functio
             rarity: rarityMap[rarityTag.$.value],
             cost: costTag.$.value,
             cnName: item.Tag[0].zhCN,
+            enName: item.Tag[0].enUS,
             cardSet: cardSetTag.$.value,
             img: (jsonFormat[id] && jsonFormat[id].fullImgUrl) || ""
           };
@@ -85,6 +86,7 @@ fs.readFile(path.resolve(__dirname, './HearthDb.CardDefs.xml'), 'utf-8', functio
               rarity: rarityMap[rarityTag.$.value],
               cost: costTag.$.value,
               cnName: item.Tag[0].zhCN,
+              enName: item.Tag[0].enUS,
               cardSet: cardSetTag.$.value,
               img: (jsonFormat["56067"] && jsonFormat["56067"].fullImgUrl) || ""
             };
