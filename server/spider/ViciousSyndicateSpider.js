@@ -71,9 +71,9 @@ class ViciousSyndicateSpider {
 
   runStandard() {
     let _this = this;
-    let list = require("../../storage/vicious-syndicate/standard/report/newest-list");
+    let list = require("../../storage/vicious-syndicate/standard/report/old-list");
     return co(function* () {
-      let url = yield _this.getLastStandardPageUrl();
+      let url = "https://www.vicioussyndicate.com/vs-data-reaper-report-187/";
       let reportName = url.split("/")[3];
       console.info(`${url}开始读取`);
       let {hrefList, time} = yield _this.readHomePage(url);
@@ -105,7 +105,7 @@ class ViciousSyndicateSpider {
           }
           console.info(`该篇周报剩余：${hrefList.length - j - 1}`);
           yield utils.writeFile(path.join(rootDir, "standard", "deck", `${reportName}.json`), JSON.stringify(reportContent));
-          yield utils.writeFile(path.join(rootDir, "standard", "report", "newest-list.json"), JSON.stringify(list));
+          yield utils.writeFile(path.join(rootDir, "standard", "report", "old-list.json"), JSON.stringify(list));
         }
       } else {
         reportContent = {};
@@ -133,7 +133,7 @@ class ViciousSyndicateSpider {
           }
           console.info(`该篇周报剩余：${hrefList.length - j - 1}`);
           yield utils.writeFile(path.join(rootDir, "standard", "deck", `${reportName}.json`), JSON.stringify(reportContent));
-          yield utils.writeFile(path.join(rootDir, "standard", "report", "newest-list.json"), JSON.stringify(list));
+          yield utils.writeFile(path.join(rootDir, "standard", "report", "old-list.json"), JSON.stringify(list));
         }
       }
       console.info(`${url} done`);

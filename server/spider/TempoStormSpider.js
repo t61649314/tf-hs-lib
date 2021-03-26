@@ -178,20 +178,21 @@ class TempoStormSpider {
         });
         reportContent[deck.playerClass].push(deck);
         yield utils.writeFile(path.join(rootDir, type, "deck", `${reportName}.json`), JSON.stringify(reportContent));
-        yield utils.writeFile(path.join(rootDir, type, "report", type === "standard" ? "newest-list.json" : "list.json"), JSON.stringify(list));
+        yield utils.writeFile(path.join(rootDir, type, "report", type === "standard" ? "old-list.json" : "list.json"), JSON.stringify(list));
       }
     })
   }
 
   runStandard() {
-    let list = require("../../storage/tempo-storm/standard/report/newest-list");
+    let list = require("../../storage/tempo-storm/standard/report/old-list");
     let _this = this;
     return co(function* () {
       console.info(`开始获取count`);
       let count = yield _this.getCount("standard");
       console.info(`获取count成功：${count}`);
       console.info(`开始获取pageSlug`);
-      let slug = yield _this.getPageSlug(count, "standard");
+      // let slug = yield _this.getPageSlug(count, "standard");
+      let slug = "2021-03-09";
       console.info(`获取pageSlug成功：${slug}`);
       const reportName = `tempo-storm-${slug}`;
       console.info(`开始获取deckSlugList`);
@@ -229,6 +230,7 @@ class TempoStormSpider {
       console.info(`获取count成功：${count}`);
       console.info(`开始获取pageSlug`);
       let slug = yield _this.getPageSlug(count, "wild");
+      slug = "2021-03-03";
       console.info(`获取pageSlug成功：${slug}`);
       const reportName = `tempo-storm-${slug}`;
       console.info(`开始获取deckSlugList`);

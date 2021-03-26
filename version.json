@@ -2,6 +2,17 @@
   "_id": "const",
   "timeNode": [
     {
+      "time": "2021-03-26",
+      "title": "20.0版本回调部分上线"
+    },
+    {
+      "time": "2021-02-20",
+      "title": "高阶修士奥露拉削弱",
+      "weakenCardArr": [
+        59587
+      ]
+    },
+    {
       "time": "2021-01-29",
       "title": "狂乱调整",
       "weakenCardArr": [
