@@ -3,11 +3,20 @@ const fs = require('fs');
 const path = require('path');
 const utils = require("../utils/utils");
 const json = require("./2_json_cards_cards_new");
+const oldJson = require("./2_json_cards_cards_old");
 const xmlParser = new xml2js.Parser({
   explicitArray: false
 }); // xml -> json
 let jsonFormat = {};
-let keys = Object.keys(json);
+let keys = Object.keys(oldJson);
+keys.forEach(key => {
+  let itemObj = oldJson[key];
+  let itemObjKeys = Object.keys(itemObj);
+  itemObjKeys.forEach(key => {
+    jsonFormat[key] = itemObj[key];
+  })
+});
+keys = Object.keys(json);
 keys.forEach(key => {
   let itemObj = json[key];
   let itemObjKeys = Object.keys(itemObj);
