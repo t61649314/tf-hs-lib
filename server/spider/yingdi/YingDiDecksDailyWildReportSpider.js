@@ -29,8 +29,7 @@ class YingDiDecksDailyWildReportSpider {
       let articleList2 = yield YingDiDecksDailyWildReportSpider.readHomePage(url2);
       let articleList = [...articleList1, ...articleList2];
       for (let i = 0; i < articleList.length; i++) {
-        let reportName = articleList[i].title.replace(new RegExp("<em>","g"), "").replace(new RegExp("</em>","g"), "");;
-
+        let reportName = articleList[i].title.replace(new RegExp("<em>","g"), "").replace(new RegExp("</em>","g"), "").replace(new RegExp("（更新中）","g"), "");
         let articleUrl = `https://www.iyingdi.com/article/${articleList[i].id}?time=1547867333211&token=0d27fe4a9a834c3abcff23a7caf6f0ec&system=web/`;
         try {
           console.info(`${articleUrl}开始读取`);
