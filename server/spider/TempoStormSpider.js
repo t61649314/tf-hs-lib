@@ -193,7 +193,7 @@ class TempoStormSpider {
       console.info(`开始获取pageSlug`);
       let slug = yield _this.getPageSlug(count, "standard");
       console.info(`获取pageSlug成功：${slug}`);
-      const reportName = `tempo-storm-${slug}`;
+      const reportName = `tempo-storm-${slug.replace("meta-snapshot/standard/","")}`;
       console.info(`开始获取deckSlugList`);
       let {deckSlugList, time} = yield _this.getDeckSlugList(slug, "standard");
       console.info(`获取deckSlugList成功：${deckSlugList}`);
@@ -209,11 +209,11 @@ class TempoStormSpider {
         yield _this.build(count, deckSlugList, reportContent, list, reportName, "standard");
       } else {
         reportContent = {};
-        list = [{
+        list.unshift({
           "name": reportName,
           "time": time,
           "fromUrl": `https://tempostorm.com/hearthstone/meta-snapshot/standard/${slug}`
-        }];
+        });
         yield _this.build(0, deckSlugList, reportContent, list, reportName, "standard");
       }
       console.info(`${reportName} done`);
