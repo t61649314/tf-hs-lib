@@ -12,8 +12,8 @@ co(function* () {
   const ydddwr = new YingDiDecksDailyWildReportSpider();
   // yield htd.run();
   // yield ydddwr.run();
-  // yield vs.runStandard();
-  // yield vs.runWild();
+  yield vs.runStandard();
+  yield vs.runWild();
   yield ts.runStandard();
   yield ts.runWild();
 });
