@@ -5,39 +5,63 @@ const co = require('co');
 const cheerio = require('cheerio');
 
 class YingDiArticleSpider {
+  static readTzPost(url) {
+    return co(function* () {
+      return yield utils.startRequest(url, false).then(($) => {
+        console.info(`${url}读取成功`);
+        const deckListDom = $('.yingdi-deck');
+        if (deckListDom && deckListDom.length) {
+          let deckList = [];
+          deckListDom.each(function () {
+            deckList.push(
+              {
+                name:"",
+                code: $(this).find("aside").html()
+              })
+          });
+          return {
+            deckList: deckList
+          };
+        } else {
+          console.info(`${url}：no data`);
+        }
+      })
+    })
+  }
+
   static readArticle(url, bbsplus) {
     return co(function* () {
       let res = yield utils.startRequest(url, false, true);
-      if(!res.success){
+      if (!res.success) {
         return {
-          deckList:[],
+          deckList: [],
           time: null
         };
       }
       let created, content;
       if (bbsplus) {
         created = res.post.bbsPost.created;
-        content = res.post.bbsPost.content;
+        content = res.post.bbsPost.content || res.post.bbsPost.contentHtml;
       } else {
         created = res.article.created;
-        content = res.article.content;
+        content = res.article.content || res.post.bbsPost.contentHtml;
       }
       if (bbsplus) {
         let $ = cheerio.load(content)
-        if($("aside").length){
+        if ($("aside").length) {
           let deckList = [];
           for (var i = 0; i < $("aside").length; i++) {
             let code = $("aside")[i].children[0].data;
             deckList.push({
-              name:"",
+              name: "",
               code
             })
           }
           return {
-            deckList:deckList,
+            deckList: deckList,
             time: created * 1000
           };
-        }else{
+        } else {
           let contentObj = JSON.parse(content);
           return {
             deckList: contentObj.filter(item => {
@@ -163,9 +187,9 @@ const shengerkuangyeArticleIdList = [75317, 72307, 68573, 60767, 58190, 56065, 5
 const yuebangArticleIdList = [2334748];
 const fengtianArticleIdList = [71751, 69619];
 const zaowuzheArticleIdList = [80753, 78627, 70829, 67497, 64253];
-const suzhijichaArticleIdList = [109364,2305496, 101923, 96311, 85163, 78225, 76281, 74671, 67565];
+const suzhijichaArticleIdList = [109364, 2305496, 101923, 96311, 85163, 78225, 76281, 74671, 67565];
 const lajiArticleIdList = [88815, 84583];
-const qianjinsiArticleIdList = [109335,107739,106233, 0, 105279, 101655];
+const qianjinsiArticleIdList = [109335, 107739, 106233, 0, 105279, 101655];
 let yingDiArticleSpider = new YingDiArticleSpider();
 // yingDiArticleSpider.run("other", "【旅法师营地】【狂野】疯狂的暗月马戏团卡组速递（第二天）", [2320381], true,true,true);
 // yingDiArticleSpider.run("other", "【旅法师营地】【狂野】疯狂的暗月马戏团卡组速递（第一天）", [2319759], true,true,true);

@@ -6,16 +6,9 @@ const co = require('co');
 let rootDir = path.join(storagePath, "yingdi-daily-wild-report");
 
 class YingDiDecksDailyWildReportSpider {
-  static readHomePage(url) {
-    return utils.startRequest(url, false, true).then((data) => {
-      if (data.success) {
-        return data.list.map(item => {
-          return {
-            title: item.title,
-            id: item.sourceId
-          }
-        });
-      }
+  static readHomePage(url, data) {
+    return utils.postForm(url, data).then((data) => {
+      return JSON.parse(data).items;
     });
   }
 
@@ -23,43 +16,43 @@ class YingDiDecksDailyWildReportSpider {
     let _this = this;
     let list = require(`../../../storage/yingdi-daily-wild-report/wild/report/list`);
     return co(function* () {
-      let url1 = "https://www.iyingdi.com/common/search?version=820&type=feed&key=%E8%90%A5%E5%9C%B0%E7%8B%82%E9%87%8E%E5%A4%96%E6%9C%8D%E7%89%B9%E8%BE%91%E3%80%91+%E7%AC%AC&page=0&size=10";
-      let url2 = "https://www.iyingdi.com/common/search?version=820&type=feed&key=%E8%90%A5%E5%9C%B0%E7%82%89%E7%9F%B3%E7%8B%82%E9%87%8E%E6%97%A5%E6%8A%A5&page=0&size=10";
-      let articleList1 = yield YingDiDecksDailyWildReportSpider.readHomePage(url1);
-      let articleList2 = yield YingDiDecksDailyWildReportSpider.readHomePage(url2);
+      let body = {
+        page: 1,
+        search_type: 1,
+        size: 10
+      };
+      let articleList1 = yield YingDiDecksDailyWildReportSpider.readHomePage("https://api.iyingdi.com/web/search/list", {
+        timestamp: 1620141028,
+        search_string: "营地炉石狂野日报"
+        , sign: "3b7b985cfe4e7187a4b87d5753cb711b",
+        ...body
+      });
+      let articleList2 = yield YingDiDecksDailyWildReportSpider.readHomePage("https://api.iyingdi.com/web/search/list", {
+        timestamp: 1620141061,
+        search_string: "营地狂野外服特辑】 第",
+        sign: "e730c74ef5354df238396c6da59a87c3",
+        ...body
+      });
       let articleList = [...articleList1, ...articleList2];
       for (let i = 0; i < articleList.length; i++) {
-        let reportName = articleList[i].title.replace(new RegExp("<em>","g"), "").replace(new RegExp("</em>","g"), "").replace(new RegExp("（更新中）","g"), "");
-        let articleUrl = `https://www.iyingdi.com/article/${articleList[i].id}?time=1547867333211&token=0d27fe4a9a834c3abcff23a7caf6f0ec&system=web/`;
+        let reportName = articleList[i].title.replace(new RegExp("<em>", "g"), "").replace(new RegExp("</em>", "g"), "").replace(new RegExp("（更新中）", "g"), "");
+        let articleUrl = `https://www.iyingdi.com/tz/post/${articleList[i].source_id}`;
         try {
           console.info(`${articleUrl}开始读取`);
           const exist = !!list.find(item => {
             return item.name === reportName.replace("&", "和");
           });
           if (!exist) {
-            let deckList,time;
-            let res = yield YingDiArticleSpider.readArticle(articleUrl);
-            deckList=res.deckList;
-            time=res.time;
-            if(!deckList.length){
-              articleUrl = `https://www.iyingdi.com/bbsplus/comment/list/post?postId=${articleList[i].id}&token=&system=web&page=0`;
-              res = yield YingDiArticleSpider.readArticle(articleUrl,true);
-              deckList=res.deckList;
-              time=res.time;
-              if(!deckList.length){
-                continue
-              }
-            }
+            let deckList;
+            let res = yield YingDiArticleSpider.readTzPost(articleUrl);
+            deckList = res.deckList;
             let reportContent = {};
             list.unshift({
               "name": reportName,
-              "time": time,
-              "fromUrl": `https://www.iyingdi.com/web/article/search/${articleList[i].id}`
+              "time": articleList[i].created * 1000,
+              "fromUrl": articleUrl
             });
             for (let j = 0; j < deckList.length; j++) {
-              if(deckList[j].code==="AAEBAf0EHooBwAGrBOYE9w3DFoK0Aum6Ati7AtDBApjEAsPqAv3qAs7vAtKJA9aZA5+bA+KbA/+dA6WhA/yjA5KkA7+kA7ulA/2sA+yvA7i2A8W4A/e4A8PMAwAA"){
-                continue
-              }
               //通过code调用ts的接口获取卡组信息
               let {cards, occupation} = utils.getCardInfoByCode(deckList[j].code);
               // 构建dir对象

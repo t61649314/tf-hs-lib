@@ -109,11 +109,11 @@ class ViciousSyndicateSpider {
         }
       } else {
         reportContent = {};
-        list = [{
+        list.unshift({
           "name": reportName,
           "time": time,
           "fromUrl": url
-        }];
+        });
         for (let j = 0; j < hrefList.length; j++) {
           console.info(`${hrefList[j]}开始读取`);
           try {

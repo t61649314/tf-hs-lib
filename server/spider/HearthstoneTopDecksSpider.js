@@ -36,13 +36,13 @@ class HearthstoneTopDecksSpider {
   readHomePage(url) {
     return utils.startRequest(url).then(($) => {
       console.info(`${url}读取成功`);
-      const deckHrefList = $('.medium-content');
+      const deckHrefList = $('.elementor-post__card');
       if (deckHrefList.length) {
         let hrefList = [];
         deckHrefList.each(function () {
-          const href = $(this).find(".entry-title").find("a").attr("href");
-          const name = $(this).find(".entry-title").find("a").html();
-          const time = $(this).find(".meta-date").html();
+          const href = $(this).find(".elementor-post__title").find("a").attr("href");
+          const name = $(this).find(".elementor-post__title").find("a").html().trim();
+          const time = $(this).find(".elementor-post-date").html().trim();
           hrefList.push({
             href: href,
             name: name,
@@ -62,7 +62,7 @@ class HearthstoneTopDecksSpider {
     return co(function* () {
 
       for (let i = 1; ; i++) {
-        if (i > 2) {
+        if (i > 3) {
           break;
         }
         let url;

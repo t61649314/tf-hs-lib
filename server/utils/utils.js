@@ -13,10 +13,35 @@ const request = require('request');
 const _ = require("lodash");
 const Const = require("../../server/spider/const");
 
+function postForm(url, data) {
+  return new Promise((resolve, reject) => {
+    request.post({
+      url: url,
+      headers: {
+        'Host': 'api.iyingdi.com',
+        'Login-Token': 'nologin',
+        'Origin': 'https://www.iyingdi.com',
+        'Platform': 'pc',
+        'Referer': 'https://www.iyingdi.com/',
+        'Sec-Fetch-Dest': 'empty',
+        'Sec-Fetch-Mode': 'cors',
+        'Sec-Fetch-Site': 'same-site',
+        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.146 Safari/537.36',
+      },
+      form: data}, function (error, response, body) {
+      if (!error && response.statusCode === 200) {
+        resolve(body);
+      }else{
+        reject(error);
+      }
+    });
+  })
+}
+
 function formatDeckName(name, decks, occupation) {
   let deckZhCNWordGroupKeyList = Object.keys(deckZhCNWordGroupJson);
   let deckZhCNWordGroupValueList = Object.values(deckZhCNWordGroupJson);
-  if(name.indexOf(occupation)>-1){
+  if (name.indexOf(occupation) > -1) {
     name = name.split(occupation)[0];
   }
   deckZhCNWordGroupKeyList.forEach(item => {
@@ -43,9 +68,9 @@ function formatDeckName(name, decks, occupation) {
           let find58770 = decks.find(item => {
             return item.dbfId === 58770
           });
-          if(find58770){
+          if (find58770) {
             name = "冰";
-          }else{
+          } else {
             name = "无限火球";
           }
         }
@@ -212,8 +237,8 @@ function getCardInfoByCode(code) {
     console.warn(`not find this occupation : ${occupationId}`)
   }
   let arr = deckFromCode.cards.map(item => {
-    if(item.id===60183){
-      item.id=58782
+    if (item.id === 60183) {
+      item.id = 58782
     }
     if (!cardZhCNJson[item.id]) {
       console.warn(`not find this dbfId : ${code}`);
@@ -242,6 +267,7 @@ function getCardInfoByCode(code) {
 
 
 module.exports = {
+  postForm,
   getCardInfoByCode,
   readFile,
   formatDeckName,
