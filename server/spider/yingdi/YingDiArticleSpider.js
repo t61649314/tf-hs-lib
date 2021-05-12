@@ -15,7 +15,7 @@ class YingDiArticleSpider {
           deckListDom.each(function () {
             deckList.push(
               {
-                name:"",
+                name: "",
                 code: $(this).find("aside").html()
               })
           });
@@ -27,69 +27,6 @@ class YingDiArticleSpider {
         }
       })
     })
-  }
-
-  static readArticle(url, bbsplus) {
-    return co(function* () {
-      let res = yield utils.startRequest(url, false, true);
-      if (!res.success) {
-        return {
-          deckList: [],
-          time: null
-        };
-      }
-      let created, content;
-      if (bbsplus) {
-        created = res.post.bbsPost.created;
-        content = res.post.bbsPost.content || res.post.bbsPost.contentHtml;
-      } else {
-        created = res.article.created;
-        content = res.article.content || res.post.bbsPost.contentHtml;
-      }
-      if (bbsplus) {
-        let $ = cheerio.load(content)
-        if ($("aside").length) {
-          let deckList = [];
-          for (var i = 0; i < $("aside").length; i++) {
-            let code = $("aside")[i].children[0].data;
-            deckList.push({
-              name: "",
-              code
-            })
-          }
-          return {
-            deckList: deckList,
-            time: created * 1000
-          };
-        } else {
-          let contentObj = JSON.parse(content);
-          return {
-            deckList: contentObj.filter(item => {
-              return item.type === "deckCode";
-            }).map(item => {
-              return {
-                name: item.deckname,
-                code: item.code
-              }
-            }),
-            time: created * 1000
-          };
-        }
-      } else {
-        let contentObj = JSON.parse(content);
-        return {
-          deckList: contentObj.filter(item => {
-            return item.type === "deckCode";
-          }).map(item => {
-            return {
-              name: item.deckname,
-              code: item.code
-            }
-          }),
-          time: created * 1000
-        };
-      }
-    });
   }
 
   run(keyWord, cnName, articleIdList, onlyOne, canRefresh, bbsplus) {
@@ -107,25 +44,21 @@ class YingDiArticleSpider {
         } else {
           reportName = `${cnName}第${articleIdList.length - i}期`;
         }
-        let url;
-        if (bbsplus) {
-          url = `https://www.iyingdi.com/bbsplus/comment/list/post?postId=${articleIdList[i]}&token=&system=web&page=0`;
-        } else {
-          url = `https://www.iyingdi.com/article/${articleIdList[i]}?time=${new Date().getTime()}&system=web&remark=seed`;
-        }
-
+        let url = `https://www.iyingdi.com/tz/post/${articleIdList[i]}`;
         try {
           console.info(`${url}开始读取`);
           const exist = !!list.find(item => {
             return item.name === reportName;
           });
-          let {deckList, time} = yield YingDiArticleSpider.readArticle(url, bbsplus);
+          let deckList;
+          let res = yield YingDiArticleSpider.readTzPost(url);
+          deckList = res.deckList;
           if (!exist) {
             let reportContent = {};
             list.unshift({
               "name": reportName,
-              "time": time,
-              "fromUrl": `https://www.iyingdi.com/web/article/search/${articleIdList[i]}`
+              "time": new Date("2021-05-10").getTime(),
+              "fromUrl": url
             });
             for (let j = 0; j < deckList.length; j++) {
               //通过code调用ts的接口获取卡组信息
@@ -138,7 +71,7 @@ class YingDiArticleSpider {
                 name: deckList[j].name,
                 cards: cards,
                 code: deckList[j].code,
-                alreadyFormatName: !bbsplus
+                alreadyFormatName: !!deckList[j].name
               });
               console.info(`该篇周报剩余：${deckList.length - j - 1}`);
             }
@@ -189,7 +122,7 @@ const fengtianArticleIdList = [71751, 69619];
 const zaowuzheArticleIdList = [80753, 78627, 70829, 67497, 64253];
 const suzhijichaArticleIdList = [109364, 2305496, 101923, 96311, 85163, 78225, 76281, 74671, 67565];
 const lajiArticleIdList = [88815, 84583];
-const qianjinsiArticleIdList = [109335, 107739, 106233, 0, 105279, 101655];
+const qianjinsiArticleIdList = [5022407, 109335, 107739, 106233, 0, 105279, 101655];
 let yingDiArticleSpider = new YingDiArticleSpider();
 // yingDiArticleSpider.run("other", "【旅法师营地】【狂野】疯狂的暗月马戏团卡组速递（第二天）", [2320381], true,true,true);
 // yingDiArticleSpider.run("other", "【旅法师营地】【狂野】疯狂的暗月马戏团卡组速递（第一天）", [2319759], true,true,true);
@@ -204,7 +137,7 @@ let yingDiArticleSpider = new YingDiArticleSpider();
 // yingDiArticleSpider.run("other", "【旅法师营地】【狂野】外域的灰烬卡组速递（第二日）", [2214425], true, true, true);
 // yingDiArticleSpider.run("other", "【旅法师营地】【狂野】外域的灰烬卡组速递（第一日）", [2210833], true, true, true);
 // yingDiArticleSpider.run("laji", "狂野环境辣鸡战报", lajiArticleIdList);
-// yingDiArticleSpider.run("qianjinsi", "前进四狂野环境报", qianjinsiArticleIdList);
+yingDiArticleSpider.run("qianjinsi", "前进四狂野环境报", qianjinsiArticleIdList);
 // yingDiArticleSpider.run("qianjinsi", "前进四狂野环境报第3期", [2289613], true, false, true);
 // yingDiArticleSpider.run("other", "虎牙和咕咕咕文案组狂野联合战报", [93623], true);
 // yingDiArticleSpider.run("other", "【旅法师营地】魔都战队狂野上分卡组推荐合集", [96623], true, true);
@@ -216,5 +149,5 @@ let yingDiArticleSpider = new YingDiArticleSpider();
 // yingDiArticleSpider.run("suzhijicha", "素质极差狂野战报", suzhijichaArticleIdList, false, false, false);
 // yingDiArticleSpider.run("shengerkuangye", "生而狂野战报", shengerkuangyeArticleIdList);
 // yingDiArticleSpider.run("fengtian", "奉天战队狂野战报", fengtianArticleIdList);
-yingDiArticleSpider.run("yuebang", "月榜群狂野战报", yuebangArticleIdList, false, false, true);
+// yingDiArticleSpider.run("yuebang", "月榜群狂野战报", yuebangArticleIdList, false, false, true);
 module.exports = YingDiArticleSpider;
