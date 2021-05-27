@@ -137,7 +137,7 @@ let yingDiArticleSpider = new YingDiArticleSpider();
 // yingDiArticleSpider.run("other", "【旅法师营地】【狂野】外域的灰烬卡组速递（第二日）", [2214425], true, true, true);
 // yingDiArticleSpider.run("other", "【旅法师营地】【狂野】外域的灰烬卡组速递（第一日）", [2210833], true, true, true);
 // yingDiArticleSpider.run("laji", "狂野环境辣鸡战报", lajiArticleIdList);
-yingDiArticleSpider.run("qianjinsi", "前进四狂野环境报", qianjinsiArticleIdList);
+// yingDiArticleSpider.run("qianjinsi", "前进四狂野环境报", qianjinsiArticleIdList);
 // yingDiArticleSpider.run("qianjinsi", "前进四狂野环境报第3期", [2289613], true, false, true);
 // yingDiArticleSpider.run("other", "虎牙和咕咕咕文案组狂野联合战报", [93623], true);
 // yingDiArticleSpider.run("other", "【旅法师营地】魔都战队狂野上分卡组推荐合集", [96623], true, true);
