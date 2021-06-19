@@ -33,7 +33,9 @@ class YingDiDecksDailyWildReportSpider {
         sign: "e730c74ef5354df238396c6da59a87c3",
         ...body
       });
-      let articleList = [...articleList1, ...articleList2];
+      let articleList = [...articleList1, ...articleList2].filter(({title}) => {
+        return title.indexOf("营地炉石狂野日报") > -1 || title.indexOf("营地狂野外服特辑】 第") > -1
+      });
       for (let i = 0; i < articleList.length; i++) {
         let reportName = articleList[i].title.replace(new RegExp("<em>", "g"), "").replace(new RegExp("</em>", "g"), "").replace(new RegExp("（更新中）", "g"), "");
         let articleUrl = `https://www.iyingdi.com/tz/post/${articleList[i].source_id}`;
@@ -73,7 +75,6 @@ class YingDiDecksDailyWildReportSpider {
           console.info(`${articleUrl} done`);
         } catch (e) {
           console.error(`${articleUrl}:${e}`);
-          break;
         }
       }
     });
