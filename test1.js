@@ -1,65 +1,63 @@
-// function quickSort(arr, l, r) {
-//   if (l >= r) {
-//     return;
-//   }
-//   let x = l, y = r, base = arr[l];
-//   while (x < y) {
-//     while (x < y && arr[y] >= base) {
-//       y--
-//     }
-//     if (x < y) {
-//       arr[x] = arr[y];
-//       x++;
-//     }
-//     while (x < y && arr[x] < base) {
-//       x++
-//     }
-//     if (x < y) {
-//       arr[y] = arr[x];
-//       y--;
-//     }
-//   }
-//   arr[x] = base;
-//   quickSort(arr, l, x - 1);
-//   quickSort(arr, x + 1, r);
-// }
-//
-// function getmid(a, c, b) {
-//   if (a > b) {
-//     [a, b] = [b, a]
-//   }
-//   if (a > c) {
-//     [a, c] = [c, a]
-//   }
-//   if (b > c) {
-//     [b, c] = [c, b]
-//   }
-//   return b
-// }
-// function quickSort2(arr, l, r) {
-//
-//   while (l < r) {
-//     let x = l, y = r, base = getmid(arr[l], arr[parseInt((l + r) / 2)], arr[r]);
-//     while (x <= y) {
-//       while (arr[y] > base) {
-//         y--
-//       }
-//       while (arr[x] < base) {
-//         x++
-//       }
-//       if (x <= y) {
-//         let temp = arr[y];
-//         arr[y] = arr[x];
-//         arr[x] = temp;
-//         x++;
-//         y--;
-//       }
-//     }
-//     console.log(arr,x,y)
-//     quickSort2(arr, x, r);
-//     r = y;
-//   }
-// }
+function quickSort(arr, l, r) {
+  if (l >= r) {
+    return;
+  }
+  let x = l, y = r, base = arr[l];
+  while (x < y) {
+    while (x < y && arr[y] >= base) {
+      y--
+    }
+    if (x < y) {
+      arr[x] = arr[y];
+      x++;
+    }
+    while (x < y && arr[x] < base) {
+      x++
+    }
+    if (x < y) {
+      arr[y] = arr[x];
+      y--;
+    }
+  }
+  arr[x] = base;
+  quickSort(arr, l, x - 1);
+  quickSort(arr, x + 1, r);
+}
+
+function getmid(a, c, b) {
+  if (a > b) {
+    [a, b] = [b, a]
+  }
+  if (a > c) {
+    [a, c] = [c, a]
+  }
+  if (b > c) {
+    [b, c] = [c, b]
+  }
+  return b
+}
+function quickSort2(arr, l, r) {
+  while (l < r) {
+    let x = l, y = r, base = getmid(arr[l], arr[parseInt((l + r) / 2)], arr[r]);
+    while (x <= y) {
+      while (arr[y] > base) {
+        y--
+      }
+      while (arr[x] < base) {
+        x++
+      }
+      if (x <= y) {
+        let temp = arr[y];
+        arr[y] = arr[x];
+        arr[x] = temp;
+        x++;
+        y--;
+      }
+    }
+    quickSort2(arr, x, r);
+    r = y;
+  }
+}
 // //
 // // function insertSort(arr) {
 // //   for (let i = 0; i < arr.length; i++) {
@@ -73,11 +71,11 @@
 // //   }
 // // }
 //
-// let arr = [1, 10, 4, 7, 2, 5, 0, 10, 1]
+let arr = [1, 2,2,2,2,1]
 //
 //
-// quickSort2(arr, 0, 8);
-
+quickSort(arr, 0, 5)
+console.log(arr)
 //
 // var sortColors = function(nums) {
 //   let i=0,j=nums.length-1;
@@ -584,69 +582,305 @@ var findSubsequences = function (nums) {
 //   let b=[3,4]
 // findMedianSortedArrays(a,b)
 
-var trap = function (height) {
-  let dp = [0, 0];
-  for (let i = 2; i < height.length; i++) {
-    let j = i - 1;
-    if (height[j] > height[i]) {
-      dp[i] = dp[i - 1];
-    } else {
-      let low;
-      do {
-        low = height[j];
-        j--
-      } while (j > 0 && height[j] < low)
-
-      if (j > 0) {
-        let high
-        do {
-          high = height[j]
-          j--
-        } while (j >= 0 && height[j] > high)
-        high = Math.min(high, height[i]);
-        let tiji = 0
-        for (let q = j + 2; q < i; q++) {
-          tiji += high - height[q]
-        }
-        dp[i] = dp[j + 1] + tiji;
-      }
-    }
-  }
-  console.log(dp)
-  return dp[dp.length - 1]
-};
-
-
-var shipWithinDays = function (weights, days) {
-  let head = weights[weights.length - 1];
-  let tail = weights.reduce((pre, curr) => {
-    return pre + curr;
-  }, 0)
-  while (head < tail) {
-    let mid = parseInt((head + tail) / 2);
-    let days = getDays(mid);
-    if (days <= 5) {
-      tail = mid;
-    } else {
-      head = mid + 1;
-    }
-  }
-
-  function getDays(k) {
-    let d = 1,temp=0;
-    for (let i = 0; i < weights.length; i++) {
-      if (temp + weights[i] > k) {
-        d++;
-        temp = 0;
-      }
-      temp += weights[i]
-    }
-    return d;
-  }
-
-  return head;
-};
-let a = [3,2,2,4,1,4]
-
-;
-shipWithinDays(a, 3)
+// var trap = function (height) {
+//   let dp = [0, 0];
+//   for (let i = 2; i < height.length; i++) {
+//     let j = i - 1;
+//     if (height[j] > height[i]) {
+//       dp[i] = dp[i - 1];
+//     } else {
+//       let low;
+//       do {
+//         low = height[j];
+//         j--
+//       } while (j > 0 && height[j] < low)
+//
+//       if (j > 0) {
+//         let high
+//         do {
+//           high = height[j]
+//           j--
+//         } while (j >= 0 && height[j] > high)
+//         high = Math.min(high, height[i]);
+//         let tiji = 0
+//         for (let q = j + 2; q < i; q++) {
+//           tiji += high - height[q]
+//         }
+//         dp[i] = dp[j + 1] + tiji;
+//       }
+//     }
+//   }
+//   console.log(dp)
+//   return dp[dp.length - 1]
+// };
+//
+//
+// var shipWithinDays = function (weights, days) {
+//   let head = weights[weights.length - 1];
+//   let tail = weights.reduce((pre, curr) => {
+//     return pre + curr;
+//   }, 0)
+//   while (head < tail) {
+//     let mid = parseInt((head + tail) / 2);
+//     let days = getDays(mid);
+//     if (days <= 5) {
+//       tail = mid;
+//     } else {
+//       head = mid + 1;
+//     }
+//   }
+//
+//   function getDays(k) {
+//     let d = 1,temp=0;
+//     for (let i = 0; i < weights.length; i++) {
+//       if (temp + weights[i] > k) {
+//         d++;
+//         temp = 0;
+//       }
+//       temp += weights[i]
+//     }
+//     return d;
+//   }
+//
+//   return head;
+// };
+// let a = [3,2,2,4,1,4]
+//
+// ;
+// shipWithinDays(a, 3)
+// let a = function (a, b, c) {
+//   return a + b + c;
+// }
+//
+//
+// let currying = function (fn) {
+//   let func = function (...args) {
+//     if (args.length >= fn.length) {
+//       return fn.call(this, ...args);
+//     } else {
+//       let f2 = function (...outerArgs) {
+//         return func(...args, ...outerArgs);
+//       }
+//       f2.toString = function () {
+//         return fn.call(this, ...args,0);
+//       }
+//       return f2;
+//     }
+//   }
+//
+//   return func;
+// }
+// var abc = function (a, b, c) {
+//   return a + b + c;
+// };
+//
+// var curried = currying(abc);
+//
+// console.log(curried(1)(2));
+// console.log(curried(1, 2)(3));
+// console.log(curried(1, 2, 3));
+// console.log(curried(1)(2, 3));
+//
+//
+//
+//
+// function Promise(func) {
+//   this.status = 'pending';
+//   this.successFunc = [];
+//   this.rejectFunc = [];
+//   this.value = undefined;
+//   this.reason = undefined;
+//   var resolve = (result) => {
+//     if (this.status === 'pending') {
+//       this.value = result;
+//       this.status = "resolved";
+//       this.successFunc.forEach(fn => fn());
+//
+//     }
+//   };
+//   var reject = (result) => {
+//     if (this.status === 'pending') {
+//       this.reason = result;
+//       this.status = 'rejected';
+//       this.rejectFunc.forEach(fn => fn());
+//     }
+//   };
+//   try {//执行时可能会发生异常
+//     func(resolve, reject);
+//   } catch (e) {
+//     reject(e);//promise失败了
+//   }
+//
+//   this.then = (onFuiFilled, onRejected) => {
+//     onFuiFilled = typeof onFuiFilled === 'function' ? onFuiFilled : y => y;
+//     onRejected = typeof onRejected === 'function' ? onRejected : err => {
+//       throw err;
+//     };
+//     return new Promise((resolve, reject) => {
+//       let fuiFilled = () => setTimeout(() => {
+//         try {
+//           let result = onFuiFilled(this.value);
+//           if (result instanceof Promise) {
+//             result.then(resolve, reject)
+//           } else {
+//             resolve(result);
+//           }
+//         } catch (e) {
+//           reject(e);
+//         }
+//       }, 0);
+//       let rejected = () => setTimeout(() => {
+//         try {
+//           let result = onRejected(this.reason);
+//           if (result instanceof Promise) {
+//             result.then(resolve, reject)
+//           } else {
+//             resolve(result);
+//           }
+//         } catch (e) {
+//           reject(e)
+//         }
+//       }, 0);
+//       if (this.status === 'resolved') {
+//         fuiFilled();
+//       } else if (this.status === 'rejected') {
+//         rejected();
+//       } else if (this.status === 'pending') {
+//         //把成功的函数一个个存放到成功回调函数数组中
+//         this.successFunc.push(fuiFilled);
+//         //把失败的函数一个个存放到失败回调函数数组中
+//         this.rejectFunc.push(rejected)
+//       }
+//     });
+//   };
+//   this.catch = (errFunc) => {
+//     return this.then(undefined, errFunc);
+//   };
+//   this.finally = (cb) => {
+//     return this.then(
+//       value => Promise.resolve(cb()).then(() => value),
+//       reason => Promise.resolve(cb()).then(() => {
+//         throw reason
+//       })
+//     );
+//   }
+// }
+//
+// Promise.resolve = function (value) {
+//   // 如果参数是MyPromise实例，直接返回这个实例
+//   if (value instanceof Promise) return value;
+//   return new Promise(resolve => resolve(value))
+// };
+//
+// Promise.reject = function (value) {
+//   return new Promise((resolve, reject) => reject(value))
+// };
+//
+// Promise.all = function (list) {
+//   return new Promise((resolve, reject) => {
+//     /**
+//      * 返回值的集合
+//      */
+//     let values = [];
+//     let count = 0;
+//     for (let [i, p] of list.entries()) {
+//       // 数组参数如果不是MyPromise实例，先调用MyPromise.resolve
+//       this.resolve(p).then(res => {
+//         values[i] = res;
+//         count++;
+//         // 所有状态都变成fulfilled时返回的MyPromise状态就变成fulfilled
+//         if (count === list.length) resolve(values)
+//       }, err => {
+//         // 有一个被rejected时返回的MyPromise状态就变成rejected
+//         reject(err)
+//       })
+//     }
+//   })
+// };
+// Promise.race = function (list) {
+//   return new Promise((resolve, reject) => {
+//     for (let p of list) {
+//       // 只要有一个实例率先改变状态，新的MyPromise的状态就跟着改变
+//       this.resolve(p).then(res => {
+//         resolve(res)
+//       }, err => {
+//         reject(err)
+//       })
+//     }
+//   })
+// };
+// let p = new Promise((resolve, reject) => {
+//   //做一些异步操作
+//   setTimeout(() => {
+//     resolve('我是成功1');
+//   }, 2000);
+//   setTimeout(() => {
+//     reject('我是失败1');
+//   }, 3000);
+// });
+//
+//
+// Promise.all([p, p]).then(res => {
+//   console.log(res)
+// });
+//
+// Promise.resolve()
+//   .then(() => {
+//     return new Error('error!!!')
+//   })
+//   .then((res) => {
+//     console.log('then: ', res)
+//   })
+//   .catch((err) => {
+//     console.log('catch: ', err)
+//   })
+//
+// p.then((data) => {
+//   console.log(data);
+//   return new Promise((resolve, reject) => {
+//     setTimeout(() => {
+//       resolve('我是成功2');
+//     }, 3000);
+//     setTimeout(() => {
+//       reject('我是失败2');
+//     }, 2000);
+//   });
+// }, (err) => {
+//   console.log('rejected', err);
+//   return 1;
+// })
+//   .then(data => {
+//     console.log("resolve" + data);
+//     return 2;
+//   }, (err) => {
+//     console.log('rejected', err);
+//     return new Promise((resolve, reject) => {
+//       setTimeout(() => {
+//         resolve('我是成功3');
+//       }, 2000);
+//       setTimeout(() => {
+//         reject('我是失败3');
+//       }, 3000);
+//     });
+//   })
+//   .then(data => {
+//     console.log("resolve" + data);
+//     return 3;
+//   }, (err) => {
+//     console.log('rejected', err);
+//     return 3;
+//   })
+//   .then(data => {
+//     console.log("resolve" + data);
+//     throw new Error("test error");
+//   }, (err) => {
+//     console.log('rejected', err);
+//     return 4;
+//   })
+//   .then(data => {
+//     console.log("resolve" + data);
+//   }, (err) => {
+//     console.log('rejected', err);
+//   }).catch(err => {
+//   console.log('error', err);
+// });

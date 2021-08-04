@@ -228,7 +228,8 @@ class TempoStormSpider {
       let count = yield _this.getCount("wild");
       console.info(`获取count成功：${count}`);
       console.info(`开始获取pageSlug`);
-      let slug = yield _this.getPageSlug(count, "wild");
+      // let slug = yield _this.getPageSlug(count, "wild");
+      let slug = "2021-07-06";
       console.info(`获取pageSlug成功：${slug}`);
       const reportName = `tempo-storm-${slug}`;
       console.info(`开始获取deckSlugList`);

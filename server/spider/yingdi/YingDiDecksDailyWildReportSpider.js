@@ -34,6 +34,7 @@ class YingDiDecksDailyWildReportSpider {
         ...body
       });
       let articleList = [...articleList1, ...articleList2].filter(({title}) => {
+        title=title.replace(new RegExp("<em>", "g"), "").replace(new RegExp("</em>", "g"), "");
         return title.indexOf("营地炉石狂野日报") > -1 || title.indexOf("营地狂野外服特辑】 第") > -1
       });
       for (let i = 0; i < articleList.length; i++) {
