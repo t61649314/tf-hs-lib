@@ -73,8 +73,8 @@ class ViciousSyndicateSpider {
     let _this = this;
     let list = require("../../storage/vicious-syndicate/standard/report/old-list");
     return co(function* () {
-      // let url = yield _this.getLastStandardPageUrl();
-      let url = "https://www.vicioussyndicate.com/vs-data-reaper-report-201/"
+      let url = yield _this.getLastStandardPageUrl();
+      // let url = "https://www.vicioussyndicate.com/vs-data-reaper-report-201/"
       let reportName = url.split("/")[3];
       console.info(`${url}开始读取`);
       let {hrefList, time} = yield _this.readHomePage(url);

@@ -6,26 +6,24 @@ const cheerio = require('cheerio');
 
 class YingDiArticleSpider {
   static readTzPost(url) {
-    return co(function* () {
-      return yield utils.startRequest(url, false).then(($) => {
-        console.info(`${url}读取成功`);
-        const deckListDom = $('.yingdi-deck');
-        if (deckListDom && deckListDom.length) {
-          let deckList = [];
-          deckListDom.each(function () {
-            deckList.push(
-              {
-                name: "",
-                code: $(this).find("aside").html()
-              })
-          });
-          return {
-            deckList: deckList
-          };
-        } else {
-          console.info(`${url}：no data`);
-        }
-      })
+    return utils.startRequest(url, false).then(($) => {
+      console.info(`${url}读取成功`);
+      const deckListDom = $('.yingdi-deck');
+      if (deckListDom && deckListDom.length) {
+        let deckIdList = [];
+        deckListDom.each(function () {
+          deckIdList.push($(this).find(".deck-link").attr("data-id"))
+        });
+        return deckIdList;
+      } else {
+        console.info(`${url}：no data`);
+      }
+    })
+  }
+
+  static readDeckDetails(url) {
+    return utils.startRequest(url, false, true).then((res) => {
+      return res
     })
   }
 
@@ -50,9 +48,7 @@ class YingDiArticleSpider {
           const exist = !!list.find(item => {
             return item.name === reportName;
           });
-          let deckList;
-          let res = yield YingDiArticleSpider.readTzPost(url);
-          deckList = res.deckList;
+          let deckIdList = yield YingDiArticleSpider.readTzPost(url);
           if (!exist) {
             let reportContent = {};
             list.unshift({
@@ -60,7 +56,9 @@ class YingDiArticleSpider {
               "time": new Date("2021-05-10").getTime(),
               "fromUrl": url
             });
-            for (let j = 0; j < deckList.length; j++) {
+            for (let j = 0; j < deckIdList.length; j++) {
+              let deckId = deckIdList[j];
+              YingDiArticleSpider.readDeckDetails(`https://api2.iyingdi.com/hearthstone/deck/${deckId}?token=&id=${deckId}&format=json`);
               //通过code调用ts的接口获取卡组信息
               let {cards, occupation} = utils.getCardInfoByCode(deckList[j].code);
               // 构建dir对象

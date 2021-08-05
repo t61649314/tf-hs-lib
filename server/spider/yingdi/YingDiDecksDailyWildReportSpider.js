@@ -34,8 +34,8 @@ class YingDiDecksDailyWildReportSpider {
         ...body
       });
       let articleList = [...articleList1, ...articleList2].filter(({title}) => {
-        title=title.replace(new RegExp("<em>", "g"), "").replace(new RegExp("</em>", "g"), "");
-        return title.indexOf("营地炉石狂野日报") > -1 || title.indexOf("营地狂野外服特辑】 第") > -1
+        title = title.replace(new RegExp("<em>", "g"), "").replace(new RegExp("</em>", "g"), "");
+        return title.indexOf("营地炉石狂野日报") > -1 || title.indexOf("营地狂野外服特辑】 第") > -1 || title.indexOf("营地狂野外服特辑】第") > -1
       });
       for (let i = 0; i < articleList.length; i++) {
         let reportName = articleList[i].title.replace(new RegExp("<em>", "g"), "").replace(new RegExp("</em>", "g"), "").replace(new RegExp("（更新中）", "g"), "");
@@ -46,29 +46,29 @@ class YingDiDecksDailyWildReportSpider {
             return item.name === reportName.replace("&", "和");
           });
           if (!exist) {
-            let deckList;
-            let res = yield YingDiArticleSpider.readTzPost(articleUrl);
-            deckList = res.deckList;
+            let deckIdList = yield YingDiArticleSpider.readTzPost(articleUrl);
             let reportContent = {};
             list.unshift({
               "name": reportName,
               "time": articleList[i].created * 1000,
               "fromUrl": articleUrl
             });
-            for (let j = 0; j < deckList.length; j++) {
+            for (let j = 0; j < deckIdList.length; j++) {
+              let deckId = deckIdList[j];
+              let {deck} =yield YingDiArticleSpider.readDeckDetails(`https://api2.iyingdi.com/hearthstone/deck/${deckId}?token=&id=${deckId}&format=json`);
               //通过code调用ts的接口获取卡组信息
-              let {cards, occupation} = utils.getCardInfoByCode(deckList[j].code);
+              let {cards, occupation} = utils.getCardInfoByCode(deck.code);
               // 构建dir对象
               if (!reportContent[occupation]) {
                 reportContent[occupation] = [];
               }
               reportContent[occupation].push({
-                name: deckList[j].name,
+                name: deck.name,
                 cards: cards,
-                code: deckList[j].code,
-                alreadyFormatName: !!deckList[j].name
+                code: deck.code,
+                alreadyFormatName: true
               });
-              console.info(`该篇周报剩余：${deckList.length - j - 1}`);
+              console.info(`该篇周报剩余：${deckIdList.length - j - 1}`);
             }
             yield utils.writeFile(path.join(rootDir, "wild", "deck", `${reportName}.json`), JSON.stringify(reportContent));
             yield utils.writeFile(path.join(rootDir, "wild", "report", "list.json"), JSON.stringify(list));
