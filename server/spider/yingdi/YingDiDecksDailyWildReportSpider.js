@@ -43,7 +43,7 @@ class YingDiDecksDailyWildReportSpider {
         try {
           console.info(`${articleUrl}开始读取`);
           const exist = !!list.find(item => {
-            return item.name === reportName.replace("&", "和");
+            return item.name === reportName;
           });
           if (!exist) {
             let deckIdList = yield YingDiArticleSpider.readTzPost(articleUrl);
